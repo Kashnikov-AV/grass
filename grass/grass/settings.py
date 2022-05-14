@@ -35,14 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
-    'djoser',
     'rest_framework',
     'phonenumber_field',
-
-    'user_app',
-    'api',
-    'profile_app'
 ]
 
 MIDDLEWARE = [
@@ -126,30 +120,12 @@ STATIC_URL = 'static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+#DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'user_app.User'
-AUTHENTICATION_BACKENDS = ('user_app.backends.AuthBackend',)
+#AUTH_USER_MODEL = 'user_app.User'
+#AUTHENTICATION_BACKENDS = ('user_app.backends.AuthBackend',)
 
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_simplejwt.authentication.JWTAuthentication',
-    ),
-}
 
-SIMPLE_JWT = {
-   'AUTH_HEADER_TYPES': ('Bearer',),
-}
-
-# DJOSER
-DJOSER = {
-    'USER_CREATE_PASSWORD_RETYPE': True,
-    'SEND_ACTIVATION_EMAIL': True,
-    'SET_PASSWORD_RETYPE': True,
-    'PASSWORD_RESET_CONFIRM_RETYPE': True,
-    'TOKEN_MODEL': None,  # We use only JWT
-    'ACTIVATION_URL': 'auth/verify/{uid}/{token}/',
-}
 
 # EMAIL
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
