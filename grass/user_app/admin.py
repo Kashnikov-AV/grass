@@ -1,9 +1,5 @@
 from django.contrib import admin
-
-# Register your models here.
-from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
-
 from .models import CustomUser
 
 
@@ -23,3 +19,6 @@ class CustomUserAdmin(UserAdmin):
     )
     search_fields = ('email',)
     ordering = ('email',)
+
+
+admin.site.register(CustomUser, CustomUserAdmin)
