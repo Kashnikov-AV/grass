@@ -48,3 +48,15 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+
+
+class Profile(models.Model):
+    user = models.OneToOneField(
+        CustomUser,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+    first_name = models.CharField(max_length=50)
+    second_name = models.CharField(max_length=50)
+    foto = models.ImageField(upload_to="images/", blank=True)
+    birthday = models.DateField()
