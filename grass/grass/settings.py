@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'phonenumber_field',
-    'user_app',
 ]
 
 MIDDLEWARE = [
@@ -56,10 +54,13 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'grass.urls'
 
+# URL redirecting after a successful authentication
+LOGIN_REDIRECT_URL = 'home'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
