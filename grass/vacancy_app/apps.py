@@ -1,8 +1,6 @@
 from django.apps import AppConfig
 
 
-class SignupAppConfig(AppConfig):
+class VacancyAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'signup_app'
-
-
+    name = 'vacancy_app'

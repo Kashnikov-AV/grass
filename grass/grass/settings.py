@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv, find_dotenv
 
-load_dotenv()
+load_dotenv(find_dotenv())
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,12 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY="6yki$9uz-i+2ax6mq)5o#y=p97behim4_)#fyl8_vo(_yyp%!@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'kashnikov1.pythonanywhere.com',
+    '127.0.0.1:8000',
+    '127.0.0.1',
+]
 
 # Application definition
 INSTALLED_APPS = [
@@ -44,6 +48,8 @@ INSTALLED_APPS = [
     'home_app',
     'signup_app',
     'django_simple_bulma',
+    'profile_app',
+    'vacancy_app',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +65,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'grass.urls'
 
 # URL redirecting after a successful authentication
-LOGIN_REDIRECT_URL = '/home/'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = '/accounts/login'
 
@@ -132,11 +138,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
-
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / "static",
 ]
 
 STATICFILES_FINDERS = [
@@ -166,3 +171,22 @@ EMAIL_HOST_PASSWORD = 'secret123'
 EMAIL_USE_SSL = True
 #FIXME
 DEFAULT_FROM_EMAIL = 'django-auth@'
+
+# Custom settings for django-simple-bulma
+BULMA_SETTINGS = {
+    "custom_scss": [
+        "css/bulma.sass",
+        "css/bulma.scss",
+    ],
+    "variables": {
+        "green": "#A7C957",
+        "primary": "#000000",
+        "danger": "#BC4749",
+        "white-ter": "#F2E8CF",
+    },
+    "alt_variables": {
+        "primary": "#fff",
+    },
+    "output_style": "compressed",
+    "fontawesome_token": "e761a01be3",
+}

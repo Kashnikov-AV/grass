@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<form method="post">
+  {% csrf_token %}
+  <p>Вы уверены что хотите удалить вакансию "{{ object }}"?</p>
+  <input type="submit" value="Удалить вакансию" class="button is-primary">
+  <a href="{% url 'profile-company' pk=user.pk %}" class="button is-danger">Отмена</a>
+</form>
+{% endblock %}

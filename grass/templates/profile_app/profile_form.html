@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% include 'navbar.html' %}
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.email }}!</p>
+    {% endif %}
+    <form method="POST" enctype='multipart/form-data'  action="">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button class="button" type="submit">submit</button>
+    </form>
+    <a href="{% url 'profile' pk=user.pk %}" class="button">Отмена</a>
+{% endblock %}

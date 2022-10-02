@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% include 'navbar.html' %}
+<div class="content">
+    <div class="box">
+        <div class="columns">
+            <div class="column">
+                <h1>Профиль компании</h1>
+                {% if company.logo %}
+                    <img class="image is-128x128" src="{{ company.logo.url }}" alt="connect">
+                {% endif %}
+                    <p>{{ company.company_name }}</p>
+                    <p>{{ company.about_company }}</p>
+                {% if user.pk == company.pk %}
+                    <a class="button is-primary" href="{{company.get_absolute_url}}/update/">редактировать профиль компании</a>
+                    <a class="button is-success" href="{% url 'vacancy-create' %}">Добавить вакансию</a>
+                {% endif %}
+            </div>
+            <div class="column">
+                {% if user.pk == company.pk %}
+                <h1>Ваши вакансии</h1>
+                {% for vacancy in vacancies %}
+                    <div class="box">
+                        <p>{{ vacancy.job_name }}</p>
+                        <p>{{ vacancy.company.company_name }}</p>
+                        <p> <span> от </span> {{ vacancy.salary_min }} руб. </p>
+                        <p>{{ vacancy.location }}</p>
+
+                        <a class="button is-primary" href="{{ vacancy.get_absolute_url }}/update">Редактировать вакансию</a>
+                        <a class="button is-danger" href="{{ vacancy.get_absolute_url }}/delete">Удалить вакансию</a>
+                    </div>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

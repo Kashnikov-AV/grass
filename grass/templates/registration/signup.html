@@ -2,10 +2,53 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>Sign up</h2>
-  <form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
-  </form>
+<div class="box">
+    <div class="container is-max-desktop mt-5">
+        <form method="post" class="box is is-centered has-background-white-ter">
+            {% csrf_token %}
+            <h1 class="title is-1 has-text-centered has-text-primary">Grass регистрация</h1>
+            <div class="is-centered">
+                <div class="field">
+                    <label class="label has-text-primary">E-mail</label>
+                    <div class="control has-icons-left">
+                        {{ form.email }}
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label has-text-primary">Пароль</label>
+                    <div class="control has-icons-left">
+                        {{ form.password1 }}
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label has-text-primary">Подтвердите пароль</label>
+                    <div class="control has-icons-left">
+                        {{ form.password2 }}
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="control">
+                    <label class="label has-text-primary">Выберите роль</label>
+                    {% for role in form.role %}
+                        {{ role }}
+                    {% endfor %}
+                </div>`
+                {{ form.errors }}
+                <div class="control">
+                    <button class="button is-primary" type="submit">Зарегистрироваться</button>
+                    <a class="button is-success" href="{% url 'login' %}">Вход</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
 {% endblock %}
+
