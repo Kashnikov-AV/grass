@@ -62,3 +62,6 @@ class CompanyListView(LoginRequiredMixin, ListView):
     template_name = 'profile_app/companies.html'
     model = Company
 
+class ProfileListView(LoginRequiredMixin, ListView):
+    template_name = 'profile_app/profiles.html'
+    model = Profile

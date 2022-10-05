@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% include 'navbar.html' %}
+{% include 'navbar.html' %}
 <div class="box">
     {% for company in object_list %}
         <div class="columns is-centered">
             <div class="column is-two-thirds">
-                <div class="box has-background-white-ter mt-5 is-flex is-align-content-space-around"">
+                <div class="box has-background-white-ter mt-5 is-flex is-align-content-space-around">
                         {% if company.logo %}
-                            <img class="image is-128x128 mr-5" src="{{ company.logo.url }}" alt="connect">
+                             <a href="{{ company.get_absolute_url }}">
+                                 <img class="image is-128x128 mr-5" src="{{ company.logo.url }}" alt="none">
+                             </a>
                         {% endif %}
                         <div class="content">
                             <h2 class="subtitle is-3">{{ company.company_name }}</h2>

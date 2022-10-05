@@ -38,7 +38,7 @@
             <div class="column is-four-fifth-mobile is-two-thirds-tablet is-two-thirds-desktop ">
                 <div class="is-flex is-justify-content-space-between">
                   <span>Возраст:</span>
-                  {% if profile.birth_date != 0 %}
+                  {% if profile.birth_date %}
                         <span>{{ age }} {{ end_age }}</span>
                   {% endif %}
                 </div>
