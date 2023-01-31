@@ -2,15 +2,19 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 GENDER_CHOICES = (
-    ('Мужчина', 'Мужчина'),
-    ('Женщина', 'Женщина'),
+    ('Мужчина', 0),
+    ('Женщина', 1),
 )
 
 EDU_CHOICES = (
-    ('среднее', 'среднее'),
-    ('СПО', 'СПО'),
-    ('высшее', 'высшее'),
+    ('среднее', 0),
+    ('СПО', 1),
+    ('высшее бакалавриат', 2),
+    ('высшее специалитет', 3),
+    ('высшее магистратура', 4),
+    ('высшее ученая степень', 5),
 )
+
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
@@ -18,23 +22,25 @@ def user_directory_path(instance, filename):
 
 
 class Profile(models.Model):
-
     user_model = get_user_model()
 
-    user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='profile', verbose_name='пользователь', primary_key=True,)
+    user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='profile',
+                                verbose_name='пользователь', primary_key=True, )
     name = models.CharField(max_length=100, blank=True, verbose_name='имя')
     surname = models.CharField(max_length=100, blank=True, verbose_name='фамилия')
     patronymic = models.CharField(max_length=100, blank=True, verbose_name='Отчество')
     gender = models.CharField(max_length=10, blank=True, verbose_name="Пол", choices=GENDER_CHOICES, default='Мужчина')
-    birth_date = models.DateField(null=True, blank=True, verbose_name="Дата рождения",)
+    birth_date = models.DateField(null=True, blank=True, verbose_name="Дата рождения", )
     career_objective = models.CharField(null=True, blank=True, verbose_name="Желаемая должность", max_length=150)
     salary_min = models.IntegerField(verbose_name="Минимальная зарплата", blank=True, null=True)
     salary_max = models.IntegerField(verbose_name="Максимальная зарплата", blank=True, null=True)
     work_experience = models.IntegerField(verbose_name="Опыт работы", blank=True, null=True)
     skills = models.TextField(max_length=2000, blank=True, verbose_name='Навыки')
-    level_of_education = models.CharField(max_length=100, blank=True,
+    level_of_education = models.CharField(max_length=100,
+                                          blank=True,
                                           verbose_name="Уровень образования",
-                                          choices=EDU_CHOICES,)
+                                          choices=EDU_CHOICES,
+                                          )
     edu_institution = models.CharField(max_length=100, blank=True, verbose_name='Учебное заведение')
     diplomas_certificates = models.CharField(max_length=100, blank=True, verbose_name='Дипломы и сертификаты')
     photo = models.ImageField(upload_to=user_directory_path, verbose_name='фото', name='photo', blank=True)

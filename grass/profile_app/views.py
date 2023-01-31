@@ -33,7 +33,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
     def right_end(self, data: int) -> str:
         if data % 10 == 1:
             return "год"
-        elif data < 5 and data % 10 > 1 and data % 100 < 10:
+        elif data % 10 > 1 and data % 10 < 5:
             return "года"
         elif data % 100 > 10 and data % 100 < 21:
             return "лет"

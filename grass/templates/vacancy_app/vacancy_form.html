@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'navbar.html' %}
+{% include 'components/navbar.html' %}
 <form method="POST" enctype='multipart/form-data'>
     {% csrf_token %}
     {% for input in form %}

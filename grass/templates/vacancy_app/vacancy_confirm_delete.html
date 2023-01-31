@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'navbar.html' %}
+{% include 'components.navbar.html' %}
 <form method="post">
   {% csrf_token %}
   <p>Вы уверены что хотите удалить вакансию "{{ object }}"?</p>

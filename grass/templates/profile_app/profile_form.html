@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% include 'navbar.html' %}
+    {% include 'components/navbar.html' %}
     {% if user.is_authenticated %}
         <p>Hi {{ user.email }}!</p>
     {% endif %}
