@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT
@@ -31,6 +31,7 @@ urlpatterns = [
     path('companies/', CompanyListView.as_view(), name='companies'),
     path('profiles/', ProfileListView.as_view(), name='profiles'),
     path('vacancy/', include('vacancy_app.urls')),
+    re_path(r'', include('django_private_chat2.urls', namespace='django_private_chat2')),
 ]
 
 urlpatterns += static(MEDIA_URL, document_root=MEDIA_ROOT)
