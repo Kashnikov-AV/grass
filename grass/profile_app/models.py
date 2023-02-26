@@ -2,17 +2,26 @@ from django.db import models
 from django.contrib.auth import get_user_model
 
 GENDER_CHOICES = (
-    ('Мужчина', 0),
-    ('Женщина', 1),
+    (0, 'Мужчина'),
+    (1, 'Женщина'),
 )
 
 EDU_CHOICES = (
-    ('среднее', 0),
-    ('СПО', 1),
-    ('высшее бакалавриат', 2),
-    ('высшее специалитет', 3),
-    ('высшее магистратура', 4),
-    ('высшее ученая степень', 5),
+    (0,'среднее'),
+    (1,'СПО'),
+    (2,'высшее бакалавриат'),
+    (3,'высшее специалитет'),
+    (4,'высшее магистратура'),
+    (5, 'высшее ученая степень'),
+)
+
+LANGUAGE_CHOICES = (
+    (0,'A0'),
+    (1,'A1'),
+    (2,'A2'),
+    (3,'B1'),
+    (4,'B2'),
+    (5, 'C1'),
 )
 
 
@@ -24,23 +33,38 @@ def user_directory_path(instance, filename):
 class Profile(models.Model):
     user_model = get_user_model()
 
+    # желаемая должность
+    #desired_position = models.ForeignKey()
+
+    # регион поиска работы
+    # city
+
     user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='profile',
                                 verbose_name='пользователь', primary_key=True, )
     name = models.CharField(max_length=100, blank=True, verbose_name='имя')
     surname = models.CharField(max_length=100, blank=True, verbose_name='фамилия')
     patronymic = models.CharField(max_length=100, blank=True, verbose_name='Отчество')
-    gender = models.CharField(max_length=10, blank=True, verbose_name="Пол", choices=GENDER_CHOICES, default='Мужчина')
+    gender = models.PositiveSmallIntegerField(blank=True,
+                                              verbose_name="Пол",
+                                              choices=GENDER_CHOICES,
+                                              default=0
+                                              )
     birth_date = models.DateField(null=True, blank=True, verbose_name="Дата рождения", )
     career_objective = models.CharField(null=True, blank=True, verbose_name="Желаемая должность", max_length=150)
     salary_min = models.IntegerField(verbose_name="Минимальная зарплата", blank=True, null=True)
     salary_max = models.IntegerField(verbose_name="Максимальная зарплата", blank=True, null=True)
     work_experience = models.IntegerField(verbose_name="Опыт работы", blank=True, null=True)
     skills = models.TextField(max_length=2000, blank=True, verbose_name='Навыки')
-    level_of_education = models.CharField(max_length=100,
-                                          blank=True,
-                                          verbose_name="Уровень образования",
-                                          choices=EDU_CHOICES,
-                                          )
+    level_of_education = models.PositiveSmallIntegerField(blank=True,
+                                                          verbose_name="Уровень образования",
+                                                          choices=EDU_CHOICES,
+                                                          default=0
+                                                          )
+    level_foreign_language = models.PositiveSmallIntegerField(blank=True,
+                                                              verbose_name='уровень иностранного языка',
+                                                              choices=LANGUAGE_CHOICES,
+                                                              default=0
+                                                              )
     edu_institution = models.CharField(max_length=100, blank=True, verbose_name='Учебное заведение')
     diplomas_certificates = models.CharField(max_length=100, blank=True, verbose_name='Дипломы и сертификаты')
     photo = models.ImageField(upload_to=user_directory_path, verbose_name='фото', name='photo', blank=True)
