@@ -1,74 +1,44 @@
 {% load static %}
+ <header>
+ <div class="header_top">
+                    <div class="container">
+                    <div class="location">
+<img src="{% static 'img/location.svg' %}">
+<p>Москва</p>
+</div>
+<div class="navigation">
+        <a href="#">Работодатели</a>
+        <a href="#">Вузы</a>
+        <a href="#">Статьи</a>
+        <a href="#">Партнёры</a>
+        <a href="#">О нас</a>
+</div>
+</div>
+</div>
+                <div class="header_bottom">
+                    <div class="container">
+<img src="{% static 'img/logo.svg' %}">
 
-<nav class="level navbar has-background-success mb-0" role="navigation" aria-label="main navigation">
-        <div x-data="{t: false}" class="container is-max-desktop">
-            <div class="navbar-brand">
-                <a href="{% url 'home' %}" class="navbar-item">
-                    <img src="{% static 'img/logo.svg' %}" width="" height="100px">
-                </a>
-                <a class="navbar-item" href="{% url 'home' %}">
-                        <p class="title has-text-primary is-3 level-item has-text-centered p*t-1">Grass</p>
-                </a>
-                <a x-on:click="t=!t" x-bind:class="{'is-active':t}" data-target="navMenu" class="navbar-burger" role="button" aria-label="menu" aria-expanded="false">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-            <div x-bind:class="{'is-active':t}" class="navbar-menu" id="navMenu">
-                <div class="navbar-start">
-                    {% if user.role %}
-                    <a class="navbar-item" href="{% url 'profile-company' pk=user.pk %}">
-                    {% else %}
-                    <a class="navbar-item" href="{% url 'profile' pk=user.pk %}">
-                    {% endif%}
-                            <div class="level-item has-text-centered">
-                                <div>
-                                    <img src="{% static 'img/profile.svg' %}" alt="" class="image is-32x32">
-                                    <p class="has-text-primary">Мой профиль</p>
-                                </div>
-                            </div>
-                    </a>
-                    <a href="" class="navbar-item">
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <img src="{% static 'img/letter.svg' %}" alt="" class="image is-32x32">
-                                <p class="has-text-primary">Сообщения</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'companies' %}" class="navbar-item">
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <img src="{% static 'img/home.png' %}" alt="" class="image is-32x32">
-                                <p class="has-text-primary">Работодатели</p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="{% url 'profiles' %}" class="navbar-item">
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <img src="{% static 'img/Employers.svg' %}" alt="none" class="image is-32x32">
-                                <p class="has-text-primary">Работники</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="navbar-end is-align-content-flex-end">
-                    <a class="navbar-item">
-                        <div class="level-item has-text-centered">
-                            <div>
-                                <img src="{% static 'img/bells.svg' %}" alt="" class="image is-32x32">
-                                <p class="has-text-primary">Уведомления</p>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="navbar-item">
-                        <div class="buttons">
-                            <a class="button is-primary" href="{% url 'logout' %}">Выход</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <input class="search" type="search" id="search" name="search" placeholder="Поиск по вакансиям и работодателям">
+
+    <div class="navbar">
+        <div class="navbar_item">
+        <img src="{% static 'img/message.svg' %}">
+        <a href="#">Сообщения</a>
+    </div>
+        <div class="navbar_item">
+        <img src="{% static 'img/vacancy.svg' %}">
+        <a href="#">Вакансии</a>
+    </div>
+        <div class="navbar_item">
+        <img src="{% static 'img/analytics.svg' %}">
+        <a href="#">Аналитика</a>
+    </div>
+        <div class="navbar_item">
+        <img src="{% static 'img/profile.svg' %}">
+        <a href="#">Войти</a>
+    </div>
+    </div>
+</div>
+</div>
+            </header>

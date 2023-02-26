@@ -1,0 +1,423 @@
+@import color
+
+body 
+    background-color: $Neutral-50
+    margin: auto
+
+a 
+    text-decoration: none
+
+.container 
+    width: 1440px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 0 80px
+
+.header_top 
+    display: flex
+    flex-direction: row
+    align-items: center
+    height: 46px
+    justify-content: space-between
+    justify-content: center
+    background-color: $White
+
+.location 
+    display: flex
+
+.location p 
+    width: 51px
+    height: 18px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 18px
+    color: $Green-Default
+    margin-left: 10px
+
+.navigation 
+    display: flex
+    flex-direction: row
+    padding: 0px
+    gap: 32px
+    height: 20px
+
+.navigation a 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    color: #6A6E70
+
+.header_bottom 
+    display: flex
+    flex-direction: row
+    align-items: center
+    gap: 32px
+    height: 100px
+    background-color: $Green-Default
+    border-radius: 0px
+    justify-content: space-between
+    margin-bottom: 28px
+    justify-content: center
+
+.search 
+    box-sizing: border-box
+    display: flex
+    flex-direction: row
+    align-items: center
+    padding: 12px 20px
+    width: 563px
+    height: 48px
+    border: 1px solid #D4DCDE
+    border-radius: 14px
+
+    background: url("../images/search.svg") no-repeat left
+    background-position: 525px
+    input[type="text"], textarea 
+    background-color : $White
+
+.search::placeholder
+    color: $Neutral-350
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+
+.navbar 
+    display: flex
+
+.navbar_item 
+    display: grid
+    height: 38px
+    font-family: "Gilroy"
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    color: $White
+    justify-items: center
+    align-content: center
+    padding-right: 40px
+
+.navbar_item:first-child
+    padding-left: 5px
+
+.navbar_item:last-child
+    padding-right: 0px
+
+
+.navbar a 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    color: $White
+    margin-top: 6px
+
+form 
+    text-align: -webkit-center
+
+.form_block 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 400px
+    height: 666px
+    background: $White
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
+    border-radius: 20px
+    padding: 0 24px
+
+.title 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 32px
+    line-height: 40px
+    color: $Neutral-900
+
+.inputs 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    gap: 12px
+    width: 400px
+    height: 157px
+
+.input_item 
+    width: 375px
+    height: 54px
+    border-radius: 15px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    padding-left: 20px
+    border: 1px solid #D4DCDE
+
+.input_item::placeholder
+    color: $Neutral-350
+
+.input_item_eye 
+    width: 375px
+    height: 54px
+    border-radius: 15px
+    background: url(../images/eye.svg) no-repeat left
+    background-position: 360px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    padding-left: 20px
+    border: 1px solid #D4DCDE
+
+.input_item_eye::placeholder
+    color: $Neutral-350
+
+.inputs a 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    color: $Green-Default
+
+.button_1 
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 16px 32px
+    gap: 8px
+    width: 400px
+    height: 54px
+    background: $Green-Default
+    border-radius: 14px
+    margin-bottom: 10px
+    cursor: pointer
+    margin-top: 25px
+    color: $White
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 20px
+    border: 1px
+
+.button_2 
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 16px 32px
+    gap: 8px
+    width: 400px
+    height: 54px
+    border: 1px solid $Green-Default
+    border-radius: 14px
+    cursor: pointer
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 20px
+    color: $Green-Default
+    background: $White
+
+.buttons p 
+    width: 400px
+    height: 60px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    color: #6A6E70
+    text-align: left
+  
+.separation 
+    display: flex
+    flex-direction: row
+    justify-content: center
+    align-items: center
+    padding: 0px
+    gap: 12px
+    width: 400px
+
+.separation
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    display: flex
+    align-items: center
+    color: $Neutral-500
+
+.separation div 
+    width: 176px
+    height: 1px
+    background: #D4DCDE
+
+.other_ways 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    text-align: center
+    color: $Neutral-900
+    width: 400px
+    margin: -7px 0 11px 0
+
+.logos 
+    display: flex
+    justify-content: center
+    gap: 30px
+    width: 400px
+    height: 46px
+
+footer 
+    height: 280px
+    background: $White
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-top: 100px
+
+footer_2 
+    height: 280px
+    background: $White
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.list 
+    display: flex
+    padding-top: 40px
+    justify-content: center
+    align-items: flex-start
+
+    .list_small
+    text-align: left
+    display: inline
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    color: #6A6E70
+    
+.list_1 
+    text-align: left
+    font-family: "Gilroy"
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 22px
+    color: #1F1F1F
+    margin-right: 120px
+    width: 150px
+    display: grid
+    align-content: center
+
+.list_2 
+    text-align: left
+    display: inline
+    width: 107px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-right: 125px
+
+.list_3 
+    text-align: left
+    display: inline
+    width: 89px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-right: 130px
+
+.list_4 
+    text-align: left
+    display: inline
+    width: 154px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-right: 40px
+
+.list_5 
+    text-align: left
+    display: inline
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 14px
+    line-height: 20px
+    color: #6A6E70
+    margin-right: 110px
+    margin-top: 60px
+
+.footer_logo 
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 400
+    font-size: 14px
+    line-height: 20px
+    color: $Neutral-900
+    margin-top: 145px
+
+/* Регистрация */
+form_2 
+    text-align: -webkit-center
+
+.form_block_2 
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    padding: 36px 24px
+    gap: 32px
+    width: 448px
+    height: 370px
+    left: 496px
+    top: 174px
+    background: $White
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
+    border-radius: 20px
+
+.subtext 
+    margin-top: -50px
+
+.selector 
+    box-sizing: border-box
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    padding: 4px
+    gap: 4px
+    width: 400px
+    height: 54px
+    border: 1px solid $Neutral-250
+    border-radius: 14px
