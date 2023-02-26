@@ -23,3 +23,4 @@ application = ProtocolTypeRouter({
         URLRouter(urls.websocket_urlpatterns)
     ),
 })
+

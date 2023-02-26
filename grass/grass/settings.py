@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'vacancy_app',
     'django_private_chat2.apps.DjangoPrivateChat2Config',
     'city_app',
+    'chat_app',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -174,6 +176,11 @@ EMAIL_USE_SSL = True
 #FIXME
 DEFAULT_FROM_EMAIL = 'django-auth@'
 
+#chat settings
+# CHAT_WS_SERVER_HOST = 'localhost'
+# CHAT_WS_SERVER_PORT = 5002
+# CHAT_WS_SERVER_PROTOCOL = 'ws'
+
 # Custom settings for django-simple-bulma
 BULMA_SETTINGS = {
     "custom_scss": [
@@ -191,4 +198,45 @@ BULMA_SETTINGS = {
     },
     "output_style": "compressed",
     "fontawesome_token": "e761a01be3",
+}
+
+ASGI_APPLICATION = 'grass.chat_app.routing.application'
+
+
+# Uncomment this to try out RabbitMQ layer - install channels_rabbitmq>=3.0.0 first
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_rabbitmq.core.RabbitmqChannelLayer",
+#         "CONFIG": {
+#             "host": "amqp://guest:guest@127.0.0.1:5672/",
+#         },
+#     },
+# }
+
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django.db.backends': {
+            'level': 'DEBUG',
+            'handlers': ['console'],
+        }
+    },
+    # Uncomment this to view django_private_chat2's logs
+
+    # 'root': {
+    #     'handlers': ['console'],
+    #     'level': 'INFO',
+    # },
 }
