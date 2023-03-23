@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% include 'components/navbar.html' %}
 <div class="content">
     <div class="box">
         <h1>Профиль сотрудника</h1>
@@ -48,7 +47,7 @@
             <div class="column is-four-fifth-mobile is-two-thirds-tablet is-two-thirds-desktop ">
                 <div class="is-flex is-justify-content-space-between">
                   <span>Пол:</span>
-                  <span>{{ profile.gender }}</span>
+                  <span>{{ profile.get_gender_display }}</span>
                 </div>
             </div>
         </div>
@@ -89,7 +88,7 @@
             <div class="column is-four-fifth-mobile is-two-thirds-tablet is-two-thirds-desktop ">
                 <div class="is-flex is-justify-content-space-between">
                   <span>Уровень образования:</span>
-                  <span>{{profile.level_of_education}}</span>
+                  <span>{{profile.get_level_of_education_display }}</span>
                 </div>
             </div>
         </div>
