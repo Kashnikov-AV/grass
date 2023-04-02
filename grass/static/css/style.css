@@ -354,6 +354,9 @@ footer_2 {
   padding-top: 40px;
   justify-content: center;
   align-items: flex-start;
+}
+
+.list_small {
   text-align: left;
   display: inline;
   font-family: "Gilroy";
@@ -363,6 +366,7 @@ footer_2 {
   line-height: 20px;
   color: #6A6E70;
 }
+
 .list_1 {
   text-align: left;
   font-family: "Gilroy";
