@@ -1,24 +1,22 @@
-    <form>
-        <div class="form_register_end">
-            <div class="form_block_number_title">
-                <p>Создание аккаунта</p>
-            </div>
-            <div class="form_block_number_inputs">
-                <input class="input_item" type="text" id="text" name="text" placeholder="Имя">
-                <input class="input_item" type="number" id="number" name="number" placeholder="Фамилия">
-                <p>Введите дату рождения</p>
-                <input class="input_item" type="number" id="number" name="number" placeholder="ДД.ММ.ГГГГ">
-                <p>Выберите пол</p>
-                <div class="selector">
-                    <div class="left" type="radio">
-                    </div>
-                    <div class="right" type="radio">
-                    </div>
-                </div>
-            </div>
-            <div class="form_register_end_buttons">
-                <button class="button_1" formaction="/">Завершить регистрацию</button>
-                <button class="button_2" formaction="/">Назад</button>
+<form>
+    <div class="form_register_end">
+        <div class="form_block_number_title">
+            <p>Создание аккаунта</p>
+        </div>
+        <div class="form_block_number_inputs">
+            <input class="input_item" type="text" id="text" name="text" placeholder="Имя">
+            <input class="input_item" type="number" id="number" name="number" placeholder="Фамилия">
+            <p>Введите дату рождения</p>
+            <input class="input_item" type="number" id="number" name="number" placeholder="ДД.ММ.ГГГГ">
+            <p>Выберите пол</p>
+            <div class="sex">
+                <input type="button" value=" Ищу работу " class="btn-sex  work" onclick="deletedItem('INN')">
+                <input type="button" value=" Ищу сотрудников " class="btn-sex sex-grey workers" onclick="AddItem('INN')">
             </div>
         </div>
-    </form>
+        <div class="form_register_end_buttons">
+            <button class="button_1" formaction="/">Завершить регистрацию</button>
+            <button class="button_2" formaction="/">Назад</button>
+        </div>
+    </div>
+</form>

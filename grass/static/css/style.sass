@@ -6,12 +6,10 @@ body
 
 a 
     text-decoration: none
+    color: #1F1F1F
 
 .container 
     width: 1440px
-    display: flex
-    justify-content: space-between
-    align-items: center
     margin: 0 80px
 
 .header_top 
@@ -20,8 +18,12 @@ a
     align-items: center
     height: 46px
     justify-content: space-between
-    justify-content: center
     background-color: $White
+
+.header_top_container
+    display: flex
+    justify-content: space-between
+    align-items: center
 
 .location 
     display: flex
@@ -52,32 +54,38 @@ a
     line-height: 20px
     color: #6A6E70
 
+.navigation a:hover
+    color: $Neutral-900
+
 .header_bottom 
     display: flex
-    flex-direction: row
-    align-items: center
-    gap: 32px
     height: 100px
     background-color: $Green-Default
     border-radius: 0px
-    justify-content: space-between
     margin-bottom: 28px
-    justify-content: center
+    align-items: center
+
+.header_button_logo_searh
+    display: flex
+
+.header_buttom_container
+    display: flex
+    justify-content: space-between
+    align-items: center
 
 .search 
     box-sizing: border-box
     display: flex
-    flex-direction: row
-    align-items: center
-    padding: 12px 20px
     width: 563px
     height: 48px
-    border: 1px solid #D4DCDE
+    border: 0 solid #D4DCDE
     border-radius: 14px
-    background: url("../images/search.svg") no-repeat left
+    background: url(../images/search.svg) no-repeat left
     background-position: 525px
-    input[type="text"], textarea 
+    input[type="text"], textarea
+    color: red  
     background-color : $White
+    margin-left: 32px
 
 .search::placeholder
     color: $Neutral-350
@@ -89,6 +97,9 @@ a
 
 .navbar 
     display: flex
+    width: 100%
+    justify-content: right
+    gap: 32px
 
 .navbar_item 
     display: grid
@@ -103,12 +114,32 @@ a
     align-content: center
     padding-right: 40px
 
+.navbar_item svg
+    fill: $White
+    width: 24px
+    margin-bottom: 6px
+
+a:has(.navbar_item svg:hover) .navbar_item p
+    color: $Neutral-150
+    fill: $Neutral-150
+
+a:has(.navbar_item p:hover) .navbar_item svg
+    color: $Neutral-150
+    fill: $Neutral-150 
+
+a:has(.navbar_item p:hover) .navbar_item p
+    color: $Neutral-150
+    fill: $Neutral-150 
+
+a:has(.navbar_item svg:hover) .navbar_item svg
+    color: $Neutral-150
+    fill: $Neutral-150 
+
 .navbar_item:first-child
     padding-left: 5px
 
 .navbar_item:last-child
     padding-right: 0px
-
 
 .navbar a 
     font-family: 'Gilroy'
@@ -117,7 +148,6 @@ a
     font-size: 16px
     line-height: 22px
     color: $White
-    margin-top: 6px
 
 form 
     text-align: -webkit-center
@@ -140,6 +170,7 @@ form
     font-size: 32px
     line-height: 40px
     color: $Neutral-900
+    margin-top: -20px
 
 .inputs 
     display: flex
@@ -150,7 +181,6 @@ form
     height: 157px
 
 .input_item 
-    width: 375px
     height: 54px
     border-radius: 15px
     font-family: 'Gilroy'
@@ -160,12 +190,12 @@ form
     line-height: 22px
     padding-left: 20px
     border: 1px solid #D4DCDE
+    margin-bottom: 10px
 
 .input_item::placeholder
     color: $Neutral-350
 
 .input_item_eye 
-    width: 375px
     height: 54px
     border-radius: 15px
     background: url(../images/eye.svg) no-repeat left
@@ -294,6 +324,8 @@ footer
     line-height: 22px
     color: $Neutral-900
     margin-top: 100px
+    display: flex
+    justify-content: center
 
 footer_2 
     height: 280px
@@ -305,8 +337,25 @@ footer_2
 .list 
     display: flex
     padding-top: 40px
-    justify-content: center
     align-items: flex-start
+    width: 100%
+    justify-content: space-between
+    
+.list_table a
+    display: flex
+
+.list_dark
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 22px
+    color: #1F1F1F
+    margin-bottom: 24px
+
+.plus
+    display: flex
+    align-items: flex-end
 
 .list_small
     text-align: left
@@ -317,67 +366,33 @@ footer_2
     font-size: 14px
     line-height: 20px
     color: #6A6E70
-    
-.list_1 
-    text-align: left
-    font-family: "Gilroy"
-    font-style: normal
-    font-weight: 700
-    font-size: 16px
-    line-height: 22px
-    color: #1F1F1F
-    margin-right: 120px
-    width: 150px
-    display: grid
-    align-content: center
 
-.list_2 
-    text-align: left
-    display: inline
-    width: 107px
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 500
-    font-size: 16px
-    line-height: 22px
-    color: $Neutral-900
-    margin-right: 125px
-
-.list_3 
-    text-align: left
-    display: inline
-    width: 89px
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 700
-    font-size: 16px
-    line-height: 22px
-    color: $Neutral-900
-    margin-right: 130px
-
-.list_4 
-    text-align: left
-    display: inline
-    width: 154px
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 700
-    font-size: 16px
-    line-height: 22px
-    color: $Neutral-900
-    margin-right: 40px
-
-.list_5 
-    text-align: left
-    display: inline
+.list_1_a
     font-family: 'Gilroy'
     font-style: normal
     font-weight: 500
     font-size: 14px
     line-height: 20px
     color: #6A6E70
-    margin-right: 110px
-    margin-top: 60px
+    margin: 24px 64px 0 0
+
+.list_2 a
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-bottom: 24px
+
+.list_3 a
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    line-height: 22px
+    color: $Neutral-900
+    margin-bottom: 24px
 
 .footer_logo 
     font-family: 'Gilroy'
@@ -398,10 +413,8 @@ form_2
     align-items: flex-start
     padding: 36px 24px
     gap: 32px
-    width: 448px
+    width: 404px
     height: 370px
-    left: 496px
-    top: 174px
     background: $White
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
@@ -526,14 +539,11 @@ form_2
     align-items: flex-start
     padding: 36px 24px
     gap: 32px
-    width: 448px
+    width: 404px
     height: 370px
-    left: 496px
-    top: 174px
     background: $White
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
-
 
 .subtext 
     margin-top: -50px
@@ -595,3 +605,51 @@ form_city
     height: 54px
     background: #20B84B
     border-radius: 14px
+
+input 
+    width: 100%
+    height: 42px
+    background: #FFFFFF
+    padding-left: 15px
+    border: 1px solid #D4DCDE
+    border-radius: 14px
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+  
+.content 
+  margin-top: 28px
+  place-self: center
+  background-color: #fff
+  width: 466px
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
+  border-radius: 20px
+
+.btn 
+  width: 418px
+  height: 54px
+  font-style: normal
+  font-weight: 700
+  font-size: 16px
+
+.sex 
+  display: flex
+  height: 54px
+  border: 1px solid #D4DCDE
+  border-radius: 14px
+  padding-left: 4px
+  padding-right: 4px
+  width: 392px
+  
+.btn-sex 
+  margin: 4px 0
+  height: 46px
+  border: none
+  border-radius: 10px
+
+.sex-grey 
+  background-color: #E9EDEF
+
+.sex-white 
+  background-color: #ffffff
