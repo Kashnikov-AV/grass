@@ -47,7 +47,7 @@ class SignUpForm(UserCreationForm):
     role = forms.TypedChoiceField(
         coerce=lambda x: bool(int(x)),
         label="Подтвердите пароль",
-        choices=((0, 'Работник'), (1, 'Работодатель')),
+        choices=((0, 'Ищу работу'), (1, 'Ищу сотрудника')),
         widget=forms.RadioSelect()
     )
 

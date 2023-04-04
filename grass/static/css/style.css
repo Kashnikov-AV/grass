@@ -6,12 +6,28 @@ body {
 
 a {
   text-decoration: none;
-  color: #1F1F1F;
 }
 
 .container {
   width: 1440px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 80px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .header_top {
@@ -20,13 +36,8 @@ a {
   align-items: center;
   height: 46px;
   justify-content: space-between;
+  justify-content: center;
   background-color: #FFFFFF;
-}
-
-.header_top_container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .location {
@@ -36,7 +47,7 @@ a {
 .location p {
   width: 51px;
   height: 18px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -54,7 +65,7 @@ a {
 }
 
 .navigation a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -62,53 +73,37 @@ a {
   color: #6A6E70;
 }
 
-.navigation a:hover {
-  color: #1F1F1F;
-}
-
 .header_bottom {
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
   height: 100px;
   background-color: #20B84B;
   border-radius: 0px;
-  margin-bottom: 28px;
-  align-items: center;
-}
-
-.header_button_logo_searh {
-  display: flex;
-}
-
-.header_buttom_container {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 28px;
+  justify-content: center;
 }
 
 .search {
   box-sizing: border-box;
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 12px 20px;
   width: 563px;
   height: 48px;
-  border: 0 solid #D4DCDE;
+  border: 1px solid #D4DCDE;
   border-radius: 14px;
-  background: url(../images/search.svg) no-repeat left;
+  background: url("../images/search.svg") no-repeat left;
   background-position: 525px;
-  color: red;
   background-color: #FFFFFF;
-  margin-left: 32px;
 }
-.search::-moz-placeholder {
-  color: #B7BEC0;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-}
+
 .search::placeholder {
   color: #B7BEC0;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -117,9 +112,6 @@ a {
 
 .navbar {
   display: flex;
-  width: 100%;
-  justify-content: right;
-  gap: 32px;
 }
 
 .navbar_item {
@@ -136,32 +128,6 @@ a {
   padding-right: 40px;
 }
 
-.navbar_item svg {
-  fill: #FFFFFF;
-  width: 24px;
-  margin-bottom: 6px;
-}
-
-a:has(.navbar_item svg:hover) .navbar_item p {
-  color: #E9EDEF;
-  fill: #E9EDEF;
-}
-
-a:has(.navbar_item p:hover) .navbar_item svg {
-  color: #E9EDEF;
-  fill: #E9EDEF;
-}
-
-a:has(.navbar_item p:hover) .navbar_item p {
-  color: #E9EDEF;
-  fill: #E9EDEF;
-}
-
-a:has(.navbar_item svg:hover) .navbar_item svg {
-  color: #E9EDEF;
-  fill: #E9EDEF;
-}
-
 .navbar_item:first-child {
   padding-left: 5px;
 }
@@ -171,12 +137,13 @@ a:has(.navbar_item svg:hover) .navbar_item svg {
 }
 
 .navbar a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #FFFFFF;
+  margin-top: 6px;
 }
 
 form {
@@ -196,13 +163,12 @@ form {
 }
 
 .title {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   color: #1F1F1F;
-  margin-top: -20px;
 }
 
 .inputs {
@@ -215,20 +181,16 @@ form {
 }
 
 .input_item {
+  width: 375px;
   height: 54px;
   border-radius: 15px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   padding-left: 20px;
   border: 1px solid #D4DCDE;
-  margin-bottom: 10px;
-}
-
-.input_item::-moz-placeholder {
-  color: #B7BEC0;
 }
 
 .input_item::placeholder {
@@ -236,11 +198,12 @@ form {
 }
 
 .input_item_eye {
+  width: 375px;
   height: 54px;
   border-radius: 15px;
   background: url(../images/eye.svg) no-repeat left;
   background-position: 360px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -249,16 +212,12 @@ form {
   border: 1px solid #D4DCDE;
 }
 
-.input_item_eye::-moz-placeholder {
-  color: #B7BEC0;
-}
-
 .input_item_eye::placeholder {
   color: #B7BEC0;
 }
 
 .inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -281,7 +240,7 @@ form {
   cursor: pointer;
   margin-top: 25px;
   color: #FFFFFF;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -301,7 +260,7 @@ form {
   border: 1px solid #20B84B;
   border-radius: 14px;
   cursor: pointer;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -313,7 +272,7 @@ form {
 .buttons p {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -333,7 +292,7 @@ form {
 }
 
 .separation {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -350,7 +309,7 @@ form {
 }
 
 .other_ways {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -372,15 +331,13 @@ form {
 footer {
   height: 280px;
   background: #FFFFFF;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
   margin-top: 100px;
-  display: flex;
-  justify-content: center;
 }
 
 footer_2 {
@@ -394,34 +351,14 @@ footer_2 {
 .list {
   display: flex;
   padding-top: 40px;
+  justify-content: center;
   align-items: flex-start;
-  width: 100%;
-  justify-content: space-between;
-}
-
-.list_table a {
-  display: flex;
-}
-
-.list_dark {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-bottom: 24px;
-}
-
-.plus {
-  display: flex;
-  align-items: flex-end;
 }
 
 .list_small {
   text-align: left;
   display: inline;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -429,38 +366,74 @@ footer_2 {
   color: #6A6E70;
 }
 
-.list_1_a {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  margin: 24px 64px 0 0;
-}
-
-.list_2 a {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-bottom: 24px;
-}
-
-.list_3 a {
+.list_1 {
+  text-align: left;
   font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
-  margin-bottom: 24px;
+  margin-right: 120px;
+  width: 150px;
+  display: grid;
+  align-content: center;
+}
+
+.list_2 {
+  text-align: left;
+  display: inline;
+  width: 107px;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-right: 125px;
+}
+
+.list_3 {
+  text-align: left;
+  display: inline;
+  width: 89px;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-right: 130px;
+}
+
+.list_4 {
+  text-align: left;
+  display: inline;
+  width: 154px;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-right: 40px;
+}
+
+.list_5 {
+  text-align: left;
+  display: inline;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+  margin-right: 110px;
+  margin-top: 60px;
 }
 
 .footer_logo {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -480,8 +453,10 @@ form_2 {
   align-items: flex-start;
   padding: 36px 24px;
   gap: 32px;
-  width: 404px;
+  width: 448px;
   height: 370px;
+  left: 496px;
+  top: 174px;
   background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
@@ -522,7 +497,7 @@ form_2 {
 }
 
 .form_block_number_inputs p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -532,7 +507,7 @@ form_2 {
 }
 
 .form_block_number_inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -577,7 +552,7 @@ form_2 {
 .form_register_company_buttons {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -603,7 +578,7 @@ form_2 {
 .form_register_end_buttons {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -618,8 +593,10 @@ form_2 {
   align-items: flex-start;
   padding: 36px 24px;
   gap: 32px;
-  width: 404px;
+  width: 448px;
   height: 370px;
+  left: 496px;
+  top: 174px;
   background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
@@ -659,7 +636,7 @@ form_city {
 .city_title {
   width: 800px;
   height: 40px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -691,58 +668,3 @@ form_city {
   background: #20B84B;
   border-radius: 14px;
 }
-
-input {
-  width: 100%;
-  height: 42px;
-  background: #FFFFFF;
-  padding-left: 15px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.content {
-  margin-top: 28px;
-  place-self: center;
-  background-color: #fff;
-  width: 466px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.btn {
-  width: 418px;
-  height: 54px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.sex {
-  display: flex;
-  height: 54px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  padding-left: 4px;
-  padding-right: 4px;
-  width: 392px;
-}
-
-.btn-sex {
-  margin: 4px 0;
-  height: 46px;
-  border: none;
-  border-radius: 10px;
-}
-
-.sex-grey {
-  background-color: #E9EDEF;
-}
-
-.sex-white {
-  background-color: #ffffff;
-}/*# sourceMappingURL=style.css.map */
