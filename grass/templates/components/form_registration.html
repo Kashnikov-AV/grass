@@ -1,5 +1,5 @@
 {% load static %}
-<form_2>
+<form>
     <div class="form_block_2">
         <div class="title">
             <p>Создание аккаунта</p>
@@ -8,14 +8,21 @@
             <p>Для чего вы создаете аккаунт?</p>
         </div>
         <div class="selector">
-            <div class="left" type="radio">
-            </div>
-            <div class="right" type="radio">
-            </div>
+            <input class="left" name="role"  type="radio" value="0" id="role_0">
+            <label for="role_0">Ищу работу</label>
+
+            <input class="left" name="role"  type="radio" value="1" id="role_1">
+            <label for="role_1">Ищу сотрудников</label>
         </div>
         <div class="buttons">
             <button class="button_1">Продолжить</button>
             <button class="button_2">Войти в аккаунт</button>
         </div>
     </div>
-</form_2>
+</form>
+
+<form method="POST" enctype='multipart/form-data'  action="">
+    {% csrf_token %}
+    {{ form.as_p}}
+    <button class="button" type="submit">submit</button>
+</form>

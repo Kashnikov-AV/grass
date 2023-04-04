@@ -16,6 +16,20 @@ a {
   margin: 0 80px;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
 .header_top {
   display: flex;
   flex-direction: row;
@@ -33,7 +47,7 @@ a {
 .location p {
   width: 51px;
   height: 18px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -51,7 +65,7 @@ a {
 }
 
 .navigation a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -86,17 +100,10 @@ a {
   background-position: 525px;
   background-color: #FFFFFF;
 }
-.search::-moz-placeholder {
-  color: #B7BEC0;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-}
+
 .search::placeholder {
   color: #B7BEC0;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -130,7 +137,7 @@ a {
 }
 
 .navbar a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -156,7 +163,7 @@ form {
 }
 
 .title {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -177,17 +184,13 @@ form {
   width: 375px;
   height: 54px;
   border-radius: 15px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   padding-left: 20px;
   border: 1px solid #D4DCDE;
-}
-
-.input_item::-moz-placeholder {
-  color: #B7BEC0;
 }
 
 .input_item::placeholder {
@@ -200,7 +203,7 @@ form {
   border-radius: 15px;
   background: url(../images/eye.svg) no-repeat left;
   background-position: 360px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -209,16 +212,12 @@ form {
   border: 1px solid #D4DCDE;
 }
 
-.input_item_eye::-moz-placeholder {
-  color: #B7BEC0;
-}
-
 .input_item_eye::placeholder {
   color: #B7BEC0;
 }
 
 .inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -241,7 +240,7 @@ form {
   cursor: pointer;
   margin-top: 25px;
   color: #FFFFFF;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -261,7 +260,7 @@ form {
   border: 1px solid #20B84B;
   border-radius: 14px;
   cursor: pointer;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -273,7 +272,7 @@ form {
 .buttons p {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -293,7 +292,7 @@ form {
 }
 
 .separation {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -310,7 +309,7 @@ form {
 }
 
 .other_ways {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -332,7 +331,7 @@ form {
 footer {
   height: 280px;
   background: #FFFFFF;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -359,7 +358,7 @@ footer_2 {
 .list_small {
   text-align: left;
   display: inline;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -385,7 +384,7 @@ footer_2 {
   text-align: left;
   display: inline;
   width: 107px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -398,7 +397,7 @@ footer_2 {
   text-align: left;
   display: inline;
   width: 89px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -411,7 +410,7 @@ footer_2 {
   text-align: left;
   display: inline;
   width: 154px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -423,7 +422,7 @@ footer_2 {
 .list_5 {
   text-align: left;
   display: inline;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -434,7 +433,7 @@ footer_2 {
 }
 
 .footer_logo {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -498,7 +497,7 @@ form_2 {
 }
 
 .form_block_number_inputs p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -508,7 +507,7 @@ form_2 {
 }
 
 .form_block_number_inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -553,7 +552,7 @@ form_2 {
 .form_register_company_buttons {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -579,7 +578,7 @@ form_2 {
 .form_register_end_buttons {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -637,7 +636,7 @@ form_city {
 .city_title {
   width: 800px;
   height: 40px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -668,4 +667,4 @@ form_city {
   height: 54px;
   background: #20B84B;
   border-radius: 14px;
-}/*# sourceMappingURL=style.css.map */
+}

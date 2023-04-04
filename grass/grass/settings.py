@@ -50,9 +50,8 @@ INSTALLED_APPS = [
     'django_simple_bulma',
     'profile_app',
     'vacancy_app',
-    'django_private_chat2.apps.DjangoPrivateChat2Config',
     'city_app',
-    'chat_app',
+    # 'chat_app',
     'django_extensions',
 ]
 
@@ -69,9 +68,9 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'grass.urls'
 
 # URL redirecting after a successful authentication
-LOGIN_REDIRECT_URL = 'home'
-LOGIN_URL = '/accounts/login'
-LOGOUT_REDIRECT_URL = '/accounts/login'
+# LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'home'
 
 # Base url to serve media files
 MEDIA_URL = 'media/'
@@ -169,9 +168,9 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
 #FIXME
-EMAIL_HOST_USER = 'django-auth@'
+EMAIL_HOST_USER = 'duo1245@yandex.ru'
 #FIXME
-EMAIL_HOST_PASSWORD = 'secret123'
+EMAIL_HOST_PASSWORD = 'yzquhtpwlvnpajab'
 EMAIL_USE_SSL = True
 #FIXME
 DEFAULT_FROM_EMAIL = 'django-auth@'
@@ -202,7 +201,6 @@ BULMA_SETTINGS = {
 
 ASGI_APPLICATION = 'grass.chat_app.routing.application'
 
-
 # Uncomment this to try out RabbitMQ layer - install channels_rabbitmq>=3.0.0 first
 # CHANNEL_LAYERS = {
 #     "default": {
@@ -212,31 +210,8 @@ ASGI_APPLICATION = 'grass.chat_app.routing.application'
 #         },
 #     },
 # }
-
-
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels.layers.InMemoryChannelLayer'
     }
-}
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.db.backends': {
-            'level': 'DEBUG',
-            'handlers': ['console'],
-        }
-    },
-    # Uncomment this to view django_private_chat2's logs
-
-    # 'root': {
-    #     'handlers': ['console'],
-    #     'level': 'INFO',
-    # },
 }

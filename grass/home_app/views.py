@@ -1,10 +1,10 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import View, TemplateView
+from django.views.generic import TemplateView
 from vacancy_app.models import Vacancy
 
 
-class HomeView(LoginRequiredMixin, TemplateView):
+class HomeView(TemplateView):
     login_url = 'login'
     redirect_field_name = 'home'
     template_name = 'home.html'
