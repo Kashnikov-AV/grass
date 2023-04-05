@@ -1,21 +1,32 @@
 {% extends "base.html" %}
+{% load i18n %}
 
 {% block content %}
 {% include 'components/header.html' %}
 <main>
-    {% include 'components/form_registration.html' %}
-    <fieldset>
-        <legend>Choose your favorite monster</legend>
-
-        <input type="radio" id="kraken" name="monster" value="K">
-        <label for="kraken">Kraken</label><br>
-
-        <input type="radio" id="sasquatch" name="monster" value="S">
-        <label for="sasquatch">Sasquatch</label><br>
-
-        <input type="radio" id="mothman" name="monster" value="M">
-        <label for="mothman">Mothman</label>
-    </fieldset>
+    <!--    {% include 'components/form_registration.html' %}-->
+    <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+    <form action="" method="post">{% csrf_token %}
+        <table>
+            {{ wizard.management_form }}
+            {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+            {{ form.as_table }}
+            {% endfor %}
+            {% else %}
+            {{ wizard.form }}
+            {% endif %}
+        </table>
+        {% if wizard.steps.prev %}
+        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
+        <button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
+        {% endif %}
+        <input type="submit" value="{% trans "submit" %}"/>
+    </form>
 </main>
 {% include 'components/footer.html' %}
+
+
+
 {% endblock %}

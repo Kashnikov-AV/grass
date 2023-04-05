@@ -2,6 +2,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import get_user_model, password_validation
 from django import forms
 
+
 ROLE_CHOICES =(
     (False, "Работник"),
     (True, "Работодатель"),
@@ -83,3 +84,4 @@ class LoginForm(AuthenticationForm):
     class Meta:
         model = get_user_model()
         fields = ('email', 'password',)
+

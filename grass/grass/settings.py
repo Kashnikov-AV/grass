@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'city_app',
     # 'chat_app',
     'django_extensions',
+    'formtools',
 ]
 
 MIDDLEWARE = [
