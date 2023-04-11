@@ -6,6 +6,8 @@ import django.db.models.deletion
 import profile_app.models
 
 
+
+
 class Migration(migrations.Migration):
 
     initial = True
