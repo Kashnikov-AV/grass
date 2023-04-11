@@ -1,43 +1,210 @@
 @charset "UTF-8";
-body {
-  background-color: #F6F6F6;
-  margin: auto;
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("fonts/Gilroy-Thin.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Thin.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
 }
-
-a {
-  text-decoration: none;
+/* UltraLightItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-UltraLightItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-UltraLightItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-UltraLightItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
 }
-
-.container {
-  width: 1440px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 80px;
+/* Light */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Light.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Light.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
 }
-
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* Regular */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
 }
-
-main {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+/* Medium */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
 }
-
+/* SemiBold */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-SemiBold.ttf") format("truetype");
+  src: url("../fonts/Gilroy-SemiBold.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+/* UltraLight */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-UltraLight.ttf") format("truetype");
+  src: url("../fonts/Gilroy-UltraLight.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-UltraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+/* Bold */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Bold.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+/* ExtraBold */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  font-weight: 800;
+  font-style: normal;
+}
+/* Black */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Black.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Black.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+/* Heavy */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-Heavy.ttf") format("truetype");
+  src: url("../fonts/Gilroy-Heavy.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+/* BlackItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-BlackItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-BlackItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+}
+/* ExtraBoldItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  font-weight: normal;
+  font-style: italic;
+}
+/* SemiBoldItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-SemiBoldItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-SemiBoldItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-SemiBoldItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* BoldItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-BoldItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+}
+/* MediumItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-MediumItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-MediumItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+}
+/* LightItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-LightItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-LightItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-LightItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+/* ThinItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-ThinItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-ThinItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-ThinItalic.woff") format("woff");
+  font-weight: 100;
+  font-style: italic;
+}
+/* RegularItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-RegularItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-RegularItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-RegularItalic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+}
+/* HeavyItalic */
+@font-face {
+  font-family: "Gilroy";
+  src: local("Gilroy");
+  src: url("../fonts/Gilroy-HeavyItalic.ttf") format("truetype");
+  src: url("../fonts/Gilroy-HeavyItalic.eot?#iefix") format("embedded-opentype");
+  src: url("../fonts/Gilroy-HeavyItalic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
 .header_top {
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 46px;
   justify-content: space-between;
-  justify-content: center;
   background-color: #FFFFFF;
+}
+
+.header_top_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .location {
@@ -47,11 +214,12 @@ main {
 .location p {
   width: 51px;
   height: 18px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
+  color: #20B84B;
   color: #20B84B;
   margin-left: 10px;
 }
@@ -65,7 +233,7 @@ main {
 }
 
 .navigation a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -73,45 +241,64 @@ main {
   color: #6A6E70;
 }
 
+.navigation a:hover {
+  color: #1F1F1F;
+}
+
 .header_bottom {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 32px;
   height: 100px;
   background-color: #20B84B;
   border-radius: 0px;
-  justify-content: space-between;
   margin-bottom: 28px;
-  justify-content: center;
+  align-items: center;
+}
+
+.header_button_logo_searh {
+  display: flex;
+}
+
+.header_buttom_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .search {
-  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 12px 20px;
   width: 563px;
   height: 48px;
-  border: 1px solid #D4DCDE;
+  border: 0 solid #D4DCDE;
   border-radius: 14px;
-  background: url("../images/search.svg") no-repeat left;
+  background: url(../images/search.svg) no-repeat left;
   background-position: 525px;
   background-color: #FFFFFF;
+  margin-left: 32px;
 }
-
-.search::placeholder {
-  color: #B7BEC0;
-  font-family: 'Gilroy';
+.search::-moz-placeholder {
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
+  color: #FFFFFF;
+  color: #B7BEC0;
+}
+.search::placeholder {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #B7BEC0;
 }
 
 .navbar {
   display: flex;
+  width: 100%;
+  justify-content: right;
+  gap: 32px;
 }
 
 .navbar_item {
@@ -128,22 +315,649 @@ main {
   padding-right: 40px;
 }
 
+.navbar_item svg {
+  fill: #FFFFFF;
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+a:has(.navbar_item svg:hover) .navbar_item p {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+a:has(.navbar_item p:hover) .navbar_item svg {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+a:has(.navbar_item p:hover) .navbar_item p {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+a:has(.navbar_item svg:hover) .navbar_item svg {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
 .navbar_item:first-child {
   padding-left: 5px;
 }
 
 .navbar_item:last-child {
   padding-right: 0px;
+  gap: 16px;
 }
 
 .navbar a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #FFFFFF;
-  margin-top: 6px;
+}
+
+footer {
+  height: 280px;
+  background: #FFFFFF;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  padding-top: 40px;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.list_table a {
+  display: flex;
+}
+
+.list_dark {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-bottom: 24px;
+}
+
+.plus {
+  display: flex;
+  align-items: flex-end;
+}
+
+.list_1_a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+  margin: 24px 64px 0 0;
+}
+
+.list_2 a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-bottom: 24px;
+}
+
+.list_3 a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  margin-bottom: 24px;
+}
+
+.footer_logo {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+  margin-top: 145px;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h5, p {
+  margin: 0;
+}
+
+input, button {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+.main_form {
+  padding: 36px 24px;
+  width: 848px;
+  height: 861px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.employee_profile {
+  padding: 36px 24px;
+  width: 848px;
+  height: 555px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+
+.main_form_text {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+}
+
+.prof_logo {
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.prof_logo img {
+  margin-right: 24px;
+}
+
+.prof_logo_salary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.prof_logo_salary h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.prof_logo input {
+  width: 195px;
+  height: 42px;
+  background: #20B84B;
+  border-radius: 14px;
+  float: right;
+}
+
+.prof_logo_profile {
+  width: 100%;
+  gap: 8px;
+  display: grid;
+}
+
+.prof_logo_profile h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+}
+
+.prof_logo_profile h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+.change {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #6A6E70;
+  margin-right: 16px;
+}
+
+.line hr {
+  height: 1px;
+  background: #D4DCDE;
+  border: none;
+  margin-bottom: 32px;
+}
+
+.about_me h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+  margin-right: 16px;
+}
+
+.about_me p {
+  font-size: 14px;
+  line-height: 22px;
+  margin-bottom: 48px;
+}
+
+.education {
+  display: flex;
+  flex-direction: column;
+}
+
+.education_shadow {
+  width: 800px;
+  background: #F7F6F6;
+  border-radius: 14px;
+  padding: 0 0 0 32px;
+  margin-bottom: 16px;
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.education h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+  margin-right: 16px;
+}
+
+.education h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.education h5 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.education_file {
+  color: #6A6E70;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  margin-top: 18px;
+  display: block;
+}
+
+.experience {
+  margin-top: 48px;
+}
+
+.experience_shadow {
+  width: 800px;
+  height: 194px;
+  background: #F7F6F6;
+  border-radius: 14px;
+  padding: 24px 0 0 32px;
+}
+
+.experience_left p {
+  margin-top: 4px;
+}
+
+.experience_right p {
+  margin-top: 4px;
+}
+
+.experience_down h4 {
+  margin: 16px 0 4px 0;
+}
+
+.experience h2 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 24px;
+  margin-right: 16px;
+}
+
+.experience h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.info {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #B7BEC0;
+  margin-top: 298px;
+  text-align: center;
+}
+
+.btn_green {
+  background: #20B84B;
+  border-radius: 14px;
+  color: #fff;
+  margin-top: 24px;
+  width: 418px;
+  height: 54px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  width: 250px;
+}
+.btn_green:hover {
+  background: #1D9E42;
+}
+.btn_green:active {
+  background: #4FCB72;
+}
+
+.btn_white {
+  border: 1px solid #20B84B;
+  background-color: #fff;
+  color: #20B84B;
+  margin-top: 12px;
+  margin-bottom: 16px;
+  width: 418px;
+  height: 54px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  width: 250px;
+}
+.btn_white:hover {
+  border-color: #1D9E42;
+  color: #1D9E42;
+}
+.btn_white:active {
+  border-color: #4FCB72;
+  color: #4FCB72;
+}
+
+.other_block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  margin-left: 16px;
+}
+
+.contact_form {
+  width: 416px;
+  height: 338px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding-left: 24px;
+  padding: 36px 0 0 24px;
+}
+
+.link {
+  margin-top: 34px;
+  display: block;
+}
+
+.contact_form a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #20B84B;
+}
+
+.contact_form p {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.contact_form h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 32px;
+}
+
+.contact_form h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #6A6E70;
+  margin: 24px 0 8px 0;
+}
+
+.vacancies_logo_text {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #6A6E70;
+  margin: 48px 0 24px 40px;
+}
+
+.vacancies {
+  padding: 24px 0 24px 24px;
+  width: 416px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  margin: 12px 0;
+}
+
+.vacancies p {
+  margin: 9px 0 36px 0;
+}
+
+.vacancies div {
+  display: flex;
+}
+
+.vacancies h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.vacancies h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #6A6E70;
+  margin-left: 16px;
+}
+
+.vacancies h5 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+  margin-right: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.about_me a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex a {
+  color: #20B84B;
+}
+
+.main_flex_two {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 32px;
+}
+
+.employee_profile {
+  padding: 36px 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  gap: 24px;
+  display: grid;
+  width: 848px;
+  height: 441px;
+}
+
+.employee_profile_without_information {
+  padding: 36px 24px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  gap: 16px;
+  display: grid;
+  width: 848px;
+  height: 441px;
+  height: 555px;
+}
+
+body {
+  background-color: #F6F6F6;
+  margin: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #1F1F1F;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 80px;
+}
+
+.button_1:hover {
+  background: #1D9E42;
+}
+
+.button_2:hover {
+  border-color: #1D9E42;
+  color: #1D9E42;
+}
+
+.button_1:active {
+  background: #4FCB72;
+}
+
+.button_2:active {
+  border-color: #4FCB72;
+  color: #4FCB72;
 }
 
 form {
@@ -151,24 +965,26 @@ form {
 }
 
 .form_block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 400px;
-  height: 666px;
-  background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
-  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 24px;
+  gap: 32px;
+  width: 448px;
+  height: 668px;
+  align-items: center;
+  background: #FFFFFF;
 }
 
 .title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   color: #1F1F1F;
+  margin-top: -20px;
 }
 
 .inputs {
@@ -181,16 +997,20 @@ form {
 }
 
 .input_item {
-  width: 375px;
   height: 54px;
   border-radius: 15px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   padding-left: 20px;
   border: 1px solid #D4DCDE;
+  margin-bottom: 10px;
+}
+
+.input_item::-moz-placeholder {
+  color: #B7BEC0;
 }
 
 .input_item::placeholder {
@@ -198,12 +1018,11 @@ form {
 }
 
 .input_item_eye {
-  width: 375px;
   height: 54px;
   border-radius: 15px;
   background: url(../images/eye.svg) no-repeat left;
   background-position: 360px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -212,12 +1031,16 @@ form {
   border: 1px solid #D4DCDE;
 }
 
+.input_item_eye::-moz-placeholder {
+  color: #B7BEC0;
+}
+
 .input_item_eye::placeholder {
   color: #B7BEC0;
 }
 
 .inputs a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -240,7 +1063,7 @@ form {
   cursor: pointer;
   margin-top: 25px;
   color: #FFFFFF;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -260,7 +1083,7 @@ form {
   border: 1px solid #20B84B;
   border-radius: 14px;
   cursor: pointer;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -272,7 +1095,7 @@ form {
 .buttons p {
   width: 400px;
   height: 60px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -292,7 +1115,7 @@ form {
 }
 
 .separation {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -309,7 +1132,7 @@ form {
 }
 
 .other_ways {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -328,153 +1151,42 @@ form {
   height: 46px;
 }
 
-footer {
-  height: 280px;
-  background: #FFFFFF;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-top: 100px;
-}
-
-footer_2 {
-  height: 280px;
-  background: #FFFFFF;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.list {
-  display: flex;
-  padding-top: 40px;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-.list_small {
-  text-align: left;
-  display: inline;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-}
-
-.list_1 {
-  text-align: left;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-right: 120px;
-  width: 150px;
-  display: grid;
-  align-content: center;
-}
-
-.list_2 {
-  text-align: left;
-  display: inline;
-  width: 107px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-right: 125px;
-}
-
-.list_3 {
-  text-align: left;
-  display: inline;
-  width: 89px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-right: 130px;
-}
-
-.list_4 {
-  text-align: left;
-  display: inline;
-  width: 154px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-  margin-right: 40px;
-}
-
-.list_5 {
-  text-align: left;
-  display: inline;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  margin-right: 110px;
-  margin-top: 60px;
-}
-
-.footer_logo {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #1F1F1F;
-  margin-top: 145px;
-}
-
 /* Регистрация */
-form_2 {
-  text-align: -webkit-center;
-}
-
-.form_block_2 {
+.form_signup {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 36px 24px;
   gap: 32px;
   width: 448px;
   height: 370px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  justify-content: center;
+  background: #FFFFFF;
+}
+
+.form_signup_subtext {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
 }
 
 .form_block_number {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 36px 24px;
   gap: 32px;
   width: 448px;
   height: 404px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  background: #FFFFFF;
+  justify-content: space-evenly;
 }
 
 .form_block_number_title {
@@ -497,7 +1209,7 @@ form_2 {
 }
 
 .form_block_number_inputs p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -507,7 +1219,7 @@ form_2 {
 }
 
 .form_block_number_inputs a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -518,20 +1230,33 @@ form_2 {
 .form_block_password {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 36px 24px;
   gap: 32px;
   width: 448px;
-  height: 404px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
+  height: 456px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  justify-content: space-evenly;
+  background: #FFFFFF;
 }
 
 .form_block_password_buttons {
   margin-top: -30px;
+}
+
+.form_blok_recovery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px;
+  gap: 32px;
+  width: 448px;
+  height: 404px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding-top: 100px;
 }
 
 .form_register_company {
@@ -540,19 +1265,18 @@ form_2 {
   align-items: flex-start;
   padding: 36px 24px;
   gap: 32px;
-  width: 448px;
-  height: 560px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
+  width: 410px;
+  height: 450px;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  background: #FFFFFF;
+  padding-top: 50px;
 }
 
 .form_register_company_buttons {
   width: 400px;
   height: 60px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -563,22 +1287,21 @@ form_2 {
 .form_register_end {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 36px 24px;
-  gap: 32px;
   width: 448px;
   height: 596px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  justify-content: space-evenly;
+  background: #FFFFFF;
+  padding: 25px 0 75px 0;
 }
 
 .form_register_end_buttons {
   width: 400px;
   height: 60px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -590,20 +1313,25 @@ form_2 {
 .form_register_email {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding: 36px 24px;
   gap: 32px;
   width: 448px;
   height: 370px;
-  left: 496px;
-  top: 174px;
-  background: #FFFFFF;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
+  background: #FFFFFF;
+  justify-content: center;
 }
 
 .subtext {
   margin-top: -50px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
 }
 
 .selector {
@@ -636,7 +1364,7 @@ form_city {
 .city_title {
   width: 800px;
   height: 40px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -668,3 +1396,83 @@ form_city {
   background: #20B84B;
   border-radius: 14px;
 }
+
+input {
+  width: 100%;
+  height: 42px;
+  background: #FFFFFF;
+  padding-left: 15px;
+  border: 1px solid #D4DCDE;
+  border-radius: 14px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.btn btn-default {
+  width: 418px;
+  height: 54px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.sex {
+  display: flex;
+  border: 1px solid #D4DCDE;
+  border-radius: 14px;
+  width: 392px;
+}
+
+.button {
+  width: 194px;
+  height: 46px;
+  border-radius: 10px;
+  position: relative;
+  margin: 4px;
+}
+
+.button label,
+.button input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 15px;
+}
+
+.button input[type=radio] {
+  opacity: 0.011;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.button input[type=radio]:checked + label {
+  background: #E9EDEF;
+  border-radius: 4px;
+}
+
+.button input[type=text] {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.form_signup_one {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 24px;
+  gap: 32px;
+  width: 448px;
+  height: 650px;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  justify-content: center;
+  background: #FFFFFF;
+}/*# sourceMappingURL=style.css.map */
