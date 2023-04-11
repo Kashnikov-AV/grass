@@ -1,44 +1,44 @@
 {% load static %}
- <header>
- <div class="header_top">
-                    <div class="container">
-                    <div class="location">
-<img src="{% static 'img/location.svg' %}">
-<p>Москва</p>
-</div>
-<div class="navigation">
-        <a href="#">Работодатели</a>
-        <a href="#">Вузы</a>
-        <a href="#">Статьи</a>
-        <a href="#">Партнёры</a>
-        <a href="#">О нас</a>
-</div>
-</div>
-</div>
-                <div class="header_bottom">
-                    <div class="container">
-<img src="{% static 'img/logo.svg' %}">
+<header>
+    <div class="header_top">
+        <div class="container">
+            <div class="location">
+                <img src="{% static 'img/location.svg' %}">
+                <p>Москва</p>
+            </div>
+            <div class="navigation">
+                <a href="#">Работодатели</a>
+                <a href="#">Вузы</a>
+                <a href="#">Статьи</a>
+                <a href="#">Партнёры</a>
+                <a href="#">О нас</a>
+            </div>
+        </div>
+    </div>
+    <div class="header_bottom">
+        <div class="container">
+            <img src="{% static 'img/logo.svg' %}">
 
-    <input class="search" type="search" id="search" name="search" placeholder="Поиск по вакансиям и работодателям">
+            <input class="search" type="search" id="search" name="search" placeholder="Поиск по вакансиям и работодателям">
 
-    <div class="navbar">
-        <div class="navbar_item">
-        <img src="{% static 'img/message.svg' %}">
-        <a href="#">Сообщения</a>
+            <div class="navbar">
+                <div class="navbar_item">
+                    <img src="{% static 'img/message.svg' %}">
+                    <a href="#">Сообщения</a>
+                </div>
+                <div class="navbar_item">
+                    <img src="{% static 'img/vacancy.svg' %}">
+                    <a href="#">Вакансии</a>
+                </div>
+                <div class="navbar_item">
+                    <img src="{% static 'img/analytics.svg' %}">
+                    <a href="#">Аналитика</a>
+                </div>
+                <div class="navbar_item">
+                    <img src="{% static 'img/profile.svg' %}">
+                    <a href="{% url 'login' %}">Войти</a>
+                </div>
+            </div>
+        </div>
     </div>
-        <div class="navbar_item">
-        <img src="{% static 'img/vacancy.svg' %}">
-        <a href="#">Вакансии</a>
-    </div>
-        <div class="navbar_item">
-        <img src="{% static 'img/analytics.svg' %}">
-        <a href="#">Аналитика</a>
-    </div>
-        <div class="navbar_item">
-        <img src="{% static 'img/profile.svg' %}">
-        <a href="{% url 'login' %}">Войти</a>
-    </div>
-    </div>
-</div>
-</div>
-            </header>
+</header>
