@@ -1,9 +1,17 @@
-@import color
-@import fonts
-@import header
-@import footer
-@import reset
-@import profile
+@import components/_color
+@import components/_fonts
+@import components/_header
+@import components/_footer
+@import components/_reset
+@import components/_profile
+
+.flex-container
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+main
+    flex: 1
 
 body
     background-color: $Neutral-50
@@ -15,7 +23,7 @@ a
 
 .container
     width: 1440px
-    margin: 0 80px
+    padding: 0 80px
 
 .button_1:hover
     background: #1D9E42
