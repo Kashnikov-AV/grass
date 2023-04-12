@@ -9,12 +9,12 @@ from django.http import HttpResponse
 class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy("login")
-    template_name = "registration/signup.html"
+    template_name = "signup_app/signup.html"
 
 
 class CustomLoginView(LoginView):
     form_class = LoginForm
-    template_name = "registration/login.html"
+    template_name = "signup_app/login.html"
 
 
 class SignupWizardView(SessionWizardView):

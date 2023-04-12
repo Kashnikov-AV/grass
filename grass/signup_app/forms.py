@@ -14,9 +14,9 @@ class SignUpForm(UserCreationForm):
         label='E-mail',
         label_suffix='',
         widget=forms.EmailInput(attrs={
-            "class": "input is-primary",
+            "class": "input_item",
             "type": "email",
-            "placeholder": "Введите E-mail",
+            "placeholder": "Электронная почта",
         }
         ))
 
@@ -25,9 +25,9 @@ class SignUpForm(UserCreationForm):
         strip=False,
         widget=forms.PasswordInput(attrs={
             "autocomplete": "new-password",
-            "class": "input is-primary",
+            "class": "input_item",
             "type": "password",
-            "placeholder": "Введите пароль",
+            "placeholder": "Пароль",
         }),
         help_text=password_validation.password_validators_help_text_html(),
         label_suffix="",
@@ -36,9 +36,9 @@ class SignUpForm(UserCreationForm):
         label="Подтвердите пароль",
         widget=forms.PasswordInput(attrs={
             "autocomplete": "new-password",
-            "class": "input is-primary",
+            "class": "input_item",
             "type": "password",
-            "placeholder": "Подтвердите пароль",
+            "placeholder": "Повторите пароль",
         }),
         strip=False,
         help_text="Enter the same password as before, for verification.",
@@ -47,9 +47,11 @@ class SignUpForm(UserCreationForm):
 
     role = forms.TypedChoiceField(
         coerce=lambda x: bool(int(x)),
-        label="Подтвердите пароль",
+        label="",
         choices=((0, 'Ищу работу'), (1, 'Ищу сотрудника')),
-        widget=forms.RadioSelect()
+        widget=forms.RadioSelect(attrs={
+            "class": "btn btn-default"
+        })
     )
 
     class Meta:
