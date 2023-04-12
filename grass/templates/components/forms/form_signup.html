@@ -1,4 +1,5 @@
-<form>
+<form method="POST">
+    {% csrf_token %}
     <div class="form_signup_one">
         <div class="title">
             <p>Создание аккаунта</p>
@@ -24,7 +25,7 @@
         </div>
         <div class="buttons">
             <button class="button_1">Завершить регистрацию</button>
-            <button class="button_2">Войти</button>
+            <a class="button_2" href="{% url 'login' %}">Войти</a>
         </div>
     </div>
 </form>

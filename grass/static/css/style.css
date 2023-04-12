@@ -376,6 +376,7 @@ a:has(.navbar_item svg:hover) .navbar_item svg {
   background-color: #FFFFFF;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .list {
@@ -943,13 +944,15 @@ input, button {
   height: 555px;
 }
 
-@use components/_color {}.flex-container {
+.flex-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 
 main {
+  padding-top: 28px;
+  padding-bottom: 100px;
   flex: 1;
   background-color: #F6F6F6;
 }

@@ -1,4 +1,5 @@
-<form>
+<form method="POST">
+    {% csrf_token %}
     <div class="form_block">
         <div class="title">
             <p>Вход в аккаунт</p>
@@ -10,7 +11,7 @@
         </div>
         <div class="buttons">
             <button class="button_1">Войти</button>
-            <button class="button_2" formaction="">Создать аккаунт</button>
+            <a class="button_2" href="{% url 'signup' %}">Создать аккаунт</a>
             <p>Нажимая «Войти», вы подтверждаете, что ознакомлены, полностью согласны и принимаете условия  <a href="/" style="color: #20B84B"> «Соглашения об оказании услуг по содействию в трудоустройстве»</a></a></p>
         </div>
         <div class="separation">
