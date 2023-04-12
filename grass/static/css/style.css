@@ -373,7 +373,7 @@ a:has(.navbar_item svg:hover) .navbar_item svg {
 .footer-desktop {
   height: 280px;
   width: 100wh;
-  background-color: green;
+  background-color: #FFFFFF;
   display: flex;
   justify-content: center;
 }
@@ -943,7 +943,7 @@ input, button {
   height: 555px;
 }
 
-.flex-container {
+@use components/_color {}.flex-container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
