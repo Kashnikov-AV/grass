@@ -270,7 +270,6 @@
   height: 100px;
   background-color: #20B84B;
   border-radius: 0px;
-  margin-bottom: 28px;
   align-items: center;
 }
 
@@ -371,10 +370,10 @@ a:has(.navbar_item svg:hover) .navbar_item svg {
   color: #FFFFFF;
 }
 
-footer-desktop {
+.footer-desktop {
   height: 280px;
-  background: #FFFFFF;
-  margin-top: 100px;
+  width: 100wh;
+  background-color: green;
   display: flex;
   justify-content: center;
 }
@@ -382,6 +381,7 @@ footer-desktop {
 .list {
   display: flex;
   padding-top: 40px;
+  margin: 0 80px;
   align-items: flex-start;
   width: 100%;
   justify-content: space-between;
@@ -951,11 +951,7 @@ input, button {
 
 main {
   flex: 1;
-}
-
-body {
   background-color: #F6F6F6;
-  margin: auto;
 }
 
 a {
@@ -966,6 +962,7 @@ a {
 .container {
   width: 1440px;
   padding: 0 80px;
+  margin: 0 auto;
 }
 
 .button_1:hover {
