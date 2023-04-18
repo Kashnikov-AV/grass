@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    {% include 'components/header.html' %}
+    <main>
+        <div class="flex-main">
+            <h1 class="h1-bold">Страница находится в <br> процессе разработки</h1>
+            <img src="{% static 'img/Development.svg' %}" alt="coming soon">
+        </div>
+    </main>
+    {% include 'components/footer.html' %}
+{% endblock %}
