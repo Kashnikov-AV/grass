@@ -1,6 +1,4 @@
-
-
-.footer-desktop 
+.footer-desktop
     height: 280px
     width: 100wh
     background-color: $White
@@ -8,39 +6,67 @@
     justify-content: center
     align-items: center
 
+footer
+    background: $White
+    height: 280px
+    display: flex !important
+    justify-content: center
 
-.list 
+.footer_flex
     display: flex
-    padding-top: 40px
-    margin: 0 80px
-    align-items: flex-start
-    width: 100%
     justify-content: space-between
-    
-.list_table 
-    a
-        display: flex
+    margin-top: 60px
 
-.list_dark
-    @include h4_Bold
-    margin-bottom: 24px
-
-.plus
-    display: flex
-    align-items: flex-end
-
-.list_1_a
-    @include Text_Small_Medium
-    margin: 24px 64px 0 0
-
-.list_2 a
-    @include h4_Medium
-    margin-bottom: 24px
-
-.list_3 a
-    @include h4_Bold
-    margin-bottom: 24px
-
-.footer_logo 
+.footer_logo
     @include Text_Small_Regular
-    margin-top: 145px
+    margin: 140px 0 0 0
+
+.partners
+    display: flex
+    flex-direction: column
+    gap: 32px
+    a
+        @include h4_Bold
+
+.list
+    display: flex
+    flex-direction: column
+    gap: 16px
+    a
+        @include Text_Small_Medium
+        width: max-content
+
+.footer_navigation
+    display: flex
+    flex-direction: column
+    gap: 24px
+    a
+        @include h4_Medium
+
+.navigation_bar
+    display: flex
+    flex-direction: column
+    gap: 24px
+    a
+        @include h4_Bold
+
+.contact_details
+    display: flex
+    flex-direction: column
+    gap: 32px
+    p
+        @include h4_Bold
+
+.frame_62
+    display: flex
+    flex-direction: row
+    gap: 64px
+
+.list
+    display: flex
+    flex-direction: column
+    gap: 16px
+    a
+        @include Text_Small_Medium
+    a:hover
+        color: $Neutral-900

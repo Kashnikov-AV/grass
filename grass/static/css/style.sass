@@ -39,9 +39,8 @@ a
     color: #1F1F1F
 
 .container
-    width: 1440px
-    padding: 0 80px
-    margin: 0 auto
+    width: 1280px
+    margin: 0 80px
 
 .button_1:hover
     background: #1D9E42
@@ -58,31 +57,46 @@ a
     color:#4FCB72
 
 
-form 
+form
     text-align: -webkit-center
 
-.form_block 
+.form_block
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
     display: flex
     flex-direction: column
-    padding: 36px 24px
     gap: 32px
     width: 448px
     height: 668px
     align-items: center
     background: $White
 
-.title 
+.title
     font-family: 'Gilroy'
     font-style: normal
     font-weight: 700
     font-size: 32px
     line-height: 40px
     color: $Neutral-900
-    margin-top: -20px
+    align-items: flex-start
+    width: 400px
+    display: flex
+    margin-top: 32px
 
-.inputs 
+.title_no_margin
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 32px
+    line-height: 40px
+    color: $Neutral-900
+
+.form
+    display: flex
+    flex-direction: column
+    gap: 24px
+
+.inputs
     display: flex
     flex-direction: column
     align-items: flex-start
@@ -90,7 +104,7 @@ form
     width: 400px
     height: 157px
 
-.input_item 
+.input_item
     height: 54px
     border-radius: 15px
     font-family: 'Gilroy'
@@ -105,10 +119,10 @@ form
 .input_item::placeholder
     color: $Neutral-350
 
-.input_item_eye 
+.input_item_eye
     height: 54px
     border-radius: 15px
-    background: url(../images/eye.svg) no-repeat left
+    background: url(../img/eye.svg) no-repeat left
     background-position: 360px
     font-family: 'Gilroy'
     font-style: normal
@@ -121,7 +135,7 @@ form
 .input_item_eye::placeholder
     color: $Neutral-350
 
-.inputs a 
+.inputs a
     font-family: 'Gilroy'
     font-style: normal
     font-weight: 500
@@ -129,50 +143,38 @@ form
     line-height: 20px
     color: $Green-Default
 
-.button_1 
+.buttons
+    flex-direction: column
+    width: 400px
     display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
-    padding: 16px 32px
     gap: 8px
-    width: 100%
-    height: 54px
-    background: $Green-Default
-    border-radius: 14px
-    margin-bottom: 10px
-    cursor: pointer
-    margin-top: 25px
-    color: $White
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 700
-    font-size: 16px
-    line-height: 20px
-    border: 1px
 
-.button_2 
-    display: flex
-    flex-direction: row
-    justify-content: center
-    align-items: center
-    padding: 16px 32px
-    gap: 8px
-    border: 1px solid $Green-Default
-    border-radius: 14px
+.button_1
     cursor: pointer
-    font-family: 'Gilroy'
+    font-family: "Gilroy"
     font-style: normal
     font-weight: 700
     font-size: 16px
-    line-height: 20px
+    height: 54px
+    border-radius: 14px
+    background: $Green-Default
+    color: $White
+    width: 400px
+
+.button_2
+    cursor: pointer
+    font-family: "Gilroy"
+    font-style: normal
+    font-weight: 700
+    font-size: 16px
+    height: 54px
+    border-radius: 14px
+    border: 1px solid $Green-Default
     color: $Green-Default
     background: $White
+    width: 400px
 
-.buttons
-    width: 100%
-
-.buttons p 
+.buttons p
     width: 400px
     height: 60px
     font-family: 'Gilroy'
@@ -182,8 +184,9 @@ form
     line-height: 20px
     color: #6A6E70
     text-align: left
-  
-.separation 
+    margin-top: 16px
+
+.separation
     display: flex
     flex-direction: row
     justify-content: center
@@ -202,12 +205,12 @@ form
     align-items: center
     color: $Neutral-500
 
-.separation div 
+.separation div
     width: 176px
     height: 1px
     background: #D4DCDE
 
-.other_ways 
+.other_ways
     font-family: 'Gilroy'
     font-style: normal
     font-weight: 400
@@ -218,7 +221,7 @@ form
     width: 400px
     margin: -7px 0 11px 0
 
-.logos 
+.logos
     display: flex
     justify-content: center
     gap: 30px
@@ -230,47 +233,33 @@ form
     display: flex
     flex-direction: column
     align-items: center
-    padding: 36px 24px
     gap: 32px
     width: 448px
     height: 370px
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
-    justify-content: center
     background: $White
 
 .form_signup_subtext
     @include Text_Small_Regular
+    display: flex
 
 .form_block_number
     display: flex
     flex-direction: column
     align-items: center
-    padding: 36px 24px
     gap: 32px
     width: 448px
     height: 404px
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
     background: $White
-    justify-content: space-evenly
-
-.form_block_number_title
-    font-family: "Gilroy"
-    font-style: normal
-    font-weight: 700
-    font-size: 32px
-    line-height: 40px
-    color: #1F1F1F
-    margin-top: -40px
 
 .form_block_number_inputs
     display: flex
     flex-direction: column
     align-items: flex-start
     gap: 12px
-    width: 400px
-    margin-top: -30px
 
 .form_block_number_inputs p
     font-family: 'Gilroy'
@@ -293,13 +282,11 @@ form
     display: flex
     flex-direction: column
     align-items: center
-    padding: 36px 24px
     gap: 32px
     width: 448px
     height: 456px
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
-    justify-content: space-evenly
     background: $White
 
 .form_block_password_buttons
@@ -316,43 +303,29 @@ form
     background: #FFFFFF
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
-    padding-top: 100px
 
 .form_register_company
     display: flex
     flex-direction: column
-    align-items: flex-start
-    padding: 36px 24px
+    align-items: center
     gap: 32px
-    width: 410px
-    height: 450px
+    width: 448px
+    height: 560px
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
     background: #FFFFFF
-    padding-top: 50px
-
-.form_register_company_buttons
-    width: 400px
-    height: 60px
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 20px
-    color: #6A6E70
 
 .form_register_end
     display: flex
     flex-direction: column
-    align-items: center
-    padding: 36px 24px
+    gap: 32px
     width: 448px
     height: 596px
+    background: #FFFFFF
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
-    justify-content: space-evenly
-    background: $White
-    padding: 25px 0 75px 0
+    align-items: center
+    padding: 0 0 32px 0
 
 .form_register_end_buttons
     width: 400px
@@ -369,20 +342,18 @@ form
     display: flex
     flex-direction: column
     align-items: center
-    padding: 36px 24px
     gap: 32px
     width: 448px
     height: 370px
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
     border-radius: 20px
     background: $White
-    justify-content: center
 
-.subtext 
+.subtext
     margin-top: -50px
     @include large-text
 
-.selector 
+.selector
     box-sizing: border-box
     display: flex
     flex-direction: row
@@ -394,7 +365,7 @@ form
     border: 1px solid $Neutral-250
     border-radius: 14px
 
-.form_city
+form_city
     display: flex
     flex-direction: column
     align-items: flex-start
@@ -406,16 +377,6 @@ form
     height: 516px
     left: 296px
     top: 128px
-
-.city_title
-    width: 800px
-    height: 40px
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 700
-    font-size: 32px
-    line-height: 40px
-    color: #1F1F1F
 
 .city_input
     display: flex
@@ -440,7 +401,7 @@ form
     background: #20B84B
     border-radius: 14px
 
-input 
+input
     width: 100%
     height: 42px
     background: #FFFFFF
@@ -510,3 +471,47 @@ input
     border-radius: 20px
     justify-content: center
     background: #FFFFFF
+
+.form_signup_7
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 32px
+    background: #FFFFFF
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
+    border-radius: 20px
+    width: 448px
+    height: 560px
+
+.form_signup_7_title
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 700
+    font-size: 32px
+    line-height: 40px
+    text-align: center
+    color: #1F1F1F
+    width: 200px
+    height: 80px
+    margin-top: 32px
+
+.frame_76
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 16px
+    width: 400px
+
+.frame_77
+    display: flex
+    flex-direction: column
+    gap: 8px
+
+.frame_77 p
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 400
+    font-size: 16px
+    line-height: 22px
+    text-align: center
+    color: #1F1F1F

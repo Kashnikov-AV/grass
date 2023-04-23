@@ -1,44 +1,40 @@
 {% load static %}
-<footer class="footer-desktop">
+<footer>
     <div class="container">
-        <div class="list">
-            <div class="list_table">
-                <div class="list_1">
-                    <a href="#" class="list_dark">Партнёры</a>
-                    <a href="{% url 'coming' %}" class="list_1_a">МСХА Тимирязева</a>
-                    <a href="{% url 'coming' %}" class="list_1_a">Фонд содействия<br>инновациям</a>
+        <div class="footer_flex">
+            <div class="partners">
+                <a href="{% url 'coming' %}">Партнёры</a>
+                <div class="list">
+                    <a href="{% url 'coming' %}">МСХА Тимирязева</a>
+                    <a href="{% url 'coming' %}">Фонд содействия<br>инновациям</a>
                 </div>
             </div>
-            <div class="list_table">
-                <div class="list_2">
-                    <a href="{% url 'coming' %}">Работодатели</a>
-                    <a href="{% url 'coming' %}">Вузы</a>
-                    <a href="{% url 'coming' %}">Статьи</a>
-                    <a href="{% url 'coming' %}">О нас</a>
+            <div class="footer_navigation">
+                <a href="{% url 'coming' %}">Работодатели</a>
+                <a href="{% url 'coming' %}">Вузы</a>
+                <a href="{% url 'coming' %}">Статьи</a>
+                <a href="{% url 'coming' %}">О нас</a>
+            </div>
+            <div class="navigation_bar">
+                <a href="{% url 'coming' %}">Сообщения</a>
+                <a href="{% url 'coming' %}">Вакансии</a>
+                <a href="{% url 'coming' %}">Аналитика</a>
+                <a href="{% url 'coming' %}">Профиль</a>
+            </div>
+            <div class="contact_details">
+                <p>Контактные данные</p>
+                <div class="frame_62">
+                    <div class="list">
+                        <a href="{% url 'coming' %}">example@gmail.com</a>
+                        <a href="{% url 'coming' %}">+7 (988) 333-42-02</a>
+                    </div>
+                    <div class="list">
+                        <a href="{% url 'coming' %}">Группа Вконтакте</a>
+                        <a href="{% url 'coming' %}">Техническая поддержка</a>
+                    </div>
                 </div>
             </div>
-            <div class="list_table">
-                <div class="list_3">
-                    <a href="{% url 'coming' %}">Сообщения</a>
-                    <a href="{% url 'coming' %}">Вакансии</a>
-                    <a href="{% url 'coming' %}">Аналитика</a>
-                    <a href="{% url 'coming' %}">Профиль</a>
-                </div>
-            </div>
-            <div class="plus">
-                <div class="list_table">
-                    <a href="{% url 'coming' %}" class="list_dark">Контактные данные</a>
-                    <a href="{% url 'coming' %}" class="list_1_a">example@gmail.com</a>
-                    <a href="#" class="list_1_a">+7 (988) 333-42-02</a>
-                </div>
-                <div class="list_table">
-                    <a href="{% url 'coming' %}" class="list_1_a">Группа Вконтакте</a>
-                    <a href="{% url 'coming' %}" class="list_1_a">Техническая поддержка</a>
-                </div>
-            </div>
-            <div class="footer_logo">
-                <span>GrassJob © 2023</span>
-            </div>
+            <div class="footer_logo">GrassJob © 2023</div>
         </div>
     </div>
 </footer>

@@ -1,53 +1,57 @@
-.header_top 
+header
     display: flex
-    flex-direction: row
+    flex-direction: column
+    align-items: flex-start
+    height: 146px
+
+.header_top
+    display: flex
     align-items: center
+    justify-content: center
     height: 46px
-    justify-content: space-between
     background-color: $White
 
-.header_top_container
+.container_header
     display: flex
     justify-content: space-between
-    align-items: center
+    width: 1280px
+    margin: 0 80px
 
-.location 
+.location_layout
     display: flex
-
-.location p 
-    width: 51px
-    height: 18px
-    @include Link_Link_Small
-    color: $Green-Default
-    margin-left: 10px
+    p 
+        width: 51px
+        height: 18px
+        @include Link_Link_Small
+        color: $Green-Default
+        margin-left: 10px
 
 .navigation 
     display: flex
-    flex-direction: row
-    padding: 0px
     gap: 32px
-    height: 20px
-
-.navigation a 
-    @include Text_Small_Medium
-
-.navigation a:hover
-    color: $Neutral-900
+    justify-content: flex-end
+    a 
+        @include Text_Small_Medium
+    a:hover
+        color: $Neutral-900
 
 .header_bottom 
     display: flex
+    align-items: center
+    justify-content: center
+    gap: 32px
     height: 100px
-    background-color: $Green-Default
-    border-radius: 0px
-    align-items: center
+    background: #20B84B
 
-.header_button_logo_searh
+.logo_and_search_form
     display: flex
-
-.header_buttom_container
-    display: flex
-    justify-content: space-between
     align-items: center
+    img
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        width: 246px
+        height: 44px
 
 .search 
     display: flex
@@ -55,62 +59,36 @@
     height: 48px
     border: 0 solid #D4DCDE
     border-radius: 14px
-    background: url(../images/search.svg) no-repeat left
+    background: url(../img/search.svg) no-repeat left
     background-position: 525px
     input[type="text"], textarea
     background-color : $White
     margin-left: 32px
-
-.search::placeholder
-    @include  Text_Large_Medium
-    color: $Neutral-350
+    &::placeholder
+        @include Text_Large_Medium
+        color: $Neutral-350
 
 .navbar 
     display: flex
-    width: 100%
-    justify-content: right
-    gap: 32px
+    a 
+        @include large_text
+        color: $White
 
 .navbar_item 
-    display: grid
-    height: 38px
-    @include  Text_Large_Medium
+    display: flex
     justify-items: center
-    align-content: center
-    padding-right: 40px
-
-.navbar_item svg
-    fill: $White
-    width: 24px
-    margin-bottom: 6px
-
-a:has(.navbar_item svg:hover) .navbar_item p
-    color: $Neutral-150
-    fill: $Neutral-150
-
-a:has(.navbar_item p:hover) .navbar_item svg
-    color: $Neutral-150
-    fill: $Neutral-150 
-
-a:has(.navbar_item p:hover) .navbar_item p
-    color: $Neutral-150
-    fill: $Neutral-150 
-
-a:has(.navbar_item svg:hover) .navbar_item svg
-    color: $Neutral-150
-    fill: $Neutral-150 
-
-.navbar_item:first-child
-    padding-left: 5px
-
-.navbar_item:last-child
-    padding-right: 0px
-    gap: 16px
-
-.navbar a 
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 500
-    font-size: 16px
-    line-height: 22px
-    color: $White
+    justify-content: space-evenly
+    flex-wrap: wrap
+    @include Text_Large_Medium
+    &:first-child
+        padding-left: 25px
+    svg
+        fill: $White
+        width: 24px
+        margin-bottom: 6px
+    &:hover svg
+        color: $Neutral-150
+        fill: $Neutral-150
+    &:hover
+        color: $Neutral-150
+        fill: $Neutral-150
