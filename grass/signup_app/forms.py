@@ -66,7 +66,7 @@ class LoginForm(AuthenticationForm):
         widget=forms.EmailInput(attrs={
             "class": "input is-primary",
             "type": "email",
-            "placeholder": "Введите E-mail",
+            "placeholder": "Электронная почта",
         }
         ))
 
@@ -77,7 +77,7 @@ class LoginForm(AuthenticationForm):
             "autocomplete": "new-password",
             "class": "input is-primary",
             "type": "password",
-            "placeholder": "Введите пароль",
+            "placeholder": "Пароль",
         }),
         help_text=password_validation.password_validators_help_text_html(),
         label_suffix="",

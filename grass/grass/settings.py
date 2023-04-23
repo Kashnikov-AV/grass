@@ -69,9 +69,11 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'grass.urls'
 
 # URL redirecting after a successful authentication
-# LOGIN_REDIRECT_URL = 'home'
+#FIXME
+LOGIN_REDIRECT_URL = 'coming'
 LOGIN_URL = 'login'
-LOGOUT_REDIRECT_URL = 'home'
+#FIXME
+LOGOUT_REDIRECT_URL = 'coming'
 
 # Base url to serve media files
 MEDIA_URL = 'media/'

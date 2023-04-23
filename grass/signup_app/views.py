@@ -6,6 +6,7 @@ from .forms import SignUpForm, LoginForm
 from formtools.wizard.views import SessionWizardView
 from django.http import HttpResponse
 
+
 class SignUpView(CreateView):
     form_class = SignUpForm
     success_url = reverse_lazy("login")

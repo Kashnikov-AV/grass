@@ -42,7 +42,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
 
 class ProfileCompanyDetailView(LoginRequiredMixin, DetailView):
-    template_name = 'profile_app/profile_company.html'
+    template_name = 'profile_app/company_profile.html'
     model = Company
 
     def get_context_data(self, *args, **kwargs):

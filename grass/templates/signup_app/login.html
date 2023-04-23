@@ -3,7 +3,9 @@
 {% block content %}
     {% include 'components/header.html' %}
     <main>
-        {% include 'components/forms/form_authorization.html' %}
+        <div class="flex-main">
+            {% include 'components/forms/form_authorization.html' %}
+        </div>
     </main>
     {% include 'components/footer.html' %}
 {% endblock %}
