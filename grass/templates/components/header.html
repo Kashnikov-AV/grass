@@ -3,7 +3,7 @@
     <div class="header_top">
         <div class="container_header">
             <div class="location_layout">
-                <img src="{% static 'img/logo.svg' %}">
+                <img src="{% static 'img/location.svg' %}">
                 <p>Москва</p>
             </div>
             <div class="navigation">
@@ -41,12 +41,7 @@
                         <p>Вакансии</p>
                     </div>
                 </a>
-                    {% if user.is_authenticated %}
-                        {% if not user.role %}
-                            <a href="{% url 'profile' pk=user.pk %}">
-                        {% else %}
-                            <a href="{% url 'profile-company' pk=user.pk %}">
-                    {% endif %}
+                <a href="{% url 'coming' %}">
                     <div class="navbar_item">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -55,7 +50,6 @@
                         <p>Аналитика</p>
                     </div>
                 </a>
-                {% else %}
                 <a href="{% url 'login' %}">
                     <div class="navbar_item">
                         <svg viewBox="0 0 24 24">
@@ -65,7 +59,6 @@
                         <p>Войти</p>
                     </div>
                 </a>
-                {% endif %}
             </div>
         </div>
     </div>
