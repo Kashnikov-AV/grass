@@ -1976,4 +1976,527 @@ input {
   line-height: 22px;
   text-align: center;
   color: #1F1F1F;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.main {
+  height: 393px;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 250px -20px;
+}
+
+.main_text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 720px;
+  height: 294px;
+}
+
+.header_and_subheader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+  width: 720px;
+  height: 200px;
+}
+.header_and_subheader h1 {
+  width: 720px;
+  height: 118px;
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 59px;
+  text-align: center;
+  color: #000000;
+}
+.header_and_subheader h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #6A6E70;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  width: 496px;
+  height: 54px;
+}
+
+.main_bloks {
+  overflow-x: clip;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main_bloks_right {
+  margin: -60px -35px 0 0;
+}
+
+.main_right_blok_1 {
+  display: flex;
+  gap: 24px;
+  width: 252px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(9.96deg);
+  justify-content: space-around;
+}
+
+.main_right_blok_2 {
+  display: flex;
+  gap: 24px;
+  width: 252px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(-10.81deg);
+  justify-content: space-around;
+}
+
+.main_right_blok_3 {
+  display: flex;
+  gap: 24px;
+  width: 252px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(-2.39deg);
+  justify-content: space-around;
+}
+
+.main_bloks_left {
+  margin: -60px 0 0 -15px;
+}
+
+.main_left_blok_1 {
+  display: flex;
+  gap: 24px;
+  width: 252px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(9.96deg);
+  justify-content: space-around;
+}
+
+.main_left_blok_2 {
+  display: flex;
+  gap: 24px;
+  width: 252px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(-0.46deg);
+  justify-content: space-around;
+}
+
+.main_left_blok_3 {
+  display: flex;
+  gap: 24px;
+  width: 243px;
+  height: 167px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2);
+  border-radius: 20px;
+  transform: rotate(5.51deg);
+  justify-content: space-around;
+}
+
+.main_header_blok {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-evenly;
+}
+.main_header_blok button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px;
+  gap: 8px;
+  width: 195px;
+  height: 42px;
+  border: 1px solid #20B84B;
+  border-radius: 14px;
+}
+
+.position_and_company {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+.position_and_company h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.position_and_company_text {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+.position_and_company_text h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+.position_and_company_text h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  align-items: center;
+  gap: 80px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 80px;
+}
+
+.internships {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.picture {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #D4DCDE;
+  border-radius: 20px;
+  margin: -64px 0px;
+}
+.picture img {
+  width: 308px;
+  height: 308px;
+  border-radius: 20px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  gap: 12px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  width: 238px;
+}
+.text h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F1F1F;
+  text-align: center;
+}
+.text h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F1F1F;
+  color: #6A6E70;
+  text-align: center;
+}
+
+.news_vacancies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.title {
+  display: flex;
+  margin: 0;
+  justify-content: space-between;
+  width: 100%;
+  align-items: baseline;
+}
+.title h1 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #1F1F1F;
+}
+.title a {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #20B84B;
+}
+
+.vacancies_blok {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.vacancy_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  width: 368px;
+}
+.vacancy_card p {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #6A6E70;
+}
+
+.head_layout_top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+.head_layout_top img {
+  width: 60px;
+  height: 60px;
+}
+
+.title_blok {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+.title_blok h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F1F1F;
+}
+
+.head_layout_down {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+.head_layout_down h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.companies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.companies_blok {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.company_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.company_card p {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #6A6E70;
+}
+
+.companies_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.applicants {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.candidates_blok {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.candidate_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.candidate_card p {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #6A6E70;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.news_cards {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.new_card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 20px;
+  background: #FFFFFF;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.new_card img {
+  width: 368px;
+  height: 308px;
+  border-radius: 14px;
+}
+
+.news_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+.news_title h2 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F1F1F;
+}
+.news_title h3 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 22px;
+  color: #1F1F1F;
+  color: #6A6E70;
+}
+
+.caption {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: space-between;
+}
+.caption h4 {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.views {
+  display: flex;
+  gap: 8px;
+}
+.views img {
+  width: 22px;
+  height: 22px;
+}
