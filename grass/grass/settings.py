@@ -70,10 +70,10 @@ ROOT_URLCONF = 'grass.urls'
 
 # URL redirecting after a successful authentication
 #FIXME
-LOGIN_REDIRECT_URL = 'coming'
+LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
 #FIXME
-LOGOUT_REDIRECT_URL = 'coming'
+LOGOUT_REDIRECT_URL = 'home'
 
 # Base url to serve media files
 MEDIA_URL = 'media/'
