@@ -43,7 +43,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'phonenumber_field',
+    'widget_tweaks',
+    'django_extensions',
+    'formtools',
+
     'users_app',
     'home_app',
     'signup_app',
@@ -52,8 +57,7 @@ INSTALLED_APPS = [
     'vacancy_app',
     # 'city_app',
     # 'chat_app',
-    'django_extensions',
-    'formtools',
+
 ]
 
 MIDDLEWARE = [

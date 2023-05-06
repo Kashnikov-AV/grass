@@ -19,8 +19,7 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT
 from profile_app.views import CompanyListView, ProfileListView
-# from chat_app.views import UsersListView
-from django.contrib.auth.decorators import login_required
+
 
 from django.views.generic import TemplateView, ListView
 
