@@ -1,74 +1,60 @@
 @charset "UTF-8";
-@font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("fonts/Gilroy-Thin.ttf") format("truetype");
-  src: url("../fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-Thin.woff") format("woff");
+@use "/components/_color" as * {}@font-face {
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("fonts/Gilroy-Thin.ttf") format("truetype"), url("../fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
+
 /* Regular */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
-  src: url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-Regular.ttf") format("truetype"), url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+
 /* Medium */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-Medium.ttf") format("truetype");
-  src: url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-Medium.ttf") format("truetype"), url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
+
 /* Bold */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-Bold.ttf") format("truetype");
-  src: url("../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-Bold.ttf") format("truetype"), url("../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
+
 /* BoldItalic */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-BoldItalic.ttf") format("truetype");
-  src: url("../fonts/Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-BoldItalic.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-BoldItalic.ttf") format("truetype"), url("../fonts/Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-BoldItalic.woff") format("woff");
   font-weight: 700;
   font-style: italic;
 }
+
 /* MediumItalic */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-MediumItalic.ttf") format("truetype");
-  src: url("../fonts/Gilroy-MediumItalic.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-MediumItalic.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-MediumItalic.ttf") format("truetype"), url("../fonts/Gilroy-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
 }
+
 /* RegularItalic */
 @font-face {
-  font-family: "Gilroy";
-  src: local("Gilroy");
-  src: url("../fonts/Gilroy-RegularItalic.ttf") format("truetype");
-  src: url("../fonts/Gilroy-RegularItalic.eot?#iefix") format("embedded-opentype");
-  src: url("../fonts/Gilroy-RegularItalic.woff") format("woff");
+  font-family: 'Gilroy';
+  src: local("Gilroy"), url("../fonts/Gilroy-RegularItalic.ttf") format("truetype"), url("../fonts/Gilroy-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-RegularItalic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
-header {
+
+@use "/_color" as * {}header {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -93,10 +79,11 @@ header {
 .location_layout {
   display: flex;
 }
+
 .location_layout p {
   width: 51px;
   height: 18px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -111,14 +98,16 @@ header {
   gap: 32px;
   justify-content: flex-end;
 }
+
 .navigation a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
 }
+
 .navigation a:hover {
   color: #1F1F1F;
 }
@@ -136,6 +125,7 @@ header {
   display: flex;
   align-items: center;
 }
+
 .logo_and_search_form img {
   display: flex;
   flex-direction: column;
@@ -144,41 +134,12 @@ header {
   height: 44px;
 }
 
-.search {
-  display: flex;
-  width: 563px;
-  height: 48px;
-  border: 0 solid #D4DCDE;
-  border-radius: 14px;
-  background: url(../img/search.svg) no-repeat left;
-  background-position: 525px;
-  background-color: #FFFFFF;
-  margin-left: 32px;
-}
-.search::-moz-placeholder {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #FFFFFF;
-  color: #B7BEC0;
-}
-.search::placeholder {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #FFFFFF;
-  color: #B7BEC0;
-}
-
 .navbar {
   display: flex;
 }
+
 .navbar a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -189,31 +150,90 @@ header {
 
 .navbar_item {
   display: flex;
-  justify-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #FFFFFF;
 }
+
 .navbar_item:first-child {
   padding-left: 25px;
 }
+
 .navbar_item svg {
   fill: #FFFFFF;
   width: 24px;
   margin-bottom: 6px;
 }
+
 .navbar_item:hover svg {
   color: #E9EDEF;
   fill: #E9EDEF;
 }
+
 .navbar_item:hover {
   color: #E9EDEF;
   fill: #E9EDEF;
+}
+
+.search-form {
+  flex: 1;
+  position: relative;
+  min-width: 360px;
+  margin: 0 7px 0 32px;
+}
+
+#search {
+  display: flex;
+  width: 100%;
+  height: 48px;
+  border: 0 solid #D4DCDE;
+  border-radius: 14px;
+  cursor: default;
+}
+
+#search::placeholder {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #B7BEC0;
+}
+
+.search-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  cursor: pointer;
+  background-color: #FFFFFF;
+}
+
+.search-button::before {
+  content: url(../img/search.svg);
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: #FFFFFF;
+}
+
+.footer-desktop {
+  height: 280px;
+  width: 100wh;
+  background-color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer {
@@ -230,7 +250,7 @@ footer {
 }
 
 .footer_logo {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -244,8 +264,9 @@ footer {
   flex-direction: column;
   gap: 32px;
 }
+
 .partners p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -258,14 +279,14 @@ footer {
   flex-direction: column;
   gap: 16px;
 }
+
 .list a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
-  width: -moz-max-content;
   width: max-content;
 }
 
@@ -274,8 +295,9 @@ footer {
   flex-direction: column;
   gap: 24px;
 }
+
 .footer_navigation a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -288,8 +310,9 @@ footer {
   flex-direction: column;
   gap: 24px;
 }
+
 .navigation_bar a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -302,8 +325,9 @@ footer {
   flex-direction: column;
   gap: 32px;
 }
+
 .contact_details p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -322,14 +346,16 @@ footer {
   flex-direction: column;
   gap: 16px;
 }
+
 .list a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
 }
+
 .list a:hover {
   color: #1F1F1F;
 }
@@ -378,7 +404,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: "";
+  content: '';
   content: none;
 }
 
@@ -425,7 +451,7 @@ input, button {
 }
 
 .main_form_text {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -450,7 +476,7 @@ input, button {
 }
 
 .prof_logo_salary h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -472,7 +498,7 @@ input, button {
 }
 
 .prof_logo_profile h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -480,7 +506,7 @@ input, button {
 }
 
 .prof_logo_profile h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -488,7 +514,7 @@ input, button {
 }
 
 .change {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -544,27 +570,24 @@ input, button {
 }
 
 .education h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
-  width: 368px;
-  margin-bottom: 4px;
 }
 
 .education h5 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 4px;
 }
 
 .education_file {
   color: #6A6E70;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -583,10 +606,6 @@ input, button {
   background: #F7F6F6;
   border-radius: 14px;
   padding: 24px 0 0 32px;
-}
-
-.experience_left {
-  width: 368px;
 }
 
 .experience_left p {
@@ -610,7 +629,7 @@ input, button {
 }
 
 .experience h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -618,7 +637,7 @@ input, button {
 }
 
 .info {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -640,9 +659,11 @@ input, button {
   font-size: 16px;
   width: 250px;
 }
+
 .btn_green:hover {
   background: #1D9E42;
 }
+
 .btn_green:active {
   background: #4FCB72;
 }
@@ -660,10 +681,12 @@ input, button {
   font-size: 16px;
   width: 250px;
 }
+
 .btn_white:hover {
   border-color: #1D9E42;
   color: #1D9E42;
 }
+
 .btn_white:active {
   border-color: #4FCB72;
   color: #4FCB72;
@@ -693,7 +716,7 @@ input, button {
 }
 
 .contact_form a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -702,7 +725,7 @@ input, button {
 }
 
 .contact_form p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -710,7 +733,7 @@ input, button {
 }
 
 .contact_form h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -719,7 +742,7 @@ input, button {
 }
 
 .contact_form h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -729,7 +752,7 @@ input, button {
 }
 
 .vacancies_logo_text {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -757,7 +780,7 @@ input, button {
 }
 
 .vacancies h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -766,7 +789,7 @@ input, button {
 }
 
 .vacancies h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -776,7 +799,7 @@ input, button {
 }
 
 .vacancies h5 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -789,7 +812,7 @@ input, button {
 }
 
 .about_me a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -806,6 +829,8 @@ input, button {
 
 .main_flex_two {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-right: 32px;
 }
 
@@ -854,7 +879,7 @@ main {
 }
 
 .h1-bold {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -908,7 +933,7 @@ form {
 }
 
 .title {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -921,7 +946,7 @@ form {
 }
 
 .title_no_margin {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -947,7 +972,7 @@ form {
 .input_item {
   height: 54px;
   border-radius: 15px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -955,10 +980,6 @@ form {
   padding-left: 20px;
   border: 1px solid #D4DCDE;
   margin-bottom: 10px;
-}
-
-.input_item::-moz-placeholder {
-  color: #B7BEC0;
 }
 
 .input_item::placeholder {
@@ -970,7 +991,7 @@ form {
   border-radius: 15px;
   background: url(../img/eye.svg) no-repeat left;
   background-position: 360px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -979,16 +1000,12 @@ form {
   border: 1px solid #D4DCDE;
 }
 
-.input_item_eye::-moz-placeholder {
-  color: #B7BEC0;
-}
-
 .input_item_eye::placeholder {
   color: #B7BEC0;
 }
 
 .inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1033,7 +1050,7 @@ form {
 .buttons p {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1054,7 +1071,7 @@ form {
 }
 
 .separation {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1071,7 +1088,7 @@ form {
 }
 
 .other_ways {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1104,7 +1121,7 @@ form {
 }
 
 .form_signup_subtext {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1133,7 +1150,7 @@ form {
 }
 
 .form_block_number_inputs p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1143,7 +1160,7 @@ form {
 }
 
 .form_block_number_inputs a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1208,7 +1225,7 @@ form {
 .form_register_end_buttons {
   width: 400px;
   height: 60px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1231,7 +1248,7 @@ form {
 
 .subtext {
   margin-top: -50px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1298,7 +1315,7 @@ input {
   padding-left: 15px;
   border: 1px solid #D4DCDE;
   border-radius: 14px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1337,19 +1354,19 @@ input {
   padding-top: 15px;
 }
 
-.button input[type=radio] {
+.button input[type="radio"] {
   opacity: 0.011;
   z-index: 100;
   cursor: pointer;
 }
 
-.button input[type=radio]:checked + label {
+.button input[type="radio"]:checked + label {
   background: #E9EDEF;
   border-radius: 4px;
 }
 
-.button input[type=text] {
-  font-family: "Gilroy";
+.button input[type="text"] {
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1384,7 +1401,7 @@ input {
 }
 
 .form_signup_7_title {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -1411,565 +1428,7 @@ input {
 }
 
 .frame_77 p {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
-  color: #F6F6F6;
-  margin: auto;
-}
-
-a {
-  text-decoration: none;
-  color: #1F1F1F;
-}
-
-.container {
-  width: 1280px;
-  margin: 0 80px;
-}
-
-.button_1:hover {
-  background: #1D9E42;
-}
-
-.button_2:hover {
-  border-color: #1D9E42;
-  color: #1D9E42;
-}
-
-.button_1:active {
-  background: #4FCB72;
-}
-
-.button_2:active {
-  border-color: #4FCB72;
-  color: #4FCB72;
-}
-
-form {
-  text-align: -webkit-center;
-}
-
-.form_block {
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 448px;
-  height: 668px;
-  align-items: center;
-  background: #FFFFFF;
-}
-
-.title {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  color: #1F1F1F;
-  align-items: flex-start;
-  width: 400px;
-  display: flex;
-  margin-top: 32px;
-}
-
-.title_no_margin {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  color: #1F1F1F;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  width: 400px;
-  height: 157px;
-}
-
-.input_item {
-  height: 54px;
-  border-radius: 15px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  padding-left: 20px;
-  border: 1px solid #D4DCDE;
-  margin-bottom: 10px;
-}
-
-.input_item::-moz-placeholder {
-  color: #B7BEC0;
-}
-
-.input_item::placeholder {
-  color: #B7BEC0;
-}
-
-.input_item_eye {
-  height: 54px;
-  border-radius: 15px;
-  background: url(../img/eye.svg) no-repeat left;
-  background-position: 360px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  padding-left: 20px;
-  border: 1px solid #D4DCDE;
-}
-
-.input_item_eye::-moz-placeholder {
-  color: #B7BEC0;
-}
-
-.input_item_eye::placeholder {
-  color: #B7BEC0;
-}
-
-.inputs a {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #20B84B;
-}
-
-.buttons {
-  flex-direction: column;
-  width: 400px;
-  display: flex;
-  gap: 8px;
-}
-
-.button_1 {
-  cursor: pointer;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  height: 54px;
-  border-radius: 14px;
-  background: #20B84B;
-  color: #FFFFFF;
-  width: 400px;
-}
-
-.button_2 {
-  cursor: pointer;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  height: 54px;
-  border-radius: 14px;
-  border: 1px solid #20B84B;
-  color: #20B84B;
-  background: #FFFFFF;
-  width: 400px;
-}
-
-.buttons p {
-  width: 400px;
-  height: 60px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  text-align: left;
-  margin-top: 16px;
-}
-
-.separation {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  gap: 12px;
-  width: 400px;
-}
-
-.separation {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  color: #6A6E70;
-}
-
-.separation div {
-  width: 176px;
-  height: 1px;
-  background: #D4DCDE;
-}
-
-.other_ways {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  color: #1F1F1F;
-  width: 400px;
-  margin: -7px 0 11px 0;
-}
-
-.logos {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  width: 400px;
-  height: 46px;
-}
-
-/* Регистрация */
-.form_signup {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 370px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_signup_subtext {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  display: flex;
-}
-
-.form_block_number {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 404px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_number_inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.form_block_number_inputs p {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  text-align: left;
-}
-
-.form_block_number_inputs a {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #20B84B;
-}
-
-.form_block_password {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 456px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_password_buttons {
-  margin-top: -30px;
-}
-
-.form_blok_recovery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 36px 24px;
-  gap: 32px;
-  width: 448px;
-  height: 404px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.form_register_company {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 560px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_register_end {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 448px;
-  height: 596px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  align-items: center;
-  padding: 0 0 32px 0;
-}
-
-.form_register_end_buttons {
-  width: 400px;
-  height: 60px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  margin-top: -30px;
-}
-
-.form_register_email {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 370px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.subtext {
-  margin-top: -50px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-}
-
-.selector {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 4px;
-  gap: 4px;
-  width: 400px;
-  height: 54px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-form_city {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px 24px;
-  gap: 32px;
-  isolation: isolate;
-  position: absolute;
-  width: 848px;
-  height: 516px;
-  left: 296px;
-  top: 128px;
-}
-
-.city_input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px 20px;
-  width: 800px;
-  height: 54px;
-  background: #FFFFF;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-.city_button button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 32px;
-  gap: 8px;
-  width: 280px;
-  height: 54px;
-  background: #20B84B;
-  border-radius: 14px;
-}
-
-input {
-  width: 100%;
-  height: 42px;
-  background: #FFFFFF;
-  padding-left: 15px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.btn btn-default {
-  width: 418px;
-  height: 54px;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-}
-
-.sex {
-  display: flex;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  width: 392px;
-}
-
-.button {
-  width: 194px;
-  height: 46px;
-  border-radius: 10px;
-  position: relative;
-  margin: 4px;
-}
-
-.button label,
-.button input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding-top: 15px;
-}
-
-.button input[type=radio] {
-  opacity: 0.011;
-  z-index: 100;
-  cursor: pointer;
-}
-
-.button input[type=radio]:checked + label {
-  background: #E9EDEF;
-  border-radius: 4px;
-}
-
-.button input[type=text] {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-}
-
-.form_signup_one {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 36px 24px;
-  gap: 32px;
-  width: 448px;
-  height: 650px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  justify-content: center;
-  background: #FFFFFF;
-}
-
-.form_signup_7 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  width: 448px;
-  height: 560px;
-}
-
-.form_signup_7_title {
-  font-family: "Gilroy";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  text-align: center;
-  color: #1F1F1F;
-  width: 200px;
-  height: 80px;
-  margin-top: 32px;
-}
-
-.frame_76 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 400px;
-}
-
-.frame_77 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.frame_77 p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -2003,10 +1462,11 @@ input {
   width: 720px;
   height: 200px;
 }
+
 .header_and_subheader h1 {
   width: 720px;
   height: 118px;
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -2014,8 +1474,9 @@ input {
   text-align: center;
   color: #000000;
 }
+
 .header_and_subheader h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -2037,6 +1498,7 @@ input {
   overflow-x: clip;
   display: flex;
   justify-content: space-between;
+  margin-top: 100px;
 }
 
 .main_bloks_right {
@@ -2125,6 +1587,7 @@ input {
   gap: 8px;
   justify-content: space-evenly;
 }
+
 .main_header_blok button {
   display: flex;
   flex-direction: row;
@@ -2143,8 +1606,9 @@ input {
   gap: 8px;
   flex-direction: column;
 }
+
 .position_and_company h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2158,16 +1622,18 @@ input {
   gap: 8px;
   align-items: center;
 }
+
 .position_and_company_text h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #1F1F1F;
 }
+
 .position_and_company_text h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2205,6 +1671,7 @@ input {
   border-radius: 20px;
   margin: -64px 0px;
 }
+
 .picture img {
   width: 308px;
   height: 308px;
@@ -2223,8 +1690,9 @@ input {
   border-radius: 20px;
   width: 238px;
 }
+
 .text h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2232,8 +1700,9 @@ input {
   color: #1F1F1F;
   text-align: center;
 }
+
 .text h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -2258,16 +1727,18 @@ input {
   width: 100%;
   align-items: baseline;
 }
+
 .title h1 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   color: #1F1F1F;
 }
+
 .title a {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2293,8 +1764,9 @@ input {
   border-radius: 20px;
   width: 368px;
 }
+
 .vacancy_card p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2310,6 +1782,7 @@ input {
   gap: 20px;
   width: 100%;
 }
+
 .head_layout_top img {
   width: 60px;
   height: 60px;
@@ -2322,8 +1795,9 @@ input {
   gap: 8px;
   width: 100%;
 }
+
 .title_blok h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2337,8 +1811,9 @@ input {
   width: 100%;
   justify-content: space-between;
 }
+
 .head_layout_down h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -2371,8 +1846,9 @@ input {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+
 .company_card p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2413,8 +1889,9 @@ input {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+
 .candidate_card p {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2447,6 +1924,7 @@ input {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
+
 .new_card img {
   width: 368px;
   height: 308px;
@@ -2459,16 +1937,18 @@ input {
   align-items: flex-start;
   gap: 12px;
 }
+
 .news_title h2 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: #1F1F1F;
 }
+
 .news_title h3 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -2483,8 +1963,9 @@ input {
   width: 100%;
   justify-content: space-between;
 }
+
 .caption h4 {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2496,6 +1977,7 @@ input {
   display: flex;
   gap: 8px;
 }
+
 .views img {
   width: 22px;
   height: 22px;

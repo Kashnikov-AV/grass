@@ -1,9 +1,12 @@
-@import components/_color
-@import components/_fonts
-@import components/_header
-@import components/_footer
-@import components/_reset
-@import components/_profile
+@import 'components/_color'
+@use "/components/_color" as *
+@import 'components/_fonts'
+@import 'components/_header'
+@import 'components/_footer'
+@import 'components/_reset'
+@import 'components/_profile'
+
+
 
 .flex-container
     display: flex
@@ -561,6 +564,7 @@ input
     overflow-x: clip
     display: flex
     justify-content: space-between
+    margin-top: 100px
 
 .main_bloks_right
     margin: -60px -35px 0 0
@@ -892,3 +896,5 @@ input
     img
         width: 22px
         height: 22px
+
+

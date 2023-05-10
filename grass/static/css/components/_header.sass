@@ -1,3 +1,5 @@
+@use "/_color" as *
+
 header
     display: flex
     flex-direction: column
@@ -53,20 +55,7 @@ header
         width: 246px
         height: 44px
 
-.search 
-    display: flex
-    width: 563px
-    height: 48px
-    border: 0 solid #D4DCDE
-    border-radius: 14px
-    background: url(../img/search.svg) no-repeat left
-    background-position: 525px
-    input[type="text"], textarea
-    background-color : $White
-    margin-left: 32px
-    &::placeholder
-        @include Text_Large_Medium
-        color: $Neutral-350
+
 
 .navbar 
     display: flex
@@ -76,8 +65,9 @@ header
 
 .navbar_item 
     display: flex
-    justify-items: center
-    justify-content: space-evenly
+    flex-direction: column
+    align-items: center
+    justify-content: center
     flex-wrap: wrap
     @include Text_Large_Medium
     &:first-child
@@ -92,3 +82,41 @@ header
     &:hover
         color: $Neutral-150
         fill: $Neutral-150
+
+.search-form
+    flex: 1
+    position: relative
+    // max-width: 563px
+    min-width: 360px
+    margin: 0 7px 0 32px
+
+
+#search 
+    display: flex
+    width: 100%
+    height: 48px
+    border: 0 solid #D4DCDE
+    border-radius: 14px
+    cursor: default
+    &::placeholder
+        @include Text_Large_Medium
+        color: $Neutral-350
+
+.search-button
+    position: absolute
+    top: 5px
+    right: 10px
+    width: 42px
+    height: 42px
+    border: none
+    cursor: pointer
+    background-color: $White
+    &::before
+        content: url(../img/search.svg)
+        display: inline-block
+        width: 18px
+        height: 18px
+        // background: url(../img/search.svg) no-repeat left
+        background-color : $White
+
+    
