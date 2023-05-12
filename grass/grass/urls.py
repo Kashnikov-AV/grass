@@ -34,6 +34,7 @@ urlpatterns = [
     path('profiles/', ProfileListView.as_view(), name='profiles'),
     path('vacancy/', include('vacancy_app.urls')),
     path('coming-soon/', TemplateView.as_view(template_name="coming-soon.html"), name='coming'),
+    path('test/', TemplateView.as_view(template_name="test.html"), name='test'),
     # path('chat/', include()),
     # path('chat/users/', UsersListView.as_view(), name='users_list'),
 ]
