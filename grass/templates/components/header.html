@@ -25,7 +25,10 @@
                         placeholder="Поиск по вакансиям и работодателям">
                     <button class="search-button" type="submit"></button>
             </form>
-
+                <div class="img_mobile">
+                    <a href="{% url 'coming' %}"><img class="img_one" src="{% static 'img/magnifier.svg' %}"></a>
+                    <a href="{% url 'coming' %}"><img class="img_two" src="{% static 'img/Burger_Menu.svg' %}"></a>
+                </div>
             <div class="navbar">
                 <a href="{% url 'coming' %}">
                     <div class="navbar_item">

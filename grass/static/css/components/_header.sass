@@ -18,6 +18,7 @@ header
     justify-content: space-between
     width: 1280px
     margin: 0 80px
+    align-items: center
 
 .location_layout
     display: flex
@@ -119,4 +120,44 @@ header
         // background: url(../img/search.svg) no-repeat left
         background-color : $White
 
-    
+.img_mobile
+    display: none
+
+@media (max-width: 360px)
+    header
+        height: 95px
+
+    .header_top
+        display: none
+
+    .header_bottom
+        width: 360px
+        height: 60px
+
+    .search
+        display: none
+
+    .navbar
+        display: none
+
+    .logo_and_search_form img
+        width: 155px
+        height: 28px
+
+    .img_mobile
+        display: flex
+        width: 20%
+        justify-content: space-between
+
+    .img_one
+        display: block
+        width: 18px
+
+    .img_two
+        width: 22px
+
+    .container_header
+        display: flex
+        justify-content: space-between
+        width: 360px
+        margin: 0 16px

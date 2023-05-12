@@ -70,3 +70,40 @@ footer
         @include Text_Small_Medium
     a:hover
         color: $Neutral-900
+
+.footer_navigation_bar
+    display: flex
+    width: 26%
+    justify-content: space-between
+
+@media (max-width: 360px)
+    footer
+        margin-top: 64px !important
+
+    .footer_flex
+        display: flex
+        margin-top: 60px
+        align-items: flex-start
+        flex-direction: column
+
+    .container
+        width: 360px !important
+        margin: 0 28px 0 16px !important
+
+    .footer_navigation_bar
+        display: flex
+        width: 100%
+        justify-content: space-between
+        flex-direction: row-reverse
+        margin-top: 60px
+
+    .contact_details
+        margin-top: 64px
+        width: 100%
+
+    .frame_62
+        flex-direction: column
+        gap: 0
+
+    .footer_logo
+        margin-top: 64px
