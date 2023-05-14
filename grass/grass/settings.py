@@ -55,7 +55,7 @@ INSTALLED_APPS = [
     'django_simple_bulma',
     'profile_app',
     'vacancy_app',
-    # 'city_app',
+    'city_app',
     # 'chat_app',
 
 ]
