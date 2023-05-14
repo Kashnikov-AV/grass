@@ -1,10 +1,9 @@
-@use "/_color" as *
+// @use "/_color" as *
 
 header
     display: flex
     flex-direction: column
     align-items: flex-start
-    height: 146px
 
 .header_top
     display: flex
@@ -123,7 +122,14 @@ header
 .img_mobile
     display: none
 
-@media (max-width: 360px)
+@media (max-width: 1280px)
+    .header_top
+        display: none
+
+    .navbar_item
+        display: none
+
+@media (max-width: 768px)
     header
         height: 95px
 
@@ -131,10 +137,9 @@ header
         display: none
 
     .header_bottom
-        width: 360px
         height: 60px
 
-    .search
+    .search-form
         display: none
 
     .navbar
@@ -146,7 +151,7 @@ header
 
     .img_mobile
         display: flex
-        width: 20%
+        width: 10%
         justify-content: space-between
 
     .img_one
@@ -159,5 +164,5 @@ header
     .container_header
         display: flex
         justify-content: space-between
-        width: 360px
+        width: 768px
         margin: 0 16px

@@ -1,3 +1,4 @@
+{% load static %}
 <form method="POST">
     {% csrf_token %}
 
@@ -26,8 +27,8 @@
             <p>Войти с помощью</p>
         </div>
         <div class="logos">
-            <a href=""><img src="images/google.svg"></a>
-            <a href=""><img src="images/vk.svg">
+            <a href=""><img src="{% static 'img/google.svg' %}"></a>
+            <a href=""><img src="{% static 'img/vk.svg' %}"></a>
         </div>
     </div>
 </form>
