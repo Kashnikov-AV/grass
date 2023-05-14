@@ -1,5 +1,5 @@
+// @use "/components/_color" as *
 @import 'components/_color'
-@use "/components/_color" as *
 @import 'components/_fonts'
 @import 'components/_header'
 @import 'components/_footer'
@@ -16,6 +16,8 @@ main
     padding-bottom: 100px
     flex: 1
     background-color: $Neutral-50
+    background-image: url(../img/main.png)
+    background-repeat: no-repeat
 
 .flex-main
     display: flex
@@ -69,6 +71,11 @@ form
     height: 668px
     align-items: center
     background: $White
+
+.form_block_number_title
+    width: 400px
+    height: 80px
+    @include h1_Bold
 
 .title
     font-family: 'Gilroy'
@@ -142,6 +149,12 @@ form
     line-height: 20px
     color: $Green-Default
 
+.buttons_index
+    width: 496px
+    height: 54px
+    display: flex
+    gap: 16px
+
 .buttons
     flex-direction: column
     width: 400px
@@ -172,6 +185,9 @@ form
     color: $Green-Default
     background: $White
     width: 400px
+    display: flex
+    align-items: center
+    justify-content: center
 
 .buttons p
     width: 400px
@@ -945,9 +961,8 @@ input
     height: 54px
 
 .main_bloks
-    overflow-x: clip
     display: flex
-    justify-content: space-between
+    justify-content: center
     margin-top: 125px
 
 .main_bloks_right
