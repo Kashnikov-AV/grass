@@ -1,11 +1,80 @@
-Primary, Large, Hover, Primary
-Primary_Large, Default, Primary
-Primary_Large_Hover_Primary
+%button_large
+    width: 114px
+    height: 54px
+    border-radius: 14px
+    @include Button_Bold
 
+%button_medium
+    width: 114px
+    height: 42px
+    border-radius: 14px
+    @include Button_Bold
 
+%button_small
+    width: 114px
+    height: 32px
+    border-radius: 14px
+    @include Button_Bold
 
-Secondary_Large_Hover_Primary
+.primary_large
+    @extend %button_large
+    color: $White
+    background: $Green-Default
+    border: none
+    &:hover
+        background: $Green-Hover
+    &:active
+        background: $Green-Active
 
-Secondary_Large_Default_Primary
+.secondary_large
+    @extend %button_large
+    border: 1px solid $Green-Default
+    color: $Green-Default
+    &:hover
+        color: $Green-Hover
+        background: $Neutral-50
+        border: 1px solid $Green-Hover
+    &:active
+        color: $Green-Active
 
-Secondary_Large_Hover_Primary
+.primary_medium
+    @extend %button_medium
+    color: $White
+    background: $Green-Default
+    border: none
+    &:hover
+        background: $Green-Hover
+    &:active
+        background: $Green-Active
+
+.secondary_medium
+    @extend %button_medium
+    border: 1px solid $Green-Default
+    color: $Green-Default
+    &:hover
+        color: $Green-Hover
+        background: $Neutral-50
+        border: 1px solid $Green-Hover
+    &:active
+        color: $Green-Active
+
+.primary_small
+    @extend %button_small
+    color: $White
+    background: $Green-Default
+    border: none
+    &:hover
+        background: $Green-Hover
+    &:active
+        background: $Green-Active
+
+.secondary_small
+    @extend %button_small
+    border: 1px solid $Green-Default
+    color: $Green-Default
+    &:hover
+        color: $Green-Hover
+        background: $Neutral-50
+        border: 1px solid $Green-Hover
+    &:active
+        color: $Green-Active

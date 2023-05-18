@@ -5,8 +5,23 @@
     <main>
         <div class="flex-main">
             {% include 'components/forms/form_authorization.html' %}
-            {% include 'components/forms/form_password recovery_4.html' %}
+            {% include 'components/forms/form_password_recovery_4.html' %}
 
+            <form class="field-default">
+        <input class="field-default__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
+        <button class="field-default__placeholder__search" type="submit"></button>
+</form>
+
+<form class="field-empty">
+        <input class="field-empty__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
+</form>
+
+<button class="primary_large">Button</button>
+<button class="secondary_large">Button</button>
+<button class="primary_medium">Button</button>
+<button class="secondary_medium">Button</button>
+<button class="primary_small">Button</button>
+<button class="secondary_small">Button</button>
         </div>
     </main>
     {% include 'components/footer.html' %}
