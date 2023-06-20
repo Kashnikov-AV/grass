@@ -1,80 +1,156 @@
-%button_large
+%button-large
     width: 114px
     height: 54px
     border-radius: 14px
-    @include Button_Bold
+    @include Button-Bold
 
-%button_medium
+%button-medium
     width: 114px
     height: 42px
     border-radius: 14px
-    @include Button_Bold
+    @include Button-Bold
 
-%button_small
+%button-small
     width: 114px
     height: 32px
     border-radius: 14px
-    @include Button_Bold
+    @include Button-Bold
 
-.primary_large
-    @extend %button_large
+.btn-primary-large
+    @extend %button-large
+    color: $White
+    background-color: $Green-Default
+    border: none
+    &:hover
+        background-color: $Green-Hover
+    &:active
+        background-color: $Green-Active
+
+.btn-secondary-large
+    @extend %button-large
+    border: 1px solid $Green-Default
+    color: $Green-Default
+    background-color: transparent
+    &:hover
+        color: $Green-Hover
+        background-color: $Neutral-50
+        border: 1px solid $Green-Hover
+    &:active
+        color: $Green-Active
+        background-color: $Neutral-50
+
+.btn-primary-medium
+    @extend %button-medium
     color: $White
     background: $Green-Default
     border: none
     &:hover
-        background: $Green-Hover
+        background-color: $Green-Hover
     &:active
-        background: $Green-Active
+        background-color: $Green-Active
 
-.secondary_large
-    @extend %button_large
+.btn-secondary-medium
+    @extend %button-medium
     border: 1px solid $Green-Default
     color: $Green-Default
+    background-color: transparent
     &:hover
         color: $Green-Hover
-        background: $Neutral-50
+        background-color: $Neutral-50
         border: 1px solid $Green-Hover
     &:active
         color: $Green-Active
+        background-color: $Neutral-50
 
-.primary_medium
-    @extend %button_medium
+.btn-primary-small
+    @extend %button-small
     color: $White
-    background: $Green-Default
+    background-color: $Green-Default
     border: none
     &:hover
-        background: $Green-Hover
+        background-color: $Green-Hover
     &:active
-        background: $Green-Active
+        background-color: $Green-Active
 
-.secondary_medium
-    @extend %button_medium
+.btn-secondary-small
+    @extend %button-small
     border: 1px solid $Green-Default
     color: $Green-Default
+    background-color: transparent
     &:hover
         color: $Green-Hover
-        background: $Neutral-50
+        background-color: $Neutral-50
         border: 1px solid $Green-Hover
     &:active
         color: $Green-Active
+        background-color: $Neutral-50
 
-.primary_small
-    @extend %button_small
+.btn-primary-large-is-danger
+    @extend %button-large
+    background-color: $Red-Default
     color: $White
-    background: $Green-Default
-    border: none
     &:hover
-        background: $Green-Hover
+        background-color: $Red-Hover
     &:active
-        background: $Green-Active
+        background-color: $Red-Active
 
-.secondary_small
-    @extend %button_small
-    border: 1px solid $Green-Default
-    color: $Green-Default
+.btn-secondary-large-is-danger
+    @extend %button-large
+    color: $Red-Default
+    border: 1px solid $Red-Default
+    background-color: transparent
     &:hover
-        color: $Green-Hover
-        background: $Neutral-50
-        border: 1px solid $Green-Hover
+        color: $Red-Hover
+        background-color: $Neutral-50
+        border: 1px solid $Red-Hover
     &:active
-        color: $Green-Active
+        color: $Red-Active
+        background-color: $Neutral-50
+
+
+.btn-primary-medium-is-danger
+    @extend %button-medium
+    background-color: $Red-Default
+    color: $White
+    &:hover
+        background-color: $Red-Hover
+    &:active
+        background-color: $Red-Active
+
+.btn-secondary-medium-is-danger
+    @extend %button-medium
+    color: $Red-Default
+    border: 1px solid $Red-Default
+    background-color: transparent
+    &:hover
+        color: $Red-Hover
+        background-color: $Neutral-50
+        border: 1px solid $Red-Hover
+    &:active
+        color: $Red-Active
+        background-color: $Neutral-50
+
+.btn-primary-small-is-danger
+    @extend %button-small
+    background-color: $Red-Default
+    color: $White
+    &:hover
+        background-color: $Red-Hover
+    &:active
+        background-color: $Red-Active
+
+
+.btn-secondary-small-is-danger
+    @extend %button-small
+    color: $Red-Default
+    border: 1px solid $Red-Default
+    background-color: transparent
+    &:hover
+        color: $Red-Hover
+        background-color: $Neutral-50
+        border: 1px solid $Red-Hover
+    &:active
+        color: $Red-Active
+        background-color: $Neutral-50
+    
+

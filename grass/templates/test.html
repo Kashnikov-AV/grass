@@ -1,28 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    {% include 'components/header.html' %}
-    <main>
-        <div class="flex-main">
-            {% include 'components/forms/form_authorization.html' %}
-            {% include 'components/forms/form_password_recovery_4.html' %}
+{% include 'components/header.html' %}
+<main>
+    <div class="flex-main">
+        {% include 'components/forms/form_authorization.html' %}
+        {% include 'components/forms/form_password_recovery_4.html' %}
 
-            <form class="field-default">
-        <input class="field-default__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
-        <button class="field-default__placeholder__search" type="submit"></button>
-</form>
-
-<form class="field-empty">
-        <input class="field-empty__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
-</form>
-
-<button class="primary_large">Button</button>
-<button class="secondary_large">Button</button>
-<button class="primary_medium">Button</button>
-<button class="secondary_medium">Button</button>
-<button class="primary_small">Button</button>
-<button class="secondary_small">Button</button>
+        <form class="field-default">
+            <input class="field-default__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
+            <button class="field-default__placeholder__search" type="submit"></button>
+        </form>
+        <div style="background-color: white">
+            <button class="btn-primary-large">Button</button>
+            <button class="btn-secondary-large">Button</button>
+            <button class="btn-primary-medium">Button</button>
+            <button class="btn-secondary-medium">Button</button>
+            <button class="btn-primary-small">Button</button>
+            <button class="btn-secondary-small">Button</button>
+            <button class="btn-primary-large-is-danger">Button</button>
+            <button class="btn-secondary-large-is-danger">Button</button>
+            <button class="btn-primary-medium-is-danger">Button</button>
+            <button class="btn-secondary-medium-is-danger">Button</button>
+            <button class="btn-primary-small-is-danger">Button</button>
+            <button class="btn-secondary-small-is-danger">Button</button>
         </div>
-    </main>
-    {% include 'components/footer.html' %}
+    </div>
+</main>
+{% include 'components/footer.html' %}
 {% endblock %}
