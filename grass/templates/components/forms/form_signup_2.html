@@ -1,16 +1,18 @@
 {% load static %}
-<form>
-    <div class="form_signup">
-        <div class="form_block_number_title">
-            <p>Создание аккаунта</p>
-        </div>
-        <div class="form_block_number_inputs">
-            <p>На данную почту придёт письмо с кодом подтверждения</p>
-            <input class="input_item" type="email" id="email" name="email" placeholder="Электронная почта">
+{% load widget_tweaks %}
+<div class="box form-block">
+    <h2 class="title-1">Создание аккаунта</h2>
+    <form action="">
+        <div class="inputs">
+            <div class="field">
+                <label for="">На данную почту придёт письмо с кодом подтверждения</label>
+                <input class="input" type="email" id="email" name="email" placeholder="Электронная почта">
+                <span class="error-message"></span>
+            </div>
         </div>
         <div class="buttons">
-            <button class="button_1" formaction="">Получить код</button>
-            <button class="button_2" formaction="">Назад</button>
+            <button class="btn-primary-large" formaction="">Получить код</button>
+            <button class="btn-secondary-large" formaction="">Назад</button>
         </div>
-    </div>
-</form>
+    </form>
+</div>

@@ -3,23 +3,24 @@
 {% load static %}
 {% block title %}Home{% endblock %}
 {% block content %}
-    {% include 'components/header.html' %}
-    <main>
+{% include 'components/header.html' %}
+<main>
+    <div class="main-background">
         <div class="main_bloks">
-        <div class="main">
-            <div class="main_text">
-                <div class="header_and_subheader">
-                    <h1>Начните свою карьеру<br>в сельскохозяйственной сфере!</h1>
-                    <h2>Наша платформа помогает связать<br>работодателей и соискателей в одном месте.</h2>
-                </div>
-                <div class="buttons_index">
-                    <button class="button_1">Смотреть вакансии</button>
-                    <button class="button_2">Смотреть соискателей</button>
+            <div class="main">
+                <div class="main_text">
+                    <div class="header_and_subheader">
+                        <h1>Начните свою карьеру<br>в сельскохозяйственной сфере!</h1>
+                        <h2>Наша платформа помогает связать<br>работодателей и соискателей в одном месте.</h2>
+                    </div>
+                    <div class="buttons_index">
+                        <button class="btn-primary-large btn-fluid">Смотреть вакансии</button>
+                        <button class="btn-secondary-large btn-fluid">Смотреть соискателей</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
     <div class="content_index">
         <div class="container">
             <div class="categories">
@@ -392,7 +393,8 @@
             </div>
         </div>
     </div>
+    
     </div>
-    </main>
-    {% include 'components/footer.html' %}
+</main>
+{% include 'components/footer.html' %}
 {% endblock %}

@@ -4,13 +4,17 @@
 {% include 'components/header.html' %}
 <main>
     <div class="flex-main">
-        {% include 'components/forms/form_authorization.html' %}
-        {% include 'components/forms/form_password_recovery_4.html' %}
-
-        <form class="field-default">
-            <input class="field-default__placeholder" type="search" id="search" name="search" placeholder="Placeholder">
-            <button class="field-default__placeholder__search" type="submit"></button>
-        </form>
+        {% include 'components/forms/form_signup_1.html' %}
+        {% include 'components/forms/form_signup_2.html' %}
+        {% include 'components/forms/form_signup_3.html' %}
+        {% include 'components/forms/form_signup_4_worker.html' %}
+        {% include 'components/forms/form_signup_4_employer.html' %}
+        {% include 'components/forms/form_signup_5.html' %}
+        <div>
+            <input type="text" class="input" placeholder="place">
+            <input type="text" class="input" placeholder="place">
+            <input type="text" class="input input-error" placeholder="place">
+        </div>
         <div style="background-color: white">
             <button class="btn-primary-large">Button</button>
             <button class="btn-secondary-large">Button</button>

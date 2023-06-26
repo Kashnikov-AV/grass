@@ -1,11 +1,57 @@
 %input
-    width: 382px
     height: 54px
     border-radius: 14px
-
-.field-empty
-    border: 1px solid #D4DCDE
-    background: $White
+    padding: 0px 10px 0px 20px
+    border: 1px solid $Neutral-250
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 22px
+    outline: none
+    box-sizing: border-box
+    
+.input
     @extend %input
-    display: flex
-    align-items: center
+    &::placeholder
+        color: $Neutral-350
+    &:active, &:focus
+        border: 1px solid $Green-Default
+
+.input-error
+    border: 1px solid $Red-Default
+    &:active, &:focus
+        border: 1px solid $Red-Active
+
+.input-pass
+    @extend %input
+    &::placeholder
+        color: $Neutral-350
+    &:active, &:focus
+        border: 1px solid $Green-Default
+    // FIX ME
+    &__eye-container
+        position: absolute
+        right: 1rem
+        top: 1rem
+    &__eye-image
+        height: 1 rem
+
+
+.inputs
+    margin-bottom: 24px
+
+.field
+    margin-bottom: 12px
+    label
+        @include Text_Small_Regular
+        padding-bottom: 8px
+        display: block
+    .error-message
+        padding-top: 8px
+        @include Text_Small_Regular
+        color: $Red-Default
+
+
+
+    

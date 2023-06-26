@@ -1,17 +1,24 @@
 {% load static %}
-<form>
-    <div class="form_signup">
-        <div class="form_block_number_title">
-            <p>Создание аккаунта</p>
-        </div>
-        <div class="form_block_number_inputs">
-            <p>Введите код из письма</p>
-            <input class="input_item" type="number" id="number" name="number" placeholder="4 цифры">
-            <a href="/">Отправить снова</a>
+{% load widget_tweaks %}
+<div class="box form-block">
+    <h2 class="title-1">Создание аккаунта</h2>
+    <form action="">
+        <div class="inputs">
+            <div class="field">
+                <!-- FIX ME -->
+                <label for="">Придумайте пароль<br>(минимум 6 латинских букв и 2 цифры)</label>
+                <input class="input-pass" type="password" id="" name="" placeholder="Пароль">
+                <span class="error-message"></span>
+            </div>
+            <div class="field">
+                <!-- FIX ME -->
+                <input class="input-pass" type="password" id="" name="" placeholder="Повторите пароль">
+                <span class="error-message"></span>
+            </div>
         </div>
         <div class="buttons">
-            <button class="button_1" formaction="">Продолжить</button>
-            <button class="button_2" formaction="">Назад</button>
+            <button class="btn-primary-large">Продолжить</button>
+            <a href="#" class="btn-secondary-large">Назад</a>
         </div>
-    </div>
-</form>
+    </form>
+</div>

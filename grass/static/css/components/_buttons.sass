@@ -1,20 +1,35 @@
 %button-large
-    width: 114px
     height: 54px
+    padding-right: 32px
+    padding-left: 32px
     border-radius: 14px
+    border: none
     @include Button-Bold
+    display: flex
+    align-items: center
+    justify-content: center
 
 %button-medium
-    width: 114px
     height: 42px
+    padding-right: 32px
+    padding-left: 32px
     border-radius: 14px
+    border: none
     @include Button-Bold
+    display: flex
+    align-items: center
+    justify-content: center
 
 %button-small
-    width: 114px
     height: 32px
+    padding-right: 32px
+    padding-left: 32px
     border-radius: 14px
+    border: none
     @include Button-Bold
+    display: flex
+    align-items: center
+    justify-content: center
 
 .btn-primary-large
     @extend %button-large
@@ -153,4 +168,5 @@
         color: $Red-Active
         background-color: $Neutral-50
     
-
+.btn-fluid
+    width: 100%

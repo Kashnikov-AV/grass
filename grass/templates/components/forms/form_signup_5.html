@@ -1,29 +1,15 @@
 {% load static %}
-<form>
-    <div class="form_signup">
-        <div class="form_block_number_title">
-            <p>Создание аккаунта</p>
-        </div>
-        <div class="form_block_number_inputs">
-            <input class="input_item" type="text" id="text" name="text" placeholder="Имя">
-            <input class="input_item" type="number" id="number" name="number" placeholder="Фамилия">
-            <p>Введите дату рождения</p>
-            <input class="input_item" type="number" id="number" name="number" placeholder="ДД.ММ.ГГГГ">
-            <p>Выберите пол</p>
-            <div class="sex">
-                <div class="button">
-                    <input type="radio" name="check-substitution-2" checked/>
-                    <label class="btn btn-default">Ищу работу</label>
-                  </div>
-                  <div class="button">
-                    <input type="radio" name="check-substitution-2" />
-                    <label class="btn btn-default">Ищу сотрудников</label>
-                  </div>
-                </div>
-        </div>
-        <div class="form_register_end_buttons">
-            <button class="button_1" formaction="">Завершить регистрацию</button>
-            <button class="button_2" formaction="">Назад</button>
-        </div>
+{% load widget_tweaks %}
+<div class="box form-block">
+    <h2 class="title-1 activate-form__title">Активируйте аккаунт</h2>
+    <div class="activate-form">
+        <p class="activate-form__subtittle-1">В течение 2 минут на вашу почту придёт письмо с ссылкой для завершения регистрации.</p>
+        <p class="activate-form__subtittle-2">Если не пришло, нажмите кнопку ниже</p>
+        <img class="activate-form__image" src="{% static 'img/activate-account.svg' %}">
     </div>
-</form>
+    <form action="">
+        <div class="buttons">
+            <button class="btn-primary-large btn-fluid">Отправить повторно</button>
+        </div>
+    </form>
+</div>
