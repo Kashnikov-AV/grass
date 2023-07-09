@@ -1,0 +1,21 @@
+{% extends "signup_app/signup.html" %}
+{% load widget_tweaks %}
+
+{% block form_wizard %}
+<div class="field">
+    <label>Для чего вы создаете аккаунт?</label>
+    <div class="radio-select">
+        {% for radio in form.role %}
+        <div class="radio">
+            {% render_field radio.tag %}
+            <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
+        </div>
+        {% endfor %} 
+    </div>
+</div>
+{% endblock %}
+
+{% block button_wizard %}
+    <button class="btn-primary-large" name="wizard_goto_step" type="submit" value="{{ wizard.steps.next }}">Продолжить</button>
+    <a href="{% url 'login' %}" class="btn-secondary-large">Войти в аккаунт</a>
+{% endblock %}

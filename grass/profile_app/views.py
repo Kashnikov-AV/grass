@@ -29,7 +29,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
         return context
 
-    #правильное склонение лет год года
+    # правильное склонение лет год года
     def right_end(self, data: int) -> str:
         if data % 10 == 1:
             return "год"
@@ -42,7 +42,7 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
 
 
 class ProfileCompanyDetailView(LoginRequiredMixin, DetailView):
-    template_name = 'profile_app/company_profile.html'
+    template_name = 'profile_app/company-profile.html'
     model = Company
 
     def get_context_data(self, *args, **kwargs):
@@ -61,6 +61,7 @@ class ProfileCompanyUpdateView(LoginRequiredMixin, UpdateView):
 class CompanyListView(LoginRequiredMixin, ListView):
     template_name = 'profile_app/companies.html'
     model = Company
+
 
 class ProfileListView(LoginRequiredMixin, ListView):
     template_name = 'profile_app/profiles.html'

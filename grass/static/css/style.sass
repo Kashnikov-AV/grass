@@ -8,6 +8,10 @@
 @import 'components/_search'
 @import 'components/_buttons'
 @import 'components/_inputs'
+@import 'components/_modal'
+
+.is-fluid
+    width: 100%
 
 .box
     box-sizing: border-box
@@ -31,6 +35,140 @@
     flex-direction: column
     min-height: 100vh
 
+.container-grid
+    margin: 0 auto
+    display: grid
+    column-gap: 16px
+    row-gap: 48px
+    max-width: 1280px
+    // height: 1000px
+    grid-template-columns: 2fr 1fr
+    grid-template-rows: auto 1fr
+    // grid-auto-rows: 1fr
+
+.profile-data
+    // background-color: red
+    grid-row: span 2
+    // grid-column: auto
+
+.main-inf
+    .link-green-large
+        margin-left: 16px
+        display: inline-block
+    display: flex
+    flex: 1 auto 1
+    justify-content: space-between
+    align-items: center
+    align-content: stretch
+    gap: 24px
+    min-height: 124px
+    &__avatar
+        width: 100px
+        height: 100px
+    &__bio
+        flex-grow: 1
+        &-title
+            @include h2_Bold
+            margin-bottom: 8px
+        &-job
+            @include h3_Medium
+            margin-bottom: 16px
+        &-text
+            @include Text_Large_Medium
+            color: $Neutral-500
+            margin-bottom: 4px
+    &__salary
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-self: stretch
+        &-text       
+            @include h4_Medium
+            color: $Neutral-500
+        &-text_bold
+            @include h4_Bold
+            color: $Neutral-500
+
+.other-inf
+    display: flex
+    flex-direction: column
+    gap: 48px
+    .link-green-large
+        margin-left: 16px
+        display: inline-block
+    &__item
+        &-title
+            @include h3_Bold
+            margin-bottom: 24px
+        &-promt
+            @include Text_Small_Regular
+            
+.contact-data
+    // background-color: yellow
+    // grid-column: auto
+    &__title
+        @include h2_Bold
+        margin-bottom: 32px
+    &__subtitle
+        @include h4_Medium
+        color: $Neutral-500
+        margin-bottom: 8px
+    &__text
+        display: block
+        @include Text_Large_Medium
+        color: $Neutral-900
+        margin-bottom: 24px
+
+.separation-line
+    height: 1px
+    width: 100%
+    background: $Neutral-150
+    // border: none
+    margin: 32px 0
+
+.vacancies-list
+    grid-column-start: 2
+    // background-color: green
+    &__title
+        @include h2_Bold
+        color: $Neutral-500
+        margin-bottom: 24px
+        margin-left: 24px
+    // grid-column: auto
+
+.v-card
+    padding: 24px
+    &__header
+        display: flex
+        align-items: center
+        gap: 8px
+        margin-bottom: 9px
+        flex: 1 1 auto 1
+        &-vacancy-name
+            @include h3_Bold
+        &-dot
+            width: 6px
+            height: 6px
+            background-color: $Neutral-500
+            border-radius: 50%
+            display: inline-block
+        &-company-name
+            @include h4_Medium
+            color: $Neutral-500
+            flex-grow: 1
+            
+        &-create-date
+            @include Text_Small_Medium
+    &__salary
+        margin-bottom: 24px
+        @include h4_Medium
+        color: $Neutral-500
+
+#profile-vacancies
+    display: flex
+    flex-direction: column
+    gap: 12px   
+
 main
     padding-top: 28px
     padding-bottom: 100px
@@ -45,9 +183,7 @@ main
 .flex-main
     display: flex
     flex-direction: column
-    align-content: center
     align-items: center
-    padding-top: 62px
 
 .h1-bold
     font-family: 'Gilroy'
@@ -100,12 +236,24 @@ a
     @include h1_Bold
     margin-bottom: 32px
 
-.link-green
+.link-green-small
     @include Link_Link_Small
+    cursor: pointer
+
+.link-green-large
+    @include Link_Link_Large
+    cursor: pointer
+    
 
 .form-subtitle
     @include Text_Small_Regular
     margin-top: 16px
+
+.form-login__text
+
+    @include Text_Small_Regular
+    margin-top: 24px
+    text-align: center
 
 .title_no_margin
     font-family: 'Gilroy'
@@ -126,11 +274,11 @@ a
     width: 400px
     margin: -7px 0 11px 0
 
-.logos
+.form-login__logos
     display: flex
     justify-content: center
-    gap: 30px
-    width: 400px
+    gap: 16px
+    margin-top: 16px
     height: 46px
 
 /* Регистрация */
@@ -364,37 +512,14 @@ a
     width: 400px
 
 .separation
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 20px
-    display: flex
-    align-items: center
+    @include Text_Small_Regular
     color: $Neutral-500
+    margin-top: 24px
 
 .separation div
     width: 176px
     height: 1px
     background: #D4DCDE
-
-.other_ways
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 20px
-    text-align: center
-    color: $Neutral-900
-    width: 400px
-    margin: -7px 0 11px 0
-
-.logos
-    display: flex
-    justify-content: center
-    gap: 30px
-    width: 400px
-    height: 46px
 
 .form_block_number
     display: flex
@@ -487,6 +612,11 @@ a
     line-height: 20px
     color: #6A6E70
     margin-top: -30px
+
+.coming-soon
+    margin-top: 36px
+    text-align: center
+    padding: 36px 24px
 
 .subtext
     margin-top: -50px
@@ -606,6 +736,74 @@ input
         @include large_text
     &__image
         margin: 32px 0 32px 0
+
+.modal
+    &__inputs
+        display: flex
+        gap: 16px
+        width: 100%
+        margin-top: 8px
+
+    &-information
+        margin-bottom: 32px
+
+        &__bio-and-photo
+            display: flex
+            gap: 32px
+            align-items: center
+            &-avatar
+                width: 100px
+                heigth: 100px
+                align-self: start
+            &-salary
+                width: 192px
+
+    &-subtitle
+        @include Text_Large_Medium
+        color: $Neutral-500
+        &__space
+            margin-bottom: 8px
+    &-buttons
+        display: flex
+        flex-direction: row
+        width: 576px
+    &-buttons-confirm
+        display: flex
+        flex-direction: row
+        width: 512px
+        // margin-top: 32px
+    &-pt
+        margin-top: -10px
+    &-block
+        width: 848px
+        min-height: 3rem
+        position: relative
+        display: block
+        z-index: 2
+        &-contact
+            width: 448px
+            position: relative
+            display: block
+        &-confirm
+            width: 560px
+            position: relative
+            display: block
+            z-index: 200
+            &__title
+                @include h2_Bold
+                margin-bottom: 16px
+    &-close
+        @include h2_Medium
+        width: 24px
+        height: 24px
+        position: absolute
+        top: 18px
+        right: 18px
+        cursor: pointer
+        &:before
+            content: "✖"
+            color: $Neutral-500            
+
 
 .main
     height: 393px
@@ -986,7 +1184,28 @@ input
         width: 22px
         height: 22px
 
+@media (max-width: 1280px)
+    .profile-data
+        margin-left: 16px
+
+    .contact-data
+        margin-right: 16px
+
+    .vacancies-list
+        margin-right: 16px
+
+
 @media (max-width: 768px)
+    .container-grid
+        grid-template-columns: 1fr
+        padding: 0 16px
+
+    .contact-data, .profile-data, .vacancies-list
+        grid-column: auto
+        grid-row: auto
+        margin: 0
+    
+
     .box
         padding: 36px 16px 36px 16px
 

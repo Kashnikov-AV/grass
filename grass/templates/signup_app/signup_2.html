@@ -1,0 +1,19 @@
+{% extends "signup_app/signup.html" %}
+{% load widget_tweaks %}
+
+{% block form_wizard %}
+<div class="field">
+    <label for="">На данную почту придёт письмо с кодом подтверждения</label>
+    {% render_field form.email class="input" placeholder="Электронная почта" %}
+    <span class="error-message">
+        {% for error in form.email.errors %}
+            {{ error|escape }}
+        {% endfor %}
+    </span>
+</div>
+{% endblock %}
+
+{% block button_wizard %}
+<button class="btn-primary-large" type="submit" value="submit">Получить код</button>
+<button class="btn-secondary-large" name="wizard_goto_step" value="{{ wizard.steps.prev }}" formnovalidate>Назад</button>
+{% endblock %}

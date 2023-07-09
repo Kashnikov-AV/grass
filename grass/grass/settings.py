@@ -30,7 +30,7 @@ SECRET_KEY="6yki$9uz-i+2ax6mq)5o#y=p97behim4_)#fyl8_vo(_yyp%!@"
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'kashnikov1.pythonanywhere.com',
+    'grass.pythonanywhere.com',
     '127.0.0.1:8000',
     '127.0.0.1',
 ]

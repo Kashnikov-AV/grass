@@ -1,11 +1,75 @@
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% block content %}
-    {% include 'components/header.html' %}
-    <main>
-        <div class="flex-main">
-            {% include 'components/profile/main.html' %}
+{% include 'components/header.html' %}
+<main>
+    <!-- <div class="flex-main"> -->
+    <div x-data="{'isModalOpen': false}" x-show="isModalOpen" x-cloak x-transition
+        x-on:get-modal-contact.window="isModalOpen=true" class="modal">
+        <div class="overlay"></div>
+        {% include 'profile_app/modal-contact-information.html' %}
+    </div>
+
+    <div class="container-grid">
+        <div class="profile-data">
+            <div class="box">
+                <div class="main-inf">
+                    <div class="main-inf__avatar">
+                        <img src="{% static 'img/avatar-user-empty.svg' %}" alt="avatar user empty">
+                    </div>
+                    <div class="main-inf__bio">
+                        <h2 class="main-inf__bio-title">Иванов Иван Макарович</h2>
+                        <p class="main-inf__bio-job">Должность - Компания</p>
+                        <p class="main-inf__bio-text">19 лет мужчина</p>
+                        <p class="main-inf__bio-text">Город не указан<span class="link-green-large">Изменить</span></p>
+                    </div>
+                    <div class="main-inf__salary">
+                        <p class="main-inf__salary-text">Желаемая З/П - <span class="main-inf__salary-text_bold">60 000 ₽</span></p>
+                        <button class="btn-primary-medium">Написать</button>
+                    </div>
+                </div>
+                <div class="separation-line"></div>
+                <div class="other-inf">
+                    <div class="other-inf__item">
+                        <div class="other-inf__item-title">О себе<span class="link-green-large">Изменить</span></div>
+                        <p class="other-inf__item-promt">Напишите краткую информацию о себе, своих навыках и интересах.</p>
+                    </div>
+                    <div class="other-inf__item">
+                        <div class="other-inf__item-title">Образование<span class="link-green-large">Изменить</span>
+                        </div>
+                        <p class="other-inf__item-promt">Добавьте учебное заведение в котором вы обучались или обучаетесь на данный момент</p>
+                    </div>
+                    <div class="other-inf__item">
+                        <div class="other-inf__item-title">Опыт работы<span class="link-green-large">Изменить</span>
+                        </div>
+                        <p class="other-inf__item-promt">Добавьте информацию про свой опыт работы.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
-    {% include 'components/footer.html' %}
+        <div class="contact-data">
+            <div class="box">
+                <h2 class="contact-data__title">Контакные данные</h2>
+                <p class="contact-data__subtitle">Сайт</p>
+                <a href="#" class="contact-data__text link-green-large">ivan.ru</a>
+                <p class="contact-data__subtitle">Телефон</p>
+                <p class="contact-data__text">+7 (906) 045-89-78</p>
+                <p class="contact-data__subtitle">Эл. почта</p>
+                <p class="contact-data__text">ivan@mail.ru</p>
+                <p x-data x-on:click="$dispatch('get-modal-contact')" class="link-green-large">Изменить</p>
+            </div>
+        </div>
+        <div class="vacancies-list">
+            <h2 class="vacancies-list__title">Рекомендованные вакансии</h2>
+            <div id="profile-vacancies">
+                {% include 'profile_app/vacancy-card.html' %}
+                {% include 'profile_app/vacancy-card.html' %}
+            </div>
+        </div>
+    </div>
+    <!-- {% include 'components/profile/main.html' %} -->
+    <!-- </div> -->
+</main>
+{% include 'components/footer.html' %}
 {% endblock %}
