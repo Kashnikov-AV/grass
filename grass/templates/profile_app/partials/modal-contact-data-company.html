@@ -1,0 +1,18 @@
+{% extends 'modal-contact-data.html' %}
+{% load widget_tweaks %}
+
+{% block form %}
+    <form hx-post="{% url 'hx-update' user.pk 'Company' 'CompanyContactDataForm' %}">{% csrf_token %}
+{% endblock %}
+
+{% block site %}
+
+{% endblock %}
+
+{% block email %}
+
+{% endblock %}
+
+{% block phone %}
+
+{% endblock %}

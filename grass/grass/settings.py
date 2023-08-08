@@ -12,28 +12,30 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv, find_dotenv
+import environ
 
-load_dotenv(find_dotenv())
+#set default env
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY="6yki$9uz-i+2ax6mq)5o#y=p97behim4_)#fyl8_vo(_yyp%!@"
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = [
-    'grass.pythonanywhere.com',
-    '127.0.0.1:8000',
-    '127.0.0.1',
-]
+ALLOWED_HOSTS = list(env('ALLOWED_HOSTS'))
 
 # Application definition
 INSTALLED_APPS = [
@@ -43,11 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.humanize',
+    'django_htmx',
 
     'phonenumber_field',
     'widget_tweaks',
     'django_extensions',
     'formtools',
+    'sorl.thumbnail',
 
     'users_app',
     'home_app',
@@ -67,6 +72,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django_htmx.middleware.HtmxMiddleware',
 ]
 
 ROOT_URLCONF = 'grass.urls'

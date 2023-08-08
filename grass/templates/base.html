@@ -1,3 +1,4 @@
+{% load django_htmx %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="ru">
@@ -9,13 +10,22 @@
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="{% static 'js/alpine-mask.js' %}"></script>
+    <script defer src="{% static 'js/alpine.js' %}"></script>
+    <script defer src="{% static 'js/htmx.min.js' %}"></script>
+    <script defer src="{% static 'js/multi-swap.js' %}"></script>
+<!--    <script defer src="https://unpkg.com/htmx.org/dist/ext/multi-swap.js"></script>-->
 </head>
-<body>
+<body hx-ext="multi-swap">
     <div class="flex-container">
         {% block content %}
         {% endblock %}
     </div>
+    {% django_htmx_script %}
+    <script>
+    document.body.addEventListener('htmx:configRequest', (event) => {
+        event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+    })
+    </script>
 </body>
 </html>

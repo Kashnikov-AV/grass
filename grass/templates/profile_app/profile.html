@@ -1,49 +1,152 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
 {% load widget_tweaks %}
+{% load thumbnail %}
+
 {% block content %}
 {% include 'components/header.html' %}
 <main>
-    <!-- <div class="flex-main"> -->
-    <div x-data="{'isModalOpen': false}" x-show="isModalOpen" x-cloak x-transition
-        x-on:get-modal-contact.window="isModalOpen=true" class="modal">
+    <!-- modals -->
+    <div x-data="{'isModalOpen': false, modalName: ''}" x-show="isModalOpen" x-cloak x-transition
+        x-on:get-modal-contact.window="isModalOpen=true; modalName=$event.detail.modalName; console.log(modalName);"
+        class="modal">
         <div class="overlay"></div>
-        {% include 'profile_app/modal-contact-information.html' %}
+        <template x-if="modalName=='modal-window' ">
+            <div id="modal-1"></div>
+        </template>
     </div>
-
     <div class="container-grid">
         <div class="profile-data">
             <div class="box">
                 <div class="main-inf">
                     <div class="main-inf__avatar">
-                        <img src="{% static 'img/avatar-user-empty.svg' %}" alt="avatar user empty">
+                        {% if profile.photo %}
+                            {% thumbnail profile.photo "100x100" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="main-inf__avatar-img" alt="avatar user">
+                            {% endthumbnail %}
+                        {% else %}    
+                            <img src="{% static 'img/avatar-user-empty.svg' %}" alt="avatar user empty">
+                        {% endif %}
                     </div>
                     <div class="main-inf__bio">
-                        <h2 class="main-inf__bio-title">Иванов Иван Макарович</h2>
-                        <p class="main-inf__bio-job">Должность - Компания</p>
-                        <p class="main-inf__bio-text">19 лет мужчина</p>
-                        <p class="main-inf__bio-text">Город не указан<span class="link-green-large">Изменить</span></p>
+                        <h2 class="main-inf__bio-title">{{ profile.name }} {{ profile.surname }} {{ profile.patronymic }}</h2>
+                        <p class="main-inf__bio-job">
+                            {% if profile.career_objective %}
+                            Желаемая должность: {{ profile.career_objective }}
+                            {% else %}
+                            Должность - Компания
+                            {% endif %}
+                        </p>
+                        <p class="main-inf__bio-text">{% if age %}{{ age }} {{ end_age }}{% endif %} {% if profile.gender is not None %}{{ profile.get_gender_display }}{% endif %}</p>
+                        <p class="main-inf__bio-text">
+                            {% if profile.city %}
+                            {{ profile.city }}
+                            {% else %}
+                            Город не указан
+                            {% endif %}
+                            {% if profile.relocate is not None %}
+                            , {{ profile.get_relocate_display }} к переезду
+                            {% endif %}
+                            {% if profile.pk == user.pk %}
+                            <span class="link-green-large"
+                            hx-get="{% url 'hx-update' user.pk 'Profile' 'ProfileMainInfoForm' %}"
+                            hx-target="#modal-1"
+                                hx-swap="innerHTML" 
+                                hx-trigger="click" 
+                                class="link-green-large" 
+                                x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })">Изменить</span>
+                            {% endif %}
+                        </p>
                     </div>
                     <div class="main-inf__salary">
-                        <p class="main-inf__salary-text">Желаемая З/П - <span class="main-inf__salary-text_bold">60 000 ₽</span></p>
-                        <button class="btn-primary-medium">Написать</button>
+                        {% if profile.desired_salary %}
+                        <p class="main-inf__salary-text">Желаемая З/П: <span class="main-inf__salary-text_bold">{{ profile.desired_salary|intcomma }} ₽</span></p>
+                        {% endif %}
+                        {% if profile.pk != user.pk %}
+                        <button class="btn-primary-medium btn-fluid">Написать</button>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="separation-line"></div>
                 <div class="other-inf">
                     <div class="other-inf__item">
-                        <div class="other-inf__item-title">О себе<span class="link-green-large">Изменить</span></div>
-                        <p class="other-inf__item-promt">Напишите краткую информацию о себе, своих навыках и интересах.</p>
+                        <div class="other-inf__item-title">О себе
+                            {% if profile.pk == user.pk %}
+                            <span hx-get="{% url 'hx-update' user.pk 'Profile' 'ProfileAboutMeForm' %}"
+                            hx-target="#modal-1"
+                                hx-swap="innerHTML" 
+                                hx-trigger="click" 
+                                class="link-green-large" 
+                                x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })">Изменить
+                            </span>
+                            {% endif %}
+                        </div>
+                        <p class="other-inf__item-promt">
+                            {% if profile.about_me %}
+                                {{ profile.about_me}}
+                            {% else %}
+                                {% if profile.pk == user.pk %}
+                                    Напишите краткую информацию о себе, своих навыках и интересах.
+                                {% else %}
+                                    Информация о себе отсутствует.
+                                {% endif %}
+                            {% endif %}
+                        </p>
                     </div>
                     <div class="other-inf__item">
-                        <div class="other-inf__item-title">Образование<span class="link-green-large">Изменить</span>
+                        <div class="other-inf__item-title">
+                            Образование
+                            {% if profile.pk == user.pk %}
+                            <span hx-get="{% url 'profile-education' user.pk %}" hx-target="#modal-1"
+                                hx-swap="innerHTML" hx-trigger="click" x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
+                                class="link-green-large">
+                                Изменить
+                            </span>
+                            {% endif %}
                         </div>
-                        <p class="other-inf__item-promt">Добавьте учебное заведение в котором вы обучались или обучаетесь на данный момент</p>
+                        <div class="other-inf__flex-entity" id="p-edu">
+                            {% for edu in educations %}
+                            <div class="entity-card">
+                                <div class="entity-card__head">
+                                    <p class="item-1 entity-card__title">{{ edu.edu_institution }}</p>
+                                    <p class="item-2 entity-card__subtitle">{{ edu.get_level_of_education_display }}</p>
+                                    <p class="item-3 entity-card__text">{{ edu.speciality }}</p>
+                                    <p class="item-4 entity-card__text">{{ edu.year_of_start_edu.year }} - {{ edu.year_of_end_edu.year }}г.</p>
+                                </div>
+                                {% if edu.diploma_certificate %}
+                                <a href="{{ edu.diploma_certificate.url }}" target="_blank"
+                                    class="entity-card__file-link">Диплом или сертификат</a>
+                                {% endif %}
+                            </div>
+                            {% empty %}
+                            {% if profile.pk == user.pk %}
+                            <p class="other-inf__item-promt">Добавьте учебное заведение в котором вы обучались или
+                                обучаетесь на данный момент</p>
+                            {% else %}
+                            <p class="other-inf__item-promt">Информация об образовании отсутствует.</p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
                     </div>
                     <div class="other-inf__item">
-                        <div class="other-inf__item-title">Опыт работы<span class="link-green-large">Изменить</span>
+                        <div class="other-inf__item-title">
+                            Опыт работы
+                            {% if profile.pk == user.pk %}
+                            <span x-data x-on:click="$dispatch('get-modal-contact', { modalName: 'exp-job' })"
+                                class="link-green-large">
+                                Изменить
+                            </span>
+                            {% endif %}
                         </div>
+                        {% if profile.pk == user.pk %}
                         <p class="other-inf__item-promt">Добавьте информацию про свой опыт работы.</p>
+                        {% else %}
+                            <p class="other-inf__item-promt">Информация об опыте раобты отсутствует.</p>
+                            {% endif %}
                     </div>
                 </div>
             </div>
@@ -52,12 +155,40 @@
             <div class="box">
                 <h2 class="contact-data__title">Контакные данные</h2>
                 <p class="contact-data__subtitle">Сайт</p>
-                <a href="#" class="contact-data__text link-green-large">ivan.ru</a>
+                <a href="
+                {% if profile.site %}
+                {{ profile.get_site_url }}
+                {% else %}
+                #
+                {% endif %}" class="contact-data__text link-green-large" target="_blank">
+                    {% if profile.site %}
+                    {{ profile.site }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </a>
                 <p class="contact-data__subtitle">Телефон</p>
-                <p class="contact-data__text">+7 (906) 045-89-78</p>
+                <p class="contact-data__text">
+                    {% if profile.phone %}
+                    {{ profile.phone }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </p>
                 <p class="contact-data__subtitle">Эл. почта</p>
-                <p class="contact-data__text">ivan@mail.ru</p>
-                <p x-data x-on:click="$dispatch('get-modal-contact')" class="link-green-large">Изменить</p>
+                <p class="contact-data__text">
+                    {% if profile.email %}
+                    {{ profile.email }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </p>
+                {% if profile.pk == user.pk %}
+                <p hx-get="{% url 'hx-update' user.pk 'Profile' 'ProfileContactDataForm' %}" hx-target="#modal-1"
+                    hx-swap="innerHTML" hx-trigger="click" x-data
+                    x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })" class="link-green-large">
+                    Изменить</p>
+                {% endif %}
             </div>
         </div>
         <div class="vacancies-list">
@@ -68,7 +199,6 @@
             </div>
         </div>
     </div>
-    <!-- {% include 'components/profile/main.html' %} -->
     <!-- </div> -->
 </main>
 {% include 'components/footer.html' %}

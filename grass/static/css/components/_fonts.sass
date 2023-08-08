@@ -101,6 +101,10 @@
     font-size: 14px
     line-height: 18px
     color: $Green-Default
+    &:hover
+        color: $Green-Hover
+    &:active
+        color: $Green-Active
 
 @mixin h4_Bold
     font-family: 'Gilroy'
@@ -141,6 +145,10 @@
     font-size: 16px
     line-height: 20px
     color: $Green-Default
+    &:hover
+        color: $Green-Hover
+    &:active
+        color: $Green-Active
 
 @mixin h3_Bold
     font-family: 'Gilroy'
@@ -158,3 +166,30 @@
     line-height: 29px
     text-align: center
     color: $Neutral-500
+
+@mixin file-link
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    color: $Neutral-500
+    text-decoration: underline
+    &:hover
+        color: $Neutral-900
+    &:active
+        color: $Neutral-350
+
+@mixin link-red
+    font-family: 'Gilroy'
+    font-style: normal
+    font-weight: 500
+    font-size: 16px
+    line-height: 20px
+    color: $Red-Default
+    &:hover
+        color: $Red-Hover
+    &:active
+        color: $Red-Active
+
+    

@@ -51,6 +51,11 @@
     grid-row: span 2
     // grid-column: auto
 
+#education-list
+    display: flex
+    flex-direction: column
+    gap: 20px
+
 .main-inf
     .link-green-large
         margin-left: 16px
@@ -63,8 +68,10 @@
     gap: 24px
     min-height: 124px
     &__avatar
-        width: 100px
-        height: 100px
+        &-img
+            width: 100px
+            height: 100px
+            border-radius: 50%  
     &__bio
         flex-grow: 1
         &-title
@@ -80,14 +87,98 @@
     &__salary
         display: flex
         flex-direction: column
-        justify-content: space-between
+        justify-content: flex-end
         align-self: stretch
+        width: 195px
         &-text       
             @include h4_Medium
             color: $Neutral-500
+            flex: 1
+            margin-top: 7px
         &-text_bold
             @include h4_Bold
             color: $Neutral-500
+
+.entity-card
+    min-width: 600px
+    padding: 24px 32px
+    background-color: $Neutral-50
+    border-radius: 14px
+    &__head
+        display: flex
+        margin-bottom: 16px
+        flex-wrap: wrap
+        .item-1
+            order: 1
+            flex: 50%
+        .item-2
+            order: 2
+            flex: 50%
+        .item-3
+            order: 3
+            flex: 50%
+        .item-4
+            order: 4
+            flex: 50%
+        &-item
+            display: flex
+            flex-direction: column
+            flex: 50%
+            gap: 4px
+        &:last-child
+            margin-bottom: 0px
+    &__title
+        @include h4_Bold
+    &__subtitle
+        @include Text_Small_Medium
+        color: $Neutral-900
+    &__text
+        @include Text_Small_Regular
+        color: $Neutral-500
+    &__file-link
+        margin-top: 16px
+        @include file-link
+    &__buttons
+        margin-top: 24px
+        display: flex
+        align-items: center
+        flex: 1 auto 1
+        gap: 16px
+        &-item
+            display: flex
+            align-items: center
+            cursor: pointer
+            &:nth-child(1)
+                fill: $Green-Default
+                color: $Green-Default
+                &:hover
+                    fill: $Green-Hover
+                    color: $Green-Hover
+                &:active
+                    fill: $Green-Active
+                    color: $Green-Active
+            &:nth-child(2)
+                fill: $Red-Default
+                color: $Red-Default
+                &:hover
+                    fill: $Red-Hover
+                    color: $Red-Hover
+                &:active
+                    fill: $Red-Active
+                    color: $Red-Active
+        &-link
+            font-family: 'Gilroy'
+            font-style: normal
+            font-weight: 500
+            font-size: 16px
+            line-height: 20px
+
+
+
+        
+        
+        
+        
 
 .other-inf
     display: flex
@@ -102,10 +193,15 @@
             margin-bottom: 24px
         &-promt
             @include Text_Small_Regular
+    &__flex-entity
+        display: flex
+        flex-direction: column
+        gap: 20px
             
 .contact-data
     // background-color: yellow
     // grid-column: auto
+
     &__title
         @include h2_Bold
         margin-bottom: 32px
@@ -118,6 +214,8 @@
         @include Text_Large_Medium
         color: $Neutral-900
         margin-bottom: 24px
+        &:last-child
+            margin-bottom: 0px
 
 .separation-line
     height: 1px
@@ -742,9 +840,12 @@ input
         display: flex
         gap: 16px
         width: 100%
-        margin-top: 8px
+        // margin-top: 8px
 
     &-information
+        display: flex
+        flex-direction: column
+        gap: 8px
         margin-bottom: 32px
 
         &__bio-and-photo
@@ -755,6 +856,10 @@ input
                 width: 100px
                 heigth: 100px
                 align-self: start
+                &-img
+                    width: 100px
+                    height: 100px
+                    border-radius: 50% 
             &-salary
                 width: 192px
 
@@ -1184,6 +1289,12 @@ input
         width: 22px
         height: 22px
 
+.mb-20
+    margin-bottom: 20px 
+
+.mt-32
+    margin-top: 32px
+
 @media (max-width: 1280px)
     .profile-data
         margin-left: 16px
@@ -1196,6 +1307,17 @@ input
 
 
 @media (max-width: 768px)
+    .entity-card
+        min-width: 10px
+        padding: 32px 16px
+        &__head
+            flex-direction: column
+            gap: 4px
+            .item-2
+                margin-bottom: 16px
+        &__file-link
+            margin-top: 20px
+
     .container-grid
         grid-template-columns: 1fr
         padding: 0 16px

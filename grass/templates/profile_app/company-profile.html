@@ -1,11 +1,182 @@
 {% extends "base.html" %}
 {% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% load thumbnail %}
+
 {% block content %}
 {% include 'components/header.html' %}
 <main>
-    <div class="flex-main">
-        {% include 'components/profile/company_profile.html' %}
+    <!-- modals -->
+    <div x-data="{'isModalOpen': false, modalName: ''}" x-show="isModalOpen" x-cloak x-transition
+        x-on:get-modal-contact.window="isModalOpen=true; modalName=$event.detail.modalName; console.log(modalName);" class="modal">
+        <div class="overlay"></div>
+        <template x-if="modalName=='modal-window' ">
+            <div id="modal-1"></div>
+        </template>
     </div>
+    <div class="container-grid">
+        <div class="profile-data">
+            <div class="box">
+                <div class="main-inf">
+                    <div class="main-inf__avatar">
+                        <img src="{% static 'img/avatat-company-empty.png' %}" alt="avatar company empty">
+                    </div>
+                    <div class="main-inf__bio">
+                        <h2 class="main-inf__bio-title">{{ company.company_name }}</h2>
+                        <p class="main-inf__bio-job">
+                            {% if company.field_of_activity %}
+                            {{ company.field_of_activity }}
+                            {% else %}
+                            Сфера деятельности
+                            {% endif %}
+                        </p>
+                        <p class="main-inf__bio-text">
+                            {% if company.count_of_employees %}
+                            {{ company.count_of_employees }}+ сотрудников
+                            {% else %}
+                            Количество сотрудников
+                            {% endif %}
+                        </p>
+                        <p class="main-inf__bio-text">Регион не указан
+                            {% if company.pk == user.pk %}
+                            <span   hx-get="{% url 'hx-update' user.pk 'Company' 'CompanyMainInfoForm' %}"
+                                    hx-target="#contact-data"
+                                    hx-swap="innerHTML"
+                                    hx-trigger="click"
+                                    x-data
+                                    x-on:click="$dispatch('get-modal-contact', { modalName: 'contact-data' })"
+                                    class="link-green-large">Изменить</span>
+                            {% endif %}
+                        </p>
+                    </div>
+                    {% if company.pk != user.pk %}
+                    <div class="main-inf__salary">
+                        <button class="btn-primary-medium btn-fluid">Написать</button>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="separation-line"></div>
+                <div class="other-inf">
+                    <div class="other-inf__item">
+                        <div class="other-inf__item-title">О компании
+                            {% if company.pk == user.pk %}
+                            <span
+                                hx-get="#"
+                                hx-target="#modal-1"
+                                hx-swap="innerHTML"
+                                hx-trigger="click"
+                                class="link-green-large"
+                                x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
+                                >Изменить</span> {% endif %}
+                            </div>
+                        <p class="other-inf__item-promt">
+                            {% if company.about_company %}
+                                {{ company.about_company}}
+                            {% else %}
+                                {% if company.pk == user.pk %}
+                                    Напишите краткое описание вашей компании.
+                                {% else %}
+                                    Информация о компании отсутствует.
+                                {% endif %}
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="other-inf__item">
+                        <div class="other-inf__item-title">
+                            Вакансии
+                            {% if company.pk == user.pk %}
+                            <span
+                                    hx-get="#"
+                                    hx-target="#modal-1"
+                                    hx-swap="innerHTML"
+                                    hx-trigger="click"
+                                x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
+                                class="link-green-large">
+                                Изменить
+                            </span>
+                            {% endif %}
+                        </div>
+                            {% if vacancies %}
+                                {% for vacancy in vacancies %}
+                                <div class="entity-card">
+                                    <div class="entity-card__head">
+                                            <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
+                                            <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
+                                            <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}</p>
+                                            <p class="item-4 entity-card__text">Требуемый опыт работы: {% if vacancy.work_experience %} {{ vacancy.get_work_exp_end }}
+                                                {% else %}
+                                                не имеет значения.
+                                                {% endif %}
+                                            </p>
+                                    </div>
+                                    <div class="entity-card__buttons">
+                                        <div class="entity-card__buttons-item">
+                                            <button class="btn-primary-medium btn-entity">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                            {% if company.pk == user.pk %}
+                            <p class="other-inf__item-promt">Добавьте вакансии, чтобы найти специалистов, которые сделают вашу компанию лучше.</p>
+                                {% else %}
+                                <p class="other-inf__item-promt">Информация о вакансиях отсутствует.</p>
+                                {% endif %}
+                            {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contact-data">
+            <div class="box">
+                <h2 class="contact-data__title">Контакные данные</h2>
+                <p class="contact-data__subtitle">Сайт компании</p>
+                <a href="{% if company.site %}
+                            {{ company.get_site_url }}
+                        {% else %}
+                            #
+                        {% endif %}" 
+                        class="contact-data__text link-green-large" 
+                        target="_blank">
+                    {% if company.site %}
+                        {{ company.site }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </a>
+                <p class="contact-data__subtitle">Телефон</p>
+                <p class="contact-data__text">
+                    {% if company.phone %}
+                    {{ company.phone }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </p>
+                <p class="contact-data__subtitle">Эл. почта</p>
+                <p class="contact-data__text">
+                    {% if company.email %}
+                    {{ company.email }}
+                    {% else %}
+                    Пусто
+                    {% endif %}
+                </p>
+                {% if company.pk == user.pk %}
+                <p x-data x-on:click="$dispatch('get-modal-contact', { modalName: 'contact-data' })" class="link-green-large">Изменить</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="vacancies-list">
+            <h2 class="vacancies-list__title">Рекомендованные вакансии</h2>
+            <div id="profile-vacancies">
+                {% include 'profile_app/vacancy-card.html' %}
+                {% include 'profile_app/vacancy-card.html' %}
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
 </main>
 {% include 'components/footer.html' %}
 {% endblock %}

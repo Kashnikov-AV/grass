@@ -1,0 +1,48 @@
+{% load static %}
+<div class="box modal-block">
+    <div class="modal-close"></div>
+    <h2 class="title-1 modal-pt">Основная информация</h2>
+    <div class="modal-information">
+        <div class="modal-information__bio-and-photo">
+            <div class="modal-information__bio-and-photo-avatar">
+                <img src="{% static 'img/avatat-company-empty.png' %}" alt="avatar company empty">
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Название компании</label>
+                    <input class="input input-fluid" type="text" id="" name="" placeholder="Название компании">
+                    <span class="error-message"></span>
+                </div>
+            </div>
+        </div>
+        <div class="modal__inputs">
+            <div class="field is-fluid">
+                <label for="">Сфера деятельности</label>
+                <input class="input input-fluid" type="text" id="" name="" placeholder="Сфера деятельности">
+                <span class="error-message"></span>
+            </div>
+            <div class="field is-fluid">
+                <label for="">Количество сотрудников</label>
+                <input class="input input-fluid" type="" id="" name="" placeholder="Количество сотрудников">
+                <span class="error-message"></span>
+            </div>
+        </div>
+        <div class="modal__inputs">
+            <div class="field is-fluid">
+                <label for="">ИНН</label>
+                <input class="input input-fluid" type="int" id="" name="" placeholder="xxxxxxxxxx">
+                <span class="error-message"></span>
+            </div>
+            <div class="field is-fluid">
+                <label for="">Город</label>
+                <input class="input input-fluid" type="text" id="" name="" placeholder="адрес главного подразделения">
+                <span class="error-message"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="buttons modal-buttons">
+        <button class="btn-primary-large btn-fluid" formaction="">Сохранить изменения</button>
+        <button class="btn-secondary-large btn-fluid" formaction="">Отмена</button>
+    </div>
+</div>

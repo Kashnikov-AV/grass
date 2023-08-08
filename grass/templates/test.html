@@ -24,15 +24,15 @@
             <div class="overlay" x-show="isModalOpen" x-cloak></div>
         </div> -->
         <div>
-            {% include 'profile_app/modal-main-information.html' %}
-            {% include 'profile_app/modal-exp-job.html' %}
-            {% include 'profile_app/modal-exp-job-confirm-delete.html' %}
-            {% include 'profile_app/modal-exp-job-add.html' %}
-            {% include 'profile_app/modal-education.html' %}
-            {% include 'profile_app/modal-education-confirm-delete.html' %}
-            {% include 'profile_app/modal-education-add.html' %}
-            {% include 'profile_app/modal-about-me.html' %}
-            {% include 'profile_app/modal-contact-information.html' %}
+            {% include 'profile_app/partials/modal-main-information.html' %}
+            {% include 'profile_app/partials/modal-exp-job.html' %}
+            {% include 'profile_app/partials/modal-exp-job-confirm-delete.html' %}
+            {% include 'profile_app/partials/modal-exp-job-add.html' %}
+            {% include 'profile_app/partials/modal-education.html' %}
+            {% include 'profile_app/partials/modal-education-confirm-delete.html' %}
+            {% include 'profile_app/partials/modal-education-add.html' %}
+            {% include 'profile_app/partials/modal-about-me.html' %}
+            {% include 'profile_app/partials/modal-contact-data.html' %}
         </div>
         <div>
             <input type="text" class="input" placeholder="place">
@@ -53,7 +53,37 @@
             <button class="btn-primary-small-is-danger">Button</button>
             <button class="btn-secondary-small-is-danger">Button</button>
         </div>
-        {% include 'components/profile/main.html' %}
+        <div class="box">
+            {% include 'profile_app/entity-card.html' %}
+        </div>
+
+        <button class="btn-primary-large-is-danger"
+        hx-get="#"
+        hx-target="#target-1"
+        hx-swap="innerHTML"
+        >
+        click</button>
+        <div id="target-1"></div>
+
+        <div class="custom-select" style="width:200px;">
+            <select>
+              <option value="0">Select car:</option>
+              <option value="1">Audi</option>
+              <option value="2">BMW</option>
+              <option value="3">Citroen</option>
+              <option value="4">Ford</option>
+              <option value="5">Honda</option>
+              <option value="6">Jaguar</option>
+              <option value="7">Land Rover</option>
+              <option value="8">Mercedes</option>
+              <option value="9">Mini</option>
+              <option value="10">Nissan</option>
+              <option value="11">Toyota</option>
+              <option value="12">Volvo</option>
+            </select>
+        </div>
+
+
     </div>
 </main>
 {% include 'components/footer.html' %}

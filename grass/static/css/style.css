@@ -93,6 +93,14 @@ header {
   margin-left: 10px;
 }
 
+.location_layout p:hover {
+  color: #1D9E42;
+}
+
+.location_layout p:active {
+  color: #4FCB72;
+}
+
 .navigation {
   display: flex;
   gap: 32px;
@@ -173,11 +181,6 @@ header {
 }
 
 .navbar_item:hover svg {
-  color: #E9EDEF;
-  fill: #E9EDEF;
-}
-
-.navbar_item:hover {
   color: #E9EDEF;
   fill: #E9EDEF;
 }
@@ -1178,6 +1181,10 @@ h1, h2, h3, h4, h5, h5, p {
   width: 100%;
 }
 
+.btn-entity {
+  width: 195px;
+}
+
 .input, .input-pass {
   height: 54px;
   border-radius: 14px;
@@ -1261,6 +1268,66 @@ h1, h2, h3, h4, h5, h5, p {
   color: #ED3838;
 }
 
+/* The container must be positioned relative: */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+.select-selected .select-arrow-active:after {
+  /* Point the arrow upwards when the select box is open (active): */
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/*-------------------------------------------*/
 .modal {
   position: absolute;
   display: flex;
@@ -1331,6 +1398,12 @@ h1, h2, h3, h4, h5, h5, p {
   grid-row: span 2;
 }
 
+#education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .main-inf {
   display: flex;
   flex: 1 auto 1;
@@ -1346,9 +1419,10 @@ h1, h2, h3, h4, h5, h5, p {
   display: inline-block;
 }
 
-.main-inf__avatar {
+.main-inf__avatar-img {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
 }
 
 .main-inf__bio {
@@ -1389,8 +1463,9 @@ h1, h2, h3, h4, h5, h5, p {
 .main-inf__salary {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-self: stretch;
+  width: 195px;
 }
 
 .main-inf__salary-text {
@@ -1401,6 +1476,8 @@ h1, h2, h3, h4, h5, h5, p {
   line-height: 22px;
   color: #1F1F1F;
   color: #6A6E70;
+  flex: 1;
+  margin-top: 7px;
 }
 
 .main-inf__salary-text_bold {
@@ -1411,6 +1488,150 @@ h1, h2, h3, h4, h5, h5, p {
   line-height: 22px;
   color: #1F1F1F;
   color: #6A6E70;
+}
+
+.entity-card {
+  min-width: 600px;
+  padding: 24px 32px;
+  background-color: #F6F6F6;
+  border-radius: 14px;
+}
+
+.entity-card__head {
+  display: flex;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.entity-card__head .item-1 {
+  order: 1;
+  flex: 50%;
+}
+
+.entity-card__head .item-2 {
+  order: 2;
+  flex: 50%;
+}
+
+.entity-card__head .item-3 {
+  order: 3;
+  flex: 50%;
+}
+
+.entity-card__head .item-4 {
+  order: 4;
+  flex: 50%;
+}
+
+.entity-card__head-item {
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  gap: 4px;
+}
+
+.entity-card__head:last-child {
+  margin-bottom: 0px;
+}
+
+.entity-card__title {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.entity-card__subtitle {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #6A6E70;
+  color: #1F1F1F;
+}
+
+.entity-card__text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1F1F1F;
+  color: #6A6E70;
+}
+
+.entity-card__file-link {
+  margin-top: 16px;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #6A6E70;
+  text-decoration: underline;
+}
+
+.entity-card__file-link:hover {
+  color: #1F1F1F;
+}
+
+.entity-card__file-link:active {
+  color: #B7BEC0;
+}
+
+.entity-card__buttons {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  flex: 1 auto 1;
+  gap: 16px;
+}
+
+.entity-card__buttons-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.entity-card__buttons-item:nth-child(1) {
+  fill: #20B84B;
+  color: #20B84B;
+}
+
+.entity-card__buttons-item:nth-child(1):hover {
+  fill: #1D9E42;
+  color: #1D9E42;
+}
+
+.entity-card__buttons-item:nth-child(1):active {
+  fill: #4FCB72;
+  color: #4FCB72;
+}
+
+.entity-card__buttons-item:nth-child(2) {
+  fill: #ED3838;
+  color: #ED3838;
+}
+
+.entity-card__buttons-item:nth-child(2):hover {
+  fill: #BF1F1F;
+  color: #BF1F1F;
+}
+
+.entity-card__buttons-item:nth-child(2):active {
+  fill: #EB6565;
+  color: #EB6565;
+}
+
+.entity-card__buttons-link {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .other-inf {
@@ -1441,6 +1662,12 @@ h1, h2, h3, h4, h5, h5, p {
   font-size: 14px;
   line-height: 20px;
   color: #1F1F1F;
+}
+
+.other-inf__flex-entity {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .contact-data__title {
@@ -1474,6 +1701,10 @@ h1, h2, h3, h4, h5, h5, p {
   color: #FFFFFF;
   color: #1F1F1F;
   margin-bottom: 24px;
+}
+
+.contact-data__text:last-child {
+  margin-bottom: 0px;
 }
 
 .separation-line {
@@ -1665,6 +1896,14 @@ a {
   cursor: pointer;
 }
 
+.link-green-small:hover {
+  color: #1D9E42;
+}
+
+.link-green-small:active {
+  color: #4FCB72;
+}
+
 .link-green-large {
   font-family: 'Gilroy';
   font-style: normal;
@@ -1673,6 +1912,14 @@ a {
   line-height: 20px;
   color: #20B84B;
   cursor: pointer;
+}
+
+.link-green-large:hover {
+  color: #1D9E42;
+}
+
+.link-green-large:active {
+  color: #4FCB72;
 }
 
 .form-subtitle {
@@ -2283,10 +2530,12 @@ input {
   display: flex;
   gap: 16px;
   width: 100%;
-  margin-top: 8px;
 }
 
 .modal-information {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-bottom: 32px;
 }
 
@@ -2300,6 +2549,12 @@ input {
   width: 100px;
   heigth: 100px;
   align-self: start;
+}
+
+.modal-information__bio-and-photo-avatar-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .modal-information__bio-and-photo-salary {
@@ -2696,6 +2951,14 @@ input {
   color: #20B84B;
 }
 
+.title_index a:hover {
+  color: #1D9E42;
+}
+
+.title_index a:active {
+  color: #4FCB72;
+}
+
 .vacancies_blok {
   display: flex;
   flex-direction: row;
@@ -2933,6 +3196,14 @@ input {
   height: 22px;
 }
 
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
 @media (max-width: 1280px) {
   .profile-data {
     margin-left: 16px;
@@ -2946,6 +3217,20 @@ input {
 }
 
 @media (max-width: 768px) {
+  .entity-card {
+    min-width: 10px;
+    padding: 32px 16px;
+  }
+  .entity-card__head {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .entity-card__head .item-2 {
+    margin-bottom: 16px;
+  }
+  .entity-card__file-link {
+    margin-top: 20px;
+  }
   .container-grid {
     grid-template-columns: 1fr;
     padding: 0 16px;

@@ -1,12 +1,11 @@
 from django.contrib import admin
-
+from .models import Profile, Company, Education
 # Register your models here.
-from .models import Profile, Company
 
 
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile
-    list_display = ('user', 'name', 'surname', 'gender', 'birth_date', 'photo')
+    list_display = ('user',)
     list_filter = ('gender', 'birth_date')
 
 
@@ -15,7 +14,22 @@ admin.site.register(Profile, ProfileAdmin)
 
 class CompanyAdmin(admin.ModelAdmin):
     model = Company
-    list_display = ('user', 'company_name', 'about_company')
+    list_display = ('company_name', 'region', 'inn',)
 
 
 admin.site.register(Company, CompanyAdmin)
+
+
+class EduAdmin(admin.ModelAdmin):
+    model = Education
+    list_display = ('profile',
+                    'edu_institution',
+                    'speciality',
+                    'level_of_education',
+                    'year_of_start_edu',
+                    'year_of_end_edu',
+                    'diploma_certificate',
+                    )
+
+
+admin.site.register(Education, EduAdmin)

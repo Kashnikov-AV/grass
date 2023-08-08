@@ -1,0 +1,44 @@
+{% load static %}
+{% load widget_tweaks %}
+<div class="box form-block">
+    <h2 class="title-1">Вход в аккаунт</h2>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="inputs">
+            <div class="field">
+                {% render_field form.username class="input" placeholder="Электронная почта" %}
+                <span class="error-message">
+                    {% for error in form.username.errors %}
+                    {{ error|escape }}
+                    {% endfor %}
+                </span>
+            </div>
+            <div class="field">
+                {% render_field form.password class="input-pass" type="password" placeholder="Пароль" %}
+                <span class="error-message">
+                    {% for error in form.password.errors %}
+                    {{ error|escape }}
+                    {% endfor %}
+                </span>
+            </div>
+            <a href="#" class="link-green-small">Не понмю пароль</a>
+        </div>
+        <div class="buttons">
+            <button class="btn-primary-large" type="submit">Войти</button>
+            <a class="btn-secondary-large" href="{% url 'signup' %}">Создать аккаунт</a>
+        </div>
+        <p class="form-subtitle">Нажимая «Войти», вы подтверждаете, что ознакомлены, полностью согласны
+            и принимаете условия <a href="#" class="link-green">«Соглашения об оказании услуг по содействию в
+                трудоустройстве»</a></p>
+        <div class="separation">
+            <div class="rectangle"></div>
+            <p>или</p>
+            <div class="rectangle"></div>
+        </div>
+        <p class="form-login__text">Войти с помощью</p>
+        <div class="form-login__logos">
+            <a href="#"><img src="{% static 'img/google.svg' %}"></a>
+            <a href="#"><img src="{% static 'img/vk.svg' %}"></a>
+        </div>
+    </form>
+</div>

@@ -1,7 +1,7 @@
 from django.db.models.signals import post_save, pre_delete, pre_save
 from django.contrib.auth import get_user_model
 from django.dispatch import receiver
-from .models import Profile, Company
+from .models import Profile, Company, Education
 import os
 from django.conf import settings
 
@@ -26,7 +26,7 @@ def save_profile(sender, instance, **kwargs):
 
 
 @receiver(pre_save, sender=Profile)
-def auto_delete_file_on_change(sender, instance, **kwargs):
+def auto_delete_file_on_change_profile(sender, instance, **kwargs):
     """
     Deletes old file from filesystem
     when corresponding `Profile` object is updated
@@ -50,7 +50,7 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
 
 
 @receiver(pre_save, sender=Company)
-def auto_delete_file_on_change(sender, instance, **kwargs):
+def auto_delete_file_on_change_company(sender, instance, **kwargs):
     """
     Deletes old file from filesystem
     when corresponding `Company` object is updated
@@ -69,6 +69,31 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
         try:
             if os.path.isfile(old_logo.path):
                 os.remove(old_logo.path)
+        except:
+            return False
+
+
+@receiver(pre_save, sender=Education)
+def auto_delete_file_on_change_education(sender, instance, **kwargs):
+    """
+    Deletes old file from filesystem
+    when corresponding `Education` object is updated
+    with new file.
+    """
+    if not instance.pk:
+        return False
+
+    try:
+        old_file = Education.objects.get(pk=instance.pk).diploma_certificate
+    except Education.DoesNotExist:
+        print('edu not exist')
+        return False
+
+    new_file = instance.diploma_certificate
+    if not old_file == new_file:
+        try:
+            if os.path.isfile(old_file.path):
+                os.remove(old_file.path)
         except:
             return False
 
