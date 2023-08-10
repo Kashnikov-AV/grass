@@ -6,13 +6,14 @@
 {% endblock %}
 
 {% block site %}
-    {% render_field form.site class="input input-fluid" placeholder="Ваша персональная страница" %}
+    {{ form.site }}
+    {% render_field form.site class="input is-fluid" placeholder="Ваша персональная страница" %}
 {% endblock %}
 
 {% block email %}
-    {% render_field form.email class="input input-fluid" placeholder="Ваш E-mail" %}
+    {% render_field form.email class="input is-fluid" placeholder="Ваш E-mail" %}
 {% endblock %}
 
 {% block phone %}
-    {% render_field form.phone class="input input-fluid" x-mask="+9 (999) 999-99-99" placeholder="+x (xxx) xxx-xx-xx" %}
+    {% render_field form.phone class="input is-fluid" x-mask="+9 (999) 999-99-99" placeholder="+x (xxx) xxx-xx-xx" %}
 {% endblock %}

@@ -130,12 +130,11 @@ class Company(models.Model):
     about_company = models.TextField(blank=True, verbose_name='О компании')
     count_of_employees = models.PositiveIntegerField(blank=True, verbose_name='Количество работников', default=0)
     region = models.CharField(blank=True, max_length=50, verbose_name='Регион регистрации компании')
-    inn = models.BigIntegerField(blank=True, verbose_name='Инн организации', default=9999999999)
+    inn = models.BigIntegerField(blank=True, verbose_name='Инн организации')
     field_of_activity = models.CharField(blank=True, max_length=150, verbose_name='Сфера деятельности')
     phone = models.CharField(blank=True, max_length=20, verbose_name='Телефон компании')
     email = models.EmailField(blank=True, max_length=100, verbose_name='Email компании')
     site = models.CharField(blank=True, max_length=200, verbose_name='Сайт компании')
-
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -162,3 +161,35 @@ class Company(models.Model):
             return 'http://' + self.site
         else:
             return self.site
+
+
+EMPLOYMENT_CHOICES = (
+    (0, 'Полная занятость'),
+    (1, 'Частичная занятость'),
+    (2, 'Стажировка'),
+    (3, 'Практика'),
+    (4, 'Вахта'),
+    (5, 'Удаленная работа')
+)
+
+
+class ExpJob(models.Model):
+    profile = models.ForeignKey(to=Profile,
+                                on_delete=models.CASCADE,
+                                related_name="exp",
+                                related_query_name="exp",
+                                verbose_name='профиль пользователя')
+
+    company_name = models.CharField(max_length=150, blank=True, verbose_name='Название компании')
+    type_employment = models.PositiveSmallIntegerField(blank=True, verbose_name='Тип занятости', choices=EMPLOYMENT_CHOICES, default=0)
+    job_function = models.CharField(max_length=100, blank=True, verbose_name='Должность')
+    city = models.CharField(blank=True, max_length=50, verbose_name='Место (город) работы')
+    at_now_time = models.BooleanField(verbose_name='по настоящее время')
+    work_responsibilities = models.TextField(verbose_name='обязанности на рабочем месте', blank=True)
+    year_of_start_job = models.DateField(blank=True, verbose_name='год начала работы', null=True)
+    year_of_end_job = models.DateField(blank=True, verbose_name='год окончания работы', null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(f'profile-{self.profile.pk} {self.company_name}')

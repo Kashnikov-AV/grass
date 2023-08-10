@@ -1,7 +1,14 @@
 from django.contrib import admin
-from .models import Profile, Company, Education
+from .models import Profile, Company, Education, ExpJob
 # Register your models here.
 
+
+class ExpAdmin(admin.ModelAdmin):
+    model = ExpJob
+    list_display = ('profile',)
+
+
+admin.site.register(ExpJob, ExpAdmin)
 
 class ProfileAdmin(admin.ModelAdmin):
     model = Profile

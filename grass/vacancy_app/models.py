@@ -1,6 +1,14 @@
 from django.db import models
 from profile_app.models import Company
 
+EMPLOYMENT_CHOICES = (
+    (0, 'Полная занятость'),
+    (1, 'Частичная занятость'),
+    (2, 'Стажировка'),
+    (3, 'Практика'),
+    (4, 'Вахта'),
+    (5, 'Удаленная работа')
+)
 
 # Create your models here.
 class Vacancy(models.Model):
@@ -18,7 +26,8 @@ class Vacancy(models.Model):
 
 
     #удаленно, стажировка, полная занятость, частичная занятость
-    working_mode = models.CharField(max_length=200, verbose_name="Тип занятости")
+    working_mode = models.PositiveSmallIntegerField(blank=True, verbose_name='Тип занятости',
+                                                       choices=EMPLOYMENT_CHOICES, default=0)
 
     #key_skills = models.ForeignKey()
 

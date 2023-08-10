@@ -2,9 +2,12 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import View, ListView, DetailView, UpdateView, DeleteView
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
 from django.urls import reverse_lazy, reverse
-from .models import Profile, Company, Education
+from .models import Profile, Company, Education, ExpJob
 from vacancy_app.models import Vacancy
-from .forms import ProfileMainInfoForm, ProfileAboutMeForm, ProfileEducationForm, CompanyContactDataForm, ProfileContactDataForm, CompanyMainInfoForm
+from .forms import (ProfileMainInfoForm, ProfileAboutMeForm,
+                    ProfileEducationForm, CompanyContactDataForm,
+                    ProfileContactDataForm, CompanyMainInfoForm,
+                    ProfileExpForm, CompanyAboutMeForm)
 from datetime import datetime
 from django_htmx.http import HttpResponseClientRedirect, HttpResponseClientRefresh
 from django.contrib.auth.decorators import login_required
@@ -21,8 +24,6 @@ def hx_delete_education(request, pk):
         'object_list': edu_list,
     })
 
-
-
 @login_required
 @require_http_methods(["GET", "POST"])
 def hx_update_view(request, pk, model, form):
@@ -32,6 +33,8 @@ def hx_update_view(request, pk, model, form):
         my_model = Company
     elif model == 'Education':
         my_model = Education
+    elif model == 'ExpJob':
+        my_model = ExpJob
 
     object_model = get_object_or_404(my_model, pk=pk)
 
@@ -49,13 +52,20 @@ def hx_update_view(request, pk, model, form):
         elif form == 'ProfileMainInfoForm':
             object_form = ProfileMainInfoForm(request.POST, request.FILES, instance=object_model)
             template = 'profile_app/partials/modal-main-information.html'
+        elif form == 'ProfileExpForm':
+            object_form = ProfileExpForm(request.POST, instance=object_model)
+            template = 'profile_app/partials/modal-exp-job-update.html'
+
         #company forms
         elif form == 'CompanyMainInfoForm':
             object_form = CompanyMainInfoForm(request.POST, instance=object_model)
             template = 'profile_app/partials/modal-main-information-company.html'
         elif form == 'CompanyContactDataForm':
             object_form = CompanyContactDataForm(request.POST, instance=object_model)
-            template = 'profile_app/partials/modal-contact-data.html'
+            template = 'profile_app/partials/modal-contact-data-company.html'
+        if form == 'CompanyAboutMeForm':
+            object_form = CompanyAboutMeForm(request.POST, instance=object_model)
+            template = 'profile_app/partials/modal-about-company.html'
 
         if object_form.is_valid():
             object_form.save()
@@ -78,13 +88,20 @@ def hx_update_view(request, pk, model, form):
                 object_model.relocate = 0
             object_form = ProfileMainInfoForm(instance=object_model, initial={'gender': int(object_model.gender), 'relocate': int(object_model.relocate)})
             template = 'profile_app/partials/modal-main-information.html'
+        elif form == 'ProfileExpForm':
+            object_form = ProfileExpForm(instance=object_model)
+            template = 'profile_app/partials/modal-exp-job-update.html'
+
         # company forms
         elif form == 'CompanyMainInfoForm':
             object_form = CompanyMainInfoForm(instance=object_model)
             template = 'profile_app/partials/modal-main-information-company.html'
         elif form == 'CompanyContactDataForm':
             object_form = CompanyContactDataForm(instance=object_model)
-            template = 'profile_app/partials/modal-contact-data.html'
+            template = 'profile_app/partials/modal-contact-data-company.html'
+        if form == 'CompanyAboutMeForm':
+            object_form = CompanyAboutMeForm(instance=object_model)
+            template = 'profile_app/partials/modal-about-company.html'
 
     return render(request, template, {
         'form': object_form,
@@ -136,13 +153,6 @@ class ProfileEducationListView(LoginRequiredMixin, ListView):
         return qs.filter(profile=self.request.user.profile)
 
 
-class ProfileAboutMeUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'profile_app/partials/modal-about-me.html'
-    form_class = ProfileAboutMeForm
-    model = Profile
-    # def get_success_url(self):
-    #     return HttpResponseClientRefresh()
-
 class ProfileDetailView(LoginRequiredMixin, DetailView):
     template_name = 'profile_app/profile.html'
     model = Profile
@@ -153,10 +163,12 @@ class ProfileDetailView(LoginRequiredMixin, DetailView):
         profile = Profile.objects.get(pk=self.object.pk)
         educations = profile.educations.all()
         context['educations'] = educations
+        exps = profile.exp.all()
+        context['exps'] = exps
         try:
             context["age"] = datetime.now().year - profile.birth_date.year
             context["end_age"] = self.right_end(int(context["age"]))
-        except ValueError:
+        except Exception:
             context["age"] = 0
             context["end_age"] = self.right_end(int(context["age"]))
 
@@ -185,6 +197,39 @@ class ProfileCompanyDetailView(LoginRequiredMixin, DetailView):
         return context
 
 
-class CompanyListView(LoginRequiredMixin, ListView):
-    template_name = 'profile_app/companies.html'
-    model = Company
+class ProfileExpListView(LoginRequiredMixin, ListView):
+    template_name = 'profile_app/partials/modal-exp-job.html'
+    model = ExpJob
+
+    def get_queryset(self):
+        # original qs
+        qs = super().get_queryset()
+        # filter by a variable captured from url, for example
+        return qs.filter(profile=self.request.user.profile)
+
+
+@login_required
+@require_http_methods(["GET", "POST"])
+def hx_create_profile_exp_add_view(request, pk):
+    profile = get_object_or_404(Profile, pk=pk)
+    form = ProfileExpForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            form.instance.profile = profile
+            form.save()
+            return HttpResponseClientRefresh()
+    else:
+        form = ProfileExpForm()
+    return render(request, 'profile_app/partials/modal-exp-job-add.html', {
+        'form': form
+    })
+
+@login_required
+def hx_delete_exp(request, pk):
+    exp_object = request.user.profile.exp.get(pk=pk)
+    exp_object.delete()
+
+    exp_list = request.user.profile.exp.all()
+    return render(request, 'profile_app/partials/entity-card-exp.html', {
+        'object_list': exp_list,
+    })

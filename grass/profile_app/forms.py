@@ -1,5 +1,5 @@
 from django import forms
-from .models import Profile, Company, Education
+from .models import Profile, Company, Education, ExpJob
 from datetime import date
 
 YEARS = [(f'{year}-01-01', str(year)) for year in range(1900, date.today().year + 6)]
@@ -91,14 +91,37 @@ class ProfileEducationForm(forms.ModelForm):
                 }
 
 
+class ProfileExpForm(forms.ModelForm):
+    class Meta:
+        model = ExpJob
+        fields = ('company_name', 'type_employment', 'job_function', 'city',
+                  'at_now_time', 'work_responsibilities', 'year_of_start_job', 'year_of_end_job')
+        widgets = {
+            'year_of_start_job': forms.SelectDateWidget(years=[x for x in range(1910, date.today().year + 1)],
+                                                        attrs={'required': 'required'},
+                                                        ),
+            'year_of_end_job': forms.SelectDateWidget(years=[x for x in range(1910, date.today().year + 1)],
+                                                      attrs={'required': 'required'},
+                                                      ),
+        }
+
+
 class CompanyMainInfoForm(forms.ModelForm):
     class Meta:
         model = Company
-        fields = ('company_name', 'count_of_employees', 'region', 'inn', 'field_of_activity')
+        fields = ('company_name', 'count_of_employees', 'region', 'inn', 'field_of_activity', 'logo')
+
 
 class CompanyContactDataForm(forms.ModelForm):
     class Meta:
         model = Company
         fields = ('site', 'email', 'phone',)
+
+class CompanyAboutMeForm(forms.ModelForm):
+    class Meta:
+        model = Company
+        fields = ('about_company',)
+
+
 
 

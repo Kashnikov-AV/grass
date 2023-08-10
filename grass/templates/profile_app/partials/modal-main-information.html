@@ -3,96 +3,100 @@
 {% load thumbnail %}
 
 <div class="box modal-block">
-    <form hx-post="{% url 'hx-update' profile.pk 'Profile' 'ProfileMainInfoForm' %}" enctype="multipart/form-data">{% csrf_token %}
-    <div class="modal-close" x-on:click="isModalOpen = false"></div>
-    <h2 class="title-1 modal-pt">Основная информация</h2>
-    <div class="modal-information">
-        <div class="modal-information__bio-and-photo">
-            <div class="modal-information__bio-and-photo-avatar">
-                {% if profile.photo %}
+    <form hx-post="{% url 'hx-update' profile.pk 'Profile' 'ProfileMainInfoForm' %}" enctype="multipart/form-data">{%
+        csrf_token %}
+        <div class="modal-close" x-on:click="isModalOpen = false"></div>
+        <h2 class="title-1 modal-pt">Основная информация</h2>
+        <div class="modal-information">
+            <div class="modal-information__bio-and-photo">
+                <div class="modal-information__bio-and-photo-avatar">
+                    {% if profile.photo %}
                     {% thumbnail profile.photo "100x100" crop="center" as im %}
-                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="main-inf__avatar-img" alt="avatar user">
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="main-inf__avatar-img"
+                        alt="avatar user">
                     {% endthumbnail %}
-                {% else %}    
+                    {% else %}
                     <img src="{% static 'img/avatar-user-empty.svg' %}" alt="avatar user empty">
-                {% endif %}
-            </div> 
+                    {% endif %}
+                </div>
+                <div class="modal__inputs">
+                    <div class="field is-fluid">
+                        <label for="">Фамилия</label>
+                        {% render_field form.surname class="input is-fluid" placeholder="Иванов" %}
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="field is-fluid">
+                        <label for="">Имя</label>
+                        {% render_field form.name class="input is-fluid" placeholder="Иван" %}
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="field is-fluid">
+                        <label for="">Отчество</label>
+                        {% render_field form.patronymic class="input is-fluid" placeholder="Иванович" %}
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="field is-fluid">
+                        <label for="">Желаемая зарплата</label>
+                        {% render_field form.desired_salary class="input" placeholder="10 000" %}
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+            </div>
             <div class="modal__inputs">
                 <div class="field is-fluid">
-                    <label for="">Фамилия</label>
-                    {% render_field form.surname class="input input-fluid" placeholder="Иванов" %}
-                    <span class="error-message"></span>
-                </div>
-                <div class="field is-fluid">
-                    <label for="">Имя</label>
-                    {% render_field form.name class="input input-fluid" placeholder="Иван" %}
-                    <span class="error-message"></span>
-                </div>
-                <div class="field is-fluid">
-                    <label for="">Отчество</label>
-                    {% render_field form.patronymic class="input input-fluid" placeholder="Иванович" %}
-                    <span class="error-message"></span>
-                </div>
-                <div class="field is-fluid">
-                    <label for="">Желаемая зарплата</label>
-                    {% render_field form.desired_salary class="input" placeholder="10 000" %}
-                    <span class="error-message"></span>
-                </div>   
-            </div>
-        </div>
-        <div class="modal__inputs">
-            <div class="field is-fluid">
-                <label for="">Дата рождения</label>
-                {% render_field form.birth_date class="input input-fluid" %}
-                <span class="error-message"></span>
-            </div>
-            <div class="field is-fluid">
-                <label for="">Пол</label>
-                <div class="radio-select">
-                    {% for radio in form.gender %}
-                    <div class="radio">
-                        {% render_field radio.tag %}
-                        <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
+                    <label for="">Дата рождения</label>
+                    <div class="field-flex">
+                        {% render_field form.birth_date class="input is-fluid" %}
                     </div>
-                    {% endfor %} 
+                    <span class="error-message"></span>
                 </div>
-            </div>
-        </div>
-        <div class="modal__inputs">
-            <div class="field is-fluid">
-                <label for="">Уровень иностранного языка</label>
-                {% render_field form.level_foreign_language class="input input-fluid" %}
-                <span class="error-message"></span>
-            </div>
-            <div class="field is-fluid">
-                <label for="">Должность</label>
-                {% render_field form.career_objective class="input input-fluid" placeholder="Должность" %}
-                <span class="error-message"></span>
-            </div>
-        </div>
-        <div class="modal__inputs">
-            <div class="field is-fluid">
-                <label for="">Город проживания</label>
-                {% render_field form.city class="input input-fluid" placeholder="Город" %}
-                <span class="error-message"></span>
-            </div>
-            <div class="field is-fluid">
-                <label for="">Готов к переезду</label>
-                <div class="radio-select">
-                    {% for radio in form.relocate %}
-                    <div class="radio">
-                        {% render_field radio.tag %}
-                        <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
+                <div class="field is-fluid">
+                    <label for="">Пол</label>
+                    <div class="radio-select">
+                        {% for radio in form.gender %}
+                        <div class="radio">
+                            {% render_field radio.tag %}
+                            <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
+                        </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %} 
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Уровень иностранного языка</label>
+                    {% render_field form.level_foreign_language class="input is-fluid" %}
+                    <span class="error-message"></span>
+                </div>
+                <div class="field is-fluid">
+                    <label for="">Должность</label>
+                    {% render_field form.career_objective class="input is-fluid" placeholder="Должность" %}
+                    <span class="error-message"></span>
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Город проживания</label>
+                    {% render_field form.city class="input is-fluid" placeholder="Город" %}
+                    <span class="error-message"></span>
+                </div>
+                <div class="field is-fluid">
+                    <label for="">Готов к переезду</label>
+                    <div class="radio-select">
+                        {% for radio in form.relocate %}
+                        <div class="radio">
+                            {% render_field radio.tag %}
+                            <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    
-    <div class="buttons modal-buttons">
-        <button class="btn-primary-large btn-fluid" type="submit">Сохранить изменения</button>
-        <a class="btn-secondary-large btn-fluid" x-on:click="isModalOpen = false" >Отмена</a>
-    </div>
-    </form>>
+
+        <div class="buttons modal-buttons">
+            <button class="btn-primary-large btn-fluid" type="submit">Сохранить изменения</button>
+            <a class="btn-secondary-large btn-fluid" x-on:click="isModalOpen = false">Отмена</a>
+        </div>
+    </form>
 </div>

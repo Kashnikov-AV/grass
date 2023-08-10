@@ -18,7 +18,6 @@ from django.urls import path, include, re_path
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT
-from profile_app.views import CompanyListView
 
 
 from django.views.generic import TemplateView, ListView
@@ -30,7 +29,6 @@ urlpatterns = [
     path('home/', include('home_app.urls')),
     path('', RedirectView.as_view(url='home/')),
     path('profile/', include('profile_app.urls')),
-    path('companies/', CompanyListView.as_view(), name='companies'),
     path('vacancy/', include('vacancy_app.urls')),
     path('coming-soon/', TemplateView.as_view(template_name="coming-soon.html"), name='coming'),
     path('test/', TemplateView.as_view(template_name="test.html"), name='test'),

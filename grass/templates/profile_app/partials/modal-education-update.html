@@ -12,7 +12,7 @@
                 </div>
                 <div class="field is-fluid">
                     <label for="">Степень образования</label>
-                    {% render_field form.level_of_education class="" %}
+                    {% render_field form.level_of_education class="input is-fluid" %}
                 </div>
             </div>
             <div class="modal__inputs">
@@ -22,17 +22,17 @@
                 </div>
                 <div class="field is-fluid">
                     <label for="">Год поступления</label>
-                    {{ form.year_of_start_edu }}
+                    {% render_field form.year_of_start_edu class="input"%}
                 </div>
             </div>
             <div class="modal__inputs">
                 <div class="field is-fluid">
                     <label for="">Диплом или сертификат</label>
-                    {{ form.diploma_certificate }}
+                    {% render_field form.diploma_certificate class="input is-fluid"%}
                 </div>
                 <div class="field is-fluid">
                     <label for="">Год окончания</label>
-                    {{ form.year_of_end_edu }}
+                    {% render_field form.year_of_end_edu class="input"%}
                 </div>
             </div>
         </div>

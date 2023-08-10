@@ -6,7 +6,7 @@
     </div>
     <div class="buttons modal-buttons">
         <button 
-            hx-get="{% url 'profile-education-add' user.pk %}"
+            hx-get="{% url 'profile-education-add' user.profile.pk %}"
             hx-target="#modal-1"
             hx-swap="innerHTML"
             hx-trigger="click"

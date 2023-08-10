@@ -42,6 +42,10 @@ class SignUpForm(UserCreationForm):
         initial=0
     )
 
+    class Meta:
+        model = get_user_model()
+        fields = ('email', 'password1', 'password2', 'role') 
+
 
 class SignUpForm1(forms.Form):
     role = forms.TypedChoiceField(

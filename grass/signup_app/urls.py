@@ -13,8 +13,8 @@ FORMS = [("role", SignUpForm1),
 
 
 urlpatterns = [
-    path("signup/", SignupWizardView.as_view(FORMS), name="signup"),
+    # path("signup/", SignupWizardView.as_view(FORMS), name="signup"),
     path("login/", CustomLoginView.as_view(), name="login"),
-    #path("signup/", SignUpView.as_view(), name="signup"),
+    path("signup/", SignUpView.as_view(), name="signup"),
     # path()
 ]

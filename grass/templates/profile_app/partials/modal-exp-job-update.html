@@ -1,7 +1,7 @@
 {% load widget_tweaks %}
 {% load static %}
 <div class="box modal-block">
-    <form hx-post="{% url 'profile-exp-add' user.profile.pk %}" enctype="multipart/form-data">{% csrf_token %}
+    <form hx-post="{% url 'hx-update' profile.pk 'ExpJob' 'ProfileExpForm' %}" enctype="multipart/form-data">{% csrf_token %}
         <div class="modal-close"></div>
         <h2 class="title-1 modal-pt">Опыт работы</h2>
         <div class="modal-information">
@@ -29,17 +29,14 @@
                 <div class="field is-half">
                     <label for="">Дата начала</label>
                     <div class="field-flex ">
-                        {% render_field form.year_of_start_job class="input is-auto-flex" %}
+                        {% render_field form.year_of_start_job class="input is-auto-flex"%}
                     </div>
                 </div>
             </div>
             <div class="modal__inputs">
                 <div class="field">
                     <div class="field-flex">
-                        <span
-                        >{{ form.at_now_time }}
-                        </span> <label for="">По настоящее время</label>
-                        
+                        <span>{{ form.at_now_time }}</span> <label for="">По настоящее время</label>
                     </div>
                 </div>
             </div>
@@ -47,14 +44,16 @@
                 <div class="field is-half">
                     <label for="">Дата окончания</label>
                     <div class="field-flex ">
-                        {% render_field form.year_of_end_job class="input is-auto-flex" %}
+                        {% render_field form.year_of_end_job class="input is-auto-flex"%}
                     </div>
                 </div>
             </div>
             <div class="modal__inputs">
                 <div class="field is-fluid">
                     <label for="">Обязанности на рабочем месте</label>
-                    {% render_field form.work_responsibilities class="input input-textarea is-fluid" placeholder="Напишите чем вы занимались в компании" %}
+                    <div class="field-flex ">
+                        {% render_field form.work_responsibilities class="input input-textarea is-fluid" placeholder="Напишите чем вы занимались в компании" %}
+                    </div>
                 </div>
             </div>
         </div>

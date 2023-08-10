@@ -1,48 +1,62 @@
+{% load widget_tweaks %}
 {% load static %}
+{% load thumbnail %}
+
 <div class="box modal-block">
-    <div class="modal-close"></div>
-    <h2 class="title-1 modal-pt">Основная информация</h2>
-    <div class="modal-information">
-        <div class="modal-information__bio-and-photo">
-            <div class="modal-information__bio-and-photo-avatar">
-                <img src="{% static 'img/avatat-company-empty.png' %}" alt="avatar company empty">
+    <form hx-post="{% url 'hx-update' profile.pk 'Company' 'CompanyMainInfoForm' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="modal-close" x-on:click="isModalOpen = false"></div>
+        <h2 class="title-1 modal-pt">Основная информация</h2>
+        <div class="modal-information">
+            <div class="modal-information__bio-and-photo">
+                <div class="modal-information__bio-and-photo-avatar">
+                    {% if profile.photo %}
+                    {% thumbnail profile.photo "100x100" crop="center" as im %}
+                    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="main-inf__avatar-img"
+                        alt="avatar user">
+                    {% endthumbnail %}
+                    {% else %}
+                    <img src="{% static 'img/avatat-company-empty.png' %}" alt="avatar company empty">
+                    {% endif %}
+                </div>
+                <div class="modal__inputs">
+                    <div class="field is-fluid">
+                        <label for="">Название компании</label>
+                        {% render_field form.company_name class="input is-fluid" placeholder="название компании" %}
+                        <span class="error-message"></span>
+                    </div>
+                </div>
             </div>
             <div class="modal__inputs">
                 <div class="field is-fluid">
-                    <label for="">Название компании</label>
-                    <input class="input input-fluid" type="text" id="" name="" placeholder="Название компании">
+                    <label for="">Сфера деятельности</label>
+                    {% render_field form.field_of_activity class="input is-fluid" placeholder="сфера деятельности" %}
+                    <span class="error-message"></span>
+                </div>
+                <div class="field is-fluid">
+                    <label for="">Количество сотрудников</label>
+                    {% render_field form.count_of_employees class="input is-fluid" placeholder="Введите количество сотрудников" %}
+                    <span class="error-message"></span>
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">ИНН</label>
+                    <!-- <input class="input is-fluid" type="int" id="" name="" placeholder="xxxxxxxxxx"> -->
+                    {% render_field form.inn class="input is-fluid" x-mask="9999999999" placeholder="xxxxxxxxxx" inputmode="numeric" min=1111111111 max=9999999999 %}
+                    <span class="error-message"></span>
+                </div>
+                <div class="field is-fluid">
+                    <label for="">Город</label>
+                    {% render_field form.region class="input is-fluid" id="comany_city" placeholder="адрес главного офиса" %}
                     <span class="error-message"></span>
                 </div>
             </div>
         </div>
-        <div class="modal__inputs">
-            <div class="field is-fluid">
-                <label for="">Сфера деятельности</label>
-                <input class="input input-fluid" type="text" id="" name="" placeholder="Сфера деятельности">
-                <span class="error-message"></span>
-            </div>
-            <div class="field is-fluid">
-                <label for="">Количество сотрудников</label>
-                <input class="input input-fluid" type="" id="" name="" placeholder="Количество сотрудников">
-                <span class="error-message"></span>
-            </div>
-        </div>
-        <div class="modal__inputs">
-            <div class="field is-fluid">
-                <label for="">ИНН</label>
-                <input class="input input-fluid" type="int" id="" name="" placeholder="xxxxxxxxxx">
-                <span class="error-message"></span>
-            </div>
-            <div class="field is-fluid">
-                <label for="">Город</label>
-                <input class="input input-fluid" type="text" id="" name="" placeholder="адрес главного подразделения">
-                <span class="error-message"></span>
-            </div>
-        </div>
-    </div>
 
-    <div class="buttons modal-buttons">
-        <button class="btn-primary-large btn-fluid" formaction="">Сохранить изменения</button>
-        <button class="btn-secondary-large btn-fluid" formaction="">Отмена</button>
-    </div>
+        <div class="buttons modal-buttons">
+            <button class="btn-primary-large btn-fluid" type="submit">Сохранить изменения</button>
+            <a href="#" x-on:click="isModalOpen = false" class="btn-secondary-large btn-fluid">Отмена</a>
+        </div>
+    </form>
 </div>

@@ -1243,6 +1243,8 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .field {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 12px;
 }
 
@@ -1255,6 +1257,10 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   padding-bottom: 8px;
   display: block;
+}
+
+.field label:last-child {
+  padding-bottom: 0px;
 }
 
 .field .error-message {
@@ -1337,7 +1343,6 @@ h1, h2, h3, h4, h5, h5, p {
   right: 0;
   top: 0;
   bottom: 0;
-  margin: auto;
 }
 
 .overlay {
@@ -1356,6 +1361,20 @@ h1, h2, h3, h4, h5, h5, p {
 
 .is-fluid {
   width: 100%;
+}
+
+.is-half {
+  width: 50%;
+}
+
+.is-auto-flex {
+  flex: auto;
+}
+
+.field-flex {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
 .box {
@@ -1399,6 +1418,12 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 #education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#exp-list {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -2137,19 +2162,6 @@ form_city {
   border-radius: 14px;
 }
 
-input {
-  width: 100%;
-  height: 42px;
-  background: #FFFFFF;
-  padding-left: 15px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-}
-
 .form_signup_7_title {
   font-family: 'Gilroy';
   font-style: normal;
@@ -2426,19 +2438,6 @@ form_city {
   height: 54px;
   background: #20B84B;
   border-radius: 14px;
-}
-
-input {
-  width: 100%;
-  height: 42px;
-  background: #FFFFFF;
-  padding-left: 15px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
 }
 
 .radio-select {

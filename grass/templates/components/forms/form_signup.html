@@ -1,37 +1,49 @@
 {% load static %}
-<form method="POST">
-    {% csrf_token %}
-    <div class="form_signup">
-        <div class="title">
-            <p>Создание аккаунта</p>
-        </div>
-        <div class="form_block_number_inputs">
-            {{ form.email }}
-        </div>
-        <div class="form_block_number_inputs">
-            <p>Придумайте пароль<br>(минимум 6 латинских букв и 2 цифры)</p>
-            {{ form.password1 }}
-            {{ form.password2 }}
-        </div>
-        <p class="form_signup_subtext">Для чего вы создаете аккаунт?</p>
-        <div class="sex">
-            {% for radio in form.role %}
-                <div class="button">
-                    {{ radio }}
+{% load widget_tweaks %}
+
+<div class="box form-block">
+    <h2 class="title-1">Создание аккаунта</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="inputs">
+            <div class="field">
+                <label for="">Введите вашу электронную почту</label>
+                {% render_field form.email class="input" placeholder="Электронная почта" %}
+                <span class="error-message">
+                    {% for error in form.email.errors %}
+                        {{ error|escape }}
+                    {% endfor %}
+                </span>
+            </div>
+            <div class="field">
+                <label for="">Придумайте пароль<br>(минимум 6 латинских букв и 2 цифры)</label>
+                {% render_field form.password1 class="input-pass" type="password" placeholder="Пароль" %}
+                <span class="error-message">
+                    {% for error in form.password1.errors %}
+                        {{ error|escape }}
+                    {% endfor %}
+                </span>
+            </div>
+            <div class="field">
+                {% render_field form.password2 class="input-pass" type="password" placeholder="Повторите пароль" %}
+                <span class="error-message">
+                    {% for error in form.password2.errors %}
+                        {{ error|escape }}
+                    {% endfor %}
+                </span>
+            </div>
+            <div class="radio-select">
+                {% for radio in form.role %}
+                <div class="radio">
+                    {% render_field radio.tag %}
+                    <label for="value_{{ forloop.counter0 }}" class="radio-label">{{ radio.choice_label }}</label>
                 </div>
-            {% endfor %}
-            <!--            <div class="button">-->
-            <!--                <input type="radio" name="check-substitution-2" checked/>-->
-            <!--                <label class="btn btn-default">Ищу работу</label>-->
-            <!--            </div>-->
-            <!--            <div class="button">-->
-            <!--                <input type="radio" name="check-substitution-2" />-->
-            <!--                <label class="btn btn-default">Ищу сотрудников</label>-->
-            <!--            </div>-->
+                {% endfor %} 
+            </div>
         </div>
         <div class="buttons">
-            <button class="button_1">Завершить регистрацию</button>
-            <a class="button_2" href="{% url 'login' %}">Войти</a>
+            <button class="btn-primary-large" type="submit">Завершить регистрацию</button>
+            <a class="btn-secondary-large" href="{% url 'login' %}">Войти</a>
         </div>
-    </div>
-</form>
+    </form>
+</div>

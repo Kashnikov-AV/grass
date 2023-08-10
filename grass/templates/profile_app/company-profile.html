@@ -9,7 +9,8 @@
 <main>
     <!-- modals -->
     <div x-data="{'isModalOpen': false, modalName: ''}" x-show="isModalOpen" x-cloak x-transition
-        x-on:get-modal-contact.window="isModalOpen=true; modalName=$event.detail.modalName; console.log(modalName);" class="modal">
+        x-on:get-modal-contact.window="isModalOpen=true; modalName=$event.detail.modalName; console.log(modalName);"
+        class="modal">
         <div class="overlay"></div>
         <template x-if="modalName=='modal-window' ">
             <div id="modal-1"></div>
@@ -38,15 +39,17 @@
                             Количество сотрудников
                             {% endif %}
                         </p>
-                        <p class="main-inf__bio-text">Регион не указан
+                        <p class="main-inf__bio-text">
+                            {% if company.region %}
+                            {{ company.region }}
+                            {% else %}
+                            Регион не указан
+                            {% endif %}
                             {% if company.pk == user.pk %}
-                            <span   hx-get="{% url 'hx-update' user.pk 'Company' 'CompanyMainInfoForm' %}"
-                                    hx-target="#contact-data"
-                                    hx-swap="innerHTML"
-                                    hx-trigger="click"
-                                    x-data
-                                    x-on:click="$dispatch('get-modal-contact', { modalName: 'contact-data' })"
-                                    class="link-green-large">Изменить</span>
+                            <span hx-get="{% url 'hx-update' user.pk 'Company' 'CompanyMainInfoForm' %}"
+                                hx-target="#modal-1" hx-swap="innerHTML" hx-trigger="click" x-data
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
+                                class="link-green-large">Изменить</span>
                             {% endif %}
                         </p>
                     </div>
@@ -61,25 +64,21 @@
                     <div class="other-inf__item">
                         <div class="other-inf__item-title">О компании
                             {% if company.pk == user.pk %}
-                            <span
-                                hx-get="#"
-                                hx-target="#modal-1"
-                                hx-swap="innerHTML"
-                                hx-trigger="click"
-                                class="link-green-large"
+                            <span hx-get="{% url 'hx-update' user.pk 'Company' 'CompanyAboutMeForm' %}"
+                                hx-target="#modal-1" hx-swap="innerHTML" hx-trigger="click" class="link-green-large"
                                 x-data
-                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
-                                >Изменить</span> {% endif %}
-                            </div>
+                                x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })">Изменить</span>
+                            {% endif %}
+                        </div>
                         <p class="other-inf__item-promt">
                             {% if company.about_company %}
-                                {{ company.about_company}}
+                            {{ company.about_company}}
                             {% else %}
-                                {% if company.pk == user.pk %}
-                                    Напишите краткое описание вашей компании.
-                                {% else %}
-                                    Информация о компании отсутствует.
-                                {% endif %}
+                            {% if company.pk == user.pk %}
+                            Напишите краткое описание вашей компании.
+                            {% else %}
+                            Информация о компании отсутствует.
+                            {% endif %}
                             {% endif %}
                         </p>
                     </div>
@@ -87,45 +86,44 @@
                         <div class="other-inf__item-title">
                             Вакансии
                             {% if company.pk == user.pk %}
-                            <span
-                                    hx-get="#"
-                                    hx-target="#modal-1"
-                                    hx-swap="innerHTML"
-                                    hx-trigger="click"
-                                x-data
+                            <span hx-get="#" hx-target="#modal-1" hx-swap="innerHTML" hx-trigger="click" x-data
                                 x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
                                 class="link-green-large">
                                 Изменить
                             </span>
                             {% endif %}
                         </div>
-                            {% if vacancies %}
-                                {% for vacancy in vacancies %}
-                                <div class="entity-card">
-                                    <div class="entity-card__head">
-                                            <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
-                                            <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
-                                            <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}</p>
-                                            <p class="item-4 entity-card__text">Требуемый опыт работы: {% if vacancy.work_experience %} {{ vacancy.get_work_exp_end }}
-                                                {% else %}
-                                                не имеет значения.
-                                                {% endif %}
-                                            </p>
-                                    </div>
-                                    <div class="entity-card__buttons">
-                                        <div class="entity-card__buttons-item">
-                                            <button class="btn-primary-medium btn-entity">Подробнее</button>
-                                        </div>
-                                    </div>
+                        <div class="other-inf__flex-entity" id="vacancies">
+                            {% for vacancy in vacancies %}
+                        <div class="entity-card">
+                            <div class="entity-card__head">
+                                <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
+                                <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
+                                <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}
+                                </p>
+                                <p class="item-4 entity-card__text">
+                                    Требуемый опыт работы: 
+                                    {% if vacancy.work_experience %} {{ vacancy.get_work_exp_end }}
+                                    {% else %}
+                                    не имеет значения.
+                                    {% endif %}
+                                </p>
+                            </div>
+                            <div class="entity-card__buttons">
+                                <div class="entity-card__buttons-item">
+                                    <button class="btn-primary-medium btn-entity">Подробнее</button>
                                 </div>
-                                {% endfor %}
-                            {% else %}
-                            {% if company.pk == user.pk %}
-                            <p class="other-inf__item-promt">Добавьте вакансии, чтобы найти специалистов, которые сделают вашу компанию лучше.</p>
-                                {% else %}
-                                <p class="other-inf__item-promt">Информация о вакансиях отсутствует.</p>
-                                {% endif %}
-                            {% endif %}
+                            </div>
+                        </div>
+                        {% empty %}
+                        {% if company.pk == user.pk %}
+                        <p class="other-inf__item-promt">Добавьте вакансии, чтобы найти специалистов, которые сделают
+                            вашу компанию лучше.</p>
+                        {% else %}
+                        <p class="other-inf__item-promt">Информация о вакансиях отсутствует.</p>
+                        {% endif %}
+                        {% endfor %}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -138,11 +136,9 @@
                             {{ company.get_site_url }}
                         {% else %}
                             #
-                        {% endif %}" 
-                        class="contact-data__text link-green-large" 
-                        target="_blank">
+                        {% endif %}" class="contact-data__text link-green-large" target="_blank">
                     {% if company.site %}
-                        {{ company.site }}
+                    {{ company.site }}
                     {% else %}
                     Пусто
                     {% endif %}
@@ -164,7 +160,10 @@
                     {% endif %}
                 </p>
                 {% if company.pk == user.pk %}
-                <p x-data x-on:click="$dispatch('get-modal-contact', { modalName: 'contact-data' })" class="link-green-large">Изменить</p>
+                <p hx-get="{% url 'hx-update' user.pk 'Company' 'CompanyContactDataForm' %}" hx-target="#modal-1"
+                    hx-swap="innerHTML" hx-trigger="click" x-data
+                    x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })" class="link-green-large">
+                    Изменить</p>
                 {% endif %}
             </div>
         </div>

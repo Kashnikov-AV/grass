@@ -1,0 +1,15 @@
+{% load widget_tweaks %}
+<div class="box modal-block">
+    <form hx-post="{% url 'hx-update' user.pk 'Company' 'CompanyAboutMeForm' %}">{% csrf_token %}
+        <div class="modal-close" x-on:click="isModalOpen = false"></div>
+        <h2 class="title-1 modal-pt">О компании</h2>
+        <div class="modal-information">
+            <p class="modal-subtitle modal-subtitle__space">Информация о компании</p>
+            {% render_field form.about_company class="input input-textarea is-fluid" placeholder="Напишите краткое описание вашей компании" %}
+        </div>
+        <div class="buttons modal-buttons">
+            <button type="submit" class="btn-primary-large btn-fluid">Сохранить изменения</button>
+            <a href="#" class="btn-secondary-large btn-fluid" x-on:click="isModalOpen = false">Отмена</a>
+        </div>
+    </form>
+</div>
