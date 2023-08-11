@@ -19,6 +19,12 @@
 .is-auto-flex
     flex: auto
 
+.is-1-flex
+    flex: 1
+
+.is-4-flex
+    flex: 4
+
 .field-flex
     display: flex
     gap: 16px
@@ -61,16 +67,6 @@
     // background-color: red
     grid-row: span 2
     // grid-column: auto
-
-#education-list
-    display: flex
-    flex-direction: column
-    gap: 20px
-
-#exp-list
-    display: flex
-    flex-direction: column
-    gap: 20px
 
 .main-inf
     .link-green-large
@@ -182,6 +178,8 @@
                 &:active
                     fill: $Red-Active
                     color: $Red-Active
+            &:nth-child(2)
+                flex: 1
         &-link
             font-family: 'Gilroy'
             font-style: normal

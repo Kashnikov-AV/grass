@@ -4,46 +4,47 @@ from .models import Vacancy
 from .forms import VacancyForm
 from profile_app.models import Company
 from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404
+from datetime import datetime
+from django_htmx.http import HttpResponseClientRedirect, HttpResponseClientRefresh
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.http import require_http_methods
+
+@login_required
+def hx_delete_vacancy(request, pk):
+    vacancy_object = request.user.company.vacancy.get(pk=pk)
+    vacancy_object.delete()
+
+    vacancy_list = request.user.company.vacancy.all()
+    return render(request, 'vacancy_app/partials/entity-card-vacancy.html', {
+        'object_list': vacancy_list,
+    })
 
 
-class VacancyCreateView(LoginRequiredMixin, CreateView):
-    template_name = 'vacancy_app/vacancy_form.html'
-    form_class = VacancyForm
-    #success_url = reverse_lazy('profile-company', kwargs={'pk': self.user.pk})
+@login_required
+@require_http_methods(["GET", "POST"])
+def hx_create_company_vacancy_view(request, pk):
+    company = get_object_or_404(Company, pk=pk)
+    if request.method == "POST":
+        form = VacancyForm(request.POST or None)
+        if form.is_valid():
+            form.instance.company = company
+            form.save()
+            return HttpResponseClientRefresh()
+    else:
+        form = VacancyForm()
+    return render(request, 'vacancy_app/partials/modal-vacancy-add.html', {
+        'form': form
+    })
 
-    def form_valid(self, form):
-        """If the form is valid, save the associated model."""
-        form.instance.company = Company.objects.get(pk=self.request.user.pk)
-        return super().form_valid(form)
 
-    def get_success_url(self, **kwargs):
-        if kwargs != None:
-            return reverse_lazy('profile-company', kwargs={'pk': self.request.user.pk})
-
-
-class VacancyUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = 'vacancy_app/vacancy_form.html'
-    form_class = VacancyForm
+class CompanyVacancyListView(LoginRequiredMixin, ListView):
+    template_name = 'vacancy_app/partials/modal-vacancy.html'
     model = Vacancy
-    #success_url = reverse_lazy('profile-company', kwargs={'pk': self.request.user.pk})
 
-    def get_success_url(self, **kwargs):
-        if kwargs != None:
-            return reverse_lazy('profile-company', kwargs={'pk': self.request.user.pk})
+    def get_queryset(self):
+        # original qs
+        qs = super().get_queryset()
+        # filter by a variable captured from url, for example
+        return qs.filter(company=self.request.user.company)
 
-
-class VacancyDetailView(LoginRequiredMixin, DetailView):
-    pass
-
-
-class VacancyListView(LoginRequiredMixin, ListView):
-    pass
-
-
-class VacancyDeleteView(LoginRequiredMixin, DeleteView):
-    model = Vacancy
-    #success_url = 'profile-company'
-
-    def get_success_url(self, **kwargs):
-        if kwargs != None:
-            return reverse_lazy('profile-company', kwargs={'pk': self.request.user.pk})

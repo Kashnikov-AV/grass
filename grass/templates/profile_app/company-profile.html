@@ -86,15 +86,19 @@
                         <div class="other-inf__item-title">
                             Вакансии
                             {% if company.pk == user.pk %}
-                            <span hx-get="#" hx-target="#modal-1" hx-swap="innerHTML" hx-trigger="click" x-data
+                            <span hx-get="{% url 'company-vacancies' user.pk %}" 
+                                hx-target="#modal-1" 
+                                hx-swap="innerHTML" 
+                                hx-trigger="click" 
+                                x-data
                                 x-on:click="$dispatch('get-modal-contact', { modalName: 'modal-window' })"
                                 class="link-green-large">
                                 Изменить
                             </span>
                             {% endif %}
                         </div>
-                        <div class="other-inf__flex-entity" id="vacancies">
-                            {% for vacancy in vacancies %}
+                        <div class="other-inf__flex-entity" id="c-vacancies">
+                        {% for vacancy in vacancies %}
                         <div class="entity-card">
                             <div class="entity-card__head">
                                 <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
@@ -102,11 +106,7 @@
                                 <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}
                                 </p>
                                 <p class="item-4 entity-card__text">
-                                    Требуемый опыт работы: 
-                                    {% if vacancy.work_experience %} {{ vacancy.get_work_exp_end }}
-                                    {% else %}
-                                    не имеет значения.
-                                    {% endif %}
+                                    Требуемый опыт работы: {{ vacancy.get_work_experience_display }}
                                 </p>
                             </div>
                             <div class="entity-card__buttons">

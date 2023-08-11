@@ -22,7 +22,7 @@ def save_profile(sender, instance, **kwargs):
     if not instance.role:
         instance.profile.save()
     else:
-        instance.profile_company.save()
+        instance.company.save()
 
 
 @receiver(pre_save, sender=Profile)

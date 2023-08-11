@@ -1,0 +1,58 @@
+{% load widget_tweaks %}
+{% load static %}
+<div class="box modal-block">
+    <form hx-post="{% url 'vacancy-add' user.company.pk %}" enctype="multipart/form-data">{% csrf_token %}
+        <div class="modal-close"></div>
+        <h2 class="title-1 modal-pt">Вакансия</h2>
+        <div class="modal-information">
+            <div class="modal__inputs">
+                <div class="field is-fluid is-auto-flex">
+                    <label for="">Название вакансии</label>
+                    {% render_field form.job_name class="input" placeholder="название вакансии" %}
+                </div>
+                <div class="field is-1-flex">
+                    <label for="">Минимальная зарплата</label>
+                    {% render_field form.salary_min class="input" placeholder="10 000" %}
+                </div>
+                <div class="field is-1-flex">
+                    <label for="">Максимальная зарплата</label>
+                    {% render_field form.salary_max class="input" placeholder="100 000" %}
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Место работы</label>
+                    {% render_field form.location class="input is-fluid" placeholder="введите адрес" %}
+                </div>
+                <div class="field is-fluid">
+                    <label for="">Тип занятости</label>
+                    {% render_field form.working_mode class="input is-fluid" %}
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-half">
+                    <label for="">Требуемый опыт работы</label>
+                    <div class="field-flex ">
+                        {% render_field form.work_experience class="input is-auto-flex" %}
+                    </div>
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Требования к вакансии</label>
+                        {% render_field form.requirements class="input input-textarea" placeholder="Опишите необходимые требования к вакансии" %}
+                </div>
+            </div>
+            <div class="modal__inputs">
+                <div class="field is-fluid">
+                    <label for="">Возможности</label>
+                    {% render_field form.responsibilities class="input input-textarea is-fluid" placeholder="Опишите возможности предоставляемые компанией" %}
+                </div>
+            </div>
+        </div>
+        <div class="buttons modal-buttons">
+            <button class="btn-primary-large btn-fluid" type="submit">Сохранить изменения</button>
+            <a href="#" x-on:click="isModalOpen = false" class="btn-secondary-large btn-fluid">Отмена</a>
+        </div>
+    </form>
+</div>

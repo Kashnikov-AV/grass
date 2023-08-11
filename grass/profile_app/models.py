@@ -124,7 +124,7 @@ class Company(models.Model):
         
     user_model = get_user_model()
 
-    user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='profile_company',
+    user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='company',
                                 primary_key=True, verbose_name='Пользователь')
     company_name = models.CharField(max_length=100, blank=True, verbose_name='Название компании')
     about_company = models.TextField(blank=True, verbose_name='О компании')

@@ -1,7 +1,7 @@
 {% load widget_tweaks %}
 {% load static %}
 <div class="box modal-block">
-    <form hx-post="{% url 'hx-update' profile.pk 'ExpJob' 'ProfileExpForm' %}" enctype="multipart/form-data">{% csrf_token %}
+    <form hx-post="{% url 'hx-update' model.pk 'ExpJob' 'ProfileExpForm' %}" enctype="multipart/form-data">{% csrf_token %}
         <div class="modal-close"></div>
         <h2 class="title-1 modal-pt">Опыт работы</h2>
         <div class="modal-information">

@@ -1,8 +1,8 @@
 from django.urls import path, include
-from .views import VacancyCreateView, VacancyUpdateView, VacancyDeleteView
+from .views import CompanyVacancyListView, hx_create_company_vacancy_view, hx_delete_vacancy
 
 urlpatterns = [
-    path('create/', VacancyCreateView.as_view(), name='vacancy-create'),
-    path('<int:pk>/update/', VacancyUpdateView.as_view(), name='vacancy-update'),
-    path('<int:pk>/delete/', VacancyDeleteView.as_view(), name='vacancy-delete'),
+    path('company/<int:pk>/vacancies/', CompanyVacancyListView.as_view(), name='company-vacancies'),
+    path('company/<int:pk>/add/', hx_create_company_vacancy_view, name='vacancy-add'),
+    path('delete/<int:pk>/', hx_delete_vacancy, name='vacancy-delete'),
 ]

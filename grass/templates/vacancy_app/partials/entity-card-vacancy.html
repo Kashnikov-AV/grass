@@ -1,38 +1,46 @@
 <div x-show="!isModalOpen" x-cloak>
-    <div class="other-inf__flex-entity" id="p-edu">
-        {% for edu in object_list %}
+    <div class="other-inf__flex-entity" id="c-vacancies">
+        {% for vacancy in object_list %}
         <div class="entity-card">
             <div class="entity-card__head">
-                <p class="item-1 entity-card__title">{{ edu.edu_institution }}</p>
-                <p class="item-2 entity-card__subtitle">{{ edu.get_level_of_education_display }}</p>
-                <p class="item-3 entity-card__text">{{ edu.speciality }}</p>
-                <p class="item-4 entity-card__text">{{ edu.year_of_start_edu.year }} - {{ edu.year_of_end_edu.year }} г.</p>
+                <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
+                <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
+                <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}
+                </p>
+                <p class="item-4 entity-card__text">
+                    Требуемый опыт работы:
+                    {% if vacancy.work_experience %} {{ vacancy.get_work_exp_end }}
+                    {% else %}
+                    не имеет значения.
+                    {% endif %}
+                </p>
             </div>
-            {% if edu.diploma_certificate %}
-            <a href="{{ edu.diploma_certificate.url }}" target="_blank" class="entity-card__file-link">Диплом или
-                сертификат</a>
-            {% endif %}
+            <div class="entity-card__buttons">
+                <div class="entity-card__buttons-item">
+                    <button class="btn-primary-medium btn-entity">Подробнее</button>
+                </div>
+            </div>
         </div>
         {% endfor %}
     </div>
 </div>
 
-<div class="other-inf__flex-entity" id="education-list">
-    {% for edu in object_list %}
+
+<div class="other-inf__flex-entity" id="vacancy-list">
+    {% for vacancy in object_list %}
     <div class="entity-card">
         <div class="entity-card__head">
-            <p class="item-1 entity-card__title">{{ edu.edu_institution }}</p>
-            <p class="item-2 entity-card__subtitle">{{ edu.get_level_of_education_display }}</p>
-            <p class="item-3 entity-card__text">{{ edu.speciality }}</p>
-            <p class="item-4 entity-card__text">{{ edu.year_of_start_edu.year }} - {{ edu.year_of_end_edu.year }} г.</p>
+            <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
+            <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
+            <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}
+            </p>
+            <p class="item-4 entity-card__text">
+                Требуемый опыт работы: {{ vacancy.get_work_experience_display }}
+            </p>
         </div>
-        {% if edu.diploma_certificate %}
-        <a href="{{ edu.diploma_certificate.url }}" target="_blank" class="entity-card__file-link">Диплом или
-            сертификат</a>
-        {% endif %}
         <div class="entity-card__buttons">
             <div class="entity-card__buttons-item"
-                 hx-get="{% url 'hx-update' edu.pk 'Education' 'ProfileEducationForm' %}"
+                 hx-get="{% url 'hx-update' vacancy.pk 'Vacancy' 'VacancyForm' %}"
                  hx-target="#modal-1"
                  hx-swap="innerHTM">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
@@ -42,13 +50,16 @@
                 <p class="entity-card__buttons-link">Изменить</p>
             </div>
             <div class="entity-card__buttons-item"
-                 hx-get="{% url 'profile-education-delete' edu.pk %}"
-                 hx-swap="multi:#p-edu,#education-list">
+                 hx-get="{% url 'vacancy-delete' vacancy.pk %}"
+                 hx-swap="multi:#c-vacancies,#vacancy-list">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
                     <path
                         d="M15 6.2H19V7.8H17.4V18.2C17.4 18.4122 17.3157 18.6157 17.1657 18.7657C17.0157 18.9157 16.8122 19 16.6 19H5.4C5.18783 19 4.98434 18.9157 4.83431 18.7657C4.68429 18.6157 4.6 18.4122 4.6 18.2V7.8H3V6.2H7V3.8C7 3.58783 7.08429 3.38434 7.23431 3.23431C7.38434 3.08429 7.58783 3 7.8 3H14.2C14.4122 3 14.6157 3.08429 14.7657 3.23431C14.9157 3.38434 15 3.58783 15 3.8V6.2ZM15.8 7.8H6.2V17.4H15.8V7.8ZM8.6 10.2H10.2V15H8.6V10.2ZM11.8 10.2H13.4V15H11.8V10.2ZM8.6 4.6V6.2H13.4V4.6H8.6Z" />
                 </svg>
                 <p class="entity-card__buttons-link">Удалить</p>
+            </div>
+            <div class="entity-card__buttons-item">
+                <button class="btn-secondary-medium btn-entity">Подробнее</button>
             </div>
         </div>
     </div>

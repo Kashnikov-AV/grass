@@ -1371,6 +1371,14 @@ h1, h2, h3, h4, h5, h5, p {
   flex: auto;
 }
 
+.is-1-flex {
+  flex: 1;
+}
+
+.is-4-flex {
+  flex: 4;
+}
+
 .field-flex {
   display: flex;
   gap: 16px;
@@ -1415,18 +1423,6 @@ h1, h2, h3, h4, h5, h5, p {
 
 .profile-data {
   grid-row: span 2;
-}
-
-#education-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-#exp-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }
 
 .main-inf {
@@ -1649,6 +1645,10 @@ h1, h2, h3, h4, h5, h5, p {
 .entity-card__buttons-item:nth-child(2):active {
   fill: #EB6565;
   color: #EB6565;
+}
+
+.entity-card__buttons-item:nth-child(2) {
+  flex: 1;
 }
 
 .entity-card__buttons-link {

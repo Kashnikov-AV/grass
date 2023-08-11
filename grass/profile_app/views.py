@@ -8,6 +8,7 @@ from .forms import (ProfileMainInfoForm, ProfileAboutMeForm,
                     ProfileEducationForm, CompanyContactDataForm,
                     ProfileContactDataForm, CompanyMainInfoForm,
                     ProfileExpForm, CompanyAboutMeForm)
+from vacancy_app.forms import VacancyForm
 from datetime import datetime
 from django_htmx.http import HttpResponseClientRedirect, HttpResponseClientRefresh
 from django.contrib.auth.decorators import login_required
@@ -35,6 +36,8 @@ def hx_update_view(request, pk, model, form):
         my_model = Education
     elif model == 'ExpJob':
         my_model = ExpJob
+    elif model == 'Vacancy':
+        my_model = Vacancy
 
     object_model = get_object_or_404(my_model, pk=pk)
 
@@ -56,6 +59,7 @@ def hx_update_view(request, pk, model, form):
             object_form = ProfileExpForm(request.POST, instance=object_model)
             template = 'profile_app/partials/modal-exp-job-update.html'
 
+
         #company forms
         elif form == 'CompanyMainInfoForm':
             object_form = CompanyMainInfoForm(request.POST, instance=object_model)
@@ -63,9 +67,13 @@ def hx_update_view(request, pk, model, form):
         elif form == 'CompanyContactDataForm':
             object_form = CompanyContactDataForm(request.POST, instance=object_model)
             template = 'profile_app/partials/modal-contact-data-company.html'
-        if form == 'CompanyAboutMeForm':
+        elif form == 'CompanyAboutMeForm':
             object_form = CompanyAboutMeForm(request.POST, instance=object_model)
             template = 'profile_app/partials/modal-about-company.html'
+        #vacancy forms
+        elif form == 'VacancyForm':
+            object_form = VacancyForm(request.POST, instance=object_model)
+            template = 'vacancy_app/partials/modal-vacancy-update.html'
 
         if object_form.is_valid():
             object_form.save()
@@ -99,22 +107,26 @@ def hx_update_view(request, pk, model, form):
         elif form == 'CompanyContactDataForm':
             object_form = CompanyContactDataForm(instance=object_model)
             template = 'profile_app/partials/modal-contact-data-company.html'
-        if form == 'CompanyAboutMeForm':
+        elif form == 'CompanyAboutMeForm':
             object_form = CompanyAboutMeForm(instance=object_model)
             template = 'profile_app/partials/modal-about-company.html'
+        # vacancy forms
+        elif form == 'VacancyForm':
+            object_form = VacancyForm(instance=object_model)
+            template = 'vacancy_app/partials/modal-vacancy-update.html'
 
     return render(request, template, {
         'form': object_form,
-        'profile': object_model,
+        'model': object_model,
     })
 
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def hx_create_profile_education_add_view(request, pk):
+def hx_create_profile_education_view(request, pk):
     profile = get_object_or_404(Profile, pk=pk)
-    form = ProfileEducationForm(request.POST or None, request.FILES)
     if request.method == "POST":
+        form = ProfileEducationForm(request.POST or None, request.FILES)
         if form.is_valid():
             form.instance.profile = profile
             form.save()
@@ -123,22 +135,6 @@ def hx_create_profile_education_add_view(request, pk):
         form = ProfileEducationForm()
     return render(request, 'profile_app/partials/modal-education-add.html', {
         'form': form
-    })
-
-@login_required
-@require_http_methods(["GET", "POST"])
-def hx_update_profile_education_add_view(request, pk):
-    edu = get_object_or_404(Education, pk=pk)
-    if request.method == "POST":
-        form = ProfileAboutMeForm(request.POST, instance=edu)
-        if form.is_valid():
-            form.save()
-            return HttpResponseClientRefresh()
-    else:
-        form = ProfileAboutMeForm(instance=edu)
-    return render(request, 'profile_app/partials/modal-education-add.html', {
-        'form': form,
-        'profile': edu,
     })
 
 
@@ -193,7 +189,8 @@ class ProfileCompanyDetailView(LoginRequiredMixin, DetailView):
     def get_context_data(self, *args, **kwargs):
         context = super(ProfileCompanyDetailView, self).get_context_data(*args, **kwargs)
         # add extra field
-        context['vacancies'] = vacancies = Vacancy.objects.filter(company=self.request.user.id)
+        company = Company.objects.get(pk=self.object.pk)
+        context['vacancies'] = vacancies = Vacancy.objects.filter(company=company)
         return context
 
 
@@ -210,10 +207,10 @@ class ProfileExpListView(LoginRequiredMixin, ListView):
 
 @login_required
 @require_http_methods(["GET", "POST"])
-def hx_create_profile_exp_add_view(request, pk):
+def hx_create_profile_exp_view(request, pk):
     profile = get_object_or_404(Profile, pk=pk)
-    form = ProfileExpForm(request.POST or None)
     if request.method == "POST":
+        form = ProfileExpForm(request.POST or None)
         if form.is_valid():
             form.instance.profile = profile
             form.save()
