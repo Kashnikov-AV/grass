@@ -21,7 +21,7 @@ admin.site.register(Profile, ProfileAdmin)
 
 class CompanyAdmin(admin.ModelAdmin):
     model = Company
-    list_display = ('company_name', 'region', 'inn',)
+    list_display = ('pk', 'company_name', 'region', 'inn',)
 
 
 admin.site.register(Company, CompanyAdmin)

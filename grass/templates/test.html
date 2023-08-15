@@ -4,25 +4,14 @@
 {% include 'components/header.html' %}
 <main>
     <div class="flex-main">
-        <!-- <div x-data="{ isModalOpen: false }" >
-            <div  class="modal" role="dialog" tabindex="-1" x-show="isModalOpen" x-on:click.away="isModalOpen = false"
-                x-cloak x-transition>
-                <div class="model-inner">
-                    <div class="modal-header">
-                        <h3>Hello World</h3>
-                        <button aria-label="Close" x-on:click="isModalOpen=false">✖</button>
-                    </div>
-                    <p>
-                        Natus earum velit ab nobis eos. Sed et exercitationem voluptatum omnis
-                        dolor voluptates. Velit ut ipsam sunt ipsam nostrum. Maiores officia
-                        accusamus qui sapiente. Dolor qui vel placeat dolor nesciunt quo dolor
-                        dolores. Quo accusamus hic atque nisi minima.
-                    </p>
-                </div>
-            </div>
-            <button x-on:click="isModalOpen = true">Open Modal</button>
-            <div class="overlay" x-show="isModalOpen" x-cloak></div>
-        </div> -->
+
+        <input type="file">
+
+        <input type="color">
+
+        {% include 'file-loader.html' %}
+        <p>--------</p>
+        {% include 'file-loader-loaded.html' %}
         <div>
             <div class="box v-card" >
                 <div class="v-card__header">
@@ -54,9 +43,6 @@
             <button class="btn-secondary-medium-is-danger">Button</button>
             <button class="btn-primary-small-is-danger">Button</button>
             <button class="btn-secondary-small-is-danger">Button</button>
-        </div>
-        <div class="box">
-            {% include 'profile_app/entity-card.html' %}
         </div>
 
         <button class="btn-primary-large-is-danger"

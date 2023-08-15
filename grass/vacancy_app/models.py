@@ -30,7 +30,7 @@ class Vacancy(models.Model):
     salary_max = models.PositiveIntegerField(verbose_name="Максимальная зарплата", default=0)
     company = models.ForeignKey(Company, on_delete=models.CASCADE, related_name='vacancy')
     location = models.CharField(max_length=150, verbose_name="Место положения")
-    responsibilities = models.TextField(verbose_name="Возможности")
+    responsibilities = models.TextField(verbose_name="Условия")
     requirements = models.TextField(verbose_name="Требования")
     work_experience = models.IntegerField(verbose_name="Опыт работы", choices=WORKEXP_CHOICES, default=0)
     working_mode = models.PositiveSmallIntegerField(verbose_name='Тип занятости',

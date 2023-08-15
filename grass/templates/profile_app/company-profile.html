@@ -4,6 +4,8 @@
 {% load widget_tweaks %}
 {% load thumbnail %}
 
+{% block title %}Company profile{% endblock %}
+
 {% block content %}
 {% include 'components/header.html' %}
 <main>
@@ -21,7 +23,14 @@
             <div class="box">
                 <div class="main-inf">
                     <div class="main-inf__avatar">
-                        <img src="{% static 'img/avatat-company-empty.png' %}" alt="avatar company empty">
+                        {% if company.logo %}
+                            {% thumbnail company.logo "100x100" crop="center" as im %}
+                                <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="main-inf__avatar-img" alt="company logo">
+                            {% endthumbnail %}
+                        {% else %}    
+                            <img src="{% static 'img/avatar-company-empty.png' %}" alt="company logo empty">
+                        {% endif %}
+                        
                     </div>
                     <div class="main-inf__bio">
                         <h2 class="main-inf__bio-title">{{ company.company_name }}</h2>
@@ -170,8 +179,8 @@
         <div class="vacancies-list">
             <h2 class="vacancies-list__title">Рекомендованные вакансии</h2>
             <div id="profile-vacancies">
-                {% include 'profile_app/vacancy-card.html' %}
-                {% include 'profile_app/vacancy-card.html' %}
+                {% include 'components/vacancy-card.html' %}
+                {% include 'components/vacancy-card.html' %}
             </div>
         </div>
     </div>

@@ -10,6 +10,33 @@
 @import 'components/_inputs'
 @import 'components/_modal'
 
+
+.file-loader
+    background-color: $Neutral-50
+    width: 392px
+    height: 78px
+    border: 2px dashed $Neutral-250
+    border-radius: 14px
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    &:hover
+        background-color: $Neutral-150
+    &-flex-container
+        display: flex
+        align-items: center
+        gap: 4px
+    &__text
+        @include Text_Small_Medium
+        color: $Neutral-900
+    &__link
+        @include Link_Link_Small
+        text-decoration: underline
+    &__subtext
+        @include Text_Small_Medium
+        color: $Neutral-350
+
 .is-fluid
     width: 100%
 
@@ -67,6 +94,7 @@
     // background-color: red
     grid-row: span 2
     // grid-column: auto
+
 
 .main-inf
     .link-green-large
@@ -266,6 +294,39 @@
         @include h4_Medium
         color: $Neutral-500
 
+.ah-card
+    padding: 24px
+    min-width: 400px
+    flex: 1
+    cursor: pointer
+    &-header
+        display: flex
+        gap: 20px
+        &__img
+            border-radius: 50%
+        &__title
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            width: 100%
+            &-h
+                display: flex
+                gap: 20px
+            &-company
+                flex: 1
+                @include h4_Medium
+            &-job
+                @include h3_Bold
+            &-salary
+                text-align: right
+                @include h4_Medium
+                color: $Neutral-500
+    &-body
+        margin-top: 20px
+        @include Text_Large_Medium
+        color: $Neutral-500
+        
+
 #profile-vacancies
     display: flex
     flex-direction: column
@@ -280,7 +341,7 @@ main
 .main-background
     background-image: url(../img/main.png)
     background-repeat: no-repeat
-    background-size: cover
+    background-size: contain
 
 .flex-main
     display: flex
@@ -889,20 +950,87 @@ form_city
             content: "✖"
             color: $Neutral-500            
 
+.home
+    background-color: red
+    &-container
+        display: flex
+        flex-direction: column
+        max-width: 1280px
+        // background-color: rgba(0,255,0,0.5)
+        justify-content: center
+        margin: 0 auto
+    &-welcome
+        display: flex
+        flex-direction: column
+        text-align: center
+        &-title
+            @include h1_Bold
+            font-size: 48px
+            margin-top: 100px
+            margin-bottom: 24px
+        &-subtitle
+            @include h2_Medium
+            margin-bottom: 40px
+        &__buttons
+            width: 496px
+            display: flex
+            gap: 16px
+            margin: 0 auto
+    &-menu
+        margin-top: 280px
+        display: flex
+        min-height: 400px
+        gap: 16px
+        flex-wrap:  wrap
+        justify-content: space-evenly
+        justify-items: center
+        &__card
+            &:hover
+                box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
+                margin-top: -5px
+            &-link
+                cursor: pointer
+            &-item
+                display: flex
+                flex-direction: column
+            &-img
+                display: inline
+                width: 100%
+                height: auto
+                border-radius: 20px
+            &-content
+                box-sizing: border-box
+                padding: 24px
+                background-color: $White
+                width: 280px
+                height: 156px
+                border-radius: 20px
+                margin: -64px auto 0 auto
+                text-align: center
+                &-title
+                    margin-bottom: 12px
+                    @include h2_Bold
+                &-subtitle
+                    @include h3_Medium
+    &-article
+        margin-top: 80px
+        &__header
+            display: flex
+            align-items: flex-end
+            &-name
+                flex: 1
+                @include h1_Bold
+            &-link
+                @include Link_Link_Large
+        &__items
+            margin-top: 32px
+            display: flex
+            flex-wrap: wrap
+            gap: 16px
 
-.main
-    height: 393px
-    display: flex
-    justify-content: center
-    margin: 0 0 250px -20px
 
-.main_text
-    display: flex
-    flex-direction: column
-    align-items: center
-    gap: 40px
-    width: 720px
-    height: 294px
+            
+
 
 .header_and_subheader
     display: flex
@@ -923,7 +1051,23 @@ form_city
         text-align: center
         color: #000000
     h2
-        @include h2_Medium
+        
+
+
+.main
+    height: 393px
+    display: flex
+    justify-content: center
+    margin: 0 0 250px -20px
+
+.main_text
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 40px
+    width: 720px
+    height: 294px
+
 
 .buttons_index
     display: flex
@@ -932,100 +1076,6 @@ form_city
     gap: 16px
     width: 496px
     height: 54px
-
-.main_bloks
-    display: flex
-    justify-content: center
-    margin-top: 125px
-
-.main_bloks_right
-    margin: -60px -35px 0 0
-
-.main_right_blok_1
-    display: flex
-    gap: 24px
-    width: 252px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(9.96deg)
-    justify-content: space-around
-
-.main_right_blok_2
-    display: flex
-    gap: 24px
-    width: 252px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(-10.81deg)
-    justify-content: space-around
-
-.main_right_blok_3
-    display: flex
-    gap: 24px
-    width: 252px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(-2.39deg)
-    justify-content: space-around
-
-.main_bloks_left
-    margin: -60px 0 0 -15px
-
-.main_left_blok_1
-    display: flex
-    gap: 24px
-    width: 252px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(9.96deg)
-    justify-content: space-around
-
-.main_left_blok_2
-    display: flex
-    gap: 24px
-    width: 252px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(-0.46deg)
-    justify-content: space-around
-
-.main_left_blok_3
-    display: flex
-    gap: 24px
-    width: 243px
-    height: 167px
-    background: #FFFFFF
-    box-shadow: 0px 5px 40px rgba(32, 184, 75, 0.2)
-    border-radius: 20px
-    transform: rotate(5.51deg)
-    justify-content: space-around
-
-.main_header_blok
-    display: flex
-    flex-direction: column
-    gap: 8px
-    justify-content: space-evenly
-    button
-        display: flex
-        flex-direction: row
-        justify-content: center
-        align-items: center
-        padding: 16px 32px
-        gap: 8px
-        width: 195px
-        height: 42px
-        border: 1px solid #20B84B
-        border-radius: 14px
 
 .position_and_company
     display: flex
@@ -1285,6 +1335,8 @@ form_city
     .vacancies-list
         margin-right: 16px
 
+    .main-background
+        background-image: none
 
 @media (max-width: 768px)
     .entity-card

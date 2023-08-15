@@ -96,8 +96,7 @@ class Education(models.Model):
                                 verbose_name='профиль пользователя')
     edu_institution = models.CharField(max_length=100, blank=True, verbose_name='Учебное заведение')
     speciality = models.CharField(max_length=200, blank=True, verbose_name='название специальности')
-    level_of_education = models.PositiveSmallIntegerField(blank=True,
-                                                          verbose_name="Уровень образования",
+    level_of_education = models.PositiveSmallIntegerField(verbose_name="Уровень образования",
                                                           choices=EDU_CHOICES,
                                                           default=0
                                                           )
@@ -128,7 +127,7 @@ class Company(models.Model):
                                 primary_key=True, verbose_name='Пользователь')
     company_name = models.CharField(max_length=100, blank=True, verbose_name='Название компании')
     about_company = models.TextField(blank=True, verbose_name='О компании')
-    count_of_employees = models.PositiveIntegerField(blank=True, verbose_name='Количество работников', default=0)
+    count_of_employees = models.PositiveIntegerField(verbose_name='Количество работников', default=0)
     region = models.CharField(blank=True, max_length=50, verbose_name='Регион регистрации компании')
     inn = models.BigIntegerField(blank=True, verbose_name='Инн организации')
     field_of_activity = models.CharField(blank=True, max_length=150, verbose_name='Сфера деятельности')
@@ -181,7 +180,7 @@ class ExpJob(models.Model):
                                 verbose_name='профиль пользователя')
 
     company_name = models.CharField(max_length=150, blank=True, verbose_name='Название компании')
-    type_employment = models.PositiveSmallIntegerField(blank=True, verbose_name='Тип занятости', choices=EMPLOYMENT_CHOICES, default=0)
+    type_employment = models.PositiveSmallIntegerField(verbose_name='Тип занятости', choices=EMPLOYMENT_CHOICES, default=0)
     job_function = models.CharField(max_length=100, blank=True, verbose_name='Должность')
     city = models.CharField(blank=True, max_length=50, verbose_name='Место (город) работы')
     at_now_time = models.BooleanField(verbose_name='по настоящее время')

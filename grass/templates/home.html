@@ -1,345 +1,118 @@
 <!-- templates/home.html -->
 {% extends 'base.html' %}
 {% load static %}
+{% load thumbnail %}
+
 {% block title %}Home{% endblock %}
+
 {% block content %}
 {% include 'components/header.html' %}
-<main>
-    <div class="main-background">
-        <div class="main_bloks">
-            <div class="main">
-                <div class="main_text">
-                    <div class="header_and_subheader">
-                        <h1>Начните свою карьеру<br>в сельскохозяйственной сфере!</h1>
-                        <h2>Наша платформа помогает связать<br>работодателей и соискателей в одном месте.</h2>
-                    </div>
-                    <div class="buttons_index">
-                        <button class="btn-primary-large btn-fluid">Смотреть вакансии</button>
-                        <button class="btn-secondary-large btn-fluid">Смотреть соискателей</button>
-                    </div>
-                </div>
+<main class="main-background">
+    <div class="home-container">
+        <div class="home-welcome">
+            <h2 class="home-welcome-title">Начните свою карьеру<br>в сельскохозяйственной сфере!</h2>
+            <p class="home-welcome-subtitle">Наша платформа помогает связать<br>работодателей и соискателей в одном
+                месте.</p>
+            <div class="home-welcome__buttons">
+                <button class="btn-primary-large btn-fluid">Смотреть вакансии</button>
+                <button class="btn-secondary-large btn-fluid">Смотреть соискателей</button>
+            </div>
+        </div>
+        <div class="home-menu">
+            <div class="home-menu__card">
+                <a href="#" class="home-menu__card-link">
+                    <div class="home-menu__card-item">
+                        <img src="{% static 'img/internships/1.png' %}" class="home-menu__card-img" alt="меню стажировки">
+                        <div class="home-menu__card-content">
+                            <h3 class="home-menu__card-content-title">Стажировки</h3>
+                            <p class="home-menu__card-content-subtitle">Отличный старт для
+                                будущей карьеры и шанс улучшить свои навыки.</p>
+                        </div>
+                    </div>   
+                </a>
+            </div>
+            <div class="home-menu__card">
+                <a href="#" class="home-menu__card-link">
+                    <div class="home-menu__card-item">
+                        <img src="{% static 'img/internships/2.png' %}" class="home-menu__card-img" alt="меню стажировки">
+                        <div class="home-menu__card-content">
+                            <h3 class="home-menu__card-content-title">Практики</h3>
+                            <p class="home-menu__card-content-subtitle">Получайте ценные знания и навыки, которые помогут в будущей карьере.</p>
+                        </div>
+                    </div>   
+                </a>
+            </div>
+            <div class="home-menu__card">
+                <a href="#" class="home-menu__card-link">
+                    <div class="home-menu__card-item">
+                        <img src="{% static 'img/internships/3.png' %}" class="home-menu__card-img" alt="меню стажировки">
+                        <div class="home-menu__card-content">
+                            <h3 class="home-menu__card-content-title">Поиск жилья</h3>
+                            <p class="home-menu__card-content-subtitle">Предоставление места для проживания от работодателей.</p>
+                        </div>
+                    </div>   
+                </a>
+            </div>
+            <div class="home-menu__card">
+                <a href="#" class="home-menu__card-link">
+                    <div class="home-menu__card-item">
+                        <img src="{% static 'img/internships/4.png' %}" class="home-menu__card-img" alt="меню стажировки">
+                        <div class="home-menu__card-content">
+                            <h3 class="home-menu__card-content-title">Блог о карьере</h3>
+                            <p class="home-menu__card-content-subtitle">Делитесь своим опытом с другими и заводите полезные знакомства.</p>
+                        </div>
+                    </div>   
+                </a>
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article__header">
+                <h2 class="home-article__header-name">Новые вакансии</h2>
+                <a class="home-article__header-link" href="#">Показать всё</a>
+            </div>
+            <div class="home-article__items">
+                {% for vac in vacancies %}
+                    {% include 'components/home-entity-card-vacancy.html' %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article__header">
+                <h2 class="home-article__header-name">Компании недели</h2>
+                <a class="home-article__header-link" href="#">Показать всё</a>
+            </div>
+            <div class="home-article__items">
+                {% for c in companies %}
+                    {% include 'components/home-entity-card-company.html' %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article__header">
+                <h2 class="home-article__header-name">Соискатели недели</h2>
+                <a class="home-article__header-link" href="#">Показать всё</a>
+            </div>
+            <div class="home-article__items">
+                {% for w in workers %}
+                    {% include 'components/home-entity-card-worker.html' %}
+                {% endfor %}
+            </div>
+        </div>
+        <div class="home-article">
+            <div class="home-article__header">
+                <h2 class="home-article__header-name">Новости агросферы</h2>
+                <a class="home-article__header-link" href="#">Показать всё</a>
+            </div>
+            <div class="home-article__items">
+                {% for w in workers %}
+                    {% include 'components/home-entity-card-worker.html' %}
+                {% endfor %}
             </div>
         </div>
     </div>
-    <div class="content_index">
-        <div class="container">
-            <div class="categories">
-                <div class="internships">
-                    <div class="picture">
-                        <img src="{% static 'img/internships/1.png' %}">
-                    </div>
-                    <div class="text">
-                        <h2>Стажировки</h2>
-                        <h3>Отличный старт для<br>будущей карьеры и шанс<br>улучшить свои навыки.</h3>
-                    </div>
-                </div>
-                <div class="internships">
-                    <div class="picture">
-                        <img src="{% static 'img/internships/2.png' %}">
-                    </div>
-                    <div class="text">
-                        <h2>Практики</h2>
-                        <h3>Получайте ценные знания<br>и навыки, которые помогут<br>в будущей карьере.</h3>
-                    </div>
-                </div>
-                <div class="internships">
-                    <div class="picture">
-                        <img src="{% static 'img/internships/3.png' %}">
-                    </div>
-                    <div class="text">
-                        <h2>Поиск жилья</h2>
-                        <h3>Предоставление места<br>для проживания от<br>работодателей.</h3>
-                    </div>
-                </div>
-                <div class="internships">
-                    <div class="picture">
-                        <img src="{% static 'img/internships/4.png' %}">
-                    </div>
-                    <div class="text">
-                        <h2>Блог о карьере</h2>
-                        <h3>Делитесь своим опытом с<br>другими и заводите<br>полезные знакомства.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="news_vacancies">
-                <div class="title_index">
-                    <h1>Новые вакансии</h1>
-                    <a href="#">Показать всё</a>
-                </div>
-                <div class="vacancies_blok">
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 50 000 ₽</h3>
-                                </div>
-                                <h2>Менеджер</h2>
-                            </div>
-                        </div>
-                        <p>Мы ищем уверенного и профессионального менеджера, который будет заниматься продажами и
-                            управлением клиентской базой нашей компании.</p>
-                    </div>
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 80 000 ₽</h3>
-                                </div>
-                                <h2>Инженер</h2>
-                            </div>
-                        </div>
-                        <p>Требуется опытный инженер, которому предстоит работа в сфере инженерии и технологии.
-                            Идеальный кандидат будет иметь высокие технические знания.</p>
-                    </div>
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 65 000 ₽</h3>
-                                </div>
-                                <h2>Агроном</h2>
-                            </div>
-                        </div>
-                        <p>Если вы обладаете знаниями и опытом в области сельского хозяйства, умеете работать с техникой
-                            и заботиться о растениях, мы будем рады видеть вас в нашей команде.</p>
-                    </div>
-                </div>
-                <div class="vacancies_blok">
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 50 000 ₽</h3>
-                                </div>
-                                <h2>Менеджер</h2>
-                            </div>
-                        </div>
-                        <p>Мы ищем уверенного и профессионального менеджера, который будет заниматься
-                            продажами и управлением клиентской базой нашей компании.</p>
-                    </div>
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 80 000 ₽</h3>
-                                </div>
-                                <h2>Инженер</h2>
-                            </div>
-                        </div>
-                        <p>Требуется опытный инженер, которому предстоит работа в сфере инженерии и технологии.
-                            Идеальный кандидат будет иметь высокие технические знания.</p>
-                    </div>
-                    <div class="vacancy_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>GrassJob</h3>
-                                    <h3>от 65 000 ₽</h3>
-                                </div>
-                                <h2>Агроном</h2>
-                            </div>
-                        </div>
-                        <p>Если вы обладаете знаниями и опытом в области сельского хозяйства, умеете работать с техникой
-                            и заботиться о растениях, мы будем рады видеть вас в нашей команде.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="companies">
-                <div class="title_index">
-                    <h1>Компании недели </h1>
-                    <a href="#">Показать всё</a>
-                </div>
-                <div class="companies_blok">
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                </div>
-                <div class="companies_blok">
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                    <div class="company_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/logo_green.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Москва</h3>
-                                </div>
-                                <h2>GrassJob</h2>
-                            </div>
-                        </div>
-                        <p>Компания в сельскохозяйственной сфере специализируется на производстве и продаже
-                            высококачественных сельскохозяйственных товаров и других инновационные продуктов.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="applicants">
-                <div class="title_index">
-                    <h1>Соискатели недели</h1>
-                    <a href="#">Показать всё</a>
-                </div>
-                <div class="candidates_blok">
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                </div>
-                <div class="candidates_blok">
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                    <div class="candidate_card">
-                        <div class="head_layout_top">
-                            <img src="{% static 'img/avatar.svg' %}">
-                            <div class="title_blok">
-                                <div class="head_layout_down">
-                                    <h3>Инженер</h3>
-                                    <h3>GrassJob</h3>
-                                </div>
-                                <h2>Иван Иванов</h2>
-                            </div>
-                        </div>
-                        <p>Я разработчик с большим опытом. Имею высокую экспертизу в разработке высоконагруженных
-                            систем, а также постоянно развиваюсь в профессиональном плане.</p>
-                    </div>
-                </div>
-            </div>
+   
+    
+    <!-- ----------------------------------- -->
 
             <div class="news">
                 <div class="title_index">
@@ -393,7 +166,7 @@
             </div>
         </div>
     </div>
-    
+
     </div>
 </main>
 {% include 'components/footer.html' %}

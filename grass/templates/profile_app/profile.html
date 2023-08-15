@@ -4,6 +4,8 @@
 {% load widget_tweaks %}
 {% load thumbnail %}
 
+{% block title %}Profile{% endblock %}
+
 {% block content %}
 {% include 'components/header.html' %}
 <main>
@@ -221,8 +223,8 @@
         <div class="vacancies-list">
             <h2 class="vacancies-list__title">Рекомендованные вакансии</h2>
             <div id="profile-vacancies">
-                {% include 'profile_app/vacancy-card.html' %}
-                {% include 'profile_app/vacancy-card.html' %}
+                {% include 'components/vacancy-card.html' %}
+                {% include 'components/vacancy-card.html' %}
             </div>
         </div>
     </div>
