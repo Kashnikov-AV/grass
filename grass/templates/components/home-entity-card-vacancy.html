@@ -1,0 +1,29 @@
+{% extends 'components/home-entity-card-base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block logo %}
+{% if vac.company.logo %}
+    {% thumbnail vac.company.logo "60x60" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="ah-card-header__img" alt="company logo">
+    {% endthumbnail %}
+{% else %}    
+    <img src="{% static 'img/avatar-company-empty.png' %}" width="60px" height="60px" alt="company logo empty">
+{% endif %}
+{% endblock %}
+
+{% block upsubtitle %}
+{{ vac.company }}
+{% endblock %}
+
+{% block salary %}
+от {{ vac.salary_min }} ₽
+{% endblock %}
+
+{% block title %}
+{{ vac.job_name }}
+{% endblock %}
+
+{% block body %}
+{{ vac.requirements|truncatechars:120 }}
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'components/home-entity-card-base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block logo %}
+{% if c.logo %}
+    {% thumbnail c.logo "60x60" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="ah-card-header__img" alt="company logo">
+    {% endthumbnail %}
+{% else %}    
+    <img src="{% static 'img/avatar-company-empty.png' %}" width="60px" height="60px" alt="company logo empty">
+{% endif %}
+{% endblock %}
+
+{% block upsubtitle %}
+{{ c.region }}
+{% endblock %}
+
+{% block salary %}
+{% endblock %}
+
+{% block title %}
+{{ c.company_name }}
+{% endblock %}
+
+{% block body %}
+{{ c.about_company|truncatechars:120 }}
+{% endblock %}

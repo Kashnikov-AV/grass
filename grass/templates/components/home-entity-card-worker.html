@@ -1,0 +1,29 @@
+{% extends 'components/home-entity-card-base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block logo %}
+{% if w.photo %}
+    {% thumbnail w.photo "60x60" crop="center" as im %}
+        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="ah-card-header__img" alt="logo profile">
+    {% endthumbnail %}
+{% else %}    
+    <img src="{% static 'img/avatar-user-empty.svg' %}" width="60px" height="60px" alt="logo profile empty">
+{% endif %}
+{% endblock %}
+
+{% block upsubtitle %}
+{{ w.career_objective }}
+{% endblock %}
+
+{% block salary %}
+желаемая З/П {{ w.desired_salary }} ₽
+{% endblock %}
+
+{% block title %}
+{{ w.surname }} {{ w.name }} {{ w.patronymic }}
+{% endblock %}
+
+{% block body %}
+{{ w.about_me|truncatechars:120 }}
+{% endblock %}

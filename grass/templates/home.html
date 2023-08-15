@@ -104,69 +104,17 @@
                 <a class="home-article__header-link" href="#">Показать всё</a>
             </div>
             <div class="home-article__items">
-                {% for w in workers %}
-                    {% include 'components/home-entity-card-worker.html' %}
+                {% for n in news %}
+                    <div class="box">
+                        <div class="home-news__title"></div>
+                        <div class="home-news__body"></div>
+                        <div class="home-nes__img"></div>
+                    </div>
+                {% empty %}
+                    <p class="other-inf__item-promt">Новостей нет</p>
                 {% endfor %}
             </div>
         </div>
-    </div>
-   
-    
-    <!-- ----------------------------------- -->
-
-            <div class="news">
-                <div class="title_index">
-                    <h1>Новости</h1>
-                    <a href="#">Показать всё</a>
-                </div>
-                <div class="news_cards">
-                    <div class="new_card">
-                        <div class="news_title">
-                            <h2>Открылись стажировки</h2>
-                            <h3>Отличный старт для будущей карьеры и шанс улучшить свои навыки.</h3>
-                        </div>
-                        <img src="{% static 'img/internships/1.png' %}">
-                        <div class="caption">
-                            <div class="views">
-                                <img src="{% static 'img/eye2.svg' %}">
-                                <h4>56</h4>
-                            </div>
-                            <h4>42 мин. назад</h4>
-                        </div>
-                    </div>
-                    <div class="new_card">
-                        <div class="news_title">
-                            <h2>Началась практика</h2>
-                            <h3>Получайте ценные знания и навыки, которые помогут в будущей карьере.</h3>
-                        </div>
-                        <img src="{% static 'img/internships/2.png' %}">
-                        <div class="caption">
-                            <div class="views">
-                                <img src="{% static 'img/eye2.svg' %}">
-                                <h4>56</h4>
-                            </div>
-                            <h4>Вчера</h4>
-                        </div>
-                    </div>
-                    <div class="new_card">
-                        <div class="news_title">
-                            <h2>Компании дают жильё</h2>
-                            <h3>Предоставление места для проживания от работодателей.</h3>
-                        </div>
-                        <img src="{% static 'img/internships/3.png' %}">
-                        <div class="caption">
-                            <div class="views">
-                                <img src="{% static 'img/eye2.svg' %}">
-                                <h4>56</h4>
-                            </div>
-                            <h4>20.04</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     </div>
 </main>
 {% include 'components/footer.html' %}

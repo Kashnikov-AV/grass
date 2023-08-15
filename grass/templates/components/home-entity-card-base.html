@@ -1,0 +1,18 @@
+{% load static %}
+{% load thumbnail %}
+
+<div class="box ah-card">
+    <a href="#">
+        <div class="ah-card-header">
+            {% block logo %}{% endblock %}
+            <div class="ah-card-header__title">
+                <div class="ah-card-header__title-h">
+                    <div class="ah-card-header__title-company">{% block upsubtitle %}{% endblock %}</div>
+                    <div class="ah-card-header__title-salary">{% block salary %}{% endblock %}</div>
+                </div>
+                <span class="ah-card-header__title-job">{% block title %}{% endblock %}</span>
+            </div>
+        </div>
+        <p class="ah-card-body">{% block body %}{% endblock %}</p>
+    </a>
+</div>
