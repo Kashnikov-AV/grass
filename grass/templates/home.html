@@ -73,6 +73,8 @@
             <div class="home-article__items">
                 {% for vac in vacancies %}
                     {% include 'components/home-entity-card-vacancy.html' %}
+                {% empty %}
+                    <p class="other-inf__item-promt">Нет вакансий</p>
                 {% endfor %}
             </div>
         </div>
@@ -84,6 +86,8 @@
             <div class="home-article__items">
                 {% for c in companies %}
                     {% include 'components/home-entity-card-company.html' %}
+                {% empty %}
+                    <p class="other-inf__item-promt">Нет компаний</p>
                 {% endfor %}
             </div>
         </div>
@@ -95,6 +99,8 @@
             <div class="home-article__items">
                 {% for w in workers %}
                     {% include 'components/home-entity-card-worker.html' %}
+                {% empty %}
+                    <p class="other-inf__item-promt">Нет работников</p>
                 {% endfor %}
             </div>
         </div>

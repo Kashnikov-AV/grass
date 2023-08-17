@@ -35,7 +35,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = list(env('ALLOWED_HOSTS'))
+ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
 
 # Application definition
 INSTALLED_APPS = [
@@ -173,16 +173,16 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users_app.CustomUser'
 
 # EMAIL
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-#FIXME
-EMAIL_HOST_USER = 'duo1245@yandex.ru'
-#FIXME
-EMAIL_HOST_PASSWORD = 'yzquhtpwlvnpajab'
-EMAIL_USE_SSL = True
-#FIXME
-DEFAULT_FROM_EMAIL = 'django-auth@'
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_PORT = 465
+# #FIXME
+# EMAIL_HOST_USER = 'duo1245@yandex.ru'
+# #FIXME
+# EMAIL_HOST_PASSWORD = 'yzquhtpwlvnpajab'
+# EMAIL_USE_SSL = True
+# #FIXME
+# DEFAULT_FROM_EMAIL = 'django-auth@'
 
 #chat settings
 # CHAT_WS_SERVER_HOST = 'localhost'
