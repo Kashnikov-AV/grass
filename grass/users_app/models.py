@@ -38,8 +38,8 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser):
-    ROLES = [(False, 'worker'),
-             (True, 'employer')
+    ROLES = [(False, 'работник'),
+             (True, 'Компания')
              ]
 
     username = None
@@ -48,7 +48,7 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
-    role = models.BooleanField(verbose_name='role', choices=ROLES, blank=True, null=True)
+    role = models.BooleanField(verbose_name='role', choices=ROLES, default=False)
 
     objects = CustomUserManager()
 

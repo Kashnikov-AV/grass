@@ -37,9 +37,9 @@ class SignUpForm(UserCreationForm):
     role = forms.TypedChoiceField(
         coerce=lambda x: bool(int(x)),
         label="",
-        choices=((0, 'Ищу работу'), (1, 'Ищу сотрудника')),
+        choices=(('0', 'Ищу работу'), ('1', 'Ищу сотрудника')),
         widget=forms.RadioSelect(),
-        initial=0
+        initial='0'
     )
 
     class Meta:
@@ -53,7 +53,7 @@ class SignUpForm1(forms.Form):
         label="",
         choices=((0, 'Ищу работу'), (1, 'Ищу сотрудника')),
         widget=forms.RadioSelect(),
-        initial=0
+        initial=1
     )
 
 

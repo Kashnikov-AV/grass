@@ -2,6 +2,10 @@
 {% load static %}
 {% load thumbnail %}
 
+{% block url %}
+    <a href="{{ w.get_absolute_url }}">
+{% endblock%}
+
 {% block logo %}
 {% if w.photo %}
     {% thumbnail w.photo "60x60" crop="center" as im %}

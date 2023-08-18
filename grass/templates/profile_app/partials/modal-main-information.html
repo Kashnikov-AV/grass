@@ -3,8 +3,8 @@
 {% load thumbnail %}
 
 <div class="box modal-block">
-    <form hx-post="{% url 'hx-update' user.pk 'Profile' 'ProfileMainInfoForm' %}" enctype="multipart/form-data">{%
-        csrf_token %}
+    <form hx-post="{% url 'hx-update' user.pk 'Profile' 'ProfileMainInfoForm' %}" enctype="multipart/form-data">
+        {% csrf_token %}
         <div class="modal-close" x-on:click="isModalOpen = false"></div>
         <h2 class="title-1 modal-pt">Основная информация</h2>
         <div class="modal-information">

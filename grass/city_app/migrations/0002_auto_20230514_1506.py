@@ -6,16 +6,16 @@ from django.db import migrations
 def parse_cities(apps, schema_editor):
     City = apps.get_model('city_app', 'City')
 
-    with open('cities_cleaned.csv', newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',', quotechar='|')
+    with open('cities_cleaned1.csv', newline='') as csvfile:
+        reader = csv.reader(csvfile, delimiter=',', quotechar='|',)
 
         for row in reader:
             city, *region = row
-            city = ''.join(city).strip().replace('"', '').replace("'", "")
-            region = ','.join(region).strip().replace('"', '').replace("'", "")
+            city = ''.join(city).strip().replace('"', '').replace("'", "").replace(chr(0x00), "")
+
+            region = ','.join(region).strip().replace('"', '').replace("'", "").replace(chr(0x00), "")
+
             c = City.objects.create(city=city, region=region)
-
-
 
 
 class Migration(migrations.Migration):

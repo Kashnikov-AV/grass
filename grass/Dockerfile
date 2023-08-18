@@ -6,7 +6,7 @@ WORKDIR /grass
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-#db
+# настройка установка нужных пакетов
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpq-dev \
@@ -16,7 +16,7 @@ WORKDIR \grass
 
 # dependencies
 RUN pip install --upgrade pip
-COPY requirements.txt
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
 

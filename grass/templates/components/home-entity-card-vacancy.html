@@ -2,6 +2,10 @@
 {% load static %}
 {% load thumbnail %}
 
+{% block url %}
+    <a href="#">
+{% endblock%}
+
 {% block logo %}
 {% if vac.company.logo %}
     {% thumbnail vac.company.logo "60x60" crop="center" as im %}

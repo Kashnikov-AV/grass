@@ -1,59 +1,52 @@
 @charset "UTF-8";
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("fonts/Gilroy-Thin.ttf") format("truetype"), url("../fonts/Gilroy-Thin.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Thin.woff") format("woff");
   font-weight: 100;
   font-style: normal;
 }
-
 /* Regular */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-Regular.ttf") format("truetype"), url("../fonts/Gilroy-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
-
 /* Medium */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-Medium.ttf") format("truetype"), url("../fonts/Gilroy-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
-
 /* Bold */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-Bold.ttf") format("truetype"), url("../fonts/Gilroy-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
-
 /* BoldItalic */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-BoldItalic.ttf") format("truetype"), url("../fonts/Gilroy-BoldItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-BoldItalic.woff") format("woff");
   font-weight: 700;
   font-style: italic;
 }
-
 /* MediumItalic */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-MediumItalic.ttf") format("truetype"), url("../fonts/Gilroy-MediumItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-MediumItalic.woff") format("woff");
   font-weight: 500;
   font-style: italic;
 }
-
 /* RegularItalic */
 @font-face {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   src: local("Gilroy"), url("../fonts/Gilroy-RegularItalic.ttf") format("truetype"), url("../fonts/Gilroy-RegularItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/Gilroy-RegularItalic.woff") format("woff");
   font-weight: 400;
   font-style: italic;
 }
-
 header {
   display: flex;
   flex-direction: column;
@@ -79,11 +72,10 @@ header {
 .location_layout {
   display: flex;
 }
-
 .location_layout p {
   width: 51px;
   height: 18px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -92,11 +84,9 @@ header {
   color: #20B84B;
   margin-left: 10px;
 }
-
 .location_layout p:hover {
   color: #1D9E42;
 }
-
 .location_layout p:active {
   color: #4FCB72;
 }
@@ -106,16 +96,14 @@ header {
   gap: 32px;
   justify-content: flex-end;
 }
-
 .navigation a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
 }
-
 .navigation a:hover {
   color: #1F1F1F;
 }
@@ -133,7 +121,6 @@ header {
   display: flex;
   align-items: center;
 }
-
 .logo_and_search_form img {
   display: flex;
   flex-direction: column;
@@ -145,9 +132,8 @@ header {
 .navbar {
   display: flex;
 }
-
 .navbar a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -162,24 +148,21 @@ header {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #FFFFFF;
 }
-
 .navbar_item:first-child {
   padding-left: 25px;
 }
-
 .navbar_item svg {
   fill: #FFFFFF;
   width: 24px;
   margin-bottom: 6px;
 }
-
 .navbar_item:hover svg {
   color: #E9EDEF;
   fill: #E9EDEF;
@@ -197,7 +180,6 @@ header {
     display: none;
   }
 }
-
 @media (max-width: 768px) {
   .header_top {
     display: none;
@@ -234,7 +216,6 @@ header {
     margin: 0 16px;
   }
 }
-
 .footer-desktop {
   height: 280px;
   width: 100wh;
@@ -258,7 +239,7 @@ footer {
 }
 
 .footer_logo {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -272,9 +253,8 @@ footer {
   flex-direction: column;
   gap: 32px;
 }
-
 .partners p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -287,14 +267,14 @@ footer {
   flex-direction: column;
   gap: 16px;
 }
-
 .list a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
+  width: -moz-max-content;
   width: max-content;
 }
 
@@ -303,9 +283,8 @@ footer {
   flex-direction: column;
   gap: 24px;
 }
-
 .footer_navigation a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -318,9 +297,8 @@ footer {
   flex-direction: column;
   gap: 24px;
 }
-
 .navigation_bar a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -333,9 +311,8 @@ footer {
   flex-direction: column;
   gap: 32px;
 }
-
 .contact_details p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -354,16 +331,14 @@ footer {
   flex-direction: column;
   gap: 16px;
 }
-
 .list a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
 }
-
 .list a:hover {
   color: #1F1F1F;
 }
@@ -407,7 +382,6 @@ footer {
     margin-top: 64px;
   }
 }
-
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -452,7 +426,7 @@ blockquote, q {
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -494,7 +468,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .main_form_text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -519,7 +493,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .prof_logo_salary h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -541,7 +515,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .prof_logo_profile h2 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -549,7 +523,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .prof_logo_profile h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -557,7 +531,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .change {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -613,7 +587,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .education h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -621,7 +595,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .education h5 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -630,7 +604,7 @@ h1, h2, h3, h4, h5, h5, p {
 
 .education_file {
   color: #6A6E70;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -672,7 +646,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .experience h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -680,7 +654,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .info {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -702,11 +676,9 @@ h1, h2, h3, h4, h5, h5, p {
   font-size: 16px;
   width: 250px;
 }
-
 .btn_green:hover {
   background: #1D9E42;
 }
-
 .btn_green:active {
   background: #4FCB72;
 }
@@ -724,12 +696,10 @@ h1, h2, h3, h4, h5, h5, p {
   font-size: 16px;
   width: 250px;
 }
-
 .btn_white:hover {
   border-color: #1D9E42;
   color: #1D9E42;
 }
-
 .btn_white:active {
   border-color: #4FCB72;
   color: #4FCB72;
@@ -759,7 +729,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .contact_form a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -768,7 +738,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .contact_form p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -776,7 +746,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .contact_form h2 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -785,7 +755,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .contact_form h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -795,7 +765,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .vacancies_logo_text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -823,7 +793,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .vacancies h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -832,7 +802,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .vacancies h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -842,7 +812,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .vacancies h5 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -855,7 +825,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .about_me a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -905,7 +875,7 @@ h1, h2, h3, h4, h5, h5, p {
   border-radius: 14px;
   padding: 0px 40px 0px 20px;
   border: 1px solid #D4DCDE;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -921,15 +891,13 @@ h1, h2, h3, h4, h5, h5, p {
   min-width: 360px;
   margin: 0 7px 0 32px;
 }
-
 .search-form__search {
   display: flex;
   width: 100%;
   cursor: default;
 }
-
-.search-form__search::placeholder {
-  font-family: 'Gilroy';
+.search-form__search::-moz-placeholder {
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -937,11 +905,18 @@ h1, h2, h3, h4, h5, h5, p {
   color: #FFFFFF;
   color: #B7BEC0;
 }
-
+.search-form__search::placeholder {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+  color: #B7BEC0;
+}
 .search-form__search:active, .search-form__search:focus {
   border: 1px solid #20B84B;
 }
-
 .search-form__search-button {
   position: absolute;
   top: 8px;
@@ -952,20 +927,19 @@ h1, h2, h3, h4, h5, h5, p {
   cursor: pointer;
   background-color: transparent;
 }
-
 .search-form__search-button::before {
   content: url(../img/search.svg);
   display: inline-block;
   background-color: #FFFFFF;
 }
 
-.btn-primary-large, .btn-secondary-large, .btn-primary-large-is-danger, .btn-secondary-large-is-danger {
+.btn-secondary-large-is-danger, .btn-primary-large-is-danger, .btn-secondary-large, .btn-primary-large {
   height: 54px;
   padding-right: 32px;
   padding-left: 32px;
   border-radius: 14px;
   border: none;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -976,13 +950,13 @@ h1, h2, h3, h4, h5, h5, p {
   justify-content: center;
 }
 
-.btn-primary-medium, .btn-secondary-medium, .btn-primary-medium-is-danger, .btn-secondary-medium-is-danger {
+.btn-secondary-medium-is-danger, .btn-primary-medium-is-danger, .btn-secondary-medium, .btn-primary-medium {
   height: 42px;
   padding-right: 32px;
   padding-left: 32px;
   border-radius: 14px;
   border: none;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -993,13 +967,13 @@ h1, h2, h3, h4, h5, h5, p {
   justify-content: center;
 }
 
-.btn-primary-small, .btn-secondary-small, .btn-primary-small-is-danger, .btn-secondary-small-is-danger {
+.btn-secondary-small-is-danger, .btn-primary-small-is-danger, .btn-secondary-small, .btn-primary-small {
   height: 32px;
   padding-right: 32px;
   padding-left: 32px;
   border-radius: 14px;
   border: none;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1015,11 +989,9 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #20B84B;
   border: none;
 }
-
 .btn-primary-large:hover {
   background-color: #1D9E42;
 }
-
 .btn-primary-large:active {
   background-color: #4FCB72;
 }
@@ -1029,13 +1001,11 @@ h1, h2, h3, h4, h5, h5, p {
   color: #20B84B;
   background-color: transparent;
 }
-
 .btn-secondary-large:hover {
   color: #1D9E42;
   background-color: #F6F6F6;
   border: 1px solid #1D9E42;
 }
-
 .btn-secondary-large:active {
   color: #4FCB72;
   background-color: #F6F6F6;
@@ -1046,11 +1016,9 @@ h1, h2, h3, h4, h5, h5, p {
   background: #20B84B;
   border: none;
 }
-
 .btn-primary-medium:hover {
   background-color: #1D9E42;
 }
-
 .btn-primary-medium:active {
   background-color: #4FCB72;
 }
@@ -1060,13 +1028,11 @@ h1, h2, h3, h4, h5, h5, p {
   color: #20B84B;
   background-color: transparent;
 }
-
 .btn-secondary-medium:hover {
   color: #1D9E42;
   background-color: #F6F6F6;
   border: 1px solid #1D9E42;
 }
-
 .btn-secondary-medium:active {
   color: #4FCB72;
   background-color: #F6F6F6;
@@ -1077,11 +1043,9 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #20B84B;
   border: none;
 }
-
 .btn-primary-small:hover {
   background-color: #1D9E42;
 }
-
 .btn-primary-small:active {
   background-color: #4FCB72;
 }
@@ -1091,13 +1055,11 @@ h1, h2, h3, h4, h5, h5, p {
   color: #20B84B;
   background-color: transparent;
 }
-
 .btn-secondary-small:hover {
   color: #1D9E42;
   background-color: #F6F6F6;
   border: 1px solid #1D9E42;
 }
-
 .btn-secondary-small:active {
   color: #4FCB72;
   background-color: #F6F6F6;
@@ -1107,11 +1069,9 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #ED3838;
   color: #FFFFFF;
 }
-
 .btn-primary-large-is-danger:hover {
   background-color: #BF1F1F;
 }
-
 .btn-primary-large-is-danger:active {
   background-color: #EB6565;
 }
@@ -1121,13 +1081,11 @@ h1, h2, h3, h4, h5, h5, p {
   border: 1px solid #ED3838;
   background-color: transparent;
 }
-
 .btn-secondary-large-is-danger:hover {
   color: #BF1F1F;
   background-color: #F6F6F6;
   border: 1px solid #BF1F1F;
 }
-
 .btn-secondary-large-is-danger:active {
   color: #EB6565;
   background-color: #F6F6F6;
@@ -1137,11 +1095,9 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #ED3838;
   color: #FFFFFF;
 }
-
 .btn-primary-medium-is-danger:hover {
   background-color: #BF1F1F;
 }
-
 .btn-primary-medium-is-danger:active {
   background-color: #EB6565;
 }
@@ -1151,13 +1107,11 @@ h1, h2, h3, h4, h5, h5, p {
   border: 1px solid #ED3838;
   background-color: transparent;
 }
-
 .btn-secondary-medium-is-danger:hover {
   color: #BF1F1F;
   background-color: #F6F6F6;
   border: 1px solid #BF1F1F;
 }
-
 .btn-secondary-medium-is-danger:active {
   color: #EB6565;
   background-color: #F6F6F6;
@@ -1167,11 +1121,9 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #ED3838;
   color: #FFFFFF;
 }
-
 .btn-primary-small-is-danger:hover {
   background-color: #BF1F1F;
 }
-
 .btn-primary-small-is-danger:active {
   background-color: #EB6565;
 }
@@ -1181,13 +1133,11 @@ h1, h2, h3, h4, h5, h5, p {
   border: 1px solid #ED3838;
   background-color: transparent;
 }
-
 .btn-secondary-small-is-danger:hover {
   color: #BF1F1F;
   background-color: #F6F6F6;
   border: 1px solid #BF1F1F;
 }
-
 .btn-secondary-small-is-danger:active {
   color: #EB6565;
   background-color: #F6F6F6;
@@ -1201,12 +1151,12 @@ h1, h2, h3, h4, h5, h5, p {
   width: 195px;
 }
 
-.input, .input-pass {
+.input-pass, .input {
   height: 54px;
   border-radius: 14px;
   padding: 0px 10px 0px 20px;
   border: 1px solid #D4DCDE;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1216,10 +1166,13 @@ h1, h2, h3, h4, h5, h5, p {
   box-sizing: border-box;
 }
 
-.input::placeholder {
+.input::-moz-placeholder {
   color: #B7BEC0;
 }
 
+.input::placeholder {
+  color: #B7BEC0;
+}
 .input:active, .input:focus {
   border: 1px solid #20B84B;
 }
@@ -1232,25 +1185,25 @@ h1, h2, h3, h4, h5, h5, p {
 .input-error {
   border: 1px solid #ED3838;
 }
-
 .input-error:active, .input-error:focus {
   border: 1px solid #EB6565;
+}
+
+.input-pass::-moz-placeholder {
+  color: #B7BEC0;
 }
 
 .input-pass::placeholder {
   color: #B7BEC0;
 }
-
 .input-pass:active, .input-pass:focus {
   border: 1px solid #20B84B;
 }
-
 .input-pass__eye-container {
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
-
 .input-pass__eye-image {
   height: 1 rem;
 }
@@ -1264,9 +1217,8 @@ h1, h2, h3, h4, h5, h5, p {
   flex-direction: column;
   margin-bottom: 12px;
 }
-
 .field label {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1275,14 +1227,12 @@ h1, h2, h3, h4, h5, h5, p {
   padding-bottom: 8px;
   display: block;
 }
-
 .field label:last-child {
   padding-bottom: 0px;
 }
-
 .field .error-message {
   padding-top: 8px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1296,7 +1246,6 @@ h1, h2, h3, h4, h5, h5, p {
   position: relative;
   font-family: Arial;
 }
-
 .custom-select select {
   display: none;
 }
@@ -1304,7 +1253,6 @@ h1, h2, h3, h4, h5, h5, p {
 .select-selected {
   background-color: DodgerBlue;
 }
-
 .select-selected:after {
   position: absolute;
   content: "";
@@ -1315,7 +1263,6 @@ h1, h2, h3, h4, h5, h5, p {
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
-
 .select-selected .select-arrow-active:after {
   /* Point the arrow upwards when the select box is open (active): */
   border-color: transparent transparent #fff transparent;
@@ -1387,19 +1334,16 @@ h1, h2, h3, h4, h5, h5, p {
   flex-direction: column;
   align-items: center;
 }
-
 .file-loader:hover {
   background-color: #E9EDEF;
 }
-
 .file-loader-flex-container {
   display: flex;
   align-items: center;
   gap: 4px;
 }
-
 .file-loader__text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1407,9 +1351,8 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   color: #1F1F1F;
 }
-
 .file-loader__link {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1417,17 +1360,14 @@ h1, h2, h3, h4, h5, h5, p {
   color: #20B84B;
   text-decoration: underline;
 }
-
 .file-loader__link:hover {
   color: #1D9E42;
 }
-
 .file-loader__link:active {
   color: #4FCB72;
 }
-
 .file-loader__subtext {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1491,7 +1431,8 @@ h1, h2, h3, h4, h5, h5, p {
 .container-grid {
   margin: 0 auto;
   display: grid;
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   row-gap: 48px;
   max-width: 1280px;
   grid-template-columns: 2fr 1fr;
@@ -1511,24 +1452,20 @@ h1, h2, h3, h4, h5, h5, p {
   gap: 24px;
   min-height: 124px;
 }
-
 .main-inf .link-green-large {
   margin-left: 16px;
   display: inline-block;
 }
-
 .main-inf__avatar-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-
 .main-inf__bio {
   flex-grow: 1;
 }
-
 .main-inf__bio-title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -1536,9 +1473,8 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   margin-bottom: 8px;
 }
-
 .main-inf__bio-job {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -1546,9 +1482,8 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   margin-bottom: 16px;
 }
-
 .main-inf__bio-text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1557,7 +1492,6 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   margin-bottom: 4px;
 }
-
 .main-inf__salary {
   display: flex;
   flex-direction: column;
@@ -1565,9 +1499,8 @@ h1, h2, h3, h4, h5, h5, p {
   align-self: stretch;
   width: 195px;
 }
-
 .main-inf__salary-text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1577,9 +1510,8 @@ h1, h2, h3, h4, h5, h5, p {
   flex: 1;
   margin-top: 7px;
 }
-
 .main-inf__salary-text_bold {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
@@ -1594,55 +1526,46 @@ h1, h2, h3, h4, h5, h5, p {
   background-color: #F6F6F6;
   border-radius: 14px;
 }
-
 .entity-card__head {
   display: flex;
   margin-bottom: 16px;
   flex-wrap: wrap;
 }
-
 .entity-card__head .item-1 {
   order: 1;
   flex: 50%;
 }
-
 .entity-card__head .item-2 {
   order: 2;
   flex: 50%;
 }
-
 .entity-card__head .item-3 {
   order: 3;
   flex: 50%;
 }
-
 .entity-card__head .item-4 {
   order: 4;
   flex: 50%;
 }
-
 .entity-card__head-item {
   display: flex;
   flex-direction: column;
   flex: 50%;
   gap: 4px;
 }
-
 .entity-card__head:last-child {
   margin-bottom: 0px;
 }
-
 .entity-card__title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .entity-card__subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -1650,9 +1573,8 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   color: #1F1F1F;
 }
-
 .entity-card__text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -1660,10 +1582,9 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   color: #6A6E70;
 }
-
 .entity-card__file-link {
   margin-top: 16px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1671,15 +1592,12 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   text-decoration: underline;
 }
-
 .entity-card__file-link:hover {
   color: #1F1F1F;
 }
-
 .entity-card__file-link:active {
   color: #B7BEC0;
 }
-
 .entity-card__buttons {
   margin-top: 24px;
   display: flex;
@@ -1687,49 +1605,40 @@ h1, h2, h3, h4, h5, h5, p {
   flex: 1 auto 1;
   gap: 16px;
 }
-
 .entity-card__buttons-item {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-
 .entity-card__buttons-item:nth-child(1) {
   fill: #20B84B;
   color: #20B84B;
 }
-
 .entity-card__buttons-item:nth-child(1):hover {
   fill: #1D9E42;
   color: #1D9E42;
 }
-
 .entity-card__buttons-item:nth-child(1):active {
   fill: #4FCB72;
   color: #4FCB72;
 }
-
 .entity-card__buttons-item:nth-child(2) {
   fill: #ED3838;
   color: #ED3838;
 }
-
 .entity-card__buttons-item:nth-child(2):hover {
   fill: #BF1F1F;
   color: #BF1F1F;
 }
-
 .entity-card__buttons-item:nth-child(2):active {
   fill: #EB6565;
   color: #EB6565;
 }
-
 .entity-card__buttons-item:nth-child(2) {
   flex: 1;
 }
-
 .entity-card__buttons-link {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1741,14 +1650,12 @@ h1, h2, h3, h4, h5, h5, p {
   flex-direction: column;
   gap: 48px;
 }
-
 .other-inf .link-green-large {
   margin-left: 16px;
   display: inline-block;
 }
-
 .other-inf__item-title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -1756,16 +1663,14 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   margin-bottom: 24px;
 }
-
 .other-inf__item-promt {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: #1F1F1F;
 }
-
 .other-inf__flex-entity {
   display: flex;
   flex-direction: column;
@@ -1773,7 +1678,7 @@ h1, h2, h3, h4, h5, h5, p {
 }
 
 .contact-data__title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -1781,9 +1686,8 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   margin-bottom: 32px;
 }
-
 .contact-data__subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1792,10 +1696,9 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   margin-bottom: 8px;
 }
-
 .contact-data__text {
   display: block;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1804,7 +1707,6 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   margin-bottom: 24px;
 }
-
 .contact-data__text:last-child {
   margin-bottom: 0px;
 }
@@ -1819,9 +1721,8 @@ h1, h2, h3, h4, h5, h5, p {
 .vacancies-list {
   grid-column-start: 2;
 }
-
 .vacancies-list__title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -1835,7 +1736,6 @@ h1, h2, h3, h4, h5, h5, p {
 .v-card {
   padding: 24px;
 }
-
 .v-card__header {
   display: flex;
   align-items: center;
@@ -1843,16 +1743,14 @@ h1, h2, h3, h4, h5, h5, p {
   margin-bottom: 9px;
   flex: 1 1 auto 1;
 }
-
 .v-card__header-vacancy-name {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .v-card__header-dot {
   width: 6px;
   height: 6px;
@@ -1860,9 +1758,8 @@ h1, h2, h3, h4, h5, h5, p {
   border-radius: 50%;
   display: inline-block;
 }
-
 .v-card__header-company-name {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1871,19 +1768,17 @@ h1, h2, h3, h4, h5, h5, p {
   color: #6A6E70;
   flex-grow: 1;
 }
-
 .v-card__header-create-date {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: #6A6E70;
 }
-
 .v-card__salary {
   margin-bottom: 24px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1898,54 +1793,46 @@ h1, h2, h3, h4, h5, h5, p {
   flex: 1;
   cursor: pointer;
 }
-
 .ah-card:hover {
   box-shadow: 0px 0px 20px 4px rgba(79, 203, 114, 0.2);
 }
-
 .ah-card-header {
   display: flex;
   gap: 20px;
 }
-
 .ah-card-header__img {
   border-radius: 50%;
 }
-
 .ah-card-header__title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
 }
-
 .ah-card-header__title-h {
   display: flex;
   gap: 20px;
 }
-
 .ah-card-header__title-company {
   flex: 1;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .ah-card-header__title-job {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .ah-card-header__title-salary {
   text-align: right;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1953,10 +1840,9 @@ h1, h2, h3, h4, h5, h5, p {
   color: #1F1F1F;
   color: #6A6E70;
 }
-
 .ah-card-body {
   margin-top: 20px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -1991,7 +1877,7 @@ main {
 }
 
 .h1-bold {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2043,7 +1929,7 @@ a {
 .form_block_number_title {
   width: 400px;
   height: 80px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2052,7 +1938,7 @@ a {
 }
 
 .title-1 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2062,7 +1948,7 @@ a {
 }
 
 .link-green-small {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -2070,17 +1956,15 @@ a {
   color: #20B84B;
   cursor: pointer;
 }
-
 .link-green-small:hover {
   color: #1D9E42;
 }
-
 .link-green-small:active {
   color: #4FCB72;
 }
 
 .link-green-large {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2088,17 +1972,15 @@ a {
   color: #20B84B;
   cursor: pointer;
 }
-
 .link-green-large:hover {
   color: #1D9E42;
 }
-
 .link-green-large:active {
   color: #4FCB72;
 }
 
 .form-subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2108,7 +1990,7 @@ a {
 }
 
 .form-login__text {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2119,7 +2001,7 @@ a {
 }
 
 .title_no_margin {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2128,7 +2010,7 @@ a {
 }
 
 .other_ways {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2186,7 +2068,7 @@ a {
 }
 
 .form_signup_subtext {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2203,7 +2085,7 @@ a {
 }
 
 .form_block_number_inputs p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2213,7 +2095,7 @@ a {
 }
 
 .form_block_number_inputs a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2252,7 +2134,7 @@ a {
 
 .subtext {
   margin-top: -50px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2313,7 +2195,7 @@ form_city {
 }
 
 .form_signup_7_title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2340,7 +2222,7 @@ form_city {
 }
 
 .frame_77 p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -2379,7 +2261,7 @@ a {
 }
 
 .title_no_margin {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2404,7 +2286,7 @@ a {
 }
 
 .separation {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2440,7 +2322,7 @@ a {
 }
 
 .form_block_number_inputs p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2450,7 +2332,7 @@ a {
 }
 
 .form_block_number_inputs a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2513,7 +2395,7 @@ a {
 .form_register_end_buttons {
   width: 400px;
   height: 60px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -2530,7 +2412,7 @@ a {
 
 .subtext {
   margin-top: -50px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2614,7 +2496,7 @@ form_city {
   bottom: 0;
   padding-top: 12px;
   text-align: center;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2623,20 +2505,23 @@ form_city {
   color: #E9EDEF;
 }
 
-.radio input[type="radio"] {
-  opacity: 0.011;
+.radio input[type=radio] {
+  width: 194px;
+  height: 46px;
+  border-radius: 10px;
+  opacity: 0.001;
   z-index: 100;
   cursor: pointer;
 }
 
-.radio input[type="radio"]:checked + label {
+.radio input[type=radio]:checked + label {
   background: #E9EDEF;
   border-radius: 10px;
   color: #1F1F1F;
 }
 
-.radio input[type="text"] {
-  font-family: 'Gilroy';
+.radio input[type=text] {
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2647,30 +2532,26 @@ form_city {
 .activate-form {
   text-align: center;
 }
-
 .activate-form__title {
   text-align: center;
 }
-
 .activate-form__subtittle-1 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .activate-form__subtittle-2 {
   margin-top: 8px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .activate-form__image {
   margin: 32px 0 32px 0;
 }
@@ -2680,38 +2561,32 @@ form_city {
   gap: 16px;
   width: 100%;
 }
-
 .modal-information {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 32px;
 }
-
 .modal-information__bio-and-photo {
   display: flex;
   gap: 32px;
   align-items: center;
 }
-
 .modal-information__bio-and-photo-avatar {
   width: 100px;
   heigth: 100px;
   align-self: start;
 }
-
 .modal-information__bio-and-photo-avatar-img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
 }
-
 .modal-information__bio-and-photo-salary {
   width: 192px;
 }
-
 .modal-subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -2719,27 +2594,22 @@ form_city {
   color: #FFFFFF;
   color: #6A6E70;
 }
-
 .modal-subtitle__space {
   margin-bottom: 8px;
 }
-
 .modal-buttons {
   display: flex;
   flex-direction: row;
   width: 576px;
 }
-
 .modal-buttons-confirm {
   display: flex;
   flex-direction: row;
   width: 512px;
 }
-
 .modal-pt {
   margin-top: -10px;
 }
-
 .modal-block {
   width: 848px;
   min-height: 3rem;
@@ -2747,22 +2617,19 @@ form_city {
   display: block;
   z-index: 2;
 }
-
 .modal-block-contact {
   width: 448px;
   position: relative;
   display: block;
 }
-
 .modal-block-confirm {
   width: 560px;
   position: relative;
   display: block;
   z-index: 200;
 }
-
 .modal-block-confirm__title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2770,9 +2637,8 @@ form_city {
   color: #1F1F1F;
   margin-bottom: 16px;
 }
-
 .modal-close {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -2786,7 +2652,6 @@ form_city {
   right: 18px;
   cursor: pointer;
 }
-
 .modal-close:before {
   content: "✖";
   color: #6A6E70;
@@ -2795,7 +2660,6 @@ form_city {
 .home {
   background-color: red;
 }
-
 .home-container {
   display: flex;
   flex-direction: column;
@@ -2803,15 +2667,13 @@ form_city {
   justify-content: center;
   margin: 0 auto;
 }
-
 .home-welcome {
   display: flex;
   flex-direction: column;
   text-align: center;
 }
-
 .home-welcome-title {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
@@ -2821,9 +2683,8 @@ form_city {
   margin-top: 100px;
   margin-bottom: 24px;
 }
-
 .home-welcome-subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 24px;
@@ -2832,14 +2693,12 @@ form_city {
   color: #6A6E70;
   margin-bottom: 40px;
 }
-
 .home-welcome__buttons {
   width: 496px;
   display: flex;
   gap: 16px;
   margin: 0 auto;
 }
-
 .home-menu {
   margin-top: 280px;
   display: flex;
@@ -2849,35 +2708,28 @@ form_city {
   justify-content: space-evenly;
   justify-items: center;
 }
-
 .home-menu__card {
   border-radius: 14px;
 }
-
 .home-menu__card:hover {
   margin-top: -5px;
 }
-
 .home-menu__card:hover .home-menu__card-content, .home-menu__card:hover .home-menu__card-img {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
 }
-
 .home-menu__card-link {
   cursor: pointer;
 }
-
 .home-menu__card-item {
   display: flex;
   flex-direction: column;
 }
-
 .home-menu__card-img {
   display: inline;
   width: 100%;
   height: auto;
   border-radius: 20px;
 }
-
 .home-menu__card-content {
   box-sizing: border-box;
   padding: 24px;
@@ -2888,69 +2740,59 @@ form_city {
   margin: -64px auto 0 auto;
   text-align: center;
 }
-
 .home-menu__card-content-title {
   margin-bottom: 12px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: #1F1F1F;
 }
-
 .home-menu__card-content-subtitle {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .home-article {
   margin-top: 80px;
 }
-
 .home-article__header {
   display: flex;
   align-items: flex-end;
 }
-
 .home-article__header-name {
   flex: 1;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   color: #1F1F1F;
 }
-
 .home-article__header-link {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #20B84B;
 }
-
 .home-article__header-link:hover {
   color: #1D9E42;
 }
-
 .home-article__header-link:active {
   color: #4FCB72;
 }
-
 .home-article__items {
   margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
 }
-
 .header_and_subheader {
   display: flex;
   flex-direction: column;
@@ -2960,11 +2802,10 @@ form_city {
   width: 720px;
   height: 200px;
 }
-
 .header_and_subheader h1 {
   width: 720px;
   height: 118px;
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 48px;
@@ -2972,7 +2813,6 @@ form_city {
   text-align: center;
   color: #000000;
 }
-
 .main {
   height: 393px;
   display: flex;
@@ -3003,9 +2843,8 @@ form_city {
   gap: 8px;
   flex-direction: column;
 }
-
 .position_and_company h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3019,18 +2858,16 @@ form_city {
   gap: 8px;
   align-items: center;
 }
-
 .position_and_company_text h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #1F1F1F;
 }
-
 .position_and_company_text h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3068,7 +2905,6 @@ form_city {
   border-radius: 20px;
   margin: -64px 0px;
 }
-
 .picture img {
   width: 308px;
   height: 308px;
@@ -3087,9 +2923,8 @@ form_city {
   border-radius: 20px;
   width: 238px;
 }
-
 .text h2 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -3097,9 +2932,8 @@ form_city {
   color: #1F1F1F;
   text-align: center;
 }
-
 .text h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -3124,29 +2958,25 @@ form_city {
   width: 100%;
   align-items: baseline;
 }
-
 .title_index h1 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 40px;
   color: #1F1F1F;
 }
-
 .title_index a {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
   color: #20B84B;
 }
-
 .title_index a:hover {
   color: #1D9E42;
 }
-
 .title_index a:active {
   color: #4FCB72;
 }
@@ -3169,9 +2999,8 @@ form_city {
   border-radius: 20px;
   width: 368px;
 }
-
 .vacancy_card p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3187,7 +3016,6 @@ form_city {
   gap: 20px;
   width: 100%;
 }
-
 .head_layout_top img {
   width: 60px;
   height: 60px;
@@ -3200,9 +3028,8 @@ form_city {
   gap: 8px;
   width: 100%;
 }
-
 .title_blok h2 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -3216,9 +3043,8 @@ form_city {
   width: 100%;
   justify-content: space-between;
 }
-
 .head_layout_down h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -3251,9 +3077,8 @@ form_city {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
-
 .company_card p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3294,9 +3119,8 @@ form_city {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
-
 .candidate_card p {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3329,7 +3153,6 @@ form_city {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
   border-radius: 20px;
 }
-
 .new_card img {
   width: 368px;
   height: 308px;
@@ -3342,18 +3165,16 @@ form_city {
   align-items: flex-start;
   gap: 12px;
 }
-
 .news_title h2 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
   color: #1F1F1F;
 }
-
 .news_title h3 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -3368,9 +3189,8 @@ form_city {
   width: 100%;
   justify-content: space-between;
 }
-
 .caption h4 {
-  font-family: 'Gilroy';
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -3382,7 +3202,6 @@ form_city {
   display: flex;
   gap: 8px;
 }
-
 .views img {
   width: 22px;
   height: 22px;
@@ -3410,7 +3229,6 @@ form_city {
     background-image: none;
   }
 }
-
 @media (max-width: 768px) {
   .entity-card {
     min-width: 10px;
@@ -3450,7 +3268,7 @@ form_city {
   .title {
     display: flex;
     margin-top: 32px;
-    font-family: 'Gilroy';
+    font-family: "Gilroy";
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
@@ -3483,4 +3301,4 @@ form_city {
   .search-form {
     display: none;
   }
-}
+}/*# sourceMappingURL=style.css.map */

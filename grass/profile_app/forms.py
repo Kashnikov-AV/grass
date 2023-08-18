@@ -49,7 +49,7 @@ class ProfileMainInfoForm(forms.ModelForm):
         coerce=lambda x: int(x),
         choices=GENDER_CHOICES,
         widget=forms.RadioSelect(),
-        initial=0
+        initial=1
     )
     relocate = forms.TypedChoiceField(
         coerce=lambda x: int(x),
@@ -64,7 +64,9 @@ class ProfileMainInfoForm(forms.ModelForm):
                   'desired_salary', 'career_objective', 'city', 'level_foreign_language', 'photo')
         widgets = {
                     'level_foreign_language': forms.Select(choices=LANGUAGE_CHOICES),
-                    'birth_date': forms.SelectDateWidget(years=[x for x in range(1910, date.today().year)]),
+                    'birth_date': forms.Select(choices=YEARS, attrs={
+                        "class": "select",
+                    }),
                 }
 
 

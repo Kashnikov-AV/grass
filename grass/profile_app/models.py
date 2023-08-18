@@ -7,8 +7,9 @@ GENDER_CHOICES = (
     (1, 'Женщина'),
 )
 
-RELOCATE = ((0, 'Готов'),
-            (1, 'Не готов')
+RELOCATE = (
+    (0, 'Готов'),
+    (1, 'Не готов')
 )
 
 EDU_CHOICES = (
@@ -47,8 +48,8 @@ class Profile(models.Model):
     name = models.CharField(max_length=100, blank=True, verbose_name='имя')
     surname = models.CharField(max_length=100, blank=True, verbose_name='фамилия')
     patronymic = models.CharField(max_length=100, blank=True, verbose_name='Отчество')
-    gender = models.BooleanField(blank=True, verbose_name="Пол", default=False, choices=GENDER_CHOICES, null=True)
-    birth_date = models.DateField(null=True, blank=True, verbose_name="Дата рождения", )
+    gender = models.PositiveSmallIntegerField(default=0, verbose_name="Пол", choices=GENDER_CHOICES)
+    birth_date = models.DateField(blank=True, null=True, verbose_name="Дата рождения")
     career_objective = models.CharField(null=True, blank=True, verbose_name="Желаемая должность", max_length=150)
     desired_salary = models.IntegerField(verbose_name="Желаемая зарплата", blank=True, default=1000)
     about_me = models.TextField(max_length=2000, blank=True, verbose_name='О себе')
@@ -60,9 +61,9 @@ class Profile(models.Model):
                                                               choices=LANGUAGE_CHOICES,
                                                               default=0
                                                               )
-    photo = ImageField(upload_to=user_directory_path, verbose_name='фото', name='photo', blank=True)
+    photo = ImageField(upload_to=user_directory_path, verbose_name='фото', name='photo', blank=True, null=True)
     city = models.CharField(blank=True, max_length=50, verbose_name='Регион проживания')
-    relocate = models.BooleanField(null=True, blank=True, default=False, verbose_name='Готовность к переезду', choices=RELOCATE)
+    relocate = models.PositiveSmallIntegerField(default=0, verbose_name='Готовность к переезду', choices=RELOCATE)
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -129,7 +130,7 @@ class Company(models.Model):
     about_company = models.TextField(blank=True, verbose_name='О компании')
     count_of_employees = models.PositiveIntegerField(verbose_name='Количество работников', default=0)
     region = models.CharField(blank=True, max_length=50, verbose_name='Регион регистрации компании')
-    inn = models.BigIntegerField(blank=True, verbose_name='Инн организации')
+    inn = models.BigIntegerField(blank=True, verbose_name='Инн организации', default=9999999999)
     field_of_activity = models.CharField(blank=True, max_length=150, verbose_name='Сфера деятельности')
     phone = models.CharField(blank=True, max_length=20, verbose_name='Телефон компании')
     email = models.EmailField(blank=True, max_length=100, verbose_name='Email компании')
