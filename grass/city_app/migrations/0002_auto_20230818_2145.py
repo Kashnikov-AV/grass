@@ -6,7 +6,7 @@ from django.db import migrations
 def parse_cities(apps, schema_editor):
     City = apps.get_model('city_app', 'City')
 
-    with open('cities_cleaned1.csv', newline='') as csvfile:
+    with open('cities_cleaned.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='|',)
 
         for row in reader:
