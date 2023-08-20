@@ -9,7 +9,7 @@ services:
       - djangonetwork
     volumes:
       - pgdata:/var/lib/postgresql/data
-    env_file: .env-prod
+    env_file: .env
   web:
     build:
       context: .
@@ -19,7 +19,7 @@ services:
              python manage.py migrate && \
              python manage.py collectstatic --no-input && \
              gunicorn --bind 0.0.0.0:8000 grass.wsgi:application"
-    env_file: .env-prod
+    env_file: .env
     ports:
       - 8000:8000
     volumes:
