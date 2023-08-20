@@ -17,4 +17,6 @@ COPY . .
 
 EXPOSE 8000
 # dependencies
+ADD requirements.txt requirements.txt
 RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install gunicorn

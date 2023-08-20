@@ -67,6 +67,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #add whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -159,7 +160,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
@@ -194,7 +196,7 @@ AUTH_USER_MODEL = 'users_app.CustomUser'
 # CHAT_WS_SERVER_PORT = 5002
 # CHAT_WS_SERVER_PROTOCOL = 'ws'
 
-ASGI_APPLICATION = 'grass.chat_app.routing.application'
+ASGI_APPLICATION = 'grass.asgi.django_asgi_app'
 
 # Uncomment this to try out RabbitMQ layer - install channels_rabbitmq>=3.0.0 first
 # CHANNEL_LAYERS = {
