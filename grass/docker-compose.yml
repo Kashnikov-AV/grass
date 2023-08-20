@@ -40,6 +40,7 @@ services:
       - static_data:/var/www/html/static
       - ./nginx-conf.d:/etc/nginx/conf.d
 
+
 networks:
     djangonetwork:
         driver: bridge
