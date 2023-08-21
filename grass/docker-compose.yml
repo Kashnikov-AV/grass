@@ -30,7 +30,14 @@ services:
       - db:db
     networks:
       - djangonetwork
-
+  nginx:
+    image: nginx:1.19.8-alpine
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    volumes:
+      - media:/media
 networks:
     djangonetwork:
         driver: bridge
