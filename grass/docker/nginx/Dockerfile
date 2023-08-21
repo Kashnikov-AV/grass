@@ -1,5 +1,5 @@
 FROM nginx:latest
 
-RUN rm /etc/nginx/cond.d/default.conf
-COPY nginx.conf /etc/nginx/cond.d
+RUN rm /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/
 COPY proxy_params /etc/nginx
