@@ -31,7 +31,7 @@ services:
     networks:
       - djangonetwork
   nginx:
-    image: nginx:1.19.8-alpine
+    build: ./docker/nginx
     depends_on:
       - web
     ports:
