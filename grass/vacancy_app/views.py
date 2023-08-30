@@ -48,3 +48,9 @@ class CompanyVacancyListView(LoginRequiredMixin, ListView):
         # filter by a variable captured from url, for example
         return qs.filter(company=self.request.user.company)
 
+
+class VacancyListView(LoginRequiredMixin, ListView):
+    template_name = 'vacancy_app/vacancies.html'
+    paginate_by = 8
+    model = Vacancy
+

@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
-from .settings import MEDIA_URL, MEDIA_ROOT, STATIC_ROOT, STATIC_URL
+from .settings import MEDIA_URL, MEDIA_ROOT, STATIC_URL
 
 
 

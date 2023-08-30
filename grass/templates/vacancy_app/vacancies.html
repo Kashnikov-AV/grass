@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+{% load widget_tweaks %}
+{% load thumbnail %}
+
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+{% include 'components/header.html' %}
+<main>
+    <div class="vacancy-container">
+        <div class="vacancy__filters">
+            <div class="vacancy__filters-item">
+                <h3 class="vacancy__filters-title">Тип занятости</h3>
+                <div class="vacancy__filters-fields">
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="type_full">
+                        <label for="type_full" class="vacancy__filters-text">Полная занятость</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="type_full">
+                        <label for="type_full" class="vacancy__filters-text">Частичная занятость</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="s">
+                        <label for="s" class="vacancy__filters-text">Стажировка</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="p">
+                        <label for="p" class="vacancy__filters-text">Практика</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="v">
+                        <label for="v" class="vacancy__filters-text">Вахта</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="checkbox" type="checkbox" name="" id="u">
+                        <label for="u" class="vacancy__filters-text">Удаленная работа</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="vacancy__filters-item">
+                <h3 class="vacancy__filters-title">Зарплата</h3>
+                <div class="vacancy__filters-fields">
+                    <div class="vacancy__filters-field">
+                        <input class="radio-small" type="radio" name="salary" id="no">
+                        <label class="vacancy__filters-text" for="no">Не имеет значения</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="radio-small" type="radio" name="salary" id="50">
+                        <label class="vacancy__filters-text" for="50">От 50 000 ₽</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="radio-small" type="radio" name="salary" id="80">
+                        <label class="vacancy__filters-text" for="80">От 80 000 ₽</label>
+                    </div>
+                    <div class="vacancy__filters-field">
+                        <input class="radio-small" type="radio" name="salary" id="120">
+                        <label class="vacancy__filters-text" for="120">От 120 000 ₽</label>
+                    </div>
+                </div>
+            </div>    
+        </div>
+
+        <div class="vacancy__main">
+            <!-- modals -->
+            <div x-data="{'isModalOpen': false, modalName: ''}" x-show="isModalOpen" x-cloak x-transition
+            x-on:get-modal-contact.window="isModalOpen=true; modalName=$event.detail.modalName; console.log(modalName);"
+            class="modal">
+            <div class="overlay"></div>
+            <template x-if="modalName=='modal-window' ">
+                <div id="modal-1"></div>
+            </template>
+            </div>
+            <!--  -->
+
+            <div class="vacancy__main-header">
+                <h2 class="vacancy__main-header-title">Вакансии</h2>
+                <div class="vacancy__main-header-container">
+                    <p class="vacancy__main-header-container-item">Найдено {{ object_list|length }} вакансий</p>
+                    <select name="select_search_type" class="input" id="id_select_search_type">
+                        <option value="">---------</option>
+
+                        <option value="0" selected="">По дате</option>
+
+                        <option value="1">По убыванию зарплаты</option>
+
+                        <option value="2">По возрастанию зарплаты</option>
+
+                    </select>
+                    <select name="select_search_by_date" class="input" id="id_select_search_by_date">
+                        <option value="">---------</option>
+
+                        <option value="0" selected="">За все время</option>
+
+                        <option value="1">За месяц</option>
+
+                        <option value="2">За неделю</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="vacancy__main-container" id=" main-vacancy-list">
+                {% for vacancy in page_obj %}
+                    <div class="box ah-card">
+                        <a href="#">
+                            <div class="ah-card-header">
+                                {% if vacancy.company.logo %}
+                                    {% thumbnail vacancy.company.logo "60x60" crop="center" as im %}
+                                        <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" class="ah-card-header__img" alt="company logo">
+                                    {% endthumbnail %}
+                                {% else %}    
+                                    <img src="{% static 'img/avatar-company-empty.png' %}" width="60px" height="60px" alt="company logo empty">
+                                {% endif %}
+                                <div class="ah-card-header__title">
+                                    <div class="ah-card-header__title-h">
+                                        <div class="ah-card-header__title-company">{{ vacancy.company }}</div>
+                                        <div class="ah-card-header__title-salary">{{ vacancy.updated_at|naturaltime }}</div>
+                                    </div>
+                                    <span class="ah-card-header__title-job">{{ vacancy.job_name }}</span>
+                                </div>
+                            </div>
+                            <p class="ah-card-h3">{{ vacancy.salary_min}} - {{ vacancy.salary_max}} ₽</p>
+                            <p class="ah-card-city">{{ vacancy.location }}</p>
+                            <p class="ah-card-body">{{ vacancy.requirements|truncatechars:120 }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="vacancy__main-pagination">
+                {% if page_obj.has_previous %}
+                        <!-- <a href="?page=1">&laquo; first</a> -->
+                        <a href="?page={{ page_obj.previous_page_number }}">
+                            <div class="vacancy__main-pagination-btn">
+                                <div class="vacancy__main-pagination-btn-arrow">
+                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2.8284 6.99398L7.7782 11.9437L6.364 13.3579L0 6.99398L6.364 0.630005L7.7782 2.04421L2.8284 6.99398Z" fill="#20B84B"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </a>
+                {% else %}
+                    <div class="vacancy__main-pagination-btn-disabled">
+                        <div class="vacancy__main-pagination-btn-arrow">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.8284 6.99398L7.7782 11.9437L6.364 13.3579L0 6.99398L6.364 0.630005L7.7782 2.04421L2.8284 6.99398Z" fill="#20B84B"/>
+                            </svg>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="current">
+                    <span class="vacancy__main-pagination-btn-text">{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+                </div>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">
+                        <div class="vacancy__main-pagination-btn">
+                            <div class="vacancy__main-pagination-btn-arrow">
+                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.94972 6.99398L0 2.04421L1.41421 0.630005L7.77822 6.99398L1.41421 13.3579L0 11.9437L4.94972 6.99398Z" fill="#20B84B"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                    <!-- <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a> -->
+                {% else %}
+                    <div class="vacancy__main-pagination-btn-disabled">
+                        <div class="vacancy__main-pagination-btn-arrow">
+                            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4.94972 6.99398L0 2.04421L1.41421 0.630005L7.77822 6.99398L1.41421 13.3579L0 11.9437L4.94972 6.99398Z" fill="#20B84B"/>
+                            </svg>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{% include 'components/footer.html' %}
+{% endblock %}

@@ -19,7 +19,13 @@ env = environ.Env(
     DEBUG=(bool, False)
 )
 
+#настройки языка
+USE_I18N = True
+USE_L10N = False
 
+LANGUAGE_CODE = 'ru'
+# Пример вывода: 16 сентября 2012
+DATE_FORMAT = 'd E Y'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,7 +45,7 @@ ALLOWED_HOSTS = env('ALLOWED_HOSTS').split()
 
 # Application definition
 INSTALLED_APPS = [
-    'daphne',
+    # 'daphne',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -113,6 +119,12 @@ WSGI_APPLICATION = 'grass.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': 'db.sqlite3',
+#     }
+# }
 
 DATABASES = {
     'default': {
@@ -161,10 +173,7 @@ CSRF_TRUSTED_ORIGINS = ["https://grass-job.ru", "https://www.grass-job.ru"]
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATICFILES_DIRS = [BASE_DIR / 'static',]
 
 STATICFILES_FINDERS = [
   # First add the two default Finders, since this will overwrite the default.
