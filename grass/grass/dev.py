@@ -2,7 +2,7 @@
 SECRET_KEY = '6_-e4#0$hr1exfn6-v*fb_x@u#+oq2%^8wn-emk=y^tzi-pvt$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*',]
+ALLOWED_HOSTS = ['*', ]
 
 DATABASES = {
     'default': {
