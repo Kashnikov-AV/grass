@@ -82,7 +82,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'grass.wsgi.application'
-ASGI_APPLICATION = 'grass.asgi.django_asgi_app'
+ASGI_APPLICATION = 'grass.asgi.application'
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
