@@ -36,7 +36,7 @@ oauthlib==3.2.0
 packaging==23.1
 phonenumbers==8.12.47
 Pillow==10.0.0
-psycopg2<=2.9.6
+psycopg2==2.9.6
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.21
@@ -55,6 +55,7 @@ social-auth-core==4.2.0
 sorl-thumbnail==12.9.0
 sqlparse==0.4.2
 Twisted==22.10.0
+twisted-iocpsupport==1.0.4
 txaio==23.1.1
 typing_extensions==4.5.0
 tzdata==2022.7
