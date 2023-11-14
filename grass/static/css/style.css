@@ -1796,6 +1796,12 @@ input[type=checkbox] {
   color: #1F1F1F;
 }
 
+.other-inf__item-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 .other-inf__flex-entity {
   display: flex;
   flex-direction: column;
