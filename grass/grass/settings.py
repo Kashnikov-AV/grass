@@ -10,3 +10,4 @@ if env('SETTINGS') == 'dev':
 elif env('SETTINGS') == 'prod':
     from .prod import *
 
+
