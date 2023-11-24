@@ -49,12 +49,12 @@ class CompanyVacancyListView(LoginRequiredMixin, ListView):
         return qs.filter(company=self.request.user.company)
 
 
-class VacancyListView(LoginRequiredMixin, ListView):
+class VacancyListView(ListView):
     template_name = 'vacancy_app/vacancies.html'
     paginate_by = 8
     model = Vacancy
 
 
-class CompanyVacancyDetailView(LoginRequiredMixin, DetailView):
+class CompanyVacancyDetailView(DetailView):
     template_name = 'vacancy_app/vacancy-detail.html'
     model = Vacancy
