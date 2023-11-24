@@ -79,7 +79,7 @@
             <div class="vacancy__main-header">
                 <h2 class="vacancy__main-header-title">Вакансии</h2>
                 <div class="vacancy__main-header-container">
-                    <p class="vacancy__main-header-container-item">Найдено {{ object_list|length }} вакансий</p>
+                    <p class="vacancy__main-header-container-item">Найдено {{ page_obj.paginator.count }} вакансий</p>
                     <select name="select_search_type" class="input" id="id_select_search_type">
                         <option value="">---------</option>
 
