@@ -54,3 +54,7 @@ class VacancyListView(LoginRequiredMixin, ListView):
     paginate_by = 8
     model = Vacancy
 
+
+class CompanyVacancyDetailView(LoginRequiredMixin, DetailView):
+    template_name = 'vacancy_app/vacancy-detail.html'
+    model = Vacancy

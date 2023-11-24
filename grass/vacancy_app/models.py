@@ -40,7 +40,7 @@ class Vacancy(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def get_absolute_url(self):
-        return f'/vacancy/{self.pk}'
+        return f'/vacancy/vacancies/{self.pk}'
 
     def __str__(self):
         return f'{self.company.pk} {self.job_name}'

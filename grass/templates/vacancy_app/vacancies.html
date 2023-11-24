@@ -105,7 +105,7 @@
             <div class="vacancy__main-container" id=" main-vacancy-list">
                 {% for vacancy in page_obj %}
                     <div class="box ah-card">
-                        <a href="#">
+                        <a href="{{ vacancy.get_absolute_url }}">
                             <div class="ah-card-header">
                                 {% if vacancy.company.logo %}
                                     {% thumbnail vacancy.company.logo "60x60" crop="center" as im %}

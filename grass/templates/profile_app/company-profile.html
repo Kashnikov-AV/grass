@@ -112,15 +112,15 @@
                             <div class="entity-card__head">
                                 <p class="item-1 entity-card__title">{{ vacancy.job_name }}</p>
                                 <p class="item-2 entity-card__subtitle">{{ vacancy.salary_min }} - {{ vacancy.salary_max }} ₽</p>
-                                <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.working_mode }}
+                                <p class="item-3 entity-card__text">{{ vacancy.location}}, {{ vacancy.get_working_mode_display }}
                                 </p>
                                 <p class="item-4 entity-card__text">
                                     Требуемый опыт работы: {{ vacancy.get_work_experience_display }}
                                 </p>
                             </div>
                             <div class="entity-card__buttons">
-                                <div class="entity-card__buttons-item">
-                                    <button class="btn-primary-medium btn-entity">Подробнее</button>
+                                <div class="entity-card__buttons-item btn-entity">
+                                    <a href="{{ vacancy.get_absolute_url }}" class="btn-primary-medium btn-entity">Подробнее</a>
                                 </div>
                             </div>
                         </div>
