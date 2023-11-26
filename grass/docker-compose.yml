@@ -21,7 +21,7 @@ services:
              daphne -p 8000 -b 0.0.0.0 grass.asgi:application"
     env_file: .env
     expose:
-      - "8000"
+      - 8000
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/media
@@ -41,8 +41,8 @@ services:
       - /var/www/certbot:/var/www/certbot
     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
     ports:
-      - "80:80"
-      - "443:443"
+      - 80:80
+      - 443:443
     links:
       - web:web
     depends_on:
