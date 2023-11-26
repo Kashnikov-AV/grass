@@ -6,4 +6,4 @@
 *.pyc
 .env
 .env-prod
-
+venv/
