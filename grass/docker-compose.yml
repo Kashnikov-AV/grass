@@ -20,8 +20,6 @@ services:
              python manage.py collectstatic --no-input && \
              daphne -p 8000 -b 0.0.0.0 grass.asgi:application"
     env_file: .env
-#    ports:
-#      - "8000:8000"
     expose:
       - "8000"
     volumes:
@@ -35,6 +33,7 @@ services:
       - djangonetwork
   nginx:
     build: ./nginx
+    restart: unless-stopped
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/media
@@ -50,15 +49,6 @@ services:
       - web
     networks:
       - djangonetwork
-#  certbot:
-#    image: certbot/certbot
-#    restart: unless-stopped
-#    volumes:
-#      - /etc/letsencrypt:/etc/letsencrypt
-#      - /var/www/certbot:/var/www/certbot
-#    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-#    networks:
-#      - djangonetwork
 
 networks:
     djangonetwork:
