@@ -31,6 +31,7 @@ urlpatterns = [
     path('', RedirectView.as_view(url='home/')),
     path('profile/', include('profile_app.urls')),
     path('vacancy/', include('vacancy_app.urls')),
+    path('analytics/', include('analytics_app.urls')),
     path('coming-soon/', TemplateView.as_view(template_name="coming-soon.html"), name='coming'),
     path('test/', TemplateView.as_view(template_name="test.html"), name='test'),
 ]
