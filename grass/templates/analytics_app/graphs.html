@@ -6,6 +6,9 @@
         <div class="flex-main">
             <div class="coming-soon">
                 Put ur data here
+                {% if chart %}
+                    <img scr="data:image/png;base64, {{chart|safe}}">
+                {% endif %}
             </div>
         </div>
     </main>
