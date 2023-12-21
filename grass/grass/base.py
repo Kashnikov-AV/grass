@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'profile_app',
     'vacancy_app',
     'city_app',
+    'analytics_app',
 ]
 
 MIDDLEWARE = [

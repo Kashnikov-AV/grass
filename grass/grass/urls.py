@@ -20,7 +20,6 @@ from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT, STATIC_URL
 
 
-
 from django.views.generic import TemplateView, ListView
 
 urlpatterns = [
@@ -31,6 +30,8 @@ urlpatterns = [
     path('', RedirectView.as_view(url='home/')),
     path('profile/', include('profile_app.urls')),
     path('vacancy/', include('vacancy_app.urls')),
+    path('analytic/', include('analytics_app.urls')),
+    path('chat/', include('chat_app.urls')),
     path('coming-soon/', TemplateView.as_view(template_name="coming-soon.html"), name='coming'),
     path('test/', TemplateView.as_view(template_name="test.html"), name='test'),
 ]

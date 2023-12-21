@@ -17,10 +17,18 @@
                 <a href="{% url 'coming' %}">О нас</a>
             </div>
             <div class="navigation_bar">
-                <a href="{% url 'coming' %}">Сообщения</a>
-                <a href="{% url 'coming' %}">Вакансии</a>
-                <a href="{% url 'coming' %}">Аналитика</a>
-                <a href="{% url 'coming' %}">Профиль</a>
+                <a href="{% url 'chat' %}">Сообщения</a>
+                <a href="{% url 'vacancies' %}">Вакансии</a>
+                <a href="{% url 'analytic' %}">Аналитика</a>
+                {% if user.is_authenticated %}
+                    {% if not user.role %}
+                        <a href="{% url 'profile' pk=user.pk %}">Профиль</a>
+                    {% else %}
+                        <a href="{% url 'profile-company' pk=user.pk %}">Профиль</a>
+                    {% endif %}
+                {% else %}
+                    <a href="{% url 'login' %}">Профиль</a>
+                {% endif %}
             </div>
             </div>
             <div class="contact_details">
@@ -36,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="footer_logo">GrassJob © 2023</div>
+            <div class="footer_logo">GrassJob © 2024</div>
         </div>
     </div>
 </footer>
