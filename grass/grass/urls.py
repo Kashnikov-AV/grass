@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from .settings import MEDIA_URL, MEDIA_ROOT, STATIC_URL
 
 
+
 from django.views.generic import TemplateView, ListView
 
 urlpatterns = [
