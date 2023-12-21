@@ -9,8 +9,31 @@
 {% block content %}
 {% include 'components/header.html' %}
 <main>
-    <div class="vacancy-container"></div>
-
+    <div class="container-grid-analytics">
+        <div class="box">
+            <p class="contact-data__title">Топ 10 вакансий</p>
+            {% autoescape off %}
+                {{ bar_chart }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Топ 10 вакансий</p>
+            {% autoescape off %}
+                {{ line_chart }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Топ 10 вакансий</p>
+            {% autoescape off %}
+                {{ scatter_chart }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Топ 10 вакансий</p>
+            {% autoescape off %}
+                {{ pie_chart }}
+            {% endautoescape %}
+        </div>
     </div>
 </main>
 {% include 'components/footer.html' %}

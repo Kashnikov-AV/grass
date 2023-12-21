@@ -1,7 +1,7 @@
 from django.urls import path, include
 from django.views.generic import TemplateView, ListView
-from .views import *
+from .views import draw_charts
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="analytics_app/analytics.html"), name='analytic'),
+    path('', draw_charts, name='analytic'),
 ]

@@ -9,7 +9,7 @@
 @import 'components/_buttons'
 @import 'components/_inputs'
 @import 'components/_modal'
- 
+
 .file-loader
     background-color: $Neutral-50
     width: 392px
@@ -84,13 +84,27 @@
     column-gap: 16px
     row-gap: 48px
     max-width: 1280px
-    // height: 1000px
     grid-template-columns: 2fr 1fr
     grid-template-rows: auto 1fr
-    // grid-auto-rows: 1fr
 
+.container-grid-analytics
+    margin: 0 auto
+    display: grid
+    column-gap: 16px
+    row-gap: 16px
+    max-width: 1280px
+    grid-template-columns: 1fr 1fr 1fr
+    grid-template-rows: 1fr
 
-.vacancy-container 
+.container-grid-chat
+    margin: 0 auto
+    display: grid
+    column-gap: 16px
+    max-width: 1280px
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: 1fr
+
+.vacancy-container
     display: flex
     max-width: 1280px
     margin: 0 auto
@@ -145,7 +159,6 @@
         gap: 16px
         margin-bottom: 20px
     &-card
-            
 
 .vacancy__filters
     display: flex
@@ -172,7 +185,6 @@
         color: $Neutral-500
 
 .checkbox
-    
 
 input[type="checkbox"]
     width: 20px
@@ -184,23 +196,22 @@ input[type="checkbox"]
     grid-row: span 2
     // grid-column: auto
 
-
 .main-inf
     .link-green-large
         margin-left: 16px
         display: inline-block
-    display: flex
-    flex: 1 auto 1
-    justify-content: space-between
-    align-items: center
-    align-content: stretch
-    gap: 24px
-    min-height: 124px
+        display: flex
+        flex: 1 auto 1
+        justify-content: space-between
+        align-items: center
+        align-content: stretch
+        gap: 24px
+        min-height: 124px
     &__avatar
         &-img
             width: 100px
             height: 100px
-            border-radius: 50%  
+            border-radius: 50%
     &__bio
         flex-grow: 1
         &-title
@@ -219,7 +230,7 @@ input[type="checkbox"]
         justify-content: flex-end
         align-self: stretch
         width: 195px
-        &-text       
+        &-text
             @include h4_Medium
             color: $Neutral-500
             flex: 1
@@ -324,7 +335,7 @@ input[type="checkbox"]
         display: flex
         flex-direction: column
         gap: 20px
-            
+
 .contact-data
     &__title
         @include h2_Bold
@@ -378,7 +389,7 @@ input[type="checkbox"]
             @include h4_Medium
             color: $Neutral-500
             flex-grow: 1
-            
+
         &-create-date
             @include Text_Small_Medium
     &__salary
@@ -427,12 +438,11 @@ input[type="checkbox"]
         margin-top: 20px
         @include Text_Large_Medium
         color: $Neutral-500
-        
 
 #profile-vacancies
     display: flex
     flex-direction: column
-    gap: 12px   
+    gap: 12px
 
 main
     padding-top: 28px
@@ -508,7 +518,6 @@ a
 .link-green-large
     @include Link_Link_Large
     cursor: pointer
-    
 
 .form-subtitle
     @include Text_Small_Regular
@@ -948,7 +957,6 @@ form_city
     @include Text_Large_Medium
     color: $Neutral-150
 
-
 .radio input[type="radio"]
     width: 100%
     height: 46px
@@ -1006,7 +1014,7 @@ form_city
                 &-img
                     width: 100px
                     height: 100px
-                    border-radius: 50% 
+                    border-radius: 50%
             &-salary
                 width: 192px
 
@@ -1054,7 +1062,7 @@ form_city
         cursor: pointer
         &:before
             content: "✖"
-            color: $Neutral-500            
+            color: $Neutral-500
 
 .home
     &-container
@@ -1086,7 +1094,7 @@ form_city
         display: flex
         min-height: 400px
         gap: 16px
-        flex-wrap:  wrap
+        flex-wrap: wrap
         justify-content: space-evenly
         justify-items: center
         &__card
@@ -1094,7 +1102,7 @@ form_city
             &:hover
                 .home-menu__card-content, .home-menu__card-img
                     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
-                margin-top: -5px
+                    margin-top: -5px
             &-link
                 cursor: pointer
             &-item
@@ -1142,10 +1150,6 @@ form_city
             &-watched
             &-timeago
 
-
-            
-
-
 .header_and_subheader
     display: flex
     flex-direction: column
@@ -1164,8 +1168,6 @@ form_city
         line-height: 59px
         text-align: center
         color: #000000
-        
-
 
 .main
     height: 393px
@@ -1180,7 +1182,6 @@ form_city
     gap: 40px
     width: 720px
     height: 294px
-
 
 .buttons_index
     display: flex
@@ -1433,7 +1434,7 @@ form_city
         height: 22px
 
 .mb-20
-    margin-bottom: 20px 
+    margin-bottom: 20px
 
 .mt-32
     margin-top: 32px
@@ -1451,6 +1452,10 @@ form_city
     .main-background
         background-image: none
 
+    .container-grid-analytics
+        grid-template-columns: 1fr 1fr
+        padding: 0 16px
+
 @media (max-width: 768px)
     .entity-card
         min-width: 10px
@@ -1464,6 +1469,10 @@ form_city
             margin-top: 20px
 
     .container-grid
+        grid-template-columns: 1fr
+        padding: 0 16px
+
+    .container-grid-analytics
         grid-template-columns: 1fr
         padding: 0 16px
 
@@ -1527,7 +1536,6 @@ form_city
     .input_item_eye
         width: 296px
 
-
     .separation
         width: 100%
         margin-top: 36px
@@ -1572,7 +1580,6 @@ form_city
     //     text-align: center
     //     @include Text_Large_Medium
     //     color: $Neutral-150
-
 
     // .radio input[type="radio"]
     //     width: 194px
