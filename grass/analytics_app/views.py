@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 import plotly.express as px
-
+import vacancy_app.models
+import profile_app.models
 
 # Create your views here.
 @login_required

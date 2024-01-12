@@ -12,6 +12,14 @@
     <div class="container-grid-chat">
         <div class="box">
             <p class="contact-data__title">Пользователи</p>
+            <!--       from github     -->
+            {% for user in users %}
+            <div>
+                <img src="{% static 'img/avatar-user-empty.png' %}" alt="" class="">
+                <a href="{% url 'chat-page' email=user.email %}">{{user.email}}</a>
+            </div>
+            {% endfor %}
+            <!--      github      -->
         </div>
         <div class="box">
             <p class="contact-data__title">Сообщения</p>

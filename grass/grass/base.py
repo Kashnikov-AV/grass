@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'vacancy_app',
     'city_app',
     'analytics_app',
+    'chat_app',
 ]
 
 MIDDLEWARE = [
