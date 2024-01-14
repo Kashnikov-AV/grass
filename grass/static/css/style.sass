@@ -1,4 +1,3 @@
-// @use "/components/_color" as *
 @import 'components/_color'
 @import 'components/_fonts'
 @import 'components/_header'
@@ -65,6 +64,21 @@
     min-width: 100px
     min-height: 50px
 
+.chat-box
+    padding: 24px 12px 24px 12px
+
+.message-box
+    padding: 16px
+
+.title-and-search
+    padding: 0px 12px
+
+.search-form-chat
+    flex: 1
+    position: relative
+    min-width: 360px
+    margin-bottom: 16px
+
 .form-block
     width: 448px
 
@@ -101,8 +115,25 @@
     display: grid
     column-gap: 16px
     max-width: 1280px
-    grid-template-columns: 1fr 2fr
+    grid-template-columns: 416px 2fr
     grid-template-rows: 1fr
+
+.chat-message-container
+    display: grid
+    .chat-message-promt
+        place-self: center
+        text-align: center
+        .chat-message-img
+            margin-bottom: 32px
+        .chat-title-promt
+            @include h2-bold
+            color: $Neutral-500
+
+.chat-title
+    @include h2-bold
+    margin-bottom: 16px
+
+
 
 .vacancy-container
     display: flex
@@ -184,8 +215,6 @@
         @include Text_Small_Regular
         color: $Neutral-500
 
-.checkbox
-
 input[type="checkbox"]
     width: 20px
     height: 20px
@@ -215,7 +244,7 @@ input[type="checkbox"]
     &__bio
         flex-grow: 1
         &-title
-            @include h2_Bold
+            @include h2-bold
             margin-bottom: 8px
         &-job
             @include h3_Medium
@@ -338,7 +367,7 @@ input[type="checkbox"]
 
 .contact-data
     &__title
-        @include h2_Bold
+        @include h2-bold
         margin-bottom: 32px
     &__subtitle
         @include h4_Medium
@@ -356,18 +385,15 @@ input[type="checkbox"]
     height: 1px
     width: 100%
     background: $Neutral-150
-    // border: none
     margin: 32px 0
 
 .vacancies-list
     grid-column-start: 2
-    // background-color: green
     &__title
-        @include h2_Bold
+        @include h2-bold
         color: $Neutral-500
         margin-bottom: 24px
         margin-left: 24px
-    // grid-column: auto
 
 .v-card
     padding: 24px
@@ -389,7 +415,6 @@ input[type="checkbox"]
             @include h4_Medium
             color: $Neutral-500
             flex-grow: 1
-
         &-create-date
             @include Text_Small_Medium
     &__salary
@@ -429,7 +454,7 @@ input[type="checkbox"]
                 flex: 1
                 @include h4_Medium
             &-job
-                @include h2_Bold
+                @include h2-bold
             &-salary
                 text-align: right
                 @include h4_Medium
@@ -477,36 +502,6 @@ a
     width: 1280px
     margin: 0 80px
 
-.button_1:hover
-    background: #1D9E42
-
-.button_2:hover
-    border-color: #1D9E42
-    color: #1D9E42
-
-.button_1:active
-    background: #4FCB72
-
-.button_2:active
-    border-color: #4FCB72
-    color: #4FCB72
-
-.form_block
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08)
-    border-radius: 20px
-    display: flex
-    flex-direction: column
-    gap: 32px
-    width: 448px
-    height: 668px
-    align-items: center
-    background: $White
-
-.form_block_number_title
-    width: 400px
-    height: 80px
-    @include h1_Bold
-
 .title-1
     @include h1_Bold
     margin-bottom: 32px
@@ -524,29 +519,9 @@ a
     margin-top: 16px
 
 .form-login__text
-
     @include Text_Small_Regular
     margin-top: 24px
     text-align: center
-
-.title_no_margin
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 700
-    font-size: 32px
-    line-height: 40px
-    color: $Neutral-900
-
-.other_ways
-    font-family: 'Gilroy'
-    font-style: normal
-    font-weight: 400
-    font-size: 14px
-    line-height: 20px
-    text-align: center
-    color: $Neutral-900
-    width: 400px
-    margin: -7px 0 11px 0
 
 .form-login__logos
     display: flex
@@ -1050,7 +1025,7 @@ form_city
             display: block
             z-index: 200
             &__title
-                @include h2_Bold
+                @include h2-bold
                 margin-bottom: 16px
     &-close
         @include h2_Medium
@@ -1124,7 +1099,7 @@ form_city
                 text-align: center
                 &-title
                     margin-bottom: 12px
-                    @include h2_Bold
+                    @include h2-bold
                 &-subtitle
                     @include h3_Medium
     &-article
@@ -1251,7 +1226,7 @@ form_city
     border-radius: 20px
     width: 238px
     h2
-        @include h2_Bold
+        @include h2-bold
         text-align: center
     h3
         @include h3_Medium
@@ -1313,7 +1288,7 @@ form_city
     gap: 8px
     width: 100%
     h2
-        @include h2_Bold
+        @include h2-bold
 
 .head_layout_down
     display: flex
@@ -1413,7 +1388,7 @@ form_city
     align-items: flex-start
     gap: 12px
     h2
-        @include h2_Bold
+        @include h2-bold
     h3
         @include h3_Medium
         color: #6A6E70
@@ -1488,7 +1463,7 @@ form_city
             text-align: center
             padding: 0 10px
             &-title
-                @include h2_Bold
+                @include h2-bold
                 // font-size: 28px
                 margin-top: 100px
                 margin-bottom: 24px
@@ -1553,7 +1528,7 @@ form_city
         display: none
 
     .title-1
-        @include h2_Bold
+        @include h2-bold
         margin-bottom: 32px
 
     .radio-select

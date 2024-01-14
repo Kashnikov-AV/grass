@@ -10,19 +10,35 @@
 {% include 'components/header.html' %}
 <main>
     <div class="container-grid-chat">
-        <div class="box">
-            <p class="contact-data__title">Пользователи</p>
+        <div class="box chat-box">
+            <div class="title-and-search">
+                <p class="chat-title">Сообщения</p>
+                {{ request.user.email }}
+                <form class="search-form-chat">
+                    <input class="search-form__search" type="search" id="search-chat" name="search-chat" placeholder="Поиск">
+                    <button class="search-form__search-button" type="submit"></button>
+                </form>
+            </div>
             <!--       from github     -->
             {% for user in users %}
             <div>
-                <img src="{% static 'img/avatar-user-empty.png' %}" alt="" class="">
-                <a href="{% url 'chat-page' email=user.email %}">{{user.email}}</a>
+                <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
+                <a href="{% url 'chat-page' email=user.email %}">
+                    {% if user.role %}
+                    {{user.company.company_name}}
+                    {% else %}
+                    {{user.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
+                    {% endif %}
+                </a>
             </div>
             {% endfor %}
             <!--      github      -->
         </div>
-        <div class="box">
-            <p class="contact-data__title">Сообщения</p>
+        <div class="box chat-message-container message-box">
+            <div class="chat-message-promt">
+                <img class="chat-message-img" src="{% static 'img/chat-promt.svg' %}" alt="message-promt">
+                <p class="chat-title-promt">Выберите чат, чтобы начать переписку</p>
+            </div>
         </div>
     </div>
 </main>

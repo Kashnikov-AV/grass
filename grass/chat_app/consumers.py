@@ -1,7 +1,7 @@
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 from channels.db import database_sync_to_async
-from chat_app.models import ChatModel, UserChatProfileModel, ChatNotification
+from chat_app.models import ChatModel, UserChatProfileModel, ChatNotification, Room
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -16,6 +16,9 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
         else:
             self.room_name = f'{other_user_id}-{my_id}'
 
+        print(self.scope.get('user'))
+        room = await Room.add(self.room_name, self.scope.get('user'))
+
         self.room_group_name = 'chat_%s' % self.room_name
 
         await self.channel_layer.group_add(
@@ -23,11 +26,13 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
 
+
         await self.accept()
 
     async def receive(self, text_data=None, bytes_data=None):
         data = json.loads(text_data)
         print(data)
+        print(self.room_group_name)
         message = data['message']
         username = data['username']
         receiver = data['receiver']
@@ -126,8 +131,8 @@ class OnlineStatusConsumer(AsyncWebsocketConsumer):
         )
 
     @database_sync_to_async
-    def change_online_status(self, username, c_type):
-        user = User.objects.get(username=username)
+    def change_online_status(self, email, c_type):
+        user = User.objects.get(email=email)
         userprofile = UserChatProfileModel.objects.get(user=user)
         if c_type == 'open':
             userprofile.online_status = True

@@ -24,16 +24,28 @@ socket.onerror = function(e){
 
 socket.onmessage = function(e){
     const data = JSON.parse(e.data);
+    console.log(data);
+    const d = new Date();
+    let minutes = d.getMinutes();
+	if (minutes < 10) {minutes = "0" + minutes}
+    let hours = d.getHours();
+	if (hours < 10) {hours = "0" + hours}
     if(data.username == message_username){
         document.querySelector('#chat-body').innerHTML += `<tr>
                                                                 <td>
-                                                                <p class="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">${data.message}</p>
+                                                                    <p class="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">${data.message}</p>
+                                                                </td>
+                                                                <td>
+                                                                    <p><small class="p-1 shadow-sm">${hours}:${minutes}</small></p>
                                                                 </td>
                                                             </tr>`
     }else{
         document.querySelector('#chat-body').innerHTML += `<tr>
                                                                 <td>
                                                                 <p class="bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">${data.message}</p>
+                                                                </td>
+                                                                <td>
+                                                                    <p><small class="p-1 shadow-sm">${hours}:${minutes}</small></p>
                                                                 </td>
                                                             </tr>`
     }
@@ -42,26 +54,32 @@ socket.onmessage = function(e){
 document.querySelector('#chat-message-submit').onclick = function(e){
     const message_input = document.querySelector('#message_input');
     const message = message_input.value;
+
     socket.send(JSON.stringify({
         'message':message,
         'username':message_username,
         'receiver':receiver
     }));
+
     message_input.value = '';
 }
 
-const messageInput = JSON.parse(document.getElementById('message_input'));
+const messageInput = JSON.parse(JSON.stringify(document.getElementById('message_input')));
 
 messageInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
-       event.preventDefault();
+        
+        event.preventDefault();
+        
        const message = messageInput.value.trim();
+
        if(message !== ''){
             socket.send(JSON.stringify({
                 'message' : message,
                 'username' : message_username,
                 'receiver':receiver
             }))
+
             messageInput.value = '';
        }
     }

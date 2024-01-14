@@ -1,15 +1,7 @@
 from django.urls import path
-from .views import CustomLoginView, SignupWizardView, SignUpView
+from .views import CustomLoginView, SignUpView
 from django.contrib.auth.views import LoginView, LogoutView
-from .forms import SignUpForm, LoginForm, SignUpForm1, SignUpForm2, SignUpForm3, SignUpForm4Company, SignUpForm4Profile
-
-FORMS = [("role", SignUpForm1),
-         ("email", SignUpForm2),
-         ("pass", SignUpForm3),
-         ("profile", SignUpForm4Profile),
-         ("company", SignUpForm4Company),
-         ]
-
+from .forms import SignUpForm, LoginForm
 
 
 urlpatterns = [

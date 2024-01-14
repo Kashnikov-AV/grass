@@ -1472,6 +1472,25 @@ h1, h2, h3, h4, h5, h5, p {
   min-height: 50px;
 }
 
+.chat-box {
+  padding: 24px 12px 24px 12px;
+}
+
+.message-box {
+  padding: 16px;
+}
+
+.title-and-search {
+  padding: 0px 12px;
+}
+
+.search-form-chat {
+  flex: 1;
+  position: relative;
+  min-width: 360px;
+  margin-bottom: 16px;
+}
+
 .form-block {
   width: 448px;
 }
@@ -1513,8 +1532,41 @@ h1, h2, h3, h4, h5, h5, p {
   display: grid;
   column-gap: 16px;
   max-width: 1280px;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 416px 2fr;
   grid-template-rows: 1fr;
+}
+
+.chat-message-container {
+  display: grid;
+}
+
+.chat-message-container .chat-message-promt {
+  place-self: center;
+  text-align: center;
+}
+
+.chat-message-container .chat-message-promt .chat-message-img {
+  margin-bottom: 32px;
+}
+
+.chat-message-container .chat-message-promt .chat-title-promt {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F1F1F;
+  color: #6A6E70;
+}
+
+.chat-title {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #1F1F1F;
+  margin-bottom: 16px;
 }
 
 .vacancy-container {
@@ -2193,47 +2245,6 @@ a {
   margin: 0 80px;
 }
 
-.button_1:hover {
-  background: #1D9E42;
-}
-
-.button_2:hover {
-  border-color: #1D9E42;
-  color: #1D9E42;
-}
-
-.button_1:active {
-  background: #4FCB72;
-}
-
-.button_2:active {
-  border-color: #4FCB72;
-  color: #4FCB72;
-}
-
-.form_block {
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 448px;
-  height: 668px;
-  align-items: center;
-  background: #FFFFFF;
-}
-
-.form_block_number_title {
-  width: 400px;
-  height: 80px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 59.42px;
-  color: #1F1F1F;
-}
-
 .title-1 {
   font-family: 'Gilroy';
   font-style: normal;
@@ -2299,27 +2310,6 @@ a {
   color: #1F1F1F;
   margin-top: 24px;
   text-align: center;
-}
-
-.title_no_margin {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  color: #1F1F1F;
-}
-
-.other_ways {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  text-align: center;
-  color: #1F1F1F;
-  width: 400px;
-  margin: -7px 0 11px 0;
 }
 
 .form-login__logos {

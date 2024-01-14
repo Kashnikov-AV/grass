@@ -34,7 +34,8 @@ class Vacancy(models.Model):
     requirements = models.TextField(verbose_name="Требования")
     work_experience = models.IntegerField(verbose_name="Опыт работы", choices=WORKEXP_CHOICES, default=0)
     working_mode = models.PositiveSmallIntegerField(verbose_name='Тип занятости',
-                                                       choices=EMPLOYMENT_CHOICES, default=0)
+                                                    choices=EMPLOYMENT_CHOICES, default=0)
+
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

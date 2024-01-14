@@ -41,6 +41,9 @@ def user_profile_directory_path(instance, filename):
 
 
 class Profile(models.Model):
+    class Meta:
+        ordering = ['pk']
+
     user_model = get_user_model()
 
     user = models.OneToOneField(user_model, on_delete=models.CASCADE, related_name='profile',
@@ -68,6 +71,8 @@ class Profile(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+
     def __str__(self):
         return str(f'{self.user.pk} {self.name} {self.surname}')
 
@@ -90,6 +95,9 @@ class Profile(models.Model):
 
 
 class Education(models.Model):
+    class Meta:
+        ordering = ['pk']
+
     profile = models.ForeignKey(to=Profile,
                                 on_delete=models.CASCADE,
                                 related_name="educations",
@@ -107,6 +115,8 @@ class Education(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+
+
     def __str__(self):
         return str(f'profile-{self.profile.pk} {self.edu_institution} {self.speciality}')
 
@@ -121,6 +131,7 @@ class Education(models.Model):
 class Company(models.Model):
     class Meta:
         verbose_name_plural = "companies"
+        ordering = ['pk']
         
     user_model = get_user_model()
 
