@@ -6,13 +6,19 @@ from profile_app.models import Company, Profile, ExpJob, Education
 from django.db.models import Count
 import pandas as pd
 
-def get_avg_sellary_hist():
+def get_top_jobs():
+    top_jobs = Vacancy.objects.values('job_name')
+    df = pd.DataFrame(top_jobs)
+    fig_hist = px.histogram(df)
+    job_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
+    return job_hist
+
+def get_avg_salary_hist():
     min_sellary = Vacancy.objects.values('salary_min')
     df = pd.DataFrame(min_sellary)
-    print(df)
-    fig_hist = px.histogram(df)
-    sellary_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
-    return sellary_hist
+    fig_hist = px.histogram(df,nbins=20)
+    salary_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
+    return salary_hist
 
 def get_req_exp_chart():
     # Pie Chart
@@ -51,10 +57,12 @@ def draw_charts(request):
 
     scatter_chart = fig_scatter.to_html(full_html=True, include_plotlyjs=False)
     line_chart = fig_line.to_html(full_html=False, include_plotlyjs=False)
-    min_sellary_hist = get_avg_sellary_hist()
+    top_jobs_hist = get_top_jobs()
+    min_salary_hist = get_avg_salary_hist()
     req_exp_chart = get_req_exp_chart()
 
-    return render(request, "analytics_app/analytics.html", {"bar_chart": min_sellary_hist,
+    return render(request, "analytics_app/analytics.html", {"bar_chart": min_salary_hist,
+                                                            'hist_chart': top_jobs_hist,
                                                             "scatter_chart": scatter_chart,
                                                             "line_chart": line_chart,
                                                             "pie_chart": req_exp_chart,
