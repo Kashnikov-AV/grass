@@ -5,18 +5,31 @@ from vacancy_app.models import Vacancy, WORKEXP_CHOICES
 from profile_app.models import Company, Profile, ExpJob, Education
 from django.db.models import Count
 import pandas as pd
+import plotly.graph_objects as go
+
 
 def get_top_jobs():
     top_jobs = Vacancy.objects.values('job_name')
     df = pd.DataFrame(top_jobs)
-    fig_hist = px.histogram(df)
+    counts = df['job_name'].value_counts()
+    res = df[~df['job_name'].isin(counts[counts < 100].index)]
+    fig_hist = px.histogram(res).update_xaxes(categoryorder='total descending')
+    fig_hist.update_layout(
+        xaxis_title="Вакансии",
+        yaxis_title="Востребованность",
+        showlegend=False)
     job_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return job_hist
 
 def get_avg_salary_hist():
     min_sellary = Vacancy.objects.values('salary_min')
     df = pd.DataFrame(min_sellary)
-    fig_hist = px.histogram(df,nbins=20)
+    lotSample = df.sample(n = 500, random_state=1)
+    fig_hist = px.histogram(lotSample,nbins=100)
+    fig_hist.update_layout(
+        xaxis_title="Средняя зарлата",
+        yaxis_title="Количество предложений",
+        showlegend=False)
     salary_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return salary_hist
 
