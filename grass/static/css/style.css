@@ -3029,9 +3029,12 @@ form_city {
   border-radius: 14px;
 }
 
+.home-menu__card:hover {
+  margin-top: -5px;
+}
+
 .home-menu__card:hover .home-menu__card-content, .home-menu__card:hover .home-menu__card-img {
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  margin-top: -5px;
 }
 
 .home-menu__card-link {
