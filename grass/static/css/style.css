@@ -1523,7 +1523,7 @@ h1, h2, h3, h4, h5, h5, p {
   column-gap: 16px;
   row-gap: 16px;
   max-width: 1280px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
 

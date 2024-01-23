@@ -2,8 +2,8 @@
 {% load thumbnail %}
 <a class="overlay-ref is-active" href="{% url 'chat-page' email=user.email %}" :id="$id('list-item')">
     <div class="chat-member-card" >
-        {% if user.role %}
-            {% if user.company.logo %}
+        {% if u.role %}
+            {% if u.company.logo %}
                 {% thumbnail user.company.logo "50x50" crop="center" as im %}
                     <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-card__img" alt="avatar user">
                 {% endthumbnail %}
@@ -11,8 +11,8 @@
                 <img src="{% static 'img/avatar-company-empty.png' %}" width="50px" height="50px" alt="avatar company empty">
             {% endif %}
         {% else %}
-            {% if user.profile.photo %}
-                {% thumbnail user.profile.photo "50x50" crop="center" as im %}
+            {% if u.profile.photo %}
+                {% thumbnail u.profile.photo "50x50" crop="center" as im %}
                     <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-card__img" alt="avatar user">
                 {% endthumbnail %}
             {% else %}    
@@ -21,10 +21,10 @@
         {% endif %}
         <div class="chat-member-card__content">
             <p class="chat-member-card__name">
-                {% if user.role %}
-                    {{user.company.company_name}}
+                {% if u.role %}
+                    {{u.company.company_name}}
                 {% else %}
-                    {{user.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
+                    {{u.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
                 {% endif %}
             </p>
             <p>time</p>

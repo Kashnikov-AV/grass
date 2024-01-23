@@ -43,7 +43,7 @@ def chatPage(request, email):
 
     current_room = Room.objects.get(room_name=thread_name)
     users_list = User.objects.filter(pk__in=list(users_id)).exclude(pk=request.user.pk)
-
+    print(users_list)
     message_objs = ChatModel.objects.filter(thread_name=thread_name)
     return render(request, 'chat_app/chat-page.html', context={'userobj': user_obj,
                                                                'users': users_list,

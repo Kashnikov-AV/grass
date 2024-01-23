@@ -19,43 +19,11 @@
                     <button class="search-form__search-button" type="submit"></button>
                 </form>
             </div>
-            <!--     from github       -->
-            <!-- <div class="">
-                <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
-                <span class="ml-2">{{request.user.email}}</span>
-            </div> -->
-            <!-- <div class="">
-                <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
-                <span class="ml-2">{{user.username}}</span>
-                {% if user.userprofilemodel.online_status %}
-                <small id="{{user.email}}_small">Online</small>
-                {% else %}
-                <small id="{{user.email}}_small">Offline</small>
-                {% endif %}
-            </div> -->
-            {% for user in users %}
-            <div>
-                <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
-                {% if user.userprofilemodel.online_status %}
-                <a style="color: green" id="{{ user.email }}_status" href="{% url 'chat-page' email=user.email %}">
-                    {% if user.role %}
-                    {{user.company.company_name}}
-                    {% else %}
-                    {{user.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
-                    {% endif %}
-                </a>
-                {% else %}
-                <a style="color: grey" id="{{ user.email }}_status" href="{% url 'chat-page' email=user.email %}">
-                    {% if user.role %}
-                    {{user.company.company_name}}
-                    {% else %}
-                    {{user.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
-                    {% endif %}
-                </a>
-                {% endif %}
+            <div class="chat-rooms" id="chat-rooms-id">
+                {% for user in users %}
+                    {% include 'components/chat-member-card.html' %}
+                {% endfor %}
             </div>
-            {% endfor %}
-            <!--     from github       -->
         </div>
         <div class="box message-box">
             <!--     from github       -->

@@ -19,20 +19,11 @@
                     <button class="search-form__search-button" type="submit"></button>
                 </form>
             </div>
-            <!--       from github     -->
-            {% for user in users %}
-            <div>
-                <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
-                <a href="{% url 'chat-page' email=user.email %}">
-                    {% if user.role %}
-                    {{user.company.company_name}}
-                    {% else %}
-                    {{user.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
-                    {% endif %}
-                </a>
+            <div class="chat-rooms" id="chat-rooms-id">
+                {% for u in users %}
+                    {% include 'components/chat-member-card.html' %}
+                {% endfor %}
             </div>
-            {% endfor %}
-            <!--      github      -->
         </div>
         <div class="box chat-message-container message-box">
             <div class="chat-message-promt">

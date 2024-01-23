@@ -16,16 +16,13 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
         else:
             self.room_name = f'{other_user_id}-{my_id}'
 
-        print(self.scope.get('user'))
-        room = await Room.add(self.room_name, self.scope.get('user'))
-
         self.room_group_name = 'chat_%s' % self.room_name
+        await Room.add(self.room_group_name, self.scope.get('user'))
 
         await self.channel_layer.group_add(
             self.room_group_name,
             self.channel_name
         )
-
 
         await self.accept()
 
@@ -64,8 +61,9 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
 
     @database_sync_to_async
     def save_message(self, username, thread_name, message, receiver):
+        room_obj = Room.objects.get(room_name=thread_name)
         chat_obj = ChatModel.objects.create(
-            sender=username, message=message, thread_name=thread_name)
+            sender=username, message=message, thread_name=thread_name, room=room_obj)
         other_user_id = self.scope['url_route']['kwargs']['id']
         get_user = User.objects.get(id=other_user_id)
         if receiver == get_user.username:

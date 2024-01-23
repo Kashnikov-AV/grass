@@ -1,6 +1,9 @@
 const id = JSON.parse(document.getElementById('json-username').textContent);
 const message_username = JSON.parse(document.getElementById('json-message-username').textContent);
 const receiver = JSON.parse(document.getElementById('json-username-receiver').textContent);
+const room = JSON.parse(document.getElementById('json-room').textContent);
+
+console.log(room);
 
 const socket = new WebSocket(
     'ws://'
