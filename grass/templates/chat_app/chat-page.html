@@ -37,7 +37,7 @@
             <div>
                 <img src="{% static 'img/avatar-user-empty.svg' %}" alt="" class="">
                 {% if user.userprofilemodel.online_status %}
-                <a style="color: green" id="{{user.email}}_status" href="{% url 'chat-page' email=user.email %}">
+                <a style="color: green" id="{{ user.email }}_status" href="{% url 'chat-page' email=user.email %}">
                     {% if user.role %}
                     {{user.company.company_name}}
                     {% else %}
@@ -45,7 +45,7 @@
                     {% endif %}
                 </a>
                 {% else %}
-                <a style="color: grey" id="{{user.email}}_status" href="{% url 'chat-page' email=user.email %}">
+                <a style="color: grey" id="{{ user.email }}_status" href="{% url 'chat-page' email=user.email %}">
                     {% if user.role %}
                     {{user.company.company_name}}
                     {% else %}
@@ -83,6 +83,7 @@
         {{userobj.id|json_script:"json-username"}}
         {{userobj.email|json_script:"json-username-receiver"}}
         {{request.user.email|json_script:"json-message-username"}}
+        {{room_obj|json_script:"json-room"}}
         <!--     from github       -->
     </div>
 </main>

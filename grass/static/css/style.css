@@ -1713,9 +1713,7 @@ input[type="checkbox"] {
   grid-row: span 2;
 }
 
-.main-inf .link-green-large {
-  margin-left: 16px;
-  display: inline-block;
+.main-inf {
   display: flex;
   flex: 1 auto 1;
   justify-content: space-between;
@@ -1723,6 +1721,11 @@ input[type="checkbox"] {
   align-content: stretch;
   gap: 24px;
   min-height: 124px;
+}
+
+.main-inf .link-green-large {
+  margin-left: 16px;
+  display: inline-block;
 }
 
 .main-inf__avatar-img {
