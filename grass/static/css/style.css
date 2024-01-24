@@ -2107,7 +2107,8 @@ input[type="checkbox"] {
 
 .message-area {
   overflow-y: scroll;
-  max-height: 528px;
+  height: 528px;
+  padding-top: 16px;
 }
 
 .message-area__my-flex {

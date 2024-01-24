@@ -33,8 +33,6 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, text_data=None, bytes_data=None):
         data = json.loads(text_data)
-        print(data)
-        print(self.room_group_name)
         message = data['message']
         username = data['username']
         receiver = data['receiver']
