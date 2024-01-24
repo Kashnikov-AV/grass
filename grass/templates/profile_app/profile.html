@@ -67,8 +67,7 @@
                         <p class="main-inf__salary-text">Желаемая З/П: <span class="main-inf__salary-text_bold">{{ profile.desired_salary|intcomma }} ₽</span></p>
                         {% endif %}
                         {% if profile.pk != user.pk %}
-                        <button class="btn-primary-medium btn-fluid">Написать</button>
-                        <a class="btn-primary-medium btn-fluid" href="{% url 'chat-page' email=profile.user.email %}">Написать</a>
+                        <a class="btn-primary-medium" href="{% url 'chat-page' email=profile.user.email %}">Написать</a>
                         {% endif %}
                     </div>
                 </div>

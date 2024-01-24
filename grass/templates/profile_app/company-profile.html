@@ -64,8 +64,7 @@
                     </div>
                     {% if company.pk != user.pk %}
                     <div class="main-inf__salary">
-                        <button class="btn-primary-medium btn-fluid">Написать</button>
-                        <a class="btn-primary-medium btn-fluid" href="{% url 'chat-page' email=company.user.email %}">Написать</a>
+                        <a class="btn-primary-medium" href="{% url 'chat-page' email=company.user.email %}">Написать</a>
                     </div>
                     {% endif %}
                 </div>
