@@ -8,8 +8,9 @@ class Room(models.Model):
     class Meta:
         ordering = ['pk']
 
+    user_model = get_user_model()
     room_name = models.CharField(max_length=150, unique=True, verbose_name='room name')
-    users = models.ManyToManyField(get_user_model(), related_name='rooms')
+    users = models.ManyToManyField(user_model, related_name='rooms')
 
     @classmethod
     @sync_to_async
