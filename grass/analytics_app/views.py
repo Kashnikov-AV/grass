@@ -7,6 +7,13 @@ from django.db.models import Count
 import pandas as pd
 import plotly.graph_objects as go
 
+def get_exp_salary_scat():
+    exp = Vacancy.objects.values('work_experience', 'salary_min')
+    salary = Vacancy.objects.values('salary_min')
+    df = pd.DataFrame(exp)
+    fig_scatter = px.scatter(df,x='work_experience',y='salary_min')
+    scatter_chart = fig_scatter.to_html(full_html=True, include_plotlyjs=False)
+    return scatter_chart
 
 def get_top_jobs():
     top_jobs = Vacancy.objects.values('job_name')
@@ -22,14 +29,14 @@ def get_top_jobs():
     return job_hist
 
 def get_avg_salary_hist():
-    min_sellary = Vacancy.objects.values('salary_min')
-    df = pd.DataFrame(min_sellary)
-    lotSample = df.sample(n = 500, random_state=1)
-    fig_hist = px.histogram(lotSample,nbins=100)
+    min_salary = Vacancy.objects.values('salary_min').filter(salary_min__lt=110000)
+    df = pd.DataFrame(min_salary)
+    fig_hist = px.histogram(df,nbins=20)
     fig_hist.update_layout(
         xaxis_title="Средняя зарлата",
         yaxis_title="Количество предложений",
-        showlegend=False)
+        showlegend=False,
+        bargap=0.1)
     salary_hist = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return salary_hist
 
@@ -68,15 +75,15 @@ def draw_charts(request):
 
 
 
-    scatter_chart = fig_scatter.to_html(full_html=True, include_plotlyjs=False)
     line_chart = fig_line.to_html(full_html=False, include_plotlyjs=False)
     top_jobs_hist = get_top_jobs()
     min_salary_hist = get_avg_salary_hist()
     req_exp_chart = get_req_exp_chart()
+    exp_salary_scat = get_exp_salary_scat()
 
     return render(request, "analytics_app/analytics.html", {"bar_chart": min_salary_hist,
                                                             'hist_chart': top_jobs_hist,
-                                                            "scatter_chart": scatter_chart,
+                                                            "scatter_chart": exp_salary_scat,
                                                             "line_chart": line_chart,
                                                             "pie_chart": req_exp_chart,
                                                             }
