@@ -79,6 +79,39 @@
     min-width: 360px
     margin-bottom: 16px
 
+.chat-member-card
+    border-radius: 14px
+    display: flex
+    gap: 16px
+    padding: 12px
+    &:hover
+        background-color: $Neutral-150
+    &__img
+        border-radius: 50%
+    &__content
+        display: flex
+        gap: 16px
+        flex: 1
+        justify-content: space-between
+    &__name
+        @include h4-bold
+
+.chat-member-info
+    display: flex
+    gap: 16px
+    align-items: center
+    &__img
+        border-radius: 50%
+    &__content
+        display: flex
+        gap: 16px
+        flex: 1
+        flex-direction: column
+    &__name
+        @include h4-bold
+    &__text
+        @include Text_Small_Regular      
+
 .form-block
     width: 448px
 
@@ -265,7 +298,7 @@ input[type="checkbox"]
             flex: 1
             margin-top: 7px
         &-text_bold
-            @include h4_Bold
+            @include h4-bold
             color: $Neutral-500
 
 .entity-card
@@ -297,7 +330,7 @@ input[type="checkbox"]
         &:last-child
             margin-bottom: 0px
     &__title
-        @include h4_Bold
+        @include h4-bold
     &__subtitle
         @include Text_Small_Medium
         color: $Neutral-900
@@ -386,6 +419,60 @@ input[type="checkbox"]
     width: 100%
     background: $Neutral-150
     margin: 32px 0
+    &-chat
+        margin: 16px 0 0 0
+        height: 1px
+        width: 100%
+        background: $Neutral-250
+
+.message-area
+    overflow-y: scroll
+    max-height: 528px
+    &__my-flex
+        display: flex
+        justify-content: right
+        padding-right: 16px
+    &__my-text
+        display: flex
+        gap: 4px
+        background-color: $Neutral-150
+        border-radius: 14px 14px 0 14px
+        margin-bottom: 8px
+        width: 420px
+        padding: 4px 16px
+        justify-content: space-between
+    &__other-flex
+        display: flex
+        justify-content: left
+    &__other-text
+        display: flex
+        gap: 4px
+        width: 420px
+        border-radius: 14px 14px 14px 0
+        background-color: $Neutral-50
+        margin-bottom: 8px
+        padding: 4px 16px
+        justify-content: space-between
+    &__message
+        overflow-wrap: anywhere
+        @include text-large-regular
+    &__time
+        align-self: flex-end
+        @include Text_Small_Regular
+
+.subhead-chat
+    display: flex
+    gap: 8px
+    padding: 16p 0
+    margin-top: 16px
+    &__input
+        flex: 1
+    &__btn
+        padding: 16px
+        &::before
+            content: url(../img/send.svg)
+
+        
 
 .vacancies-list
     grid-column-start: 2

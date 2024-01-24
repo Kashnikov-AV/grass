@@ -1491,6 +1491,72 @@ h1, h2, h3, h4, h5, h5, p {
   margin-bottom: 16px;
 }
 
+.chat-member-card {
+  border-radius: 14px;
+  display: flex;
+  gap: 16px;
+  padding: 12px;
+}
+
+.chat-member-card:hover {
+  background-color: #E9EDEF;
+}
+
+.chat-member-card__img {
+  border-radius: 50%;
+}
+
+.chat-member-card__content {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.chat-member-card__name {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.chat-member-info {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.chat-member-info__img {
+  border-radius: 50%;
+}
+
+.chat-member-info__content {
+  display: flex;
+  gap: 16px;
+  flex: 1;
+  flex-direction: column;
+}
+
+.chat-member-info__name {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.chat-member-info__text {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1F1F1F;
+}
+
 .form-block {
   width: 448px;
 }
@@ -2030,6 +2096,90 @@ input[type="checkbox"] {
   width: 100%;
   background: #E9EDEF;
   margin: 32px 0;
+}
+
+.separation-line-chat {
+  margin: 16px 0 0 0;
+  height: 1px;
+  width: 100%;
+  background: #D4DCDE;
+}
+
+.message-area {
+  overflow-y: scroll;
+  max-height: 528px;
+}
+
+.message-area__my-flex {
+  display: flex;
+  justify-content: right;
+  padding-right: 16px;
+}
+
+.message-area__my-text {
+  display: flex;
+  gap: 4px;
+  background-color: #E9EDEF;
+  border-radius: 14px 14px 0 14px;
+  margin-bottom: 8px;
+  width: 420px;
+  padding: 4px 16px;
+  justify-content: space-between;
+}
+
+.message-area__other-flex {
+  display: flex;
+  justify-content: left;
+}
+
+.message-area__other-text {
+  display: flex;
+  gap: 4px;
+  width: 420px;
+  border-radius: 14px 14px 14px 0;
+  background-color: #F6F6F6;
+  margin-bottom: 8px;
+  padding: 4px 16px;
+  justify-content: space-between;
+}
+
+.message-area__message {
+  overflow-wrap: anywhere;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+}
+
+.message-area__time {
+  align-self: flex-end;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #1F1F1F;
+}
+
+.subhead-chat {
+  display: flex;
+  gap: 8px;
+  padding: 16p 0;
+  margin-top: 16px;
+}
+
+.subhead-chat__input {
+  flex: 1;
+}
+
+.subhead-chat__btn {
+  padding: 16px;
+}
+
+.subhead-chat__btn::before {
+  content: url(../img/send.svg);
 }
 
 .vacancies-list {

@@ -12,7 +12,7 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
         my_id = self.scope['user'].id
 
         other_user_id = self.scope['url_route']['kwargs']['id']
-        other_user = User.objects.get(pk=other_user_id)
+        other_user = await User.objects.aget(pk=other_user_id)
 
         if int(my_id) > int(other_user_id):
             self.room_name = f'{my_id}-{other_user_id}'
@@ -21,8 +21,8 @@ class PersonalChatConsumer(AsyncWebsocketConsumer):
 
         self.room_group_name = 'chat_%s' % self.room_name
 
-        Room.add(self.room_group_name, self.scope.get('user'))
-        Room.add(self.room_group_name, other_user)
+        await Room.add(self.room_group_name, self.scope.get('user'))
+        await Room.add(self.room_group_name, other_user)
 
         await self.channel_layer.group_add(
             self.room_group_name,

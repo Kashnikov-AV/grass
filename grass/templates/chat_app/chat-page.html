@@ -13,46 +13,50 @@
         <div class="box chat-box">
             <div class="title-and-search">
                 <p class="chat-title">Сообщения</p>
-                {{ request.user.email }}
                 <form class="search-form-chat">
                     <input class="search-form__search" type="search" id="search-chat" name="search-chat" placeholder="Поиск">
                     <button class="search-form__search-button" type="submit"></button>
                 </form>
             </div>
             <div class="chat-rooms" id="chat-rooms-id">
-                {% for user in users %}
+                {% for u in users %}
                     {% include 'components/chat-member-card.html' %}
                 {% endfor %}
             </div>
         </div>
         <div class="box message-box">
-            <!--     from github       -->
-            {% for message in messages %}
-            {% if message.sender == request.user.email %}
-                <p class="">{{message.message}}</p>
-                <p><small class="">{{message.timestamp|time:'H:i'}}</small></p>
-            {% else %}
-                <p class="">{{message.message}}</p>
-                <p><small class="">{{message.timestamp|time:'H:i'}}</small></p>
-            {% endif %}
-            {% endfor %}
-            <div id="chat-body"></div>
-            <div class="">
-                <div class="">
-                    <input type="text" class="form-control" id="message_input" placeholder="Write message...">
-                </div>
-                <div class="">
-                    <div class="">
-                        <button class="btn-primary-small" id="chat-message-submit">Submit</button>
+            {% include 'components/chat-member-info.html' %}
+            <div class="separation-line-chat"></div>
+            <div class="message-area">
+                {% for message in messages %}
+                    {% if message.sender == request.user.email %}
+                        <div class="message-area__my-flex">
+                            <div class="message-area__my-text">
+                                <p class="message-area__message">{{message.message}}</p>
+                                <p class="message-area__time">{{message.timestamp|time:'H:i'}}</p>
+                            </div>
+                        </div>
+                    {% else %}
+                    <div class="message-area__other-flex">
+                        <div class="message-area__other-text">
+                            <p class="message-area__message">{{message.message}}</p>
+                            <p class="message-area__time">{{message.timestamp|time:'H:i'}}</p>
+                        </div>
                     </div>
-                </div>
+                    {% endif %}
+                {% endfor %}
+                <div id="chat-body"></div>
+            </div>
+            <div class="separation-line-chat"></div>
+            <div class="subhead-chat">
+                <input type="text" class="input subhead-chat__input" id="message_input" placeholder="Напишите сообщение...">
+                <button class="subhead-chat__btn btn-primary-large" id="chat-message-submit"></button>
             </div>
         </div>
         {{userobj.id|json_script:"json-username"}}
         {{userobj.email|json_script:"json-username-receiver"}}
         {{request.user.email|json_script:"json-message-username"}}
-        {{room_obj|json_script:"json-room"}}
-        <!--     from github       -->
+        {{room_obj.room_name|json_script:"json-room"}}
     </div>
 </main>
 {% include 'components/footer.html' %}

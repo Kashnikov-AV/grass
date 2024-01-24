@@ -1,10 +1,10 @@
 {% load static %}
 {% load thumbnail %}
-<a class="overlay-ref is-active" href="{% url 'chat-page' email=user.email %}" :id="$id('list-item')">
+<a class="overlay-ref is-active" href="{% url 'chat-page' email=u.email %}" :id="$id('list-item')">
     <div class="chat-member-card" >
         {% if u.role %}
             {% if u.company.logo %}
-                {% thumbnail user.company.logo "50x50" crop="center" as im %}
+                {% thumbnail u.company.logo "50x50" crop="center" as im %}
                     <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-card__img" alt="avatar user">
                 {% endthumbnail %}
             {% else %}    
@@ -24,7 +24,7 @@
                 {% if u.role %}
                     {{u.company.company_name}}
                 {% else %}
-                    {{u.profile.surname}} {{user.profile.name}} {{user.profile.patronymic}}
+                    {{u.profile.surname}} {{u.profile.name}} {{u.profile.patronymic}}
                 {% endif %}
             </p>
             <p>time</p>
