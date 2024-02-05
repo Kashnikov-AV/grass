@@ -29,9 +29,27 @@
             {% endautoescape %}
         </div>
         <div class="box">
-            <p class="contact-data__title">Топ 10 вакансий</p>
+            <p class="contact-data__title">Зависимость зарлаты от опыта работы</p>
             {% autoescape off %}
-                {{ pie_chart }}
+                {{ scatter_chart }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Частые требования</p>
+            {% autoescape off %}
+                {{ top_req }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Зарплата у востребованных вакансий</p>
+            {% autoescape off %}
+                {{ top_job_salary }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Компании</p>
+            {% autoescape off %}
+                {{ hist_co }}
             {% endautoescape %}
         </div>
     </div>
