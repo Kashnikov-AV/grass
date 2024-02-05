@@ -52,6 +52,18 @@
                 {{ hist_co }}
             {% endautoescape %}
         </div>
+        <div class="box">
+            <p class="contact-data__title">Занятость</p>
+            {% autoescape off %}
+                {{ hist_workmod }}
+            {% endautoescape %}
+        </div>
+        <div class="box">
+            <p class="contact-data__title">Дата публикации вакансий</p>
+            {% autoescape off %}
+                {{ hist_date }}
+            {% endautoescape %}
+        </div>
     </div>
 </main>
 {% include 'components/footer.html' %}

@@ -5,16 +5,20 @@ from django.db.models import Count
 import pandas as pd
 import plotly.graph_objects as go
 
-#Убрать время, оставить дату, надо поучиться работать с DateTime
 def get_hist_date():
     date = Vacancy.objects.values('created_at')
     df = pd.DataFrame(date)
-    fig_hist = px.histogram(df).update_xaxes(categoryorder='total descending')
+    fig_hist = px.histogram(df, nbins=15).update_xaxes(categoryorder='total descending')
+    fig_hist.update_layout(
+        xaxis_title="Дата публикации",
+        yaxis_title="Количество вакансий",
+        showlegend=False)
     hist_date = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return hist_date
 
 
 #Имена вместо цифр, сделать более удобочитаемым
+#Сделать line chart
 def get_hist_workmod():
     workmod = Vacancy.objects.values('working_mode').annotate(cnt=Count('working_mode'))
     df = pd.DataFrame(workmod)
@@ -35,6 +39,7 @@ def get_hist_co():
 
 
 #Сделать множество, чтобы не повторялись вакансии и у - Зп, х - имя вакансии
+#Сделать line chart
 def get_top_job_salary():
     values = Vacancy.objects.values('job_name','salary_min')
     df = pd.DataFrame(values)
@@ -45,14 +50,14 @@ def get_top_job_salary():
     return top_job_sal
 
 
-#To do: Разбить дату, сделать без скобок и тд
+#Плюс минус готово, осталось подумать над читаемостью
 def get_top_req():
     req = Vacancy.objects.values('requirements')
-    df = pd.DataFrame(req).dropna()
+    df = pd.DataFrame(req)
     df = df.loc[df['requirements'] != 'NULL']
-    # counts = df['req'].value_counts()
-    # res = df[~df['req'].isin(counts[counts < 100].index)]
-    fig_hist = px.histogram(req).update_xaxes(categoryorder='total descending')
+    counts = df['requirements'].value_counts()
+    res = df[~df['requirements'].isin(counts[counts < 20 ].index)]
+    fig_hist = px.histogram(res).update_xaxes(categoryorder='total descending')
     fig_hist.update_layout(
         xaxis_title="Требования",
         yaxis_title="Встречаемость",
