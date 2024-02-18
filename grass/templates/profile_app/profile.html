@@ -181,16 +181,16 @@
             <div class="box">
                 <h2 class="contact-data__title">Контакные данные</h2>
                 <p class="contact-data__subtitle">Сайт</p>
-                <a href="
-                {% if profile.site %}
-                {{ profile.get_site_url }}
-                {% else %}
-                #
-                {% endif %}" class="contact-data__text link-green-large" target="_blank">
+                <a href="{% if profile.site %}
+                        {{ profile.get_site_url }}
+                        {% else %}
+                        #
+                        {% endif %}" 
+                    class="contact-data__text link-green-large" target="_blank">
                     {% if profile.site %}
-                    {{ profile.site }}
+                        {{ profile.site }}
                     {% else %}
-                    Пусто
+                        Пусто
                     {% endif %}
                 </a>
                 <p class="contact-data__subtitle">Телефон</p>

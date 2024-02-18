@@ -115,8 +115,8 @@ def hx_update_view(request, pk, model, form):
             object_form = VacancyForm(instance=object_model)
             template = 'vacancy_app/partials/modal-vacancy-update.html'
 
-    print(request.POST)
-    print(request.GET)
+    #print(request.POST)
+    #print(request.GET)
     return render(request, template, {
         'form': object_form,
         'model': object_model,

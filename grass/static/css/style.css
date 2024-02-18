@@ -1697,7 +1697,6 @@ h1, h2, h3, h4, h5, h5, p {
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 59.42px;
   color: #1F1F1F;
   margin-bottom: 24px;
 }
@@ -2404,7 +2403,6 @@ a {
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 59.42px;
   color: #1F1F1F;
   margin-bottom: 32px;
 }
@@ -2474,246 +2472,6 @@ a {
   height: 46px;
 }
 
-/* Регистрация */
-.form_signup {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 32px;
-  width: 448px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-  padding: 0 0 24px 0;
-}
-
-.form_signup_5 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 596px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-  padding: 0 0 24px 0;
-}
-
-.form_signup_6 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 560px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_signup_subtext {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #1F1F1F;
-  display: flex;
-}
-
-.form_block_number_inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.form_block_number_inputs p {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  text-align: left;
-}
-
-.form_block_number_inputs a {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #20B84B;
-}
-
-.form_block_password {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 456px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_password_buttons {
-  margin-top: -30px;
-}
-
-.form_blok_recovery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 36px 24px;
-  gap: 32px;
-  width: 448px;
-  height: 404px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.subtext {
-  margin-top: -50px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 22px;
-  color: #1F1F1F;
-}
-
-.selector {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 4px;
-  gap: 4px;
-  width: 400px;
-  height: 54px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-form_city {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px 24px;
-  gap: 32px;
-  isolation: isolate;
-  position: absolute;
-  width: 848px;
-  height: 516px;
-  left: 296px;
-  top: 128px;
-}
-
-.city_input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px 20px;
-  width: 800px;
-  height: 54px;
-  background: #FFFFF;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-.city_button button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 32px;
-  gap: 8px;
-  width: 280px;
-  height: 54px;
-  background: #20B84B;
-  border-radius: 14px;
-}
-
-.form_signup_7_title {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  text-align: center;
-  color: #1F1F1F;
-  width: 200px;
-  height: 80px;
-  margin-top: 32px;
-}
-
-.frame_76 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 400px;
-}
-
-.frame_77 {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.frame_77 p {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  text-align: center;
-  color: #F6F6F6;
-  margin: auto;
-}
-
-a {
-  text-decoration: none;
-  color: #1F1F1F;
-}
-
-.container {
-  width: 1280px;
-  margin: 0 80px;
-}
-
-.button_1:hover {
-  background: #1D9E42;
-}
-
-.button_2:hover {
-  border-color: #1D9E42;
-  color: #1D9E42;
-}
-
-.button_1:active {
-  background: #4FCB72;
-}
-
-.button_2:active {
-  border-color: #4FCB72;
-  color: #4FCB72;
-}
-
-.title_no_margin {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 40px;
-  color: #1F1F1F;
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -2728,9 +2486,6 @@ a {
   padding: 0px;
   gap: 12px;
   width: 400px;
-}
-
-.separation {
   font-family: 'Gilroy';
   font-style: normal;
   font-weight: 400;
@@ -2747,108 +2502,6 @@ a {
   background: #D4DCDE;
 }
 
-.form_block_number {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 404px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_number_inputs {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-}
-
-.form_block_number_inputs p {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  text-align: left;
-}
-
-.form_block_number_inputs a {
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  color: #20B84B;
-}
-
-.form_block_password {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 456px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_password_buttons {
-  margin-top: -30px;
-}
-
-.form_blok_recovery {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 36px 24px;
-  gap: 32px;
-  width: 448px;
-  height: 404px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-}
-
-.form_register_company {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  width: 448px;
-  height: 560px;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  background: #FFFFFF;
-}
-
-.form_block_number {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 448px;
-  background: #FFFFFF;
-  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
-  border-radius: 20px;
-  align-items: center;
-}
-
-.form_register_end_buttons {
-  width: 400px;
-  height: 60px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  color: #6A6E70;
-  margin-top: -30px;
-}
-
 .coming-soon {
   margin-top: 36px;
   text-align: center;
@@ -2863,58 +2516,6 @@ a {
   font-size: 16px;
   line-height: 22px;
   color: #1F1F1F;
-}
-
-.selector {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 4px;
-  gap: 4px;
-  width: 400px;
-  height: 54px;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-form_city {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px 24px;
-  gap: 32px;
-  isolation: isolate;
-  position: absolute;
-  width: 848px;
-  height: 516px;
-  left: 296px;
-  top: 128px;
-}
-
-.city_input {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px 20px;
-  width: 800px;
-  height: 54px;
-  background: #FFFFF;
-  border: 1px solid #D4DCDE;
-  border-radius: 14px;
-}
-
-.city_button button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px 32px;
-  gap: 8px;
-  width: 280px;
-  height: 54px;
-  background: #20B84B;
-  border-radius: 14px;
 }
 
 .radio-select {
@@ -3141,7 +2742,6 @@ form_city {
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 59.42px;
   color: #1F1F1F;
   font-size: 48px;
   margin-top: 100px;
@@ -3249,7 +2849,6 @@ form_city {
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 59.42px;
   color: #1F1F1F;
 }
 
@@ -3275,28 +2874,6 @@ form_city {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-}
-
-.header_and_subheader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  gap: 24px;
-  width: 720px;
-  height: 200px;
-}
-
-.header_and_subheader h1 {
-  width: 720px;
-  height: 118px;
-  font-family: 'Gilroy';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 48px;
-  line-height: 59px;
-  text-align: center;
-  color: #000000;
 }
 
 .main {
@@ -3456,7 +3033,6 @@ form_city {
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
-  line-height: 59.42px;
   color: #1F1F1F;
 }
 
