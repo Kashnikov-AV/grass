@@ -3,7 +3,8 @@ const message_username = JSON.parse(document.getElementById('json-message-userna
 const receiver = JSON.parse(document.getElementById('json-username-receiver').textContent);
 const room = JSON.parse(document.getElementById('json-room').textContent);
 
-console.log(room);
+console.log(id);
+
 
 const socket = new WebSocket(
     'ws://'
@@ -34,23 +35,19 @@ socket.onmessage = function(e){
     let hours = d.getHours();
 	if (hours < 10) {hours = "0" + hours}
     if(data.username == message_username){
-        document.querySelector('#chat-body').innerHTML += `<tr>
-                                                                <td>
-                                                                    <p class="bg-success p-2 mt-2 mr-5 shadow-sm text-white float-right rounded">${data.message}</p>
-                                                                </td>
-                                                                <td>
-                                                                    <p><small class="p-1 shadow-sm">${hours}:${minutes}</small></p>
-                                                                </td>
-                                                            </tr>`
+        document.querySelector('#chat-body').innerHTML += `<div class="message-area__my-flex">
+                                                                <div class="message-area__my-text">
+                                                                    <p class="message-area__message">${data.message}</p>
+                                                                    <p class="message-area__time">${hours}:${minutes}</p>
+                                                                </div>
+                                                            </div>`
     }else{
-        document.querySelector('#chat-body').innerHTML += `<tr>
-                                                                <td>
-                                                                <p class="bg-primary p-2 mt-2 mr-5 shadow-sm text-white float-left rounded">${data.message}</p>
-                                                                </td>
-                                                                <td>
-                                                                    <p><small class="p-1 shadow-sm">${hours}:${minutes}</small></p>
-                                                                </td>
-                                                            </tr>`
+        document.querySelector('#chat-body').innerHTML += `<div class="message-area__my-flex">
+                                                                <div class="message-area__other-text">
+                                                                    <p class="message-area__message">${data.message}</p>
+                                                                    <p class="message-area__time">${hours}:${minutes}</p>
+                                                                </div>
+                                                            </div>`
     }
 }
 

@@ -10,12 +10,15 @@
     <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
     <link rel="stylesheet" href="{% static 'css/normalize.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <script defer src="{% static 'js/alpine-mask.js' %}"></script>
-    <script defer src="{% static 'js/alpine.js' %}"></script>
-    <script defer src="{% static 'js/htmx.min.js' %}"></script>
-    <script defer src="{% static 'js/multi-swap.js' %}"></script>
-    <!-- Use cdn to use plotly -->
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <!-- Alpine Plugins -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/mask@3.x.x/dist/cdn.min.js"></script>
+    <!-- Alpine Core -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.13.5/cdn.min.js"></script>
+    <!-- HTMX -->
+    <script defer src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    <script defer src="https://unpkg.com/htmx.org/dist/ext/multi-swap.js"></script>
+    {% block scripts %} {% endblock %}
 </head>
 <body hx-ext="multi-swap">
     <div class="flex-container">
@@ -28,7 +31,5 @@
         event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
     })
     </script>
-    <!-- chat -->
-    <script src="{% static 'js/chat.js' %}"></script>
 </body>
 </html>

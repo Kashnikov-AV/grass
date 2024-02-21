@@ -5,7 +5,10 @@
 {% load thumbnail %}
 
 {% block title %}Чат{% endblock %}
-
+{% block scripts %}
+<!-- chat -->
+<script src="{% static 'js/chat.js' %}"></script>
+{% endblock %}
 {% block content %}
 {% include 'components/header.html' %}
 <main>

@@ -156,6 +156,31 @@ header {
   color: #FFFFFF;
 }
 
+.navbar-tablet {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: #20B84B;
+  height: 100px;
+  width: 100%;
+  top: 100px;
+  left: 0px;
+  z-index: 10;
+}
+
+.navbar-mobile {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  background-color: #20B84B;
+  height: 100%;
+  width: 100%;
+  top: 60px;
+  left: 0px;
+  z-index: 10;
+}
+
 .navbar_item {
   display: flex;
   flex-direction: column;
@@ -185,11 +210,138 @@ header {
   fill: #E9EDEF;
 }
 
-.img_mobile {
+.navbar-item-tablet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.navbar-item-tablet:first-child {
+  padding-left: 25px;
+}
+
+.navbar-item-tablet svg {
+  fill: #FFFFFF;
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+.navbar-item-tablet:hover svg {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+.navbar-item-tablet img {
+  fill: #FFFFFF;
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+.navbar-item-tablet:hover img {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+.navbar-item-tablet p {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  color: #FFFFFF;
+}
+
+.navbar-item-mobile {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  height: 56px;
+  gap: 32px;
+  border-bottom: 1px solid #B7BEC0;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.navbar-item-mobile:first-child {
+  padding-left: 24px;
+}
+
+.navbar-item-mobile svg {
+  fill: #FFFFFF;
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+.navbar-item-mobile:hover svg {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+.navbar-item-mobile img {
+  fill: #FFFFFF;
+  width: 24px;
+  margin-bottom: 6px;
+}
+
+.navbar-item-mobile:hover img {
+  color: #E9EDEF;
+  fill: #E9EDEF;
+}
+
+.navbar-item-mobile p {
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1F1F1F;
+  color: #FFFFFF;
+}
+
+.mobile {
+  display: none;
+}
+
+.tablet {
   display: none;
 }
 
 @media (max-width: 1280px) {
+  .navbar-tablet {
+    display: flex;
+  }
+  .navbar-mobile {
+    display: none;
+  }
+  .mobile {
+    display: none;
+  }
+  .navbar-tablet-item {
+    display: flex;
+  }
+  .tablet {
+    display: block;
+  }
+  .tablet-burger {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+  }
   .header_top {
     display: none;
   }
@@ -199,6 +351,18 @@ header {
 }
 
 @media (max-width: 768px) {
+  .navbar-mobile {
+    display: flex;
+  }
+  .mobile {
+    display: block;
+  }
+  .navbar-tablet {
+    display: none;
+  }
+  .tablet {
+    display: none;
+  }
   .header_top {
     display: none;
   }
@@ -215,17 +379,21 @@ header {
     width: 155px;
     height: 28px;
   }
-  .img_mobile {
+  .mobile {
     display: flex;
     width: 10%;
     justify-content: space-between;
+    gap: 24px;
+    margin-right: 32px;
   }
-  .img_one {
+  .research-mobile {
     display: block;
+    cursor: pointer;
     width: 18px;
   }
-  .img_two {
+  .menu-burger-mobile {
     width: 22px;
+    cursor: pointer;
   }
   .container_header {
     display: flex;
@@ -1600,6 +1768,7 @@ h1, h2, h3, h4, h5, h5, p {
   max-width: 1280px;
   grid-template-columns: 416px 2fr;
   grid-template-rows: 1fr;
+  min-height: 698px;
 }
 
 .chat-message-container {
@@ -2098,15 +2267,20 @@ input[type="checkbox"] {
 }
 
 .separation-line-chat {
-  margin: 16px 0 0 0;
   height: 1px;
   width: 100%;
+  margin-top: 16px;
   background: #D4DCDE;
+}
+
+.chat-rooms {
+  overflow-y: scroll;
+  height: 528px;
 }
 
 .message-area {
   overflow-y: scroll;
-  height: 528px;
+  height: 488px;
   padding-top: 16px;
 }
 
@@ -2884,7 +3058,25 @@ a {
   margin-top: 32px;
 }
 
+.underline {
+  text-decoration: underline;
+}
+
+.nav-touch {
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #FFFFFF;
+  margin-top: 4px;
+}
+
 @media (max-width: 1280px) {
+  .container-grid-chat {
+    padding: 0 16px;
+  }
+  .home-container {
+    padding: 0 16px;
+  }
   .profile-data {
     margin-left: 16px;
   }

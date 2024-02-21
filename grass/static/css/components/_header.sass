@@ -21,7 +21,7 @@ header
 
 .location_layout
     display: flex
-    p 
+    p
         width: 51px
         height: 18px
         @include Link_Link_Small
@@ -55,13 +55,34 @@ header
         width: 246px
         height: 44px
 
-
-
 .navbar 
     display: flex
-    a 
+    a
         @include large_text
         color: $White
+
+.navbar-tablet
+    position: absolute
+    display: none
+    justify-content: center
+    align-items: center
+    background-color: $Green-Default
+    height: 100px
+    width: 100%
+    top: 100px
+    left: 0px
+    z-index: 10
+
+.navbar-mobile
+    position: absolute
+    display: none
+    flex-direction: column
+    background-color: $Green-Default
+    height: 100%
+    width: 100%
+    top: 60px
+    left: 0px
+    z-index: 10
 
 .navbar_item 
     display: flex
@@ -79,11 +100,90 @@ header
     &:hover svg
         color: $Neutral-150
         fill: $Neutral-150
+    
+.navbar-item-tablet
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    flex-wrap: wrap
+    cursor: pointer
+    @include Text_Large_Medium
+    &:first-child
+        padding-left: 25px
+    svg
+        fill: $White
+        width: 24px
+        margin-bottom: 6px
+    &:hover svg
+        color: $Neutral-150
+        fill: $Neutral-150
+    img
+        fill: $White
+        width: 24px
+        margin-bottom: 6px
+    &:hover img
+        color: $Neutral-150
+        fill: $Neutral-150
+    p
+        @include large_text
+        color: $White
 
-.img_mobile
+.navbar-item-mobile
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    cursor: pointer
+    height: 56px
+    gap: 32px
+    border-bottom: 1px solid $Neutral-350
+    @include Text_Large_Medium
+    &:first-child
+        padding-left: 24px
+    svg
+        fill: $White
+        width: 24px
+        margin-bottom: 6px
+    &:hover svg
+        color: $Neutral-150
+        fill: $Neutral-150
+    img
+        fill: $White
+        width: 24px
+        margin-bottom: 6px
+    &:hover img
+        color: $Neutral-150
+        fill: $Neutral-150
+    p
+        @include large_text
+        color: $White
+
+.mobile
+    display: none
+
+.tablet
     display: none
 
 @media (max-width: 1280px)
+    .navbar-tablet
+        display: flex
+
+    .navbar-mobile
+        display: none
+
+    .mobile
+        display: none
+
+    .navbar-tablet-item
+        display: flex
+
+    .tablet
+        display: block
+        &-burger
+            width: 50px
+            height: auto
+            cursor: pointer
+
     .header_top
         display: none
 
@@ -91,6 +191,18 @@ header
         display: none
 
 @media (max-width: 768px)
+    .navbar-mobile
+        display: flex
+
+    .mobile
+        display: block
+
+    .navbar-tablet
+        display: none
+
+    .tablet
+        display: none
+
     .header_top
         display: none
 
@@ -107,17 +219,21 @@ header
         width: 155px
         height: 28px
 
-    .img_mobile
+    .mobile
         display: flex
         width: 10%
         justify-content: space-between
+        gap: 24px
+        margin-right: 32px
 
-    .img_one
+    .research-mobile
         display: block
+        cursor: pointer
         width: 18px
 
-    .img_two
+    .menu-burger-mobile
         width: 22px
+        cursor: pointer
 
     .container_header
         display: flex
