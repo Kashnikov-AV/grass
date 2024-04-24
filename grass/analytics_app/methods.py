@@ -17,40 +17,47 @@ def get_hist_date():
     return hist_date
 
 
-#Имена вместо цифр, сделать более удобочитаемым
-#Сделать line chart
 def get_hist_workmod():
-    workmod = Vacancy.objects.values('working_mode').annotate(cnt=Count('working_mode'))
-    df = pd.DataFrame(workmod)
+    workmod_count = Vacancy.objects.values('working_mode').annotate(cnt=Count('working_mode'))
     dwe = dict(EMPLOYMENT_CHOICES)
-    for x in workmod:
-        x['workmod'] = dwe[x['working_mode']]
-    fig_hist = px.histogram(df).update_xaxes(categoryorder='total descending')
+    for x in workmod_count:
+        x['working_mode'] = dwe[x['working_mode']]
+    df = pd.DataFrame(workmod_count).sort_values(by='cnt')
+    fig_hist = px.line(x = df['working_mode'],y = df['cnt'])
+    fig_hist.update_layout(
+        xaxis_title="Тип занятости",
+        yaxis_title="Встречаемость",
+        showlegend=False)
     hist_workmod = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return hist_workmod
 
-#Заменить на имена, сделать меньше компаний, создать по убыванию
+#Надо переделать
 def get_hist_co():
-    company = Vacancy.objects.values('company')
+    company = Vacancy.objects.values('company').annotate(cnt=Count('company'))
+    # dwe = dict(Company.company_name)
+    # for x in company:
+    #     x['company'] = dwe[x['company']]
     df = pd.DataFrame(company)
+    counts = df['company'].value_counts()
+    vacancies = df[~df['company'].isin(counts[counts < 5000].index)]
     fig_hist = px.histogram(df).update_xaxes(categoryorder='total descending')
     hist_co = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return hist_co
 
-
-#Сделать множество, чтобы не повторялись вакансии и у - Зп, х - имя вакансии
-#Сделать line chart
+#Надо переделать
 def get_top_job_salary():
-    values = Vacancy.objects.values('job_name','salary_min')
+    values = Vacancy.objects.values('job_name')
     df = pd.DataFrame(values)
     counts = df['job_name'].value_counts()
-    res = df[~df['job_name'].isin(counts[counts < 250].index)]
-    fig_hist = px.histogram(res['salary_min'])
+    vacancies = df[~df['job_name'].isin(counts[counts < 250].index)]
+    values = Vacancy.objects.values('job_name','salary_min')
+    df = pd.DataFrame(values)
+    fig_hist = px.histogram(df['salary_min'])
     top_job_sal = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return top_job_sal
 
 
-#Плюс минус готово, осталось подумать над читаемостью
+#Что делать с требованиями? Они почти не читаемы
 def get_top_req():
     req = Vacancy.objects.values('requirements')
     df = pd.DataFrame(req)
@@ -65,11 +72,17 @@ def get_top_req():
     top_req = fig_hist.to_html(full_html=False, include_plotlyjs=False)
     return top_req
 
-#To DO: Доделать, оформить, подумоть, у одной профессии одно значние зп сделать
 def get_exp_salary_scat():
-    exp_salary = Vacancy.objects.values('work_experience', 'salary_min')
+    exp_salary = Vacancy.objects.values('work_experience', 'salary_min').annotate(cnt=Count('work_experience'))
+    dwe = dict(WORKEXP_CHOICES)
+    for x in exp_salary:
+        x['work_experience'] = dwe[x['work_experience']]
     df = pd.DataFrame(exp_salary)
-    fig_scatter = px.scatter(df,x='salary_min',y='work_experience')
+    fig_scatter = px.scatter(df,x='salary_min',y='work_experience',opacity = 0.4)
+    fig_scatter.update_layout(
+        xaxis_title="Опыт работы",
+        yaxis_title="Зарплата",
+        showlegend=False,)
     scatter_chart = fig_scatter.to_html(full_html=True, include_plotlyjs=False)
     return scatter_chart
 
