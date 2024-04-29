@@ -4,6 +4,16 @@ from .models import UserChatProfileModel, ChatNotification
 import json
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
+from django.contrib.auth import get_user_model
+
+user = get_user_model()
+
+@receiver(post_save, sender=user)
+def create_chat_profile(sender, instance, created, **kwargs):
+    if created:
+        p = UserChatProfileModel.objects.create(
+            user=instance)
+        p.save() # you have correctly passed instance to foreign key and you just need to check condition for the same
 
 @receiver(post_save, sender=ChatNotification)
 def send_notification(sender, instance, created, **kwargs):

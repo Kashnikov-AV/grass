@@ -1,9 +1,9 @@
-const id = JSON.parse(document.getElementById('json-username').textContent);
-const message_username = JSON.parse(document.getElementById('json-message-username').textContent);
-const receiver = JSON.parse(document.getElementById('json-username-receiver').textContent);
-const room = JSON.parse(document.getElementById('json-room').textContent);
+let id = document.getElementById('json-username').textContent;
+let message_username = document.getElementById('json-message-username').textContent;
+let receiver = document.getElementById('json-username-receiver').textContent;
+let room = document.getElementById('json-room').textContent;
 
-console.log(id);
+console.log(document.getElementById('json-username'));
 
 
 const socket = new WebSocket(
@@ -64,14 +64,14 @@ document.querySelector('#chat-message-submit').onclick = function(e){
     message_input.value = '';
 }
 
-const messageInput = JSON.parse(JSON.stringify(document.getElementById('message_input')));
+let messageInput = document.getElementById('message_input');
 
 messageInput.addEventListener('keyup', function(event) {
     if (event.key === 'Enter') {
         
         event.preventDefault();
         
-       const message = messageInput.value.trim();
+       let message = messageInput.value.trim();
 
        if(message !== ''){
             socket.send(JSON.stringify({

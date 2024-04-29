@@ -15,13 +15,13 @@ services:
       context: .
     restart: unless-stopped
     command: >
-      sh -c "sleep 5 && \
-             python manage.py migrate && \
-             python manage.py collectstatic --no-input && \
-             daphne -p 8000 -b 0.0.0.0 grass.asgi:application"
+            sh -c "sleep 5 && \
+            wait-for-it db:5432 -- python manage.py migrate && \
+            python manage.py collectstatic --no-input && \
+            daphne -p 8000 -b 0.0.0.0 grass.asgi:application"
     env_file: .env
-    expose:
-      - 8000
+    ports:
+      - 8000:8000
     volumes:
       - static_volume:/home/app/web/staticfiles
       - media_volume:/home/app/web/media
@@ -30,26 +30,27 @@ services:
       - redis
     links:
       - db:db
+      - redis:redis
     networks:
       - djangonetwork
-  nginx:
-    build: ./nginx
-    restart: unless-stopped
-    volumes:
-      - static_volume:/home/app/web/staticfiles
-      - media_volume:/home/app/web/media
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/www/certbot:/var/www/certbot
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-    ports:
-      - 80:80
-      - 443:443
-    links:
-      - web:web
-    depends_on:
-      - web
-    networks:
-      - djangonetwork
+  # nginx:
+  #   build: ./nginx
+  #   restart: unless-stopped
+  #   volumes:
+  #     - static_volume:/home/app/web/staticfiles
+  #     - media_volume:/home/app/web/media
+  #     - /etc/letsencrypt:/etc/letsencrypt
+  #     - /var/www/certbot:/var/www/certbot
+  #   command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   links:
+  #     - web:web
+  #   depends_on:
+  #     - web
+  #   networks:
+  #     - djangonetwork
   redis:
     image: redis:latest
     ports:
@@ -65,3 +66,4 @@ volumes:
   pgdata:
   static_volume:
   media_volume:
+

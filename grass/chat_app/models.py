@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 from asgiref.sync import sync_to_async
+import uuid
 
 
 # Create your models here.
@@ -42,15 +43,13 @@ class UserChatProfileModel(models.Model):
     class Meta:
         ordering = ['pk']
 
+    uid = models.UUIDField(default = uuid.uuid4, verbose_name='chat-uid')
     user_model = get_user_model()
-    user = models.OneToOneField(to=user_model, on_delete=models.CASCADE, verbose_name='user')
+    user = models.OneToOneField(to=user_model, on_delete=models.CASCADE, related_name='chatprofile', verbose_name='user')
     online_status = models.BooleanField(default=False, verbose_name='online status')
 
     def __str__(self) -> str:
-        if not self.user.role:
-            return str(self.user.pk) + ' ' + self.user.email + ' ' + self.user.profile.surname
-        else:
-            return str(self.user.pk) + ' ' + self.user.email + ' ' + self.user.company.company_name
+        return str(self.user.pk) + ' ' + self.user.email
 
 
 class ChatModel(models.Model):
