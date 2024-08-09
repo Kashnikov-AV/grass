@@ -33,7 +33,7 @@ services:
       - redis:redis
     networks:
       - djangonetwork
-   nginx:
+  nginx:
      build: ./nginx
      restart: unless-stopped
      volumes:
