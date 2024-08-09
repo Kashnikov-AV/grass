@@ -62,9 +62,7 @@ class ChatModel(models.Model):
     room = models.ForeignKey(to=Room, on_delete=models.CASCADE,  verbose_name='room')
     timestamp = models.DateTimeField(auto_now_add=True)
 
-
-
-    def __str__(self) -> str:
+    def __str__(self):
         return self.message
 
 

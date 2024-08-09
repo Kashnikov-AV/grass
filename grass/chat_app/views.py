@@ -26,8 +26,6 @@ def chat(request):
 def chatPage(request, email):
     user_obj = User.objects.get(email=email)
 
-
-
     rooms = request.user.rooms.all()
     users_id = set()
     for r in rooms:

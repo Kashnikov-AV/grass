@@ -33,24 +33,24 @@ services:
       - redis:redis
     networks:
       - djangonetwork
-  # nginx:
-  #   build: ./nginx
-  #   restart: unless-stopped
-  #   volumes:
-  #     - static_volume:/home/app/web/staticfiles
-  #     - media_volume:/home/app/web/media
-  #     - /etc/letsencrypt:/etc/letsencrypt
-  #     - /var/www/certbot:/var/www/certbot
-  #   command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
-  #   ports:
-  #     - 80:80
-  #     - 443:443
-  #   links:
-  #     - web:web
-  #   depends_on:
-  #     - web
-  #   networks:
-  #     - djangonetwork
+   nginx:
+     build: ./nginx
+     restart: unless-stopped
+     volumes:
+       - static_volume:/home/app/web/staticfiles
+       - media_volume:/home/app/web/media
+       - /etc/letsencrypt:/etc/letsencrypt
+       - /var/www/certbot:/var/www/certbot
+     command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+     ports:
+       - 80:80
+       - 443:443
+     links:
+       - web:web
+     depends_on:
+       - web
+     networks:
+       - djangonetwork
   redis:
     image: redis:latest
     ports:

@@ -7,3 +7,7 @@
 .env
 .env-prod
 venv/
+media/
+.idea/
+
+!/.gitignore
