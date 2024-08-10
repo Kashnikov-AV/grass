@@ -27,7 +27,7 @@ services:
       - media_volume:/home/app/web/media
     depends_on:
       - db
-      - redis
+#      - redis
     links:
       - db:db
       - redis:redis
