@@ -4,6 +4,10 @@ SECRET_KEY = '6_-e4#0$hr1exfn6-v*fb_x@u#+oq2%^8wn-emk=y^tzi-pvt$'
 DEBUG = True
 ALLOWED_HOSTS = ['*', ]
 
+CSRF_TRUSTED_ORIGINS = ["https://grass-job.ru",
+                        "https://www.grass-job.ru",
+                        ]
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
