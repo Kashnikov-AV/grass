@@ -54,12 +54,13 @@ WORKDIR $APP_HOME
 
 # install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends netcat
-RUN apt-get install wait-for-it
+#RUN apt-get install wait-for-it
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache /wheels/*
 RUN pip install psycopg2-binary
+RUN pip install wait-for-it
 
 # copy project
 COPY . $APP_HOME
