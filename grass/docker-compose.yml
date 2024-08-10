@@ -27,8 +27,10 @@ services:
       - media_volume:/home/app/web/media
     depends_on:
       - db
+      - redis
     links:
       - db:db
+      - redis:redis
     networks:
       - djangonetwork
   nginx:
@@ -49,6 +51,12 @@ services:
        - web
      networks:
        - djangonetwork
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+    networks:
+      - djangonetwork
 
 networks:
     djangonetwork:
