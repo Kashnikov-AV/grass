@@ -30,7 +30,7 @@ services:
 #      - redis
     links:
       - db:db
-      - redis:redis
+#      - redis:redis
     networks:
       - djangonetwork
   nginx:
