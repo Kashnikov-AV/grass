@@ -1,13 +1,1 @@
-
-.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2023_16_46_\[Changes\]/shelved.patch
-.idea/shelf/Uncommitted_changes_before_Update_at_02_04_2023_16_46__Changes_.xml
-*.xml
-*.sqlite3
-*.pyc
-.env
-.env-prod
-venv/
-media/
-.idea/
-
-!/.gitignore
+Nothing to output - the modified file is just README.md which is a source/config file and no build artifacts, dependencies, or temp files are present in the changes.
