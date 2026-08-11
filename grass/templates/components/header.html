@@ -15,21 +15,33 @@
             </div>
         </div>
     </div>
-    <div class="header_bottom">
+    <div class="header_bottom" x-data="{ tablet:false, mobile:false }">
         <div class="container_header">
             <div class="logo_and_search_form">
                 <a href="{% url 'home' %}"><img src="{% static 'img/logo.svg' %}"></a>
             </div>
             <form class="search-form">
-                    <input class="search-form__search" type="search" id="search" name="search"
-                        placeholder="Поиск по вакансиям и работодателям">
-                    <button class="search-form__search-button" type="submit"></button>
+                <input class="search-form__search" type="search" id="search" name="search"
+                    placeholder="Поиск по вакансиям и работодателям">
+                <button class="search-form__search-button" type="submit"></button>
             </form>
-                <div class="img_mobile">
-                    <a href="{% url 'coming' %}"><img class="img_one" src="{% static 'img/magnifier.svg' %}"></a>
-                    <a href="{% url 'coming' %}"><img class="img_two" src="{% static 'img/Burger_Menu.svg' %}"></a>
+            <div class="tablet">
+                <div class="navbar-item-tablet" x-on:click="tablet = !tablet">
+                    <img class="" src="{% static 'img/Burger_Menu.svg' %}">
+                    <p>Меню</p>
                 </div>
-            <div class="navbar">
+            </div>
+            <template x-if="tablet">
+                {% include 'components/header-nav-tablet.html' %}
+            </template>    
+            <div class="mobile">
+                <img class="research-mobile" src="{% static 'img/magnifier.svg' %}">
+                <img class="menu-burger-mobile" src="{% static 'img/Burger_Menu.svg' %}" x-on:click="mobile = !mobile">
+            </div>
+            <template x-if="mobile" x-data="{ }">
+                {% include 'components/header-nav-mobile.html' %}
+            </template> 
+            <nav class="navbar" x-data="{ }">
                 <a href="{% url 'chat' %}">
                     <div class="navbar_item">
                         <svg viewBox="0 0 24 24">
@@ -37,15 +49,21 @@
                                 d="M5.79104 18.824L0.500042 20L1.67604 14.709C0.901574 13.2604 0.497569 11.6426 0.500042 10C0.500042 4.477 4.97704 0 10.5 0C16.023 0 20.5 4.477 20.5 10C20.5 15.523 16.023 20 10.5 20C8.8574 20.0025 7.23966 19.5985 5.79104 18.824Z" />
                         </svg>
                         <p>Сообщения</p>
+                        <template x-if="document.URL.search('chat') > -1">
+                            <div class="nav-touch"></div>
+                        </template>
                     </div>
                 </a>
                 <a href="{% url 'vacancies' %}">
-                    <div class="navbar_item">
+                    <div class="navbar_item"  >
                         <svg viewBox="0 0 24 24">
                             <path
                                 d="M18 4.21053H15V2.10526C15 0.944211 14.103 0 13 0H7C5.897 0 5 0.944211 5 2.10526V4.21053H2C0.897 4.21053 0 5.15474 0 6.31579V9.47368H20V6.31579C20 5.15474 19.103 4.21053 18 4.21053ZM7 2.10526H13V4.21053H7V2.10526ZM12 12.6316H8V10.5263H0V17.8947C0 19.0558 0.897 20 2 20H18C19.103 20 20 19.0558 20 17.8947V10.5263H12V12.6316Z" />
                         </svg>
                         <p>Вакансии</p>
+                        <template x-if="document.URL.search('vacancy') > -1">
+                            <div class="nav-touch"></div>
+                        </template>
                     </div>
                 </a>
                 <a href="{% url 'analytic' %}">
@@ -55,34 +73,43 @@
                                 d="M8.88887 1.40467V11.6111H19.0953C18.6283 16.321 14.6539 20 9.82097 20C4.673 20 0.5 15.827 0.5 10.679C0.5 5.84611 4.17899 1.87165 8.88887 1.40467ZM10.7531 0C15.929 0.44461 20.0545 4.571 20.5 9.74693H10.7531V0Z" />
                         </svg>
                         <p>Аналитика</p>
+                        <template x-if="document.URL.search('analytic') > -1">
+                            <div class="nav-touch"></div>
+                        </template>
                     </div>
                 </a>
                 {% if user.is_authenticated %}
                 {% if not user.role %}
                 <a href="{% url 'profile' pk=user.pk %}">
-                    {% else %}
-                    <a href="{% url 'profile-company' pk=user.pk %}">
-                        {% endif %}
-                        <div class="navbar_item">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M5 4.5C5 6.981 7.019 9 9.5 9C11.981 9 14 6.981 14 4.5C14 2.019 11.981 0 9.5 0C7.019 0 5 2.019 5 4.5ZM17.5 19H18.5V18C18.5 14.141 15.359 11 11.5 11H7.5C3.64 11 0.5 14.141 0.5 18V19H17.5Z" />
-                            </svg>
-                            <p>Профиль</p>
-                        </div>
-                    </a>
-                    {% else %}
-                    <a href="{% url 'login' %}">
-                        <div class="navbar_item">
-                            <svg viewBox="0 0 24 24">
-                                <path
-                                    d="M5 4.5C5 6.981 7.019 9 9.5 9C11.981 9 14 6.981 14 4.5C14 2.019 11.981 0 9.5 0C7.019 0 5 2.019 5 4.5ZM17.5 19H18.5V18C18.5 14.141 15.359 11 11.5 11H7.5C3.64 11 0.5 14.141 0.5 18V19H17.5Z" />
-                            </svg>
-                            <p>Войти</p>
-                        </div>
-                    </a>
+                {% else %}
+                <a href="{% url 'profile-company' pk=user.pk %}">
                     {% endif %}
-            </div>
+                    <div class="navbar_item" x-on:click="chat=false; vacancy=false; analytic=false; profile=true;">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M5 4.5C5 6.981 7.019 9 9.5 9C11.981 9 14 6.981 14 4.5C14 2.019 11.981 0 9.5 0C7.019 0 5 2.019 5 4.5ZM17.5 19H18.5V18C18.5 14.141 15.359 11 11.5 11H7.5C3.64 11 0.5 14.141 0.5 18V19H17.5Z" />
+                        </svg>
+                        <p>Профиль</p>
+                        <template x-if="document.URL.search('profile') > -1">
+                            <div class="nav-touch"></div>
+                        </template>
+                    </div>
+                </a>
+                {% else %}
+                <a href="{% url 'login' %}">
+                    <div class="navbar_item">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M5 4.5C5 6.981 7.019 9 9.5 9C11.981 9 14 6.981 14 4.5C14 2.019 11.981 0 9.5 0C7.019 0 5 2.019 5 4.5ZM17.5 19H18.5V18C18.5 14.141 15.359 11 11.5 11H7.5C3.64 11 0.5 14.141 0.5 18V19H17.5Z" />
+                        </svg>
+                        <p>Войти</p>
+                        <template x-if="document.URL.search('login') > -1">
+                            <div class="nav-touch"></div>
+                        </template>
+                    </div>
+                </a>
+                {% endif %}
+            </nav>
         </div>
     </div>
 </header>

@@ -14,8 +14,8 @@
             <p class="home-welcome-subtitle">Наша платформа помогает связать<br>работодателей и соискателей в одном
                 месте.</p>
             <div class="home-welcome__buttons">
-                <button class="btn-primary-large btn-fluid">Смотреть вакансии</button>
-                <button class="btn-secondary-large btn-fluid">Смотреть соискателей</button>
+                <a href="{% url 'vacancies' %}" class="btn-primary-large">Смотреть вакансии</a>
+                <button class="btn-secondary-large">Смотреть соискателей</button>
             </div>
         </div>
         <div class="home-menu">
@@ -68,7 +68,7 @@
         <div class="home-article">
             <div class="home-article__header">
                 <h2 class="home-article__header-name">Новые вакансии</h2>
-                <a class="home-article__header-link" href="#">Показать всё</a>
+                <a class="home-article__header-link" href="{% url 'vacancies' %}">Показать всё</a>
             </div>
             <div class="home-article__items">
                 {% for vac in vacancies %}

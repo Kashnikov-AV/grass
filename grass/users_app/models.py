@@ -38,6 +38,9 @@ class CustomUserManager(BaseUserManager):
 
 
 class CustomUser(AbstractUser):
+    class Meta:
+        ordering = ['pk']
+
     ROLES = [(False, 'работник'),
              (True, 'Компания')
              ]

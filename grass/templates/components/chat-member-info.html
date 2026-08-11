@@ -1,0 +1,32 @@
+{% load static %}
+{% load thumbnail %}
+<div class="chat-member-info">
+    {% if userobj.role %}
+        {% if userobj.company.logo %}
+            {% thumbnail userobj.company.logo "50x50" crop="center" as im %}
+                <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-info__img" alt="avatar user">
+            {% endthumbnail %}
+        {% else %}    
+            <img src="{% static 'img/avatar-company-empty.png' %}" width="50px" height="50px" alt="avatar company empty">
+        {% endif %}
+    {% else %}
+        {% if userobj.profile.photo %}
+            {% thumbnail u.profile.photo "50x50" crop="center" as im %}
+                <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-info__img" alt="avatar user">
+            {% endthumbnail %}
+        {% else %}    
+            <img src="{% static 'img/avatar-user-empty.svg' %}" width="50px" height="50px" alt="avatar user empty">
+        {% endif %}
+    {% endif %}
+    <div class="chat-member-info__content">
+        <p class="chat-member-info__name">
+            {% if userobj.role %}
+                {{userobj.company.company_name}}
+            {% else %}
+                {{userobj.profile.surname}} {{userobj.profile.name}} {{userobj.profile.patronymic}}
+            {% endif %}
+        </p>
+        <p class="chat-member-info__text">был 100 лет назад</p>
+    </div>
+    <img src="{% static 'img/search.svg' %}" width="22px" height="22px" alt="search tab message">
+</div>    

@@ -28,43 +28,11 @@
                 {{ hist_chart }}
             {% endautoescape %}
         </div>
-        <div class="box">
-            <p class="contact-data__title">Зависимость зарлаты от опыта работы</p>
-            {% autoescape off %}
-                {{ scatter_chart }}
-            {% endautoescape %}
-        </div>
-        <div class="box">
-            <p class="contact-data__title">Частые требования</p>
-            {% autoescape off %}
-                {{ top_req }}
-            {% endautoescape %}
-        </div>
-        <div class="box">
-            <p class="contact-data__title">Зарплата у востребованных вакансий</p>
-            {% autoescape off %}
-                {{ top_job_salary }}
-            {% endautoescape %}
-        </div>
-        <div class="box">
-            <p class="contact-data__title">Компании</p>
-            {% autoescape off %}
-                {{ hist_co }}
-            {% endautoescape %}
-        </div>
-        <div class="box">
-            <p class="contact-data__title">Занятость</p>
-            {% autoescape off %}
-                {{ hist_workmod }}
-            {% endautoescape %}
-        </div>
-        <div class="box">
-            <p class="contact-data__title">Дата публикации вакансий</p>
-            {% autoescape off %}
-                {{ hist_date }}
-            {% endautoescape %}
-        </div>
     </div>
 </main>
 {% include 'components/footer.html' %}
+{% endblock %}
+{% block scripts %}
+<!-- Use cdn to use plotly -->
+<script defer src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 {% endblock %}

@@ -67,7 +67,7 @@
                         <p class="main-inf__salary-text">Желаемая З/П: <span class="main-inf__salary-text_bold">{{ profile.desired_salary|intcomma }} ₽</span></p>
                         {% endif %}
                         {% if profile.pk != user.pk %}
-                        <button class="btn-primary-medium btn-fluid">Написать</button>
+                        <a class="btn-primary-medium" href="{% url 'chat-page' email=profile.user.email %}">Написать</a>
                         {% endif %}
                     </div>
                 </div>
@@ -181,16 +181,16 @@
             <div class="box">
                 <h2 class="contact-data__title">Контакные данные</h2>
                 <p class="contact-data__subtitle">Сайт</p>
-                <a href="
-                {% if profile.site %}
-                {{ profile.get_site_url }}
-                {% else %}
-                #
-                {% endif %}" class="contact-data__text link-green-large" target="_blank">
+                <a href="{% if profile.site %}
+                        {{ profile.get_site_url }}
+                        {% else %}
+                        #
+                        {% endif %}" 
+                    class="contact-data__text link-green-large" target="_blank">
                     {% if profile.site %}
-                    {{ profile.site }}
+                        {{ profile.site }}
                     {% else %}
-                    Пусто
+                        Пусто
                     {% endif %}
                 </a>
                 <p class="contact-data__subtitle">Телефон</p>

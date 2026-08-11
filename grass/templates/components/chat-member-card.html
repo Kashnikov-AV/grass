@@ -1,0 +1,33 @@
+{% load static %}
+{% load thumbnail %}
+<a class="overlay-ref is-active" href="{% url 'chat-page' email=u.email %}" :id="$id('list-item')">
+    <div class="chat-member-card" >
+        {% if u.role %}
+            {% if u.company.logo %}
+                {% thumbnail u.company.logo "50x50" crop="center" as im %}
+                    <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-card__img" alt="avatar user">
+                {% endthumbnail %}
+            {% else %}    
+                <img src="{% static 'img/avatar-company-empty.png' %}" width="50px" height="50px" alt="avatar company empty">
+            {% endif %}
+        {% else %}
+            {% if u.profile.photo %}
+                {% thumbnail u.profile.photo "50x50" crop="center" as im %}
+                    <img src="{{ im.url }}" width="50px" height="50px" class="chat-member-card__img" alt="avatar user">
+                {% endthumbnail %}
+            {% else %}    
+                <img src="{% static 'img/avatar-user-empty.svg' %}" width="50px" height="50px" alt="avatar user empty">
+            {% endif %}
+        {% endif %}
+        <div class="chat-member-card__content">
+            <p class="chat-member-card__name">
+                {% if u.role %}
+                    {{u.company.company_name}}
+                {% else %}
+                    {{u.profile.surname}} {{u.profile.name}} {{u.profile.patronymic}}
+                {% endif %}
+            </p>
+            <p>time</p>
+        </div>
+    </div>    
+</a>
